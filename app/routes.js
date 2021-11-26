@@ -1,6 +1,10 @@
-const express = require('express')
-const router = express.Router()
+const express = require('express');
+const router = express.Router();
 
-// Add your routes here - above the module.exports line
+const v1Routes = require('./routes/v1');
 
-module.exports = router
+
+router.use('/', v1Routes);
+
+
+module.exports = router;

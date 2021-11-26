@@ -1,0 +1,63 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukBackLink({
+        text: "Back",
+        classes: "govuk-!-margin-bottom-9 govuk-!-margin-top-1",
+        href: "/"
+      }) }}
+      <h1 class="govuk-heading-xl ">
+        <span class="govuk-caption-xl">Info sharing - Alpha</span>
+        Referral service designs
+      </h1>
+      <h2 class="govuk-heading-l">
+        <span class="govuk-caption-l">
+          {{ govukTag({
+            text: "Latest"
+          }) }}
+        </span>
+        Sprint 1
+      </h2>
+
+      {{ govukDetails({
+        summaryText: "Sprint goals",
+        html: 
+       "
+        <h3 class='govuk-heading-m'>
+          Sprint goals
+        </h3>
+        <p class='govuk-body'>
+          Yet to be discussed and decided
+        <p>
+       "
+      }) }}
+
+      <h3 class="govuk-heading-m">
+        Design asset links 
+      </h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="#" class="govuk-link">Lucid board - Yet to be built</a>
+        </li>
+      </ul>
+
+      <h3 class="govuk-heading-m">
+        Prototype links 
+      </h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="#" class="govuk-link">Yet to be built</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}

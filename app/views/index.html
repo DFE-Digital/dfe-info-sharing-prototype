@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  DfE - Info sharing
 {% endblock %}
 
 {% block content %}
@@ -10,36 +10,126 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        The GOV.UK Prototype Kit
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
+        Information sharing prototype
+        <span class="govuk-caption-xl">{{ govukTag({
+          text: "Alpha"
+        }) }}</span>
+      </h1>
+      <h2 class="govuk-heading-m">
+        What is information sharing?
+      </h2>
+      <p class="govuk-body">
+        All documents and links <i>will be</i> collected on a <a href="#" class="govuk-link">Confluence page</a>.
       <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
+        <h2 class="govuk-heading-m">
+          Prototype design team
+        </h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <b>User Researchers</b>
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="#" class="govuk-link">Erin Bramwell</a></li>
+              <li><a href="#" class="govuk-link">Sam Belola</a></li>
+              <li><a href="#" class="govuk-link">Jessie Ferguson</a></li>
+            </ul>
+          </li>
+          <li>
+            <b>Content Designer</b>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>
+                <a href="#" class="govuk-link">Laura Croft</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <b>Interaction Designers</b>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>
+                <a href="#" class="govuk-link">TBC</a>
+              </li>
+              <li>
+                <a href="#" class="govuk-link">Brian Milman</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <hr class="govuk-!-margin-top-9 govuk-!-margin-bottom-7">
+        <h2 class="govuk-heading-l">
+          Prototype links
+        </h2>
+        <p class="govuk-body">
+          During Alpha the project team are looking at two alternative solutions:
+        <p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="v1/referrals/index" class="govuk-link">A referral service</a>
+            </li>
+            <li>
+              <a href="v1/directory/index" class="govuk-link">A directory of relevant services</a>
+            </li>
+          </ul>
+         <!-- <form action="version-run" method="post" novalidate data-validate='example-validation'>
+          <h2 class="govuk-heading-m govuk-!-margin-top-6">
+            Referral service 
+            <span class="govuk-caption-m">
+              Version links
+            </span>
+          </h2>
+          {{ govukSelect({
+            id: "referral-service-links",
+            name: "referral-service-links",
+            label: {
+              text: "Select which version you'd like to see"
+            },
+            
+            items: [
+              {
+                value: " ",
+                text: ""
+              },
+              {
+                value: "Version 1",
+                text: "Version 1"
+              }
+            ]
+          }) }}
+          {{ govukButton({
+            text: "Run selected version"
+          }) }}
 
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
 
-      <h2 class="govuk-heading-m">About this page</h2>
-
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
-
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
-
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="/docs/tutorials-and-examples">Example pages and documentation</a>
-        </li>
-        <li>
-          <p class="govuk-body">
-            test submit
-          <p>
-        </li>
-      </ul>
+          <h2 class="govuk-heading-m govuk-!-margin-top-6">
+            Directory service  <span class="govuk-caption-m">
+              Version links
+            </span>
+          </h2>
+          {{ govukSelect({
+            id: "directory-service-links",
+            name: "directory-service-links",
+            label: {
+              text: "Select which version you'd like to see"
+            },
+            
+            items: [
+              {
+                value: " ",
+                text: " "
+              },
+              {
+                value: "Version 1",
+                text: "Version 1"
+              },
+              
+              {
+                value: "Version 1",
+                text: "Version 1"
+              }
+            ]
+          }) }}
+          {{ govukButton({
+            text: "Run selected version"
+          }) }}
+        </form> -->
     </div>
   </div>
 
