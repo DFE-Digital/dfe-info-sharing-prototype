@@ -62,16 +62,24 @@
         <p>
           <ul class="govuk-list govuk-list--bullet">
             <li>
-              <a href="v1/directory/index" class="govuk-link">Directory of professionals who have interacted with a child/family</a>
+              <a href="directory/index" class="govuk-link">Directory of professionals who have interacted with a child/family</a>
               <p class="govuk-body">
                 Who have interacted with a child/family
               <p>
+                {{ govukButton({
+                  text: "Directory designs",
+                  href: "directory/index"
+                }) }}
             </li>
             <li>
-              <a href="v1/referrals/index" class="govuk-link">Digital referral service</a>
+              <a href="referrals/index" class="govuk-link">Digital referral service</a>
               <p class="govuk-body">
                 For Professionals actively working with families within a local Authority who need to understand the availability and make actionable referrals to targeted services that families are eligible for. 
               <p>
+                {{ govukButton({
+                  text: "Referral service designs",
+                  href: "referral/index"
+                }) }}
             </li>
            
           </ul>
