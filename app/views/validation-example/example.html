@@ -1,0 +1,69 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  DfE - Info sharing
+{% endblock %}
+
+{% block content %}
+<form action="#" method="post" novalidate data-validate='example-validation'>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-xl">{{ govukTag({
+          text: "example"
+        }) }}</span>
+        Validation example
+      </h1>
+      <p class="govuk-body">
+        The example below is here to demo how we can include error states within our prototypes. See the code for this page for the set up
+      <p>
+        <p class="govuk-body">
+          When setting a page up with validation, ensure that you include "novalidate data-validate='example-validation' in the opening form code."
+        <p>
+
+        {{ govukRadios({
+          idPrefix: "validation-example-question",
+          name: "validation-example-question",
+          
+          fieldset: {
+            legend: {
+              text: "Click Continue without selecting an option",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Value",
+              text: "Don't select me"
+            }
+          ]
+        }) }}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+        <p class="govuk-body">
+          More examples of this code may be found on <a href="https://github.com/LandRegistry/govuk-prototype-kit-form-validation/blob/master/app/views/validation-example.html" class="govuk-link" target="-blank">this repo at Github</a>. 
+        <p>
+
+  </div>
+</div>
+</form>
+
+
+<script type="application/json" id="example-validation">
+  { 		  	
+    "validation-example-question": {
+      "presence": {
+        "message": "^Error state is repeated for the component as well as the summary automatically"
+      }
+    }
+    
+  }
+</script>
+
+
+{% endblock %}

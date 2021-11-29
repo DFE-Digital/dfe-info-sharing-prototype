@@ -9,12 +9,8 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      {{ govukBackLink({
-        text: "Back",
-        classes: "govuk-!-margin-bottom-9 govuk-!-margin-top-1",
-        href: "/"
-      }) }}
+      <a onclick="goBack()" class="govuk-back-link pointer govuk-!-margin-bottom-6 govuk-!-margin-top-1">Back</a>
+      
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-xl">Info sharing - Alpha</span>
         Directory service designs
@@ -40,15 +36,15 @@
         <p>
        "
       }) }}
-      <h3 class="govuk-heading-m">
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
         Design asset links 
       </h3>
       <ul class="govuk-list govuk-list--bullet">
         <li>
-          <a href="#" class="govuk-link">Lucid board - Yet to be included</a>
+          <a href="https://lucid.app/documents#/documents?folder_id=277064132" class="govuk-link" target="_blank">Lucid board</a>
         </li>
       </ul>
-      <h3 class="govuk-heading-m">
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
         Prototype links 
       </h3>
       <ul class="govuk-list govuk-list--bullet">
@@ -56,7 +52,7 @@
           <a href="v1/directory/index" class="govuk-link">Yet to be built</a>
         </li>
       </ul>
-      <h3 class="govuk-heading-m">
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
         User Research feedback 
       </h3>
       <ul class="govuk-list govuk-list--bullet">
@@ -68,3 +64,5 @@
   </div>
 
 {% endblock %}
+
+
