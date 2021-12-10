@@ -1,0 +1,52 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+          <div class="govuk-width-container">
+            <a href="#" class="govuk-back-link">Back</a>
+          
+            <main class="govuk-main-wrapper " id="main-content" role="main">
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                  <form action="/form-handler" method="post" novalidate>
+          
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                          <h1 class="govuk-fieldset__heading">
+                            Another form
+                          </h1>
+                        </legend>
+                        <div class="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+                            <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                              Not within scope
+                            </label>
+                          </div>
+                        </div>
+          
+                      </fieldset>
+                    </div>
+          
+                    <button class="govuk-button" data-module="govuk-button">
+                      Continue
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </main>
+          </div>
+
+      </div>
+    </main>
+  </div>
+
+{% endblock %}

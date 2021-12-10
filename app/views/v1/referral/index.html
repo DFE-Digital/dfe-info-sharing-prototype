@@ -7,17 +7,75 @@ Info sharing - Referral service
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-     
-      <h1 class="govuk-heading-xl ">
-        <span class="govuk-caption-xl">Info sharing - Alpha</span>
-        Referral service designs
-      </h1>
-     <h2 class="govuk-heading-l">
-       Sprint designs will start here once we kick off.
-     </h2>
+  <div class="govuk-width-container">
+    <div class="govuk-breadcrumbs">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="#">Home</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="#">Childcare and parenting</a>
+        </li>
+      </ol>
     </div>
+  
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">Get family help services</h1>
+  
+          <p class="govuk-body">To use this service you will need:</p>
+  
+          <ul class="govuk-list govuk-list--bullet">
+            <li>the concent of the family or people being referred for a service</li>
+            <li>be able to explain in detail why you think this service is needed</li>
+          </ul>
+  
+          <p class="govuk-body">Filling in this form takes around 5 minutes.</p>
+  
+          <a href="check-who-are-you-referring.html" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8 govuk-button--start" data-module="govuk-button">
+            Get family help
+            <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+            </svg></a>
+  
+          <h2 class="govuk-heading-m">Before you start</h2>
+
+          <p class="govuk-body">Please ensure you have consent for submitting a family or someoen to use this service.</p>
+        </div>
+  
+        <div class="govuk-grid-column-one-third">
+  
+          <!-- The Related items component is not part of GOV.UK Frontend but will be styled if used in the Prototype Kit -->
+  
+          <aside class="app-related-items" role="complementary">
+            <h2 class="govuk-heading-m" id="subsection-title">
+              Subsection
+            </h2>
+            <nav role="navigation" aria-labelledby="subsection-title">
+              <ul class="govuk-list govuk-!-font-size-16">
+                <li>
+                  <a class="govuk-link" href="#">
+                    Related link
+                  </a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#">
+                    Related link
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="govuk-link govuk-!-font-weight-bold">
+                    More <span class="govuk-visually-hidden">in Subsection</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </aside>
+  
+        </div>
+      </div>
+    </main>
   </div>
 
 {% endblock %}
