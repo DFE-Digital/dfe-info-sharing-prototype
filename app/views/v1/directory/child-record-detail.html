@@ -60,7 +60,162 @@ Info sharing - Referral service
         </div>
       </div>
      
-      
+      {% from "govuk/components/tabs/macro.njk" import govukTabs %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% set pastDayHtml %}
+<h2 class="govuk-heading-l">Family</h2>
+<h3 class="govuk-heading-m">
+  Family information will be displayed here
+</h3>
+
+<p class="govuk-body">
+  This may include:
+<p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      siblings
+    </li>
+    <li>
+      contact details
+    </li>
+    <li>
+      debt information
+    </li>
+    <li>Initial warnings or flags</li>
+  </ul>
+  <p class="govuk-body">
+    This is just an example of the types of information
+  <p>
+{% endset -%}
+
+{% set pastWeekHtml %}
+<h2 class="govuk-heading-l">Health</h2>
+<h3 class="govuk-heading-m">
+  Health information will be displayed here
+</h3>
+<p class="govuk-body">
+  This may include:
+<p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      Midwife information
+    </li>
+    <li>
+      Other registered medical professionals (doctors etc)
+    </li>
+    <li>
+      timeline of interactions with vaious medical staff (including sorts and filters)
+    </li>
+    
+  </ul>
+  <p class="govuk-body">
+    This is just an example of the types of information
+  <p>
+{% endset -%}
+
+{% set socialHtml %}
+<h2 class="govuk-heading-l">Social care</h2>
+<h3 class="govuk-heading-m">
+  Social care information will be displayed here
+</h3>
+<p class="govuk-body">
+  This may include:
+<p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      any ongoing or historical sessions/cases with social care professionals
+    </li>
+    <li>
+      flags or warnings within the social care environment
+    </li>
+    <li>
+      contact details of any professionals registered with this particular child
+    </li>
+  </ul>
+  <p class="govuk-body">
+    This is just an example of the types of information
+  <p>
+{% endset -%}
+
+{% set pastMonthHtml %}
+<h2 class="govuk-heading-l">Education</h2>
+<h3 class="govuk-heading-m">
+  Education information will be displayed here
+</h3>
+<p class="govuk-body">
+  This may include:
+<p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      timeline of educational placements the child has been registered with
+    </li>
+    <li>
+      contact details of professionals related to the child's education
+    </li>
+  </ul>
+{% endset -%}
+
+{% set pastYearHtml %}
+<h2 class="govuk-heading-l">Risks </h2>
+<h3 class="govuk-heading-m">
+  Risk information will be displayed here
+</h3>
+<p class="govuk-body">
+  This may include:
+<p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      a summary of risks and warnings related to this child and their family. This will be an accumulation of the other feeds (healthcare, social etc)
+    </li>
+    <li>
+      Police warnings (where we can)
+    </li>
+    <li>
+      List item
+    </li>
+  </ul>
+{% endset -%}
+
+{{ govukTabs({
+  items: [
+    {
+      label: "Family background",
+      id: "past-day",
+      panel: {
+        html: pastDayHtml
+      }
+    },
+    {
+      label: "Health",
+      id: "past-week",
+      panel: {
+        html: pastWeekHtml
+      }
+    },
+    {
+      label: "Social care",
+      id: "social",
+      panel: {
+        html: socialHtml
+      }
+    },
+    {
+      label: "Education",
+      id: "past-month",
+      panel: {
+        html: pastMonthHtml
+      }
+    },
+    {
+      label: "Risks and alerts",
+      id: "past-year",
+      panel: {
+        html: pastYearHtml
+      }
+    }
+  ]
+}) }}
      
 
     </div>
