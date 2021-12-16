@@ -61,10 +61,10 @@ Info sharing - Referral service
                 {
                   html: 
                   "
-                  <strong class='govuk-tag govuk-tag--red'>
+                  <strong class='govuk-tag govuk-tag--red govuk-!-margin-right-3'>
                     Warning alert here
                   </strong>
-                  <a href='#' class='govuk-link'>view alerts</a>
+                  <a href='#past-year' class='govuk-link'>View alerts</a>
                   "
                 }
               ]
@@ -224,6 +224,97 @@ Info sharing - Referral service
     text: "Apply filters"
   }) }}
 </div>
+
+{{ govukTable({
+  caption: "Timeline info",
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "Profesional type"
+    },
+    {
+      text: "Profesional name"
+    },
+    {
+      text: "Organisation name"
+    },
+    {
+      text: "Date of incident"
+    },
+    
+    {
+      text: "Ongoing or one-off"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "Health"
+      },
+      {
+        text: "NA"
+      },{
+        text: "St Thomas Hospital"
+      },
+      {
+        text: "20 Feb 2020"
+      },
+      {
+        text: "One-off"
+      }
+    ],
+    [
+      {
+        text: "Social care"
+      },
+      {
+        text: "Tracy Smith"
+      },{
+        text: "Arthur daley centre"
+      },
+      {
+        text: "20 Feb 2020"
+      },
+      {
+        text: "Ongoing"
+      }
+    ],
+    [
+      {
+        text: "Police"
+      },
+      {
+        text: "P.C. Smith"
+      },{
+        text: "Townsville Police station"
+      },
+      {
+        text: "20 Feb 2020"
+      },
+      {
+        text: "One-off"
+      }
+    ],
+    [
+      {
+        text: "Health"
+      },
+      {
+        text: "NA"
+      },{
+        text: "St Thomas Hospital"
+      },
+      {
+        text: "20 Feb 2020"
+      },
+      {
+        text: "Ongoing"
+      }
+    ]
+  ]
+}) }}
+
+
 </div>
 </div>
 {% endset -%}
