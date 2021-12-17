@@ -1,0 +1,227 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Directory service
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <a onclick="goBack()" class="govuk-back-link pointer govuk-!-margin-bottom-6 govuk-!-margin-top-1">Back</a>
+      <h1 class="govuk-heading-xl ">
+        <span class="govuk-caption-xl">Info sharing - Alpha</span>
+        Child record results
+      </h1>
+    
+      <div class="govuk-grid-column-full govuk-cookie-banner govuk-!-margin-bottom-9">
+
+        <h3 class="govuk-heading-s">
+          Record filters
+        </h3>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            {{ govukSelect({
+              id: "filter-1",
+              name: "filter-1",
+              label: {
+                text: "Filter 1"
+              },
+              classes: "govuk-!-width-full",
+              items: [
+                {
+                  value: "Value",
+                  text: "Placeholder filter"
+                }
+              ]
+            }) }}
+          </div>
+          <div class="govuk-grid-column-one-third">
+            {{ govukSelect({
+              id: "filter-2",
+              name: "filter-2",
+              label: {
+                text: "Filter 2"
+              },
+              classes: "govuk-!-width-full",
+              items: [
+                {
+                  value: "Value",
+                  text: "Placeholder filter"
+                }
+              ]
+            }) }}
+          </div>
+          <div class="govuk-grid-column-one-third">
+            {{ govukSelect({
+              id: "filter-3",
+              name: "filter-3",
+              label: {
+                text: "Filter 3"
+              },
+              classes: "govuk-!-width-full",
+              items: [
+                {
+                  value: "Value",
+                  text: "Placeholder filter"
+                }
+              ]
+            }) }}
+          </div>
+        </div>
+        {{ govukButton({
+          text: "Apply filters"
+        }) }}
+      </div>
+
+     {{ govukTable({
+       caption: "Child results",
+       firstCellIsHeader: false,
+       head: [
+         {
+           text: "Name"
+         },
+         {
+           text: "Date of birth"
+         },
+         {
+           text: "'Unique identifier'"
+         },
+         {
+           text: "Address"
+         },
+         {
+           
+         }
+         
+       ],
+       rows: [
+       [
+           {
+            html: 
+            "
+             <a href='child-record-detail' class='govuk-link'>Arthur Bloggs</a>
+            "
+           },
+           {
+             text: "15 Sep 2021"
+           },
+           {
+             text: "123-456-7890"
+           },
+           {
+             text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
+           },
+           {
+            html: 
+            "
+             <a href='child-record-detail' class='govuk-link'>View record</a>
+            "
+           }
+         ],
+         
+         [
+           {
+            html: 
+            "
+             <a href='child-record-detail-alt' class='govuk-link'>Fred Bloggs</a>
+            "
+           },
+           {
+             text: "10 Feb 2018"
+           },
+           {
+             text: "746-987-3432"
+           },
+           {
+             text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
+           },
+           {
+            html: 
+            "
+             <a href='child-record-detail-alt' class='govuk-link'>View record</a>
+            "
+           }
+         ],
+         [
+           {
+            html: 
+            "
+             <a href='#' class='govuk-link'>Joe Bloggs</a>
+            "
+           },
+           {
+             text: "10 Feb 2018"
+           },
+           {
+             text: "999-888-4321"
+           },
+           {
+             text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
+           },
+           {
+            html: 
+            "
+             <a href='#' class='govuk-link'>View record</a>
+            "
+           }
+         ],
+         [
+           {
+            html: 
+            "
+             <a href='#' class='govuk-link'>Kate Bloggs</a>
+            "
+           },
+           {
+             text: "20 Mar 2020"
+           },
+           {
+             text: "333-098-6483"
+           },
+           {
+             text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
+           },
+           {
+            html: 
+            "
+             <a href='#' class='govuk-link'>View record</a>
+            "
+           }
+         ],
+         
+         [
+           {
+            html: 
+            "
+             <a href='#' class='govuk-link'>Timothy Bloggs</a>
+            "
+           },
+           {
+             text: "10 Feb 2018"
+           },
+           {
+             text: "362-781-0912"
+           },
+           {
+             text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
+           },
+           {
+            html: 
+            "
+             <a href='#' class='govuk-link'>View record</a>
+            "
+           }
+         ]
+       ]
+     }) }}
+      
+      
+     
+
+    </div>
+  </div>
+
+{% endblock %}
