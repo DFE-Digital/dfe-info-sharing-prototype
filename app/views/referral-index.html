@@ -1,71 +1,153 @@
 
+
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Info sharing - Referral service
+  DfE - Info sharing
 {% endblock %}
 
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <a onclick="goBack()" class="govuk-back-link pointer govuk-!-margin-bottom-6 govuk-!-margin-top-1">Back</a>
+      <!-- Header section -->
+        <a onclick="goBack()" class="govuk-back-link pointer govuk-!-margin-bottom-6 govuk-!-margin-top-1">Back</a>
+        
+        <h1 class="govuk-heading-xl">
+          <span class="govuk-caption-xl">Info sharing - Alpha</span>
+          Referral service designs
+        </h1>
+        
+        <h2 class="govuk-heading-l">
+          What the referral service is
+        </h2>
+        <p class="govuk-body">
+          The referral process is to allow professionals and front-line workers to refer a person or family in need for targeted services (social services). This service aims to help the workers in the community hubs by elevating the pain points within the referral process.
+        </p>
 
-     
-      <h1 class="govuk-heading-xl ">
-        <span class="govuk-caption-xl">Info sharing - Alpha</span>
-        Referral service designs
-      </h1>
-      <h2 class="govuk-heading-l">
-        <span class="govuk-caption-l">
-          {{ govukTag({
-            text: "Latest"
-          }) }}
-        </span>
-        Sprint 0
-      </h2>
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+          Useful project links 
+        </h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="https://lucid.app/documents#/documents?folder_id=277064132" class="govuk-link" target="_blank">Lucid team boards</a>
+          </li>
+        </ul>
+      <!-- END Header section -->
 
-      {{ govukDetails({
-        summaryText: "Sprint goals",
-        html: 
-       "
-        <h3 class='govuk-heading-m'>
+      <hr class="govuk-!-margin-bottom-9 govuk-!-margin-top-9">
+
+      <!-- Current sprint section -->
+        <h2 class="govuk-heading-l">
+          <span class="govuk-caption-l">
+            {{ govukTag({
+              text: "Current sprint"
+            }) }}
+          </span>
+          Sprint 1
+        </h2>
+
+        <h3 class='govuk-heading-m govuk-!-margin-bottom-1'>
           Sprint goals
         </h3>
-        <p class='govuk-body'>
-          New members to have a deeper understanding of the discovery and requirements in order to be able to design a new service in Sprint 1 (Early 2022)
-        <p>
-       "
-      }) }}
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            Understand the specific problems and users that we will focus on for Alpha.
+          </li>
+          <li>
+            Define a process flow based on the user pain points.
+          </li>
+          <li>
+            Create an initial developed prototype that can be tested for the defined flow also created within Sprint 1.
+          </li>
+        </ul>
+        
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+          Design asset links 
+        </h3>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="https://lucid.app/lucidspark/0bbb23b5-d47f-4bcf-9161-5ee495c250cf/edit#" class="govuk-link" target="_blank">Lucid board</a>
+          </li>
+        </ul>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+          Prototype links 
+        </h3>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="v2/referral/index" class="govuk-link">TBC</a>
+          </li>
+        </ul>
+      <!-- END Current sprint section -->
 
-      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
-        Design asset links 
-      </h3>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="https://lucid.app/documents#/documents?folder_id=277064132" class="govuk-link" target="_blank">Lucid team</a>
-        </li>
-        <li>
-          <a href="https://lucid.app/lucidspark/d30854d2-fa2c-4389-b90f-fe9304f75847/edit?beaconFlowId=79F0678A23C105E6&invitationId=inv_0ffbc440-aacf-4ffe-9f80-501d11fc1e95#" class="govuk-link" target="_blank">Lucid board</a>
-        </li>
-      </ul>
+      <hr class="govuk-!-margin-bottom-9 govuk-!-margin-top-9">
 
-      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
-        Prototype links 
-      </h3>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="v1/referral/index" class="govuk-link">Firsts assumption driven draft</a>
-        </li>
-      </ul>
-      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
-        User Research feedback 
-      </h3>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="#" class="govuk-link">Yet to be included</a>
-        </li>
-      </ul>
+      <!-- Previous sprints section -->
+        <h2 class="govuk-heading-l">
+          Previous sprints
+          <span class="govuk-caption-l">
+            Assets and information
+          </span>
+        </h2>
+        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+          <!-- Sprint 0 -->
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                  Sprint 0 
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+
+              <h3 class='govuk-heading-m govuk-!-margin-bottom-1'>
+                Sprint goals
+              </h3>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>
+                New members to have a deeper understanding of the discovery and requirements in order to be able to design a new service in Sprint 1 (Early 2022).
+                <strong class='govuk-tag govuk-tag--green'>
+                  Goal achieved
+                </strong>
+                </li>
+              </ul>
+              
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+                Design asset links 
+              </h3>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>
+                  <a href="https://lucid.app/lucidspark/d30854d2-fa2c-4389-b90f-fe9304f75847/edit?beaconFlowId=79F0678A23C105E6&invitationId=inv_0ffbc440-aacf-4ffe-9f80-501d11fc1e95#" class="govuk-link" target="_blank">Lucid board - Defining a initial flow and process for referrals</a>
+                </li>
+              </ul>
+             
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+                Sprint learnings
+              </h3>
+              <p class="govuk-body">
+                As a interaction designer for the referral service on the Info Sharing Alpha I have been able to understand at a high level...
+              <p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>
+                    The project ask from a strategic point.
+                  </li>
+                  <li>
+                    The pain points from a professional's point of view.
+                  </li>
+                </ul>
+              <p class="govuk-body">
+                Three <a href="https://lucid.app/lucidspark/d30854d2-fa2c-4389-b90f-fe9304f75847/edit?beaconFlowId=79F0678A23C105E6&invitationId=inv_0ffbc440-aacf-4ffe-9f80-501d11fc1e95#" class="govuk-link" target="_blank">high level flows</a> has been established with different possible outcomes and scope. The flows defined here will form the basis of the sprint 1 prototype once a team decision has been made on the scope in the new year (2022).
+              </p>
+              <p class="govuk-body">
+                It is still unclear how wide our scope is and exactly how we will improve the process for professionals (5/1/2022).
+              </p>
+           </div>
+          </div>
+          <!-- END Sprint 0 -->
+        </div>
+      <!-- END sprints section -->
+
+
     </div>
   </div>
 
