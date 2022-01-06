@@ -47,21 +47,6 @@
     serviceUrl: "/",
     containerClasses: "govuk-width-container"
   }) }}
-  
-  <div class="govuk-width-container"> 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-      {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-        {{ govukPhaseBanner({
-          tag: {
-            text: "alpha"
-          },
-          html: 'This is a prototype – This is not a real service'
-        }) }}
-        </div>
-    </div>
-  </div>
-
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
@@ -88,11 +73,6 @@
 
 {% block bodyEnd %}
   {% block scripts %}
-  <script>
-    function goBack() {
-     window.history.back();
-    }
- </script>
     {% include "includes/scripts.html" %}
     {% block pageScripts %}{% endblock %}
   {% endblock %}
