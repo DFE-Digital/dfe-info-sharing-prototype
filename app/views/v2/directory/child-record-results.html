@@ -9,7 +9,7 @@ Info sharing - Directory service
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <a onclick="goBack()" class="govuk-back-link pointer govuk-!-margin-bottom-6 govuk-!-margin-top-1">Back</a>
+      <a onclick="history.back()" class="govuk-back-link pointer govuk-!-margin-bottom-6 govuk-!-margin-top-1">Back</a>
       <h1 class="govuk-heading-xl ">
         <span class="govuk-caption-xl">Info sharing - Alpha</span>
         Child record results
@@ -76,32 +76,43 @@ Info sharing - Directory service
         }) }}
       </div>
 
+    
+      
+      
+     {%- from "govuk/components/table/macro.njk" import govukTable -%}
+
      {{ govukTable({
-       caption: "Child results",
-       firstCellIsHeader: false,
+       attributes: {
+         'data-module': 'moj-sortable-table'
+       },
        head: [
          {
-           text: "Name"
+           text: "Name",
+           attributes: {
+             "aria-sort": "ascending"
+           }
          },
          {
            text: "Date of birth"
          },
          {
-           text: "'Unique identifier'"
+           text: "Unique identifier",
+           attributes: {
+             "aria-sort": "none"
+           },
+           format: "numeric"
          },
          {
            text: "Address"
          },
          {
-           
+           text: ""
          }
-         
        ],
        rows: [
-       [
+         [
            {
-            html: 
-            "
+             html:  "
              <a href='child-record-detail' class='govuk-link'>Arthur Bloggs</a>
             "
            },
@@ -109,116 +120,129 @@ Info sharing - Directory service
              text: "15 Sep 2021"
            },
            {
-             text: "123-456-7890"
+             text: "123-456-7890",
+             format: "numeric",
+             attributes: {
+               "data-sort-value": "123-456-7890"
+             }
            },
            {
              text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
            },
            {
-            html: 
-            "
-             <a href='child-record-detail' class='govuk-link'>View record</a>
-            "
-           }
+            html:  "
+            <a href='child-record-detail' class='govuk-link'>View</a>
+           "
+          }
          ],
-         
          [
            {
-            html: 
-            "
+             html: "
              <a href='child-record-detail-alt' class='govuk-link'>Fred Bloggs</a>
             "
            },
            {
-             text: "10 Feb 2018"
+             text: "	10 Feb 2018"
            },
            {
-             text: "746-987-3432"
-           },
-           {
-             text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
-           },
-           {
-            html: 
-            "
-             <a href='child-record-detail-alt' class='govuk-link'>View record</a>
-            "
-           }
+            text: "746-987-3432",
+            format: "numeric",
+            attributes: {
+              "data-sort-value": "746-987-3432"
+            }
+          },
+          {
+            text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
+          },
+          {
+            html: "
+            <a href='child-record-detail-alt' class='govuk-link'>View</a>
+           "
+          }
          ],
          [
            {
-            html: 
-            "
+             html: "
              <a href='#' class='govuk-link'>Joe Bloggs</a>
-            "
+             "
            },
            {
              text: "10 Feb 2018"
            },
            {
-             text: "999-888-4321"
-           },
-           {
-             text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
-           },
-           {
-            html: 
-            "
-             <a href='#' class='govuk-link'>View record</a>
-            "
-           }
+            text: "999-888-4321",
+            format: "numeric",
+            attributes: {
+              "data-sort-value": "999-888-4321"
+            }
+          },
+          {
+            text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
+          },
+          {
+            html: "
+            <a href='#' class='govuk-link'>View</a>
+           "
+          }
          ],
          [
            {
-            html: 
-            "
+             html: "
              <a href='#' class='govuk-link'>Kate Bloggs</a>
-            "
+             "
            },
            {
-             text: "20 Mar 2020"
+             text: "	20 Mar 2020"
            },
            {
-             text: "333-098-6483"
-           },
-           {
-             text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
-           },
-           {
-            html: 
-            "
-             <a href='#' class='govuk-link'>View record</a>
-            "
-           }
+            text: "333-098-6483",
+            format: "numeric",
+            attributes: {
+              "data-sort-value": "333-098-6483"
+            }
+          },
+          {
+            text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
+          },
+          {
+            html: "
+            <a href='#' class='govuk-link'>View</a>
+           "
+          }
          ],
-         
          [
            {
-            html: 
-            "
+             html: "
              <a href='#' class='govuk-link'>Timothy Bloggs</a>
-            "
+               "
            },
            {
-             text: "10 Feb 2018"
+             text: "10 Feb 2018",
+             attributes: {
+               "data-sort-value": "8850"
+             }
            },
            {
-             text: "362-781-0912"
-           },
-           {
-             text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
-           },
-           {
-            html: 
-            "
-             <a href='#' class='govuk-link'>View record</a>
-            "
-           }
-         ]
-       ]
+            text: "362-781-0912",
+            format: "numeric",
+            attributes: {
+              "data-sort-value": "362-781-0912"
+            }
+          },
+          {
+            text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
+          },
+          {
+            html: "
+            <a href='#' class='govuk-link'>View</a>
+           "
+          }
+         ]      
+        ]
      }) }}
-      
-      
+
+
+
      
 
     </div>

@@ -9,28 +9,35 @@ Info sharing - Directory service
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <a onclick="goBack()" class="govuk-back-link pointer govuk-!-margin-bottom-6 govuk-!-margin-top-1">Back</a>
+      <a onclick="history.back()" class="govuk-back-link pointer govuk-!-margin-bottom-6 govuk-!-margin-top-1">Back</a>
       <h1 class="govuk-heading-xl ">
         <span class="govuk-caption-xl">Info sharing - Alpha</span>
         Child search
       </h1>
     
-      {{ govukInput({
-        id: "search-criteria",
-        name: "search-criteria",
+      {%- from "moj/components/search/macro.njk" import mojSearch -%}
+
+      {{ mojSearch({
+        action: 'child-record-results',
+        method: 'post',
+        input: {
+          id: 'search',
+          name: 'search'
+        },
         label: {
-          text: "Search field"
+          text: 'Find a person',
+          classes: 'govuk-!-font-weight-bold'
         },
         hint: {
-          text: "Need to understand what criteria we can search by"
+          text: 'You can search by name, date of birth or national insurance number'
+        },
+        button: {
+          text: 'Search'
         }
       }) }}
       
       
-      {{ govukButton({
-        text: "View results",
-        href: "child-record-results"
-      }) }}
+     
 
     </div>
   </div>
