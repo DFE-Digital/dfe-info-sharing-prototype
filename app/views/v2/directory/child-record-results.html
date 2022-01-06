@@ -22,118 +22,58 @@ Info sharing - Directory service
         </h3>
 
         <div class="govuk-grid-row">
-          {%- from "moj/components/filter/macro.njk" import mojFilter -%}
-{%- from "govuk/components/checkboxes/macro.njk" import govukCheckboxes -%}
-{%- from "govuk/components/input/macro.njk" import govukInput -%}
-
-{%- set filterOptionsHtml %}
-
-  {{ govukInput({
-    id: 'keywords',
-    name: 'keywords',
-    label: {
-      text: 'Keywords',
-      classes: 'govuk-label--m'
-    }
-  }) }}
-
-  {{ govukCheckboxes({
-    idPrefix: 'type',
-    name: 'type',
-    classes: "govuk-checkboxes--small",
-    fieldset: {
-      legend: {
-        text: 'Type',
-        classes: 'govuk-fieldset__legend--m'
-      }
-    },
-    items: [
-      {
-        value: '1',
-        text: 'Blue (18)',
-        checked: true
-      },
-      {
-        value: '2',
-        text: 'Yellow (5)',
-        checked: true
-      },
-      {
-        value: '3',
-        text: 'Red (2)'
-      }
-    ]
-  }) }}
-
-  {{ govukCheckboxes({
-    idPrefix: 'status',
-    name: 'status',
-    classes: "govuk-checkboxes--small",
-    fieldset: {
-      legend: {
-        text: 'Status',
-        classes: 'govuk-fieldset__legend--m'
-      }
-    },
-    items: [
-      {
-        value: 'complete',
-        text: 'Completed (2)',
-        checked: true
-      },
-      {
-        value: 'incomplete',
-        text: 'Incomplete (5)'
-      },
-      {
-        value: 'inprogress',
-        text: 'In progress (3)',
-        checked: false
-      }
-    ]
-  }) }}
-{% endset -%}
-
-{{ mojFilter({
-  heading: {
-    text: 'Filter'
-  },
-  selectedFilters: {
-
-    heading: {
-      text: 'Selected filters'
-    },
-
-    clearLink: {
-      text: 'Clear filters'
-    },
-
-    categories: [
-      {
-        heading: {
-          text: 'Type'
-        },
-        items: [{
-          href: '/path/to/remove/this',
-          text: 'Blue'
-        }, {
-          href: '/path/to/remove/this',
-          text: 'Yellow'
-        }]
-      },
-      {
-        heading: {
-          text: 'Status'
-        },
-        items: [{
-          href: '/path/to/remove/this',
-          text: 'Completed'
-        }]
-      }
-    ]
-  },
-  optionsHtml: filterOptionsHtml
-}) }}
+          <div class="govuk-grid-column-one-third">
+            {{ govukSelect({
+              id: "filter-1",
+              name: "filter-1",
+              label: {
+                text: "Filter 1"
+              },
+              classes: "govuk-!-width-full",
+              items: [
+                {
+                  value: "Value",
+                  text: "Placeholder filter"
+                }
+              ]
+            }) }}
+          </div>
+          <div class="govuk-grid-column-one-third">
+            {{ govukSelect({
+              id: "filter-2",
+              name: "filter-2",
+              label: {
+                text: "Filter 2"
+              },
+              classes: "govuk-!-width-full",
+              items: [
+                {
+                  value: "Value",
+                  text: "Placeholder filter"
+                }
+              ]
+            }) }}
+          </div>
+          <div class="govuk-grid-column-one-third">
+            {{ govukSelect({
+              id: "filter-3",
+              name: "filter-3",
+              label: {
+                text: "Filter 3"
+              },
+              classes: "govuk-!-width-full",
+              items: [
+                {
+                  value: "Value",
+                  text: "Placeholder filter"
+                }
+              ]
+            }) }}
+          </div>
+        </div>
+        {{ govukButton({
+          text: "Apply filters"
+        }) }}
       </div>
 
     
@@ -170,35 +110,11 @@ Info sharing - Directory service
          }
        ],
        rows: [
-         [
-           {
-             html:  "
-             <a href='child-record-detail' class='govuk-link'>Arthur Bloggs</a>
-            "
-           },
-           {
-             text: "15 Sep 2021"
-           },
-           {
-             text: "123-456-7890",
-             format: "numeric",
-             attributes: {
-               "data-sort-value": "123-456-7890"
-             }
-           },
-           {
-             text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
-           },
-           {
-            html:  "
-            <a href='child-record-detail' class='govuk-link'>View</a>
-           "
-          }
-         ],
+         
          [
            {
              html: "
-             <a href='child-record-detailß' class='govuk-link'>Fred Bloggs</a>
+             <a href='verb-child-record-detail' class='govuk-link'>Fred Bloggs</a>
             "
            },
            {
@@ -216,14 +132,39 @@ Info sharing - Directory service
           },
           {
             html: "
-            <a href='child-record-detail-alt' class='govuk-link'>View</a>
+            <a href='ver-bchild-record-detail' class='govuk-link'>View</a>
+           "
+          }
+         ],
+         [
+           {
+             html:  "
+             <a href='vera-child-record-detail' class='govuk-link'>George Bloggs</a>
+            "
+           },
+           {
+             text: "15 Sep 2021"
+           },
+           {
+             text: "123-456-7890",
+             format: "numeric",
+             attributes: {
+               "data-sort-value": "123-456-7890"
+             }
+           },
+           {
+             text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
+           },
+           {
+            html:  "
+            <a href='vera-child-record-detail' class='govuk-link'>View</a>
            "
           }
          ],
          [
            {
              html: "
-             <a href='#' class='govuk-link'>Joe Bloggs</a>
+             <a href='verc-child-record-detail' class='govuk-link'>Joe Bloggs</a>
              "
            },
            {
@@ -241,7 +182,7 @@ Info sharing - Directory service
           },
           {
             html: "
-            <a href='#' class='govuk-link'>View</a>
+            <a href='verc-child-record-detail' class='govuk-link'>View</a>
            "
           }
          ],
