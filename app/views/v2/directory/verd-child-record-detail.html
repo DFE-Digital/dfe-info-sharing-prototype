@@ -18,7 +18,7 @@ Info sharing - Directory service
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           {{ govukTable({
-            caption: "Summary details",
+            caption: " ",
             firstCellIsHeader: true,
            
             rows: [
@@ -30,14 +30,7 @@ Info sharing - Directory service
                   text: "20 Mar 2020"
                 }
               ],
-              [
-                {
-                  text: "Unique identifier"
-                },
-                {
-                  text: "333-098-6483"
-                }
-              ],
+              
               [
                 {
                   text: "Address"
@@ -102,51 +95,41 @@ Info sharing - Directory service
     
   
 
-<h2 class="govuk-heading-l">Timeline</h2>
-<h3 class="govuk-heading-m">
-  Below is the timeline information for Kate Bloggs
-</h3>
-<p class="govuk-body">
-  You can show/hide information using the filters below
-<p>
+
+
+
   <div class="govuk-grid-row">
     
   
 <div class="govuk-grid-column-full govuk-cookie-banner govuk-!-margin-bottom-9">
 
-  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-m">
+        Filter results
+      </h3>
+    </div>
+  </div>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
 {{ govukCheckboxes({
-  idPrefix: "Filter list 1",
-  name: "Filter list 1",
+  idPrefix: "filter-results",
+  name: "filter-results",
   classes: "govuk-checkboxes--small",
   fieldset: {
     legend: {
-      text: "Filter list 1",
+      text: "",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
   },
   items: [
     {
-      value: "item1",
-      text: "item1"
-    },
-    {
-      value: "item2",
-      text: "item2"
-    },
-    {
-      value: "item3",
-      text: "item3"
-    },
-    {
-      value: "item3",
-      text: "item3"
+      value: "Family care",
+      text: "Family care"
     }
   ]
 }) }}
@@ -158,27 +141,15 @@ Info sharing - Directory service
         classes: "govuk-checkboxes--small",
         fieldset: {
           legend: {
-            text: "Filter list 2",
+            text: "",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
         },
         items: [
           {
-            value: "item1",
-            text: "item1"
-          },
-          {
-            value: "item2",
-            text: "item2"
-          },
-          {
-            value: "item3",
-            text: "item3"
-          },
-          {
-            value: "item3",
-            text: "item3"
+            value: "Education",
+            text: "Education"
           }
         ]
       }) }}
@@ -190,27 +161,15 @@ Info sharing - Directory service
         classes: "govuk-checkboxes--small",
         fieldset: {
           legend: {
-            text: "Filter list 1",
+            text: "",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
         },
         items: [
           {
-            value: "item1",
-            text: "item1"
-          },
-          {
-            value: "item2",
-            text: "item2"
-          },
-          {
-            value: "item3",
-            text: "item3"
-          },
-          {
-            value: "item3",
-            text: "item3"
+            value: "Health",
+            text: "Health"
           }
         ]
       }) }}
@@ -235,7 +194,7 @@ Info sharing - Directory service
       <div class="moj-timeline__header">
         <h2 class="moj-timeline__title">Appointment</h2>
        
-        <p class="moj-timeline__byline">attended by  <a href="#" class="govuk-link">Joe Barker</a></p>
+        <p class="moj-timeline__byline">with  <a href="#" class="govuk-link">Joe Barker</a></p>
         
       </div>
   
@@ -244,8 +203,8 @@ Info sharing - Directory service
       </p>
       
       <div class="moj-timeline__description">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non felis risus. Curabitur nec ante vitae felis ullamcorper tincidunt.</p>
-        <a href="#" class="govuk-link">View linked professional</a>
+        Phone: <a href="#" class="govuk-link">07754 558866</a><br>
+        Email: <a href="#" class="govuk-link">j.barker@emailaddress.com</a>
       </div>
   
     </div>
@@ -259,9 +218,9 @@ Info sharing - Directory service
         Education - Nursery
       </strong>
       <div class="moj-timeline__header">
-        <h2 class="moj-timeline__title">Application received</h2>
+        <h2 class="moj-timeline__title">Appointment</h2>
   
-        <p class="moj-timeline__byline">by Caseworker 1</p>
+        <p class="moj-timeline__byline">by Caseworker</p>
   
       </div>
   
@@ -269,7 +228,10 @@ Info sharing - Directory service
         <time datetime="2019-06-06T09:12:00.000Z">6 June 2019 at 9:12am</time>
       </p>
   
-      <div class="moj-timeline__description">Your application has been received – reference MOJ-1234-5678</div>
+      <div class="moj-timeline__description">
+        Phone: <a href="#" class="govuk-link">NA</a><br>
+        Email: <a href="#" class="govuk-link">NA</a>
+      </div>
   
     </div>
   </div>
@@ -279,9 +241,9 @@ Info sharing - Directory service
         Health - Hospital
       </strong>
       <div class="moj-timeline__header">
-        <h2 class="moj-timeline__title">Application submitted</h2>
+        <h2 class="moj-timeline__title">Ongoing appointment</h2>
   
-        <p class="moj-timeline__byline">by Joe Bloggs</p>
+        <p class="moj-timeline__byline">at High hospital</p>
   
       </div>
   
@@ -290,16 +252,8 @@ Info sharing - Directory service
       </p>
   
       <div class="moj-timeline__description">
-        <details class="govuk-details govuk-!-margin-bottom-0">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              Application details
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            Ut quam nunc, vulputate ac metus pharetra, posuere maximus velit. <a href="https://www.google.com">Etiam nec interdum velit.</a> Suspendisse molestie lectus in eros ornare
-          </div>
-        </details>
+        Phone: <a href="#" class="govuk-link">01285 555444</a><br>
+        Email: <a href="#" class="govuk-link">info@h.hospital.co.uk</a>
       </div>
   
     </div>
@@ -307,9 +261,9 @@ Info sharing - Directory service
     <div class="moj-timeline__item">
   
       <div class="moj-timeline__header">
-        <h2 class="moj-timeline__title">Documents uploaded</h2>
+        <h2 class="moj-timeline__title">Ongoing appointment</h2>
   
-        <p class="moj-timeline__byline">by Joe Bloggs</p>
+        <p class="moj-timeline__byline">at High hospital</p>
   
       </div>
   
@@ -317,25 +271,16 @@ Info sharing - Directory service
         <time datetime="2019-05-28T10:15:00.000Z">28 May 2019 at 10:15am</time>
       </p>
   
-      <div class="moj-timeline__description">
-        <ul class="moj-timeline__documents">
-          <li class="moj-timeline__document-item">
-            <a class="moj-timeline__document-link" href="#">Document 1</a>
-          </li>
-          <li class="moj-timeline__document-item">
-            <a class="moj-timeline__document-link" href="#">Document 1</a>
-          </li>
-        </ul>
-      </div>
+    
   
     </div>
   
     <div class="moj-timeline__item">
   
       <div class="moj-timeline__header">
-        <h2 class="moj-timeline__title">Application started</h2>
+        <h2 class="moj-timeline__title">Initial appointment</h2>
   
-        <p class="moj-timeline__byline">by Joe Bloggs</p>
+        <p class="moj-timeline__byline">at High hospital</p>
   
       </div>
   
@@ -343,13 +288,7 @@ Info sharing - Directory service
         <time datetime="2019-05-21T13:15:00.000Z">21 May 2019 at 1:15pm</time>
       </p>
   
-      <div class="moj-timeline__description">
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a class="govuk-link" href="#">Item 1</li>
-          <li><a class="govuk-link" href="#">Item 2</li>
-        </ul>
-      </div>
-  
+      
     </div>
   </div>
 </div>

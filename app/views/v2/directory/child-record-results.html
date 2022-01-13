@@ -15,70 +15,26 @@ Info sharing - Directory service
         Child search results
       </h1>
     
-      <div class="govuk-grid-column-full govuk-cookie-banner govuk-!-margin-bottom-9">
+      
 
-        <h3 class="govuk-heading-s">
-          Refine your results
-        </h3>
-
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-one-third">
-            {{ govukSelect({
-              id: "filter-1",
-              name: "filter-1",
-              label: {
-                text: "Filter 1"
-              },
-              classes: "govuk-!-width-full",
-              items: [
-                {
-                  value: "Value",
-                  text: "Placeholder filter"
-                }
-              ]
-            }) }}
-          </div>
-          <div class="govuk-grid-column-one-third">
-            {{ govukSelect({
-              id: "filter-2",
-              name: "filter-2",
-              label: {
-                text: "Filter 2"
-              },
-              classes: "govuk-!-width-full",
-              items: [
-                {
-                  value: "Value",
-                  text: "Placeholder filter"
-                }
-              ]
-            }) }}
-          </div>
-          <div class="govuk-grid-column-one-third">
-            {{ govukSelect({
-              id: "filter-3",
-              name: "filter-3",
-              label: {
-                text: "Filter 3"
-              },
-              classes: "govuk-!-width-full",
-              items: [
-                {
-                  value: "Value",
-                  text: "Placeholder filter"
-                }
-              ]
-            }) }}
-          </div>
-        </div>
-        {{ govukButton({
-          text: "Apply filters"
-        }) }}
-      </div>
-
+  
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m">
+      5 records found
+    </h3>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    {{ govukButton({
+      text: "Search again",
+      classes: "govuk-button--secondary",
+      href: "child-search"
+    }) }}
+  </div>
+</div>
+      
+     
     
-      
-      
      {%- from "govuk/components/table/macro.njk" import govukTable -%}
 
      {{ govukTable({
@@ -95,13 +51,7 @@ Info sharing - Directory service
          {
            text: "Date of birth"
          },
-         {
-           text: "Unique identifier",
-           attributes: {
-             "aria-sort": "none"
-           },
-           format: "numeric"
-         },
+         
          {
            text: "Address"
          },
@@ -118,13 +68,7 @@ Info sharing - Directory service
            {
              text: "10 Feb 2018"
            },
-           {
-            text: "746-987-3432",
-            format: "numeric",
-            attributes: {
-              "data-sort-value": "746-987-3432"
-            }
-          },
+           
           {
             text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
           },
@@ -141,13 +85,7 @@ Info sharing - Directory service
            {
              text: "15 Sep 2021"
            },
-           {
-             text: "123-456-7890",
-             format: "numeric",
-             attributes: {
-               "data-sort-value": "123-456-7890"
-             }
-           },
+           
            {
              text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
            },
@@ -164,13 +102,7 @@ Info sharing - Directory service
            {
              text: "10 Feb 2018"
            },
-           {
-            text: "999-888-4321",
-            format: "numeric",
-            attributes: {
-              "data-sort-value": "999-888-4321"
-            }
-          },
+           
           {
             text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
           },
@@ -187,13 +119,7 @@ Info sharing - Directory service
            {
              text: "20 Mar 2020"
            },
-           {
-            text: "333-098-6483",
-            format: "numeric",
-            attributes: {
-              "data-sort-value": "333-098-6483"
-            }
-          },
+           
           {
             text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
           },
@@ -213,13 +139,7 @@ Info sharing - Directory service
                "data-sort-value": "8850"
              }
            },
-           {
-            text: "362-781-0912",
-            format: "numeric",
-            attributes: {
-              "data-sort-value": "362-781-0912"
-            }
-          },
+          
           {
             text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
           },
