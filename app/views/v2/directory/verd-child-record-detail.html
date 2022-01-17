@@ -27,7 +27,7 @@ Info sharing - Directory service
                   text: "Date of birth"
                 },
                 {
-                  text: "20 Mar 2020"
+                  text: "20 Mar 2017"
                 }
               ],
               
@@ -216,29 +216,54 @@ Info sharing - Directory service
     </div>
     </div>
     
+  
+
   <div class="moj-timeline govuk-!-margin-bottom-6">
     <div class="moj-timeline__item">
       <strong class="govuk-tag govuk-tag--purple">
         Education
       </strong>
       <div class="moj-timeline__header">
-        <h2 class="moj-timeline__title">New attendance</h2>
+        <h2 class="moj-timeline__title">New school</h2>
   
-        <p class="moj-timeline__byline">- Busy bees Nursery</p>
+        <p class="moj-timeline__byline">- Netherstowe Primary School</p>
   
       </div>
   
       <p class="moj-timeline__date">
-        <time datetime="2019-06-06T09:12:00.000Z">6 June 2019 at 9:12am</time>
+        <time datetime="2019-06-06T09:12:00.000Z">6 June 2019</time>
       </p>
   
       <div class="moj-timeline__description">
-        Phone: <a href="#" class="govuk-link">NA</a><br>
-        Email: <a href="#" class="govuk-link">NA</a>
+        
+        {{ govukDetails({
+          summaryText: "Contact details",
+          html: "
+          <ul class='govuk-list'>
+            
+            <li>
+                 <b>Head teacher:</b> John Ball
+            </li>
+            <li>
+              <b>Phone:</b> <a href='#' class='govuk-link'>01225 55487</a>  
+            </li>
+            <li>
+              <b>Email:</b> <a href='#' class='govuk-link'>jb@netherstowe-primary.co.uk</a> 
+            </li>
+            <li>
+              <b>Address:</b> 1 Seargant Road, Townsville, Countyville, DE34 99F
+            </li>
+          </ul>         
+          "
+        }) }}
+
+
       </div>
   
     </div>
   </div>
+
+
   <div class="moj-timeline govuk-!-margin-bottom-6">
     <div class="moj-timeline__item">
       <strong class="govuk-tag govuk-tag--blue">
@@ -292,10 +317,128 @@ Info sharing - Directory service
         <time datetime="2019-05-21T13:15:00.000Z">21 May 2019 at 1:15pm</time>
       </p>
   
+
+      
       
     </div>
+
+
+    
   </div>
+
+
+  <div class="moj-timeline govuk-!-margin-bottom-6">
+    <div class="moj-timeline__item">
+      <strong class="govuk-tag govuk-tag--purple">
+        Education
+      </strong>
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">New attendance</h2>
+  
+        <p class="moj-timeline__byline">- Busy bees Nursery</p>
+  
+      </div>
+  
+      <p class="moj-timeline__date">
+        <time datetime="2019-06-06T09:12:00.000Z">6 June 2018 at 9:12am</time>
+      </p>
+  
+      <div class="moj-timeline__description">
+        No contact details 
+      </div>
+  
+    </div>
+  </div>
+
+
+
+
+  <div class="moj-timeline govuk-!-margin-bottom-6">
+    <div class="moj-timeline__item">
+      <strong class="govuk-tag govuk-tag--blue">
+        Health - Hospital
+      </strong>
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Ongoing appointment</h2>
+  
+        <p class="moj-timeline__byline">- High hospital</p>
+  
+      </div>
+  
+      <p class="moj-timeline__date">
+        <time datetime="2019-05-28T10:45:00.000Z">28 May 2019 at 10:45am</time>
+      </p>
+  
+      <div class="moj-timeline__description">
+
+
+          <!--start of the accordion-->
+          {{ govukAccordion({
+            id: "accordion-default",
+            items: [
+              {
+                heading: {
+                  text: "Contact details"
+                },
+                content: {
+                  html: "<p class='govuk-body'>Phone: <a href='#' class='govuk-link'>01285 555444</a><br>
+                    Email: <a href='#' class='govuk-link'>info@h.hospital.co.uk</a></p>"
+                }
+              },
+              {
+                heading: {
+                  text: "Appointment details"
+                },
+                content: {
+                  html: 
+                  "
+                  <div class='moj-timeline__item'>
+  
+                    <div class='moj-timeline__header'>
+                      <h2 class='moj-timeline__title'>Ongoing appointment</h2>
+                
+                      <p class='moj-timeline__byline'>- High hospital</p>
+                
+                    </div>
+                
+                    <p class='moj-timeline__date'>
+                      <time datetime='2019-05-28T10:15:00.000Z'>28 May 2019 at 10:15am</time>
+                    </p>
+                  </div>
+                
+                  <div class='moj-timeline__item'>
+                
+                    <div class='moj-timeline__header'>
+                      <h2 class='moj-timeline__title'>Initial appointment</h2>
+                
+                      <p class='moj-timeline__byline'>- High hospital</p>
+                
+                    </div>
+                
+                    <p class='moj-timeline__date'>
+                      <time datetime='2019-05-21T13:15:00.000Z'>21 May 2019 at 1:15pm</time>
+                    </p> 
+                  </div> 
+                  "
+                }
+              }
+            ]
+          }) }}
+
+          <!--end of the accordion-->
+        
+      </div>
+  
+    </div>
+  
+    
+
+  </div>
+
+
+  
 </div>
+
 
   
 </div>  
