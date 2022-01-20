@@ -1,0 +1,460 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Directory service
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <a onclick="history.back()" class="govuk-back-link pointer govuk-!-margin-bottom-6 govuk-!-margin-top-1">Back</a>
+      <h1 class="govuk-heading-xl ">
+        <span class="govuk-caption-xl">Info sharing - Alpha</span>
+        Timothy Bloggs
+      </h1>
+    
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          {{ govukTable({
+            caption: "Summary details",
+            firstCellIsHeader: true,
+           
+            rows: [
+              [
+                {
+                  text: "Date of birth"
+                },
+                {
+                  text: "10 Feb 2018"
+                }
+              ],
+              [
+                {
+                  text: "Unique identifier"
+                },
+                {
+                  text: "362-781-0912"
+                }
+              ],
+              [
+                {
+                  text: "Address"
+                },
+                {
+                  text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
+                }
+              ],
+              
+              [
+                {
+                  text: "Warnings and risks"
+                },
+                {
+                  html: 
+                  "
+                  <strong class='govuk-tag govuk-tag--red govuk-!-margin-right-3'>
+                    Warning alert here
+                  </strong>
+                  <a href='#past-year' class='govuk-link'>View alerts</a>
+                  "
+                }
+              ]
+            ]
+          }) }}
+          
+        </div>
+      </div>
+     
+      {% from "govuk/components/tabs/macro.njk" import govukTabs %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% set pastDayHtml %}
+<h2 class="govuk-heading-l">Family</h2>
+<h3 class="govuk-heading-m">
+  Family information will be displayed here
+</h3>
+
+<p class="govuk-body">
+  This may include:
+<p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      siblings
+    </li>
+    <li>
+      contact details
+    </li>
+    <li>
+      debt information
+    </li>
+    <li>Initial warnings or flags</li>
+  </ul>
+  <p class="govuk-body">
+    This is just an example of the types of information
+  <p>
+{% endset -%}
+
+{% set pastWeekHtml %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    
+  
+
+<h2 class="govuk-heading-l">Timeline</h2>
+<h3 class="govuk-heading-m">
+  Below is the timeline information for Timothy Bloggs
+</h3>
+<p class="govuk-body">
+  You can show/hide information using the filters below
+<p>
+  <div class="govuk-grid-row">
+    
+  
+<div class="govuk-grid-column-full govuk-cookie-banner govuk-!-margin-bottom-9">
+
+  
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukCheckboxes({
+  idPrefix: "Filter list 1",
+  name: "Filter list 1",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "Filter list 1",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "item1",
+      text: "item1"
+    },
+    {
+      value: "item2",
+      text: "item2"
+    },
+    {
+      value: "item3",
+      text: "item3"
+    },
+    {
+      value: "item3",
+      text: "item3"
+    }
+  ]
+}) }}
+    </div>
+    <div class="govuk-grid-column-one-third">
+      {{ govukCheckboxes({
+        idPrefix: "Filter list 2",
+        name: "Filter list 2",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "Filter list 2",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "item1",
+            text: "item1"
+          },
+          {
+            value: "item2",
+            text: "item2"
+          },
+          {
+            value: "item3",
+            text: "item3"
+          },
+          {
+            value: "item3",
+            text: "item3"
+          }
+        ]
+      }) }}
+    </div>
+    <div class="govuk-grid-column-one-third">
+      {{ govukCheckboxes({
+        idPrefix: "Filter list 1",
+        name: "Filter list 1",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "Filter list 1",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "item1",
+            text: "item1"
+          },
+          {
+            value: "item2",
+            text: "item2"
+          },
+          {
+            value: "item3",
+            text: "item3"
+          },
+          {
+            value: "item3",
+            text: "item3"
+          }
+        ]
+      }) }}
+    </div>
+  </div>
+  {{ govukButton({
+    text: "Apply filters"
+  }) }}
+</div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+  
+  
+  <div class="moj-timeline">
+    <div class="moj-timeline__item">
+      <strong class="govuk-tag govuk-tag--turquoise">
+        Example category
+      </strong>
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Application requires confirmation</h2>
+       
+        <p class="moj-timeline__byline">by Joe Bloggs</p>
+        
+      </div>
+  
+      <p class="moj-timeline__date">
+        <time datetime="2019-06-14T14:01:00.000Z">14 June 2019 at 2:01pm</time>
+      </p>
+      
+      <div class="moj-timeline__description">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non felis risus. Curabitur nec ante vitae felis ullamcorper tincidunt.</p>
+        <a class="govuk-button govuk-!-margin-bottom-0" href="#">Continue</a>
+      </div>
+  
+    </div>
+  
+    <div class="moj-timeline__item">
+      <strong class="govuk-tag govuk-tag--blue">
+        Example category
+      </strong>
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Application review in progress</h2>
+  
+        <p class="moj-timeline__byline">by Caseworker 1</p>
+  
+      </div>
+  
+      <p class="moj-timeline__date">
+        <time datetime="2019-06-07T12:32:00.000Z">7 June 2019 at 12:32pm</time>
+      </p>
+  
+      <div class="moj-timeline__description">Your application is being reviewed by one of our case workers.</div>
+  
+    </div>
+  
+    <div class="moj-timeline__item">
+      <strong class="govuk-tag govuk-tag--yellow">
+        Example category
+      </strong>
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Application received</h2>
+  
+        <p class="moj-timeline__byline">by Caseworker 1</p>
+  
+      </div>
+  
+      <p class="moj-timeline__date">
+        <time datetime="2019-06-06T09:12:00.000Z">6 June 2019 at 9:12am</time>
+      </p>
+  
+      <div class="moj-timeline__description">Your application has been received – reference MOJ-1234-5678</div>
+  
+    </div>
+  
+    <div class="moj-timeline__item">
+      <strong class="govuk-tag govuk-tag--red">
+        Example category
+      </strong>
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Application submitted</h2>
+  
+        <p class="moj-timeline__byline">by Joe Bloggs</p>
+  
+      </div>
+  
+      <p class="moj-timeline__date">
+        <time datetime="2019-05-28T10:45:00.000Z">28 May 2019 at 10:45am</time>
+      </p>
+  
+      <div class="moj-timeline__description">
+        <details class="govuk-details govuk-!-margin-bottom-0">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Application details
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            Ut quam nunc, vulputate ac metus pharetra, posuere maximus velit. <a href="https://www.google.com">Etiam nec interdum velit.</a> Suspendisse molestie lectus in eros ornare
+          </div>
+        </details>
+      </div>
+  
+    </div>
+  
+    <div class="moj-timeline__item">
+  
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Documents uploaded</h2>
+  
+        <p class="moj-timeline__byline">by Joe Bloggs</p>
+  
+      </div>
+  
+      <p class="moj-timeline__date">
+        <time datetime="2019-05-28T10:15:00.000Z">28 May 2019 at 10:15am</time>
+      </p>
+  
+      <div class="moj-timeline__description">
+        <ul class="moj-timeline__documents">
+          <li class="moj-timeline__document-item">
+            <a class="moj-timeline__document-link" href="#">Document 1</a>
+          </li>
+          <li class="moj-timeline__document-item">
+            <a class="moj-timeline__document-link" href="#">Document 1</a>
+          </li>
+        </ul>
+      </div>
+  
+    </div>
+  
+    <div class="moj-timeline__item">
+  
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Application started</h2>
+  
+        <p class="moj-timeline__byline">by Joe Bloggs</p>
+  
+      </div>
+  
+      <p class="moj-timeline__date">
+        <time datetime="2019-05-21T13:15:00.000Z">21 May 2019 at 1:15pm</time>
+      </p>
+  
+      <div class="moj-timeline__description">
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a class="govuk-link" href="#">Item 1</li>
+          <li><a class="govuk-link" href="#">Item 2</li>
+        </ul>
+      </div>
+  
+    </div>
+  </div>
+</div>
+
+  
+</div>  
+
+
+</div>
+</div>
+{% endset -%}
+
+
+{% set pastMonthHtml %}
+<h2 class="govuk-heading-l">Education</h2>
+<h3 class="govuk-heading-m">
+  Education information will be displayed here
+</h3>
+<p class="govuk-body">
+  This may include:
+<p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      timeline of educational placements the child has been registered with
+    </li>
+    <li>
+      contact details of professionals related to the child's education
+    </li>
+  </ul>
+{% endset -%}
+
+{% set pastYearHtml %}
+<h2 class="govuk-heading-l">Risks </h2>
+<h3 class="govuk-heading-m">
+  Risk information will be displayed here
+</h3>
+<p class="govuk-body">
+  This may include:
+<p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      a summary of risks and warnings related to this child and their family. This will be an accumulation of the other feeds (healthcare, social etc)
+    </li>
+    <li>
+      Police warnings (where we can)
+    </li>
+    <li>
+      List item
+    </li>
+  </ul>
+{% endset -%}
+
+{{ govukTabs({
+  items: [
+    {
+      label: "Family background",
+      id: "past-day",
+      panel: {
+        html: pastDayHtml
+      }
+    },
+    {
+      label: "Professional support timeline",
+      id: "past-week",
+      panel: {
+        html: pastWeekHtml
+      }
+    },
+    
+    {
+      label: "Education",
+      id: "past-month",
+      panel: {
+        html: pastMonthHtml
+      }
+    },
+    {
+      label: "Risks and alerts",
+      id: "past-year",
+      panel: {
+        html: pastYearHtml
+      }
+    }
+  ]
+}) }}
+<a href="child-record-results" class="govuk-link">Return to record results</a>
+<br><br>     
+<a href="child-search" class="govuk-link">Search for another child</a>
+
+
+    </div>
+  </div>
+
+{% endblock %}

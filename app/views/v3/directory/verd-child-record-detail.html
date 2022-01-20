@@ -1,0 +1,532 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Directory service
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <a onclick="history.back()" class="govuk-back-link pointer govuk-!-margin-bottom-6 govuk-!-margin-top-1">Back</a>
+      <h1 class="govuk-heading-xl ">
+        <span class="govuk-caption-xl">Info sharing - Alpha</span>
+        Kate Bloggs
+      </h1>
+    
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          {{ govukTable({
+            caption: " ",
+            firstCellIsHeader: true,
+           
+            rows: [
+              [
+                {
+                  text: "Date of birth"
+                },
+                {
+                  text: "20 Mar 2017"
+                }
+              ],
+              
+              [
+                {
+                  text: "Address"
+                },
+                {
+                  text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
+                }
+              ],
+              
+              [
+                {
+                  text: "Warnings and risks"
+                },
+                {
+                  html: 
+                  "
+                  <strong class='govuk-tag govuk-tag--red govuk-!-margin-right-3'>
+                    Warning alert here
+                  </strong>
+                  <a href='#past-year' class='govuk-link'>View alerts</a>
+                  "
+                }
+              ]
+            ]
+          }) }}
+          
+        </div>
+        <div class="govuk-grid-column-one-third">
+          {{ govukButton({
+            text: "Button text"
+          }) }}
+        </div>
+      </div>
+     
+      {% from "govuk/components/tabs/macro.njk" import govukTabs %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% set pastDayHtml %}
+<h2 class="govuk-heading-l">Family</h2>
+<h3 class="govuk-heading-m">
+  Family information will be displayed here
+</h3>
+
+<p class="govuk-body">
+  This may include:
+<p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      siblings
+    </li>
+    <li>
+      contact details
+    </li>
+    <li>
+      debt information
+    </li>
+    <li>Initial warnings or flags</li>
+  </ul>
+  <p class="govuk-body">
+    This is just an example of the types of information
+  <p>
+{% endset -%}
+
+{% set pastWeekHtml %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    
+  
+
+
+
+
+  <div class="govuk-grid-row">
+    
+  
+<div class="govuk-grid-column-full govuk-cookie-banner govuk-!-margin-bottom-9">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-m">
+        Filter results
+      </h3>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukCheckboxes({
+  idPrefix: "filter-results",
+  name: "filter-results",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "Family care",
+      text: "Family care"
+    }
+  ]
+}) }}
+    </div>
+    <div class="govuk-grid-column-one-third">
+      {{ govukCheckboxes({
+        idPrefix: "Filter list 2",
+        name: "Filter list 2",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Education",
+            text: "Education"
+          }
+        ]
+      }) }}
+    </div>
+    <div class="govuk-grid-column-one-third">
+      {{ govukCheckboxes({
+        idPrefix: "Filter list 1",
+        name: "Filter list 1",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Health",
+            text: "Health"
+          }
+        ]
+      }) }}
+    </div>
+  </div>
+  {{ govukButton({
+    text: "Apply filters"
+  }) }}
+</div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+  
+  
+  <div class="moj-timeline govuk-!-margin-bottom-6">
+    <div class="moj-timeline__item">
+      <strong class="govuk-tag govuk-tag--turquoise">
+        Family support - Social care
+      </strong>
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Appointment</h2>
+       
+        <p class="moj-timeline__byline">-  Social services</p>
+        
+      </div>
+  
+      <p class="moj-timeline__date">
+        <time datetime="2019-06-14T14:01:00.000Z">14 June 2019 at 2:01pm</time>
+      </p>
+      
+      <div class="moj-timeline__description">
+        <b>Joe Barker</b><br>
+        Phone: <a href="#" class="govuk-link">07754 558866</a><br>
+        Email: <a href="#" class="govuk-link">j.barker@emailaddress.com</a>
+      </div>
+  
+    </div>
+    </div>
+    
+  
+
+  <div class="moj-timeline govuk-!-margin-bottom-6">
+    <div class="moj-timeline__item">
+      <strong class="govuk-tag govuk-tag--purple">
+        Education
+      </strong>
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">New school</h2>
+  
+        <p class="moj-timeline__byline">- Netherstowe Primary School</p>
+  
+      </div>
+  
+      <p class="moj-timeline__date">
+        <time datetime="2019-06-06T09:12:00.000Z">6 June 2019</time>
+      </p>
+  
+      <div class="moj-timeline__description">
+        
+        {{ govukDetails({
+          summaryText: "Contact details",
+          html: "
+          <ul class='govuk-list'>
+            
+            <li>
+                 <b>Head teacher:</b> John Ball
+            </li>
+            <li>
+              <b>Phone:</b> <a href='#' class='govuk-link'>01225 55487</a>  
+            </li>
+            <li>
+              <b>Email:</b> <a href='#' class='govuk-link'>jb@netherstowe-primary.co.uk</a> 
+            </li>
+            <li>
+              <b>Address:</b> 1 Seargant Road, Townsville, Countyville, DE34 99F
+            </li>
+          </ul>         
+          "
+        }) }}
+
+
+      </div>
+  
+    </div>
+  </div>
+
+
+  <div class="moj-timeline govuk-!-margin-bottom-6">
+    <div class="moj-timeline__item">
+      <strong class="govuk-tag govuk-tag--blue">
+        Health - Hospital
+      </strong>
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Ongoing appointment</h2>
+  
+        <p class="moj-timeline__byline">- High hospital</p>
+  
+      </div>
+  
+      <p class="moj-timeline__date">
+        <time datetime="2019-05-28T10:45:00.000Z">28 May 2019 at 10:45am</time>
+      </p>
+  
+      <div class="moj-timeline__description">
+        Phone: <a href="#" class="govuk-link">01285 555444</a><br>
+        Email: <a href="#" class="govuk-link">info@h.hospital.co.uk</a>
+      </div>
+  
+    </div>
+  
+    <div class="moj-timeline__item">
+  
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Ongoing appointment</h2>
+  
+        <p class="moj-timeline__byline">- High hospital</p>
+  
+      </div>
+  
+      <p class="moj-timeline__date">
+        <time datetime="2019-05-28T10:15:00.000Z">28 May 2019 at 10:15am</time>
+      </p>
+  
+    
+  
+    </div>
+  
+    <div class="moj-timeline__item">
+  
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Initial appointment</h2>
+  
+        <p class="moj-timeline__byline">- High hospital</p>
+  
+      </div>
+  
+      <p class="moj-timeline__date">
+        <time datetime="2019-05-21T13:15:00.000Z">21 May 2019 at 1:15pm</time>
+      </p>
+  
+
+      
+      
+    </div>
+
+
+    
+  </div>
+
+
+  <div class="moj-timeline govuk-!-margin-bottom-6">
+    <div class="moj-timeline__item">
+      <strong class="govuk-tag govuk-tag--purple">
+        Education
+      </strong>
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">New attendance</h2>
+  
+        <p class="moj-timeline__byline">- Busy bees Nursery</p>
+  
+      </div>
+  
+      <p class="moj-timeline__date">
+        <time datetime="2019-06-06T09:12:00.000Z">6 June 2018 at 9:12am</time>
+      </p>
+  
+      <div class="moj-timeline__description">
+        No contact details 
+      </div>
+  
+    </div>
+  </div>
+
+
+
+
+  <div class="moj-timeline govuk-!-margin-bottom-6">
+    <div class="moj-timeline__item">
+      <strong class="govuk-tag govuk-tag--blue">
+        Health - Hospital
+      </strong>
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Ongoing appointment</h2>
+  
+        <p class="moj-timeline__byline">- High hospital</p>
+  
+      </div>
+  
+      <p class="moj-timeline__date">
+        <time datetime="2019-05-28T10:45:00.000Z">28 May 2019 at 10:45am</time>
+      </p>
+  
+      <div class="moj-timeline__description">
+
+
+          <!--start of the accordion-->
+          {{ govukAccordion({
+            id: "accordion-default",
+            items: [
+              {
+                heading: {
+                  text: "Contact details"
+                },
+                content: {
+                  html: "<p class='govuk-body'>Phone: <a href='#' class='govuk-link'>01285 555444</a><br>
+                    Email: <a href='#' class='govuk-link'>info@h.hospital.co.uk</a></p>"
+                }
+              },
+              {
+                heading: {
+                  text: "Appointment details"
+                },
+                content: {
+                  html: 
+                  "
+                  <div class='moj-timeline__item'>
+  
+                    <div class='moj-timeline__header'>
+                      <h2 class='moj-timeline__title'>Ongoing appointment</h2>
+                
+                      <p class='moj-timeline__byline'>- High hospital</p>
+                
+                    </div>
+                
+                    <p class='moj-timeline__date'>
+                      <time datetime='2019-05-28T10:15:00.000Z'>28 May 2019 at 10:15am</time>
+                    </p>
+                  </div>
+                
+                  <div class='moj-timeline__item'>
+                
+                    <div class='moj-timeline__header'>
+                      <h2 class='moj-timeline__title'>Initial appointment</h2>
+                
+                      <p class='moj-timeline__byline'>- High hospital</p>
+                
+                    </div>
+                
+                    <p class='moj-timeline__date'>
+                      <time datetime='2019-05-21T13:15:00.000Z'>21 May 2019 at 1:15pm</time>
+                    </p> 
+                  </div> 
+                  "
+                }
+              }
+            ]
+          }) }}
+
+          <!--end of the accordion-->
+        
+      </div>
+  
+    </div>
+  
+    
+
+  </div>
+
+
+  
+</div>
+
+
+  
+</div>  
+
+
+</div>
+</div>
+{% endset -%}
+
+
+{% set pastMonthHtml %}
+<h2 class="govuk-heading-l">Education</h2>
+<h3 class="govuk-heading-m">
+  Education information will be displayed here
+</h3>
+<p class="govuk-body">
+  This may include:
+<p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      timeline of educational placements the child has been registered with
+    </li>
+    <li>
+      contact details of professionals related to the child's education
+    </li>
+  </ul>
+{% endset -%}
+
+{% set pastYearHtml %}
+<h2 class="govuk-heading-l">Risks </h2>
+<h3 class="govuk-heading-m">
+  Risk information will be displayed here
+</h3>
+<p class="govuk-body">
+  This may include:
+<p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      a summary of risks and warnings related to this child and their family. This will be an accumulation of the other feeds (healthcare, social etc)
+    </li>
+    <li>
+      Police warnings (where we can)
+    </li>
+    <li>
+      List item
+    </li>
+  </ul>
+{% endset -%}
+
+{{ govukTabs({
+  items: [
+    {
+      label: "Family background",
+      id: "past-day",
+      panel: {
+        html: pastDayHtml
+      }
+    },
+    {
+      label: "Professional support timeline",
+      id: "past-week",
+      panel: {
+        html: pastWeekHtml
+      }
+    },
+    
+    {
+      label: "Education",
+      id: "past-month",
+      panel: {
+        html: pastMonthHtml
+      }
+    },
+    {
+      label: "Risks and alerts",
+      id: "past-year",
+      panel: {
+        html: pastYearHtml
+      }
+    }
+  ]
+}) }}
+<a href="child-record-results" class="govuk-link">Return to record results</a>
+<br><br>     
+<a href="child-search" class="govuk-link">Search for another child</a>
+
+
+    </div>
+  </div>
+
+{% endblock %}

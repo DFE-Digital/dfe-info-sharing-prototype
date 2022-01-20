@@ -1,0 +1,396 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Directory service
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <a onclick="history.back()" class="govuk-back-link pointer govuk-!-margin-bottom-6 govuk-!-margin-top-1">Back</a>
+      <h1 class="govuk-heading-xl ">
+        <span class="govuk-caption-xl">Info sharing - Alpha</span>
+        Fred Bloggs
+      </h1>
+    
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          {{ govukTable({
+            caption: "Summary details",
+            firstCellIsHeader: true,
+           
+            rows: [
+              [
+                {
+                  text: "Date of birth"
+                },
+                {
+                  text: "10 Feb 2018"
+                }
+              ],
+              [
+                {
+                  text: "Unique identifier"
+                },
+                {
+                  text: "746-987-3432"
+                }
+              ],
+              [
+                {
+                  text: "Address"
+                },
+                {
+                  text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
+                }
+              ],
+              
+              [
+                {
+                  text: "Warnings and risks"
+                },
+                {
+                  html: 
+                  "
+                  <strong class='govuk-tag govuk-tag--red govuk-!-margin-right-3'>
+                    Warning alert here
+                  </strong>
+                  <a href='#past-year' class='govuk-link'>View alerts</a>
+                  "
+                }
+              ]
+            ]
+          }) }}
+          
+        </div>
+      </div>
+     
+      {% from "govuk/components/tabs/macro.njk" import govukTabs %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% set pastDayHtml %}
+<h2 class="govuk-heading-l">Family</h2>
+<h3 class="govuk-heading-m">
+  Family information will be displayed here
+</h3>
+
+<p class="govuk-body">
+  This may include:
+<p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      siblings
+    </li>
+    <li>
+      contact details
+    </li>
+    <li>
+      debt information
+    </li>
+    <li>Initial warnings or flags</li>
+  </ul>
+  <p class="govuk-body">
+    This is just an example of the types of information
+  <p>
+{% endset -%}
+
+{% set pastWeekHtml %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    
+  
+
+<h2 class="govuk-heading-l">Timeline</h2>
+<h3 class="govuk-heading-m">
+  Below is the timeline information for Fred Bloggs
+</h3>
+<p class="govuk-body">
+  You can show/hide information using the filters below
+<p>
+<div class="govuk-grid-column-full govuk-cookie-banner govuk-!-margin-bottom-9">
+
+  
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukCheckboxes({
+  idPrefix: "Filter list 1",
+  name: "Filter list 1",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "Filter list 1",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "item1",
+      text: "item1"
+    },
+    {
+      value: "item2",
+      text: "item2"
+    },
+    {
+      value: "item3",
+      text: "item3"
+    },
+    {
+      value: "item3",
+      text: "item3"
+    }
+  ]
+}) }}
+    </div>
+    <div class="govuk-grid-column-one-third">
+      {{ govukCheckboxes({
+        idPrefix: "Filter list 2",
+        name: "Filter list 2",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "Filter list 2",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "item1",
+            text: "item1"
+          },
+          {
+            value: "item2",
+            text: "item2"
+          },
+          {
+            value: "item3",
+            text: "item3"
+          },
+          {
+            value: "item3",
+            text: "item3"
+          }
+        ]
+      }) }}
+    </div>
+    <div class="govuk-grid-column-one-third">
+      {{ govukCheckboxes({
+        idPrefix: "Filter list 1",
+        name: "Filter list 1",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "Filter list 1",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "item1",
+            text: "item1"
+          },
+          {
+            value: "item2",
+            text: "item2"
+          },
+          {
+            value: "item3",
+            text: "item3"
+          },
+          {
+            value: "item3",
+            text: "item3"
+          }
+        ]
+      }) }}
+    </div>
+  </div>
+  {{ govukButton({
+    text: "Apply filters"
+  }) }}
+</div>
+
+{{ govukTable({
+  caption: "Timeline info",
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "Profesional type"
+    },
+    {
+      text: "Profesional name"
+    },
+    {
+      text: "Organisation name"
+    },
+    {
+      text: "Date of incident"
+    },
+    
+    {
+      text: "Ongoing or one-off"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "Health"
+      },
+      {
+        text: "NA"
+      },{
+        text: "St Thomas Hospital"
+      },
+      {
+        text: "20 Feb 2020"
+      },
+      {
+        text: "One-off"
+      }
+    ],
+    [
+      {
+        text: "Social care"
+      },
+      {
+        text: "Tracy Smith"
+      },{
+        text: "Arthur daley centre"
+      },
+      {
+        text: "20 Feb 2020"
+      },
+      {
+        text: "Ongoing"
+      }
+    ],
+    [
+      {
+        text: "Police"
+      },
+      {
+        text: "P.C. Smith"
+      },{
+        text: "Townsville Police station"
+      },
+      {
+        text: "20 Feb 2020"
+      },
+      {
+        text: "One-off"
+      }
+    ],
+    [
+      {
+        text: "Health"
+      },
+      {
+        text: "NA"
+      },{
+        text: "St Thomas Hospital"
+      },
+      {
+        text: "20 Feb 2020"
+      },
+      {
+        text: "Ongoing"
+      }
+    ]
+  ]
+}) }}
+
+
+</div>
+</div>
+{% endset -%}
+
+
+{% set pastMonthHtml %}
+<h2 class="govuk-heading-l">Education</h2>
+<h3 class="govuk-heading-m">
+  Education information will be displayed here
+</h3>
+<p class="govuk-body">
+  This may include:
+<p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      timeline of educational placements the child has been registered with
+    </li>
+    <li>
+      contact details of professionals related to the child's education
+    </li>
+  </ul>
+{% endset -%}
+
+{% set pastYearHtml %}
+<h2 class="govuk-heading-l">Risks </h2>
+<h3 class="govuk-heading-m">
+  Risk information will be displayed here
+</h3>
+<p class="govuk-body">
+  This may include:
+<p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      a summary of risks and warnings related to this child and their family. This will be an accumulation of the other feeds (healthcare, social etc)
+    </li>
+    <li>
+      Police warnings (where we can)
+    </li>
+    <li>
+      List item
+    </li>
+  </ul>
+{% endset -%}
+
+{{ govukTabs({
+  items: [
+    {
+      label: "Family background",
+      id: "past-day",
+      panel: {
+        html: pastDayHtml
+      }
+    },
+    {
+      label: "Professional support timeline",
+      id: "past-week",
+      panel: {
+        html: pastWeekHtml
+      }
+    },
+    
+    {
+      label: "Education",
+      id: "past-month",
+      panel: {
+        html: pastMonthHtml
+      }
+    },
+    {
+      label: "Risks and alerts",
+      id: "past-year",
+      panel: {
+        html: pastYearHtml
+      }
+    }
+  ]
+}) }}
+<a href="child-record-results" class="govuk-link">Return to record results</a>
+<br><br>     
+<a href="child-search" class="govuk-link">Search for another child</a>
+
+
+    </div>
+  </div>
+
+{% endblock %}
