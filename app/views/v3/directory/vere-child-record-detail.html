@@ -19,51 +19,6 @@ Info sharing - Directory service
       </h1>
     
       
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-          {{ govukTable({
-            caption: " ",
-            firstCellIsHeader: true,
-           
-            rows: [
-              [
-                {
-                  text: "Date of birth"
-                },
-                {
-                  text: "10 Feb 2018"
-                }
-              ],
-              
-              [
-                {
-                  text: "Address"
-                },
-                {
-                  text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
-                }
-              ],
-              
-              [
-                {
-                  text: "Warnings and risks"
-                },
-                {
-                  html: 
-                  "
-                  <strong class='govuk-tag govuk-tag--red govuk-!-margin-right-3'>
-                    Warning alert here
-                  </strong>
-                  <a href='#past-year' class='govuk-link'>View alerts</a>
-                  "
-                }
-              ]
-            ]
-          }) }}
-          
-        </div>
-       
-      </div>
      
 
 
@@ -89,6 +44,25 @@ Info sharing - Directory service
           firstCellIsHeader: true,
           
           rows: [
+          [
+                {
+                  text: "Date of birth"
+                },
+                {
+                  text: "10 Feb 2018"
+                }
+              ],
+              
+              [
+                {
+                  text: "Address"
+                },
+                {
+                  text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
+                }
+              ],
+              
+             
           [
             {
               text: "Age"
@@ -395,7 +369,7 @@ Info sharing - Directory service
               Health - Hospital
             </strong>
             <div class="moj-timeline__header">
-              <h2 class="moj-timeline__title">Ongoing appointment</h2>
+              <h2 class="moj-timeline__title">Appointment</h2>
         
               <p class="moj-timeline__byline">- High hospital</p>
         
@@ -408,7 +382,7 @@ Info sharing - Directory service
             <div class="moj-timeline__description">
       
       
-                <!--start of the accordion-->
+                <!--start of the accordion can't use this within the accordion section
                 {{ govukAccordion({
                   id: "accordion-default",
                   items: [
@@ -461,7 +435,7 @@ Info sharing - Directory service
                   ]
                 }) }}
       
-                <!--end of the accordion-->
+                end of the accordion-->
               
             </div>
         
