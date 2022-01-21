@@ -11,8 +11,11 @@ Info sharing - Directory service
     <div class="govuk-grid-column-full">
       <a onclick="history.back()" class="govuk-back-link pointer govuk-!-margin-bottom-6 govuk-!-margin-top-1">Back</a>
       <h1 class="govuk-heading-xl ">
-        <span class="govuk-caption-xl">Info sharing - Alpha</span>
+        
         Kate Bloggs
+        <span class="govuk-caption-m">
+          Last updated: 22nd Jan 2022
+        </span>
       </h1>
     
       <div class="govuk-grid-row">
@@ -58,40 +61,55 @@ Info sharing - Directory service
           }) }}
           
         </div>
-        <div class="govuk-grid-column-one-third">
-          {{ govukButton({
-            text: "Button text"
-          }) }}
-        </div>
+       
       </div>
      
+
+  
+
+
       {% from "govuk/components/tabs/macro.njk" import govukTabs %}
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
 {% set pastDayHtml %}
-<h2 class="govuk-heading-l">Family</h2>
-<h3 class="govuk-heading-m">
-  Family information will be displayed here
-</h3>
+<div class="govuk-grid-row">
+  
 
-<p class="govuk-body">
-  This may include:
-<p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>
-      siblings
-    </li>
-    <li>
-      contact details
-    </li>
-    <li>
-      debt information
-    </li>
-    <li>Initial warnings or flags</li>
-  </ul>
-  <p class="govuk-body">
-    This is just an example of the types of information
-  <p>
+<div class="govuk-grid-column-two-thirds">
+{{ govukTable({
+  caption: "About Kate",
+  firstCellIsHeader: true,
+  
+  rows: [
+  [
+    {
+      text: "Age"
+    },
+    {
+      text: "4"
+    }
+  ],
+    [
+      {
+        text: "Gender"
+      },
+      {
+        text: "Female"
+      }
+    ],
+    [
+      {
+        text: "Native language"
+      },
+      {
+        text: "English"
+      }
+    ]
+  ]
+}) }}
+
+</div>
+</div>
 {% endset -%}
 
 {% set pastWeekHtml %}
@@ -486,12 +504,13 @@ Info sharing - Directory service
       List item
     </li>
   </ul>
+  
 {% endset -%}
 
 {{ govukTabs({
   items: [
     {
-      label: "Family background",
+      label: "suitable header?",
       id: "past-day",
       panel: {
         html: pastDayHtml
@@ -502,14 +521,6 @@ Info sharing - Directory service
       id: "past-week",
       panel: {
         html: pastWeekHtml
-      }
-    },
-    
-    {
-      label: "Education",
-      id: "past-month",
-      panel: {
-        html: pastMonthHtml
       }
     },
     {
