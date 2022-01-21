@@ -10,21 +10,28 @@ Info sharing - Directory service
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <a onclick="history.back()" class="govuk-back-link pointer govuk-!-margin-bottom-6 govuk-!-margin-top-1">Back</a>
-      <h1 class="govuk-heading-xl ">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
         
         Timothy Bloggs
         <span class="govuk-caption-m">
           Last updated: 22nd Jan 2022
         </span>
       </h1>
-    
+      <strong class='govuk-tag govuk-tag--red govuk-!-margin-right-3 '>
+        Alert recorded
+      </strong>
       
+      {{ govukDetails({
+        summaryText: "Alert details",
+        classes: "govuk-!-margin-bottom-6",        
+        text: "Text"
+      }) }}
      
 
 
 <!-- accordion starts here-->
 
-<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default govuk-!-margin-bottom-6">
   <div class="govuk-accordion__section ">
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
@@ -363,7 +370,8 @@ Info sharing - Directory service
       
       
       
-        <div class="moj-timeline govuk-!-margin-bottom-6">
+        <!-- This section uses the accordion within an accordion...It really didn't work!!!
+          <div class="moj-timeline govuk-!-margin-bottom-6">
           <div class="moj-timeline__item">
             <strong class="govuk-tag govuk-tag--blue">
               Health - Hospital
@@ -382,7 +390,10 @@ Info sharing - Directory service
             <div class="moj-timeline__description">
       
       
-                <!--start of the accordion can't use this within the accordion section
+    start of the accordion can't use this within the accordion section
+
+
+
                 {{ govukAccordion({
                   id: "accordion-default",
                   items: [
@@ -435,17 +446,17 @@ Info sharing - Directory service
                   ]
                 }) }}
       
-                end of the accordion-->
+               
               
             </div>
-        
+       
           </div>
         
           
       
         </div>
       
-      
+       end of content 2-->
         
       </div>
       
@@ -456,7 +467,7 @@ Info sharing - Directory service
       
       </div>
       </div>
-      <!--end of content 2-->
+      
     </div>
   </div>
   <div class="govuk-accordion__section ">
