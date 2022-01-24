@@ -10,60 +10,25 @@ Info sharing - Directory service
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <a onclick="history.back()" class="govuk-back-link pointer govuk-!-margin-bottom-6 govuk-!-margin-top-1">Back</a>
-      <h1 class="govuk-heading-xl ">
+      <div class="govuk-grid-row govuk-!-margin-bottom-6">
+        
+      <div class="govuk-grid-column-full">
+        
+      
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">
         
         Kate Bloggs
         <span class="govuk-caption-m">
           Last updated: 22nd Jan 2022
         </span>
       </h1>
+      <strong class='govuk-tag govuk-tag--red govuk-!-margin-right-3 '>
+        Alert recorded
+      </strong>
+      <a href='#past-year' class='govuk-link'>View alerts</a>
     
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-          {{ govukTable({
-            caption: " ",
-            firstCellIsHeader: true,
-           
-            rows: [
-              [
-                {
-                  text: "Date of birth"
-                },
-                {
-                  text: "20 Mar 2017"
-                }
-              ],
-              
-              [
-                {
-                  text: "Address"
-                },
-                {
-                  text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
-                }
-              ],
-              
-              [
-                {
-                  text: "Warnings and risks"
-                },
-                {
-                  html: 
-                  "
-                  <strong class='govuk-tag govuk-tag--red govuk-!-margin-right-3'>
-                    Warning alert here
-                  </strong>
-                  <a href='#past-year' class='govuk-link'>View alerts</a>
-                  "
-                }
-              ]
-            ]
-          }) }}
-          
-        </div>
-       
-      </div>
-     
+    </div>
+  </div>
 
   
 
@@ -81,6 +46,25 @@ Info sharing - Directory service
   firstCellIsHeader: true,
   
   rows: [
+  [
+                {
+                  text: "Date of birth"
+                },
+                {
+                  text: "20 Mar 2017"
+                }
+              ],
+              
+              [
+                {
+                  text: "Address"
+                },
+                {
+                  text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
+                }
+              ],
+              
+             
   [
     {
       text: "Age"
