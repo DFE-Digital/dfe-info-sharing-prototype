@@ -101,143 +101,38 @@ Info sharing - Directory service
   <div class="govuk-grid-column-full">
     
   
-
-<h2 class="govuk-heading-l">Timeline</h2>
-<h3 class="govuk-heading-m">
-  Below is the timeline information for Fred Bloggs
-</h3>
-<p class="govuk-body">
-  You can show/hide information using the filters below
-<p>
-<div class="govuk-grid-column-full govuk-cookie-banner govuk-!-margin-bottom-9">
-
-  
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-
-{{ govukCheckboxes({
-  idPrefix: "Filter list 1",
-  name: "Filter list 1",
-  classes: "govuk-checkboxes--small",
-  fieldset: {
-    legend: {
-      text: "Filter list 1",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "item1",
-      text: "item1"
-    },
-    {
-      value: "item2",
-      text: "item2"
-    },
-    {
-      value: "item3",
-      text: "item3"
-    },
-    {
-      value: "item3",
-      text: "item3"
-    }
-  ]
-}) }}
-    </div>
-    <div class="govuk-grid-column-one-third">
-      {{ govukCheckboxes({
-        idPrefix: "Filter list 2",
-        name: "Filter list 2",
-        classes: "govuk-checkboxes--small",
-        fieldset: {
-          legend: {
-            text: "Filter list 2",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        items: [
-          {
-            value: "item1",
-            text: "item1"
-          },
-          {
-            value: "item2",
-            text: "item2"
-          },
-          {
-            value: "item3",
-            text: "item3"
-          },
-          {
-            value: "item3",
-            text: "item3"
-          }
-        ]
-      }) }}
-    </div>
-    <div class="govuk-grid-column-one-third">
-      {{ govukCheckboxes({
-        idPrefix: "Filter list 1",
-        name: "Filter list 1",
-        classes: "govuk-checkboxes--small",
-        fieldset: {
-          legend: {
-            text: "Filter list 1",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        items: [
-          {
-            value: "item1",
-            text: "item1"
-          },
-          {
-            value: "item2",
-            text: "item2"
-          },
-          {
-            value: "item3",
-            text: "item3"
-          },
-          {
-            value: "item3",
-            text: "item3"
-          }
-        ]
-      }) }}
-    </div>
-  </div>
-  {{ govukButton({
-    text: "Apply filters"
-  }) }}
-</div>
+{%- from "govuk/components/table/macro.njk" import govukTable -%}
 
 {{ govukTable({
-  caption: "Timeline info",
-  firstCellIsHeader: false,
+  attributes: {
+    'data-module': 'moj-sortable-table'
+  },
   head: [
     {
-      text: "Profesional type"
+      text: "Type",
+      attributes: {
+        "aria-sort": "ascending"
+      }
     },
     {
-      text: "Profesional name"
+      text: "Professional name",
+      attributes: {
+        "aria-sort": "none"
+      }
     },
     {
-      text: "Organisation name"
+      text: "Organisation name",
+      attributes: {
+        "aria-sort": "none"
+      }
     },
     {
-      text: "Date of incident"
-    },
-    
-    {
-      text: "Ongoing or one-off"
+      text: "Date of incident",
+      attributes: {
+        "aria-sort": "none"
+      }
     }
+    
   ],
   rows: [
     [
@@ -246,14 +141,16 @@ Info sharing - Directory service
       },
       {
         text: "NA"
-      },{
+      },
+      {
         text: "St Thomas Hospital"
       },
       {
-        text: "20 Feb 2020"
-      },
-      {
-        text: "One-off"
+        text: "20 Feb 2020",
+        
+        attributes: {
+          "data-sort-value": "1897"
+        }
       }
     ],
     [
@@ -262,14 +159,16 @@ Info sharing - Directory service
       },
       {
         text: "Tracy Smith"
-      },{
-        text: "Arthur daley centre"
       },
       {
-        text: "20 Feb 2020"
+        text: "Arthur Daily Centre"
       },
       {
-        text: "Ongoing"
+        text: "20 Feb 2020",
+        
+        attributes: {
+          "data-sort-value": "1913"
+        }
       }
     ],
     [
@@ -278,14 +177,16 @@ Info sharing - Directory service
       },
       {
         text: "P.C. Smith"
-      },{
+      },
+      {
         text: "Townsville Police station"
       },
       {
-        text: "20 Feb 2020"
-      },
-      {
-        text: "One-off"
+        text: "20 Feb 2020",
+        
+        attributes: {
+          "data-sort-value": "1913"
+        }
       }
     ],
     [
@@ -294,18 +195,24 @@ Info sharing - Directory service
       },
       {
         text: "NA"
-      },{
+      },
+      {
         text: "St Thomas Hospital"
       },
       {
-        text: "20 Feb 2020"
-      },
-      {
-        text: "Ongoing"
+        text: "20 Feb 2020",
+        
+        attributes: {
+          "data-sort-value": "1913"
+        }
       }
     ]
   ]
 }) }}
+
+
+
+
 
 
 </div>

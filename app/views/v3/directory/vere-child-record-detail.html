@@ -113,98 +113,14 @@ Info sharing - Directory service
     <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
       <!--start of content 2-->
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-          
-        
-      
-      
-      
-      
-        <div class="govuk-grid-row">
-          
-        
-      <div class="govuk-grid-column-full govuk-cookie-banner govuk-!-margin-bottom-9">
-      
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-one-third">
-            <h3 class="govuk-heading-m">
-              Filter results
-            </h3>
-          </div>
-        </div>
-      
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-one-third">
-            {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-      
-      {{ govukCheckboxes({
-        idPrefix: "filter-results",
-        name: "filter-results",
-        classes: "govuk-checkboxes--small",
-        fieldset: {
-          legend: {
-            text: "",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        items: [
-          {
-            value: "Family care",
-            text: "Family care"
-          }
-        ]
-      }) }}
-          </div>
-          <div class="govuk-grid-column-one-third">
-            {{ govukCheckboxes({
-              idPrefix: "Filter list 2",
-              name: "Filter list 2",
-              classes: "govuk-checkboxes--small",
-              fieldset: {
-                legend: {
-                  text: "",
-                  isPageHeading: true,
-                  classes: "govuk-fieldset__legend--m"
-                }
-              },
-              items: [
-                {
-                  value: "Education",
-                  text: "Education"
-                }
-              ]
-            }) }}
-          </div>
-          <div class="govuk-grid-column-one-third">
-            {{ govukCheckboxes({
-              idPrefix: "Filter list 1",
-              name: "Filter list 1",
-              classes: "govuk-checkboxes--small",
-              fieldset: {
-                legend: {
-                  text: "",
-                  isPageHeading: true,
-                  classes: "govuk-fieldset__legend--m"
-                }
-              },
-              items: [
-                {
-                  value: "Health",
-                  text: "Health"
-                }
-              ]
-            }) }}
-          </div>
-        </div>
-        {{ govukButton({
-          text: "Apply filters"
-        }) }}
-      </div>
-      </div>
-      
-      <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
+          
+        
+          
+        
+      
+      
+    
           
         
         
@@ -253,26 +169,21 @@ Info sharing - Directory service
         
             <div class="moj-timeline__description">
               
-              {{ govukDetails({
-                summaryText: "Contact details",
-                html: "
-                <ul class='govuk-list'>
+              <ul class='govuk-list'>
                   
-                  <li>
-                       <b>Head teacher:</b> John Ball
-                  </li>
-                  <li>
-                    <b>Phone:</b> <a href='#' class='govuk-link'>01225 55487</a>  
-                  </li>
-                  <li>
-                    <b>Email:</b> <a href='#' class='govuk-link'>jb@netherstowe-primary.co.uk</a> 
-                  </li>
-                  <li>
-                    <b>Address:</b> 1 Seargant Road, Townsville, Countyville, DE34 99F
-                  </li>
-                </ul>         
-                "
-              }) }}
+                <li>
+                     <b>Head teacher:</b> John Ball
+                </li>
+                <li>
+                  <b>Phone:</b> <a href='#' class='govuk-link'>01225 55487</a>  
+                </li>
+                <li>
+                  <b>Email:</b> <a href='#' class='govuk-link'>jb@netherstowe-primary.co.uk</a> 
+                </li>
+                <li>
+                  <b>Address:</b> 1 Seargant Road, Townsville, Countyville, DE34 99F
+                </li>
+              </ul>      
       
       
             </div>
@@ -365,109 +276,12 @@ Info sharing - Directory service
             </div>
         
           </div>
-        </div>
-      
-      
-      
-      
-        <!-- This section uses the accordion within an accordion...It really didn't work!!!
-          <div class="moj-timeline govuk-!-margin-bottom-6">
-          <div class="moj-timeline__item">
-            <strong class="govuk-tag govuk-tag--blue">
-              Health - Hospital
-            </strong>
-            <div class="moj-timeline__header">
-              <h2 class="moj-timeline__title">Appointment</h2>
-        
-              <p class="moj-timeline__byline">- High hospital</p>
-        
-            </div>
-        
-            <p class="moj-timeline__date">
-              <time datetime="2019-05-28T10:45:00.000Z">28 May 2019 at 10:45am</time>
-            </p>
-        
-            <div class="moj-timeline__description">
-      
-      
-    start of the accordion can't use this within the accordion section
-
-
-
-                {{ govukAccordion({
-                  id: "accordion-default",
-                  items: [
-                    {
-                      heading: {
-                        text: "Contact details"
-                      },
-                      content: {
-                        html: "<p class='govuk-body'>Phone: <a href='#' class='govuk-link'>01285 555444</a><br>
-                          Email: <a href='#' class='govuk-link'>info@h.hospital.co.uk</a></p>"
-                      }
-                    },
-                    {
-                      heading: {
-                        text: "Appointment details"
-                      },
-                      content: {
-                        html: 
-                        "
-                        <div class='moj-timeline__item'>
-        
-                          <div class='moj-timeline__header'>
-                            <h2 class='moj-timeline__title'>Ongoing appointment</h2>
-                      
-                            <p class='moj-timeline__byline'>- High hospital</p>
-                      
-                          </div>
-                      
-                          <p class='moj-timeline__date'>
-                            <time datetime='2019-05-28T10:15:00.000Z'>28 May 2019 at 10:15am</time>
-                          </p>
-                        </div>
-                      
-                        <div class='moj-timeline__item'>
-                      
-                          <div class='moj-timeline__header'>
-                            <h2 class='moj-timeline__title'>Initial appointment</h2>
-                      
-                            <p class='moj-timeline__byline'>- High hospital</p>
-                      
-                          </div>
-                      
-                          <p class='moj-timeline__date'>
-                            <time datetime='2019-05-21T13:15:00.000Z'>21 May 2019 at 1:15pm</time>
-                          </p> 
-                        </div> 
-                        "
-                      }
-                    }
-                  ]
-                }) }}
-      
-               
               
-            </div>
-       
-          </div>
-        
-          
       
-        </div>
       
-       end of content 2-->
         
       </div>
-      
-      
-        
       </div>  
-      
-      
-      </div>
-      </div>
-      
     </div>
   </div>
   <div class="govuk-accordion__section ">
@@ -483,7 +297,7 @@ Info sharing - Directory service
     </div>
   </div>
 </div>
-
+</div>
 
 <!--accordion ends here-->
 
