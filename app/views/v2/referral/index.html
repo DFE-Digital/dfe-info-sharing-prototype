@@ -14,107 +14,42 @@ Info sharing - Referral service
   
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Add a person</h2>
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Refer someone for a targeted service</h2>
 
-  <form method="post">
+  <p class="govuk-body">Refer a person or family for care services that fall under the statutory care threshold.</p>
 
-    {% call govukFieldset({
-      classes: 'moj-add-another__item',
-      legend: {
-        text: 'Person',
-        classes: 'moj-add-another__title govuk-fieldset__legend--m',
-        isPageHeading: false
-      }
-    }) %}
+  {{ govukInsetText({
+    text: "You can do a simple check to see what kind of services you can point this person towards and if a referral is likely to be the correct process in this case."
+  }) }}
 
-    {{ govukInput({
-      id: 'person[0][first_name]',
-      name: 'person[0][first_name]',
-      label: {
-        html: 'First name',
-        classes: 'govuk-!-font-weight-bold'
-      },
-      attributes: {
-        'data-name': 'person[%index%][first_name]',
-        'data-id': 'person[%index%][first_name]'
-      }
-    }) }}
+<p class="govuk-body">Refer someone for a service:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>When their needs fall under the satutory care threshold</li>
+  <li>When they are in no immdiate danger or have ongoing safeguarding concerns</li>
+  <li>If you are a professional and not a member of the general public</li>
+</ul>
 
-    {{ govukInput({
-      id: 'person[0][last_name]',
-      name: 'person[0][last_name]',
-      label: {
-        html: 'Last name',
-        classes: 'govuk-!-font-weight-bold'
-      },
-      attributes: {
-        'data-name': 'person[%index%][last_name]',
-        'data-id': 'person[%index%][last_name]'
-      }
-    }) }}
+ <form method="post">
 
-    {{ govukDateInput({
-      id: "date-of-birth",
-      fieldset: {
-        legend: {
-          text: "Date of birth",
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      hint: {
-        text: "For example, 31 3 1980"
-      },
-      items: [
-        {
-          id: "person[0][dob][day]",
-          name: "person[0][dob][day]",
-          label: "Day",
-          classes: "govuk-input--width-2",
-          attributes: {
-            'data-name': 'person[%index%][dob][day]',
-            'data-id': 'person[%index%][dob][day]'
-          }
-        },
-        {
-          id: "person[0][dob][month]",
-          name: "person[0][dob][month]",
-          label: "Month",
-          classes: "govuk-input--width-2",
-          attributes: {
-            'data-name': 'person[%index%][dob][month]',
-            'data-id': 'person[%index%][dob][month]'
-          }
-        },
-        {
-          id: "person[0][dob][year]",
-          name: "person[0][dob][year]",
-          label: "Year",
-          classes: "govuk-input--width-2",
-          attributes: {
-            'data-name': 'person[%index%][dob][year]',
-            'data-id': 'person[%index%][dob][year]'
-          }
-        }
-      ]
-    }) }}
-
-    {% endcall %}
-
-    <div class="moj-button-action">
       {{ govukButton({
-        text: 'Add another person',
-        classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4',
-        type: 'button'
+        text: "Start now",
+        href: "immediate-danger"
       }) }}
-    </div>
-
-    <div class="moj-button-action">
-      {{ govukButton({
-        text: 'Submit'
-      }) }}
-    </div>
 
   </form>
+
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+    Before you start a referral
+  </h2>
+
+  <p class="govuk-body">To use this service, you need:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>To understand the whole picture of this persons need requirements and be able to explain why you are making the referral</li>
+    <li>Consider doing a quick <a>check to see what services a family may be eligible for</li>
+    <li>You must have the consent of the person or parent or guardian to refer them for a service</li>
+    <li>The details and contact details for the person or family being referred</li>
+    <li>To ensure nobody is in immediate danger</li>
+  </ul>
 
 </div>
   </div>
