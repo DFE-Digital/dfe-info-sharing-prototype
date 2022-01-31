@@ -13,8 +13,11 @@ Info sharing - Directory service
       </div>
       </div>
       <h1 class="govuk-heading-xl ">
-        <span class="govuk-caption-xl">Info sharing - Alpha</span>
+        
         Fred Bloggs
+        <span class="govuk-caption-m">
+          Last updated: 22nd Jan 2022
+        </span>
       </h1>
     
       <div class="govuk-grid-row">
@@ -57,7 +60,7 @@ Info sharing - Directory service
                   html: 
                   "
                   <strong class='govuk-tag govuk-tag--red govuk-!-margin-right-3'>
-                    Warning alert here
+                    Alert
                   </strong>
                   <a href='#past-year' class='govuk-link'>View alerts</a>
                   "
@@ -73,29 +76,102 @@ Info sharing - Directory service
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
 {% set pastDayHtml %}
-<h2 class="govuk-heading-l">Family</h2>
-<h3 class="govuk-heading-m">
-  Family information will be displayed here
-</h3>
 
-<p class="govuk-body">
-  This may include:
-<p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>
-      siblings
-    </li>
-    <li>
-      contact details
-    </li>
-    <li>
-      debt information
-    </li>
-    <li>Initial warnings or flags</li>
-  </ul>
-  <p class="govuk-body">
-    This is just an example of the types of information
-  <p>
+<div class="govuk-grid-row">
+  
+
+  <div class="govuk-grid-column-two-thirds">
+  {{ govukTable({
+    caption: "About Fred",
+    firstCellIsHeader: true,
+    
+    rows: [
+    [
+      {
+        text: "Age"
+      },
+      {
+        text: "4"
+      }
+    ],
+      [
+        {
+          text: "Gender"
+        },
+        {
+          text: "Female"
+        }
+      ],
+      [
+        {
+          text: "Native language"
+        },
+        {
+          text: "English"
+        }
+      ]
+    ]
+  }) }}
+  
+  
+  {{ govukTable({
+    caption: "Contact details",
+    firstCellIsHeader: true,
+    rows: [
+    [
+        {
+          text: "Consent given to contact"
+        },
+        {
+          text: "Yes"
+        }
+      ],  
+    [
+        {
+          text: "Main contact"
+        },
+        {
+          text: "Diane Bloggs"
+        }
+      ],
+      [
+        {
+          text: "Connection to child"
+        },
+        {
+          text: "Mother"
+        }
+      ],
+      [
+        {
+          text: "Mobile"
+        },
+        {
+          text: "07975 000141"
+        }
+      ],
+      [
+        {
+          text: "Telephone"
+        },
+        {
+          text: "0111 555222"
+        }
+      ],
+      [
+        {
+          text: "Email"
+        },
+        {
+          text: "d.bloggs@name.com"
+        }
+      ]
+    ]
+  }) }}
+  
+  </div>
+  </div>
+
 {% endset -%}
 
 {% set pastWeekHtml %}
@@ -264,7 +340,7 @@ Info sharing - Directory service
 {{ govukTabs({
   items: [
     {
-      label: "Family background",
+      label: "Family and Fred (working title)",
       id: "past-day",
       panel: {
         html: pastDayHtml
