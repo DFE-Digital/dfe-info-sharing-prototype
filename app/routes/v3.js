@@ -1,4 +1,5 @@
 const express = require('express');
+var session = require('express-session')
 const router = express.Router();
 
 const verNum = 3;
@@ -20,6 +21,23 @@ router.post(`/v${verNum}/directory/search-type`, function (req, res) {
 
 
 
+//* Referral routes //
+router.post(`/v${verNum}/referral/child-or-young-person`, function (req, res) {
+  session.setItem('child', req.session.data);
+  res.redirect(`/v${verNum}/referral/consent`);
+});
+
+router.post(`/v${verNum}/referral/are-there-any-other-significant-adults`, function (req, res) {
+  let answer = req.session.data['significantadults'];
+
+  if (answer === 'Yes') {
+    res.redirect(`/v${verNum}/referral/other-significant-adults`);
+  } else {
+    res.redirect(`/v${verNum}/referral/are-there-any-other-professionals`);
+  }
+});
+
+//* Referral routes END //
 
 
 

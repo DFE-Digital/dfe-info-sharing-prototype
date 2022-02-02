@@ -11,112 +11,152 @@ Info sharing - Referral service
 
 {% block content %}
 
-  
-<div data-module="moj-add-another">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Referring a family for targeted services
+      </h1>
 
-  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Add a person</h2>
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span>Familiarise yourself with referrals
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="eligibility-status">
+                  Check what universal services may be available
+                </a>
+              </span>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="read-declaration-status">
+                  Read about when to refer
+                </a>
+              </span>
+            </li>
+          </ul>
+        </li>
 
-  <form method="post">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Add people involved
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <strong class="app-task-list__task-name">
+                Children and young people
+              </strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              <br>
+              <a href="referral/child-or-young-person" class="govuk-button" data-module="govuk-button" style="margin-top: 10px;">
+                Add a child or young person
+              </a>
+            </li>
+            <li class="app-task-list__item">
+              <strong class="app-task-list__task-name">
+                Parents, guardians and other adults in the home
+              </strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              <br>
+              <a href="referral/adult.html" class="govuk-button" data-module="govuk-button" style="margin-top: 10px;">
+                Add a person
+              </a>
+            </li>
+            <li class="app-task-list__item">
+              <div style="margin-bottom: 4px">
+                <strong class="app-task-list__task-name">
+                  Other significant people
+                </strong>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              </div>
+            <br>
+              {{ govukDetails({
+                summaryText: "Who 'other significant people' are",
+                text: "xxx"
+              }) }}
+              {{ govukButton({
+                text: "Skip step",
+                classes: "govuk-button--secondary"
+              }) }}
+              <button class="govuk-button" data-module="govuk-button">
+                Add a person
+              </button>
+            </li>
+            <li class="app-task-list__item">
+            <div style="margin-bottom: 4px">
+              <strong class="app-task-list__task-name">
+                Other involved professionals
+              </strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            </div>
+            <br>
+              {{ govukDetails({
+                summaryText: "Who 'other professionals' are",
+                text: "You do not need to tell us your details here. Please tell us details of professionals involved with the family."
+              }) }}
+              {{ govukButton({
+                text: "Skip step",
+                classes: "govuk-button--secondary"
+              }) }}
+              <button class="govuk-button" data-module="govuk-button">
+                Add a professional
+              </button>
+            </li>
+          </ul>
+        </li>
 
-    {% call govukFieldset({
-      classes: 'moj-add-another__item',
-      legend: {
-        text: 'Person',
-        classes: 'moj-add-another__title govuk-fieldset__legend--m',
-        isPageHeading: false
-      }
-    }) %}
-
-    {{ govukInput({
-      id: 'person[0][first_name]',
-      name: 'person[0][first_name]',
-      label: {
-        html: 'First name',
-        classes: 'govuk-!-font-weight-bold'
-      },
-      attributes: {
-        'data-name': 'person[%index%][first_name]',
-        'data-id': 'person[%index%][first_name]'
-      }
-    }) }}
-
-    {{ govukInput({
-      id: 'person[0][last_name]',
-      name: 'person[0][last_name]',
-      label: {
-        html: 'Last name',
-        classes: 'govuk-!-font-weight-bold'
-      },
-      attributes: {
-        'data-name': 'person[%index%][last_name]',
-        'data-id': 'person[%index%][last_name]'
-      }
-    }) }}
-
-    {{ govukDateInput({
-      id: "date-of-birth",
-      fieldset: {
-        legend: {
-          text: "Date of birth",
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      hint: {
-        text: "For example, 31 3 1980"
-      },
-      items: [
-        {
-          id: "person[0][dob][day]",
-          name: "person[0][dob][day]",
-          label: "Day",
-          classes: "govuk-input--width-2",
-          attributes: {
-            'data-name': 'person[%index%][dob][day]',
-            'data-id': 'person[%index%][dob][day]'
-          }
-        },
-        {
-          id: "person[0][dob][month]",
-          name: "person[0][dob][month]",
-          label: "Month",
-          classes: "govuk-input--width-2",
-          attributes: {
-            'data-name': 'person[%index%][dob][month]',
-            'data-id': 'person[%index%][dob][month]'
-          }
-        },
-        {
-          id: "person[0][dob][year]",
-          name: "person[0][dob][year]",
-          label: "Year",
-          classes: "govuk-input--width-2",
-          attributes: {
-            'data-name': 'person[%index%][dob][year]',
-            'data-id': 'person[%index%][dob][year]'
-          }
-        }
-      ]
-    }) }}
-
-    {% endcall %}
-
-    <div class="moj-button-action">
-      {{ govukButton({
-        text: 'Add another person',
-        classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4',
-        type: 'button'
-      }) }}
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Referral details
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  Add referral details
+                </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">First add the people involved</strong>
+                <br><br>
+                {{ govukButton({
+                  text: "Add referral details",
+                  disabled: true
+                }) }}
+              </li>
+          </ul>
+        </li>
+        
+        <li>    
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span> Your details
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Your details
+              </span>
+              <button class="govuk-button app-task-list__tag" data-module="govuk-button">
+                Add your details
+              </button>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">5. </span> Submit
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Submit referral
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot submit until you have completed all steps</strong>
+            </li>
+          </ul>
+        </li>
+      </ol>
     </div>
-
-    <div class="moj-button-action">
-      {{ govukButton({
-        text: 'Submit'
-      }) }}
-    </div>
-
-  </form>
-
-</div>
   </div>
 
 {% endblock %}
