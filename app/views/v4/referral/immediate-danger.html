@@ -16,10 +16,15 @@ Info sharing - Referral service
   
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Safety of the peoeple involved</h2>
+{{ govukBackLink({
+    text: "Back",
+    href: "/v4/referral"
+  }) }}
+  
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Safety of the child</h2>
   
    {{ govukInsetText({
-    text: "It is your responsibility to ensure the immediate safety of the person or people concerned with this referral. If you cannot ensure the safety of the person or people concerned with this report please dial 999 to report the concern to emergency services."
+    text: "It is your responsibility to ensure the immediate safety of the child concerned with this request. If you cannot ensure the safety of the child concerned with this request please dial 999 to report the concern to emergency services."
   }) }}
 
   <form action="immediate-danger" method="post">
@@ -29,7 +34,7 @@ Info sharing - Referral service
       name: "immediatedanger",
       fieldset: {
         legend: {
-          text: "Is there anybody involved in this case in immedate danger?",
+          text: "Is the child in any immedate danger?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--s"
         }

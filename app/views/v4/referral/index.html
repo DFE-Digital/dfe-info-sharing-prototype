@@ -14,26 +14,24 @@ Info sharing - Referral service
   
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Refer someone for a targeted service</h2>
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Request for early help and support for aged 0 to 5 targeted services</h2>
 
-  <p class="govuk-body">Refer a person or family for care services that fall under the statutory care threshold.</p>
+  <p class="govuk-body">Refer a child aged 0 to 5 for care services that fall under the statutory care threshold.</p>
 
-  {{ govukInsetText({
-    text: "You can do a simple check to see what kind of services you can point this person towards and if a referral is likely to be the correct process in this case."
-  }) }}
-
-<p class="govuk-body">Refer someone for a service:</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>When their needs fall under the satutory care threshold</li>
-  <li>When they are in no immdiate danger or have ongoing safeguarding concerns</li>
-  <li>If you are a professional and not a member of the general public</li>
-</ul>
+  <p class="govuk-body">Request early help and support for a someone:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Aged 0 to 5 years old</li>
+    <li>When their needs fall under the satutory care threshold</li>
+    <li>When they are in no immdiate danger or have ongoing safeguarding concerns</li>
+    <li>If you are a professional and not a member of the general public</li>
+  </ul>
 
  <form method="post">
 
       {{ govukButton({
         text: "Start now",
-        href: "referral/immediate-danger"
+        href: "referral/immediate-danger",
+        isStartButton: true
       }) }}
 
   </form>
@@ -44,11 +42,11 @@ Info sharing - Referral service
 
   <p class="govuk-body">To use this service, you need:</p>
   <ul class="govuk-list govuk-list--bullet">
-    <li>To understand the whole picture of this persons need requirements and be able to explain why you are making the referral</li>
-    <li>Consider doing a quick <a>check to see what services a family may be eligible for</li>
-    <li>You must have the consent of the person or parent or guardian to refer them for a service</li>
-    <li>The details and contact details for the person or family being referred</li>
-    <li>To ensure nobody is in immediate danger</li>
+    <li>To understand the whole picture of this child's need requirements and be able to explain why you are making the request</li>
+    <li>Consider doing a quick <a>check to see what services a child may be eligible for</a></li>
+    <li>You must have the consent of the parent or guardian to refer them for a targeted service</li>
+    <li>The details and contact details for the family being referred</li>
+    <li>To ensure the child is in immediate danger</li>
   </ul>
 
 </div>
