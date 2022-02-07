@@ -21,7 +21,7 @@ router.post(`/v${verNum}/referral/consent`, function (req, res) {
   let answer = req.session.data['consent'];
 
   if (answer === 'Yes') {
-    res.redirect(`/v${verNum}/referral/children-and-young-people`);
+    res.redirect(`/v${verNum}/referral/child`);
   } else {
     res.redirect(`/v${verNum}/blocked`);
   }
@@ -53,7 +53,7 @@ router.post(`/v${verNum}/referral/mash`, function (req, res) {
   if (answer === 'Yes') {
     res.redirect(`/v${verNum}/referral/mash-assessment`);
   } else {
-    res.redirect(`/v${verNum}/referral/referral-details`);
+    res.redirect(`/v${verNum}/referral/referral-details-child-health`);
   }
 });
 //* Referral routes END //

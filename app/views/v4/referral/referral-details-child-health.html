@@ -1,0 +1,277 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+  
+<div data-module="moj-add-another">
+
+  <h2 class="govuk-heading-l" tabindex="-1">Reasons for referral</h2>
+  <h2 class="govuk-heading-m" tabindex="-1">The child's health needs that are not currently being met</h2>
+
+  <form method="post">
+
+  {{ govukRadios({
+      idPrefix: "childhealth",
+      name: "childhealth",
+      fieldset: {
+        legend: {
+          text: "Growth issues",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes"
+        },
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukRadios({
+      idPrefix: "childhealth",
+      name: "childhealth",
+      fieldset: {
+        legend: {
+          text: "Development issues",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes"
+        },
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+    }) }}
+
+
+    {{ govukRadios({
+        idPrefix: "childhealth",
+        name: "childhealth",
+        fieldset: {
+          legend: {
+            text: "Physical wellbeing",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+    {{ govukRadios({
+        idPrefix: "childhealth",
+        name: "childhealth",
+        fieldset: {
+          legend: {
+            text: "Mental wellbeing",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+    {{ govukRadios({
+        idPrefix: "childhealth",
+        name: "childhealth",
+        fieldset: {
+          legend: {
+            text: "Substance misuse or dependency",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+    {{ govukRadios({
+        idPrefix: "childhealth",
+        name: "childhealth",
+        fieldset: {
+          legend: {
+            text: "Other health impairments",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+      idPrefix: "childhealth",
+      name: "childhealth",
+      fieldset: {
+        legend: {
+          text: "Health care issues",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes"
+        },
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukRadios({
+      idPrefix: "childhealth",
+      name: "childhealth",
+      fieldset: {
+        legend: {
+          text: "Dietary issues",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes"
+        },
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukRadios({
+      idPrefix: "childhealth",
+      name: "childhealth",
+      fieldset: {
+        legend: {
+          text: "Immunisations issues",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes"
+        },
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukRadios({
+      idPrefix: "childhealth",
+      name: "childhealth",
+      fieldset: {
+        legend: {
+          text: "Dental issues",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes"
+        },
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukRadios({
+      idPrefix: "childhealth",
+      name: "childhealth",
+      fieldset: {
+        legend: {
+          text: "Optical issues",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes"
+        },
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    
+    {{ govukButton({
+      text: 'Continue'
+    }) }}
+
+  </form>
+
+</div>
+  </div>
+
+{% endblock %}

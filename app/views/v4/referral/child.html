@@ -16,18 +16,9 @@ Info sharing - Referral service
   
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Children and young people in the home</h2>
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Details of the child</h2>
 
   <form method="post">
-
-    {% call govukFieldset({
-      classes: 'moj-add-another__item',
-      legend: {
-        text: 'Person',
-        classes: 'moj-add-another__title govuk-fieldset__legend--m',
-        isPageHeading: false
-      }
-    }) %}
 
     {{ govukInput({
       id: 'person[0][first_name]',
@@ -156,16 +147,19 @@ Info sharing - Referral service
       },
       items: [
         {
-          value: "A",
-          text: "A"
+          value: "Mental impairment",
+          text: "Mental impairment"
         },
         {
-          value: "B",
-          text: "B"
+          value: "Physical impairment",
+          text: "Physical impairment"
         },
         {
-          value: "C",
-          text: "C"
+          divider: "or"
+        },
+        {
+          value: "None of the above",
+          text: "None of the above"
         }
       ]
     }) }}
@@ -239,17 +233,6 @@ Info sharing - Referral service
         }
       ]
     }) }}
-
-    {% endcall %}
-
-    <div class="moj-button-action">
-      {{ govukButton({
-        text: 'Add another child or young person',
-        classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4',
-        type: 'button'
-      }) }}
-    </div>
-
 
     {{ govukButton({
       text: 'Continue',
