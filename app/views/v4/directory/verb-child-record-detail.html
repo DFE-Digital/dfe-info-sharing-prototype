@@ -1,0 +1,328 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Directory service
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-full">
+      <a href="child-record-results" class="govuk-link ">Back to results</a>
+      </div>
+      </div>
+      <h1 class="govuk-heading-xl ">
+        
+        Fred Bloggs
+        <span class="govuk-caption-m">
+          Last updated: 22nd Jan 2022
+        </span>
+      </h1>
+    
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          {{ govukTable({
+            caption: "Summary details",
+            firstCellIsHeader: true,
+           
+            rows: [
+              [
+                {
+                  text: "Date of birth"
+                },
+                {
+                  text: "10 Feb 2018"
+                }
+              ],
+              [
+                {
+                  text: "Unique identifier"
+                },
+                {
+                  text: "746-987-3432"
+                }
+              ],
+              [
+                {
+                  text: "Address"
+                },
+                {
+                  text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
+                }
+              ],
+              
+              [
+                {
+                  text: "Warnings and risks"
+                },
+                {
+                  html: 
+                  "
+                  <strong class='govuk-tag govuk-tag--red govuk-!-margin-right-3'>
+                    Alert
+                  </strong>
+                  <a href='#past-year' class='govuk-link'>View alerts</a>
+                  "
+                }
+              ]
+            ]
+          }) }}
+          
+        </div>
+      </div>
+     
+      {% from "govuk/components/tabs/macro.njk" import govukTabs %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% set pastDayHtml %}
+
+<div class="govuk-grid-row">
+  
+
+  <div class="govuk-grid-column-two-thirds">
+  {{ govukTable({
+    caption: "About Fred",
+    firstCellIsHeader: true,
+    
+    rows: [
+    [
+      {
+        text: "Age"
+      },
+      {
+        text: "4"
+      }
+    ],
+      [
+        {
+          text: "Gender"
+        },
+        {
+          text: "Female"
+        }
+      ],
+      [
+        {
+          text: "Native language"
+        },
+        {
+          text: "English"
+        }
+      ]
+    ]
+  }) }}
+  
+  
+  </div>
+  </div>
+
+{% endset -%}
+
+{% set pastWeekHtml %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    
+  
+{%- from "govuk/components/table/macro.njk" import govukTable -%}
+
+{{ govukTable({
+  attributes: {
+    'data-module': 'moj-sortable-table'
+  },
+  head: [
+    {
+      text: "Type",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+    },
+    {
+      text: "Professional name",
+      attributes: {
+        "aria-sort": "none"
+      }
+    },
+    {
+      text: "Organisation name",
+      attributes: {
+        "aria-sort": "none"
+      }
+    },
+    {
+      text: "Date of incident",
+      attributes: {
+        "aria-sort": "none"
+      }
+    }
+    
+  ],
+  rows: [
+    [
+      {
+        text: "Health"
+      },
+      {
+        text: "NA"
+      },
+      {
+        text: "St Thomas Hospital"
+      },
+      {
+        text: "20 Feb 2020",
+        
+        attributes: {
+          "data-sort-value": "1897"
+        }
+      }
+    ],
+    [
+      {
+        text: "Social care"
+      },
+      {
+        text: "Tracy Smith"
+      },
+      {
+        text: "Arthur Daily Centre"
+      },
+      {
+        text: "20 Feb 2020",
+        
+        attributes: {
+          "data-sort-value": "1913"
+        }
+      }
+    ],
+    [
+      {
+        text: "Police"
+      },
+      {
+        text: "P.C. Smith"
+      },
+      {
+        text: "Townsville Police station"
+      },
+      {
+        text: "20 Feb 2020",
+        
+        attributes: {
+          "data-sort-value": "1913"
+        }
+      }
+    ],
+    [
+      {
+        text: "Health"
+      },
+      {
+        text: "NA"
+      },
+      {
+        text: "St Thomas Hospital"
+      },
+      {
+        text: "20 Feb 2020",
+        
+        attributes: {
+          "data-sort-value": "1913"
+        }
+      }
+    ]
+  ]
+}) }}
+
+
+
+
+
+
+</div>
+</div>
+{% endset -%}
+
+
+{% set pastMonthHtml %}
+<h2 class="govuk-heading-l">Education</h2>
+<h3 class="govuk-heading-m">
+  Education information will be displayed here
+</h3>
+<p class="govuk-body">
+  This may include:
+<p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      timeline of educational placements the child has been registered with
+    </li>
+    <li>
+      contact details of professionals related to the child's education
+    </li>
+  </ul>
+{% endset -%}
+
+{% set pastYearHtml %}
+<h2 class="govuk-heading-l">Risks </h2>
+<h3 class="govuk-heading-m">
+  Risk information will be displayed here
+</h3>
+<p class="govuk-body">
+  This may include:
+<p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      a summary of risks and warnings related to this child and their family. This will be an accumulation of the other feeds (healthcare, social etc)
+    </li>
+    <li>
+      Police warnings (where we can)
+    </li>
+    <li>
+      List item
+    </li>
+  </ul>
+{% endset -%}
+
+{{ govukTabs({
+  items: [
+    {
+      label: "Family and Fred (working title)",
+      id: "past-day",
+      panel: {
+        html: pastDayHtml
+      }
+    },
+    {
+      label: "Education / Medical",
+      id: "past-month",
+      panel: {
+        html: pastMonthHtml
+      }
+    },
+    {
+      label: "Professional support timeline",
+      id: "past-week",
+      panel: {
+        html: pastWeekHtml
+      }
+    },
+    
+  
+    
+    {
+      label: "Risks and alerts",
+      id: "past-year",
+      panel: {
+        html: pastYearHtml
+      }
+    }
+  ]
+}) }}
+
+  
+<a href="child-search" class="govuk-link">Search for another child</a>
+
+
+    </div>
+  </div>
+
+{% endblock %}

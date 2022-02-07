@@ -1,0 +1,385 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Directory service
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row govuk-!-margin-bottom-6">
+  <div class="govuk-grid-column-full">
+    <a href="child-record-results" class="govuk-link ">Back to results</a>
+    </div>
+    </div>
+      <h1 class="govuk-heading-xl ">
+        
+        Joe Bloggs
+        <span class="govuk-caption-m">
+          Last updated: 22nd Jan 2022
+        </span>
+      </h1>
+    
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          {{ govukTable({
+            caption: " ",
+            firstCellIsHeader: true,
+           
+            rows: [
+              [
+                {
+                  text: "Date of birth"
+                },
+                {
+                  text: "10 Feb 2018"
+                }
+              ],
+              
+              [
+                {
+                  text: "Address"
+                },
+                {
+                  text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
+                }
+              ],
+              
+              [
+                {
+                  text: "Warnings and risks"
+                },
+                {
+                  html: 
+                  "
+                  <strong class='govuk-tag govuk-tag--red govuk-!-margin-right-3'>
+                    Warning alert here
+                  </strong>
+                  <a href='#past-year' class='govuk-link'>View alerts</a>
+                  "
+                }
+              ]
+            ]
+          }) }}
+          
+        </div>
+       
+      </div>
+     
+
+  
+
+
+      {% from "govuk/components/tabs/macro.njk" import govukTabs %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% set pastDayHtml %}
+<div class="govuk-grid-row">
+  
+
+<div class="govuk-grid-column-two-thirds">
+{{ govukTable({
+  caption: "About Joe",
+  firstCellIsHeader: true,
+  
+  rows: [
+  [
+    {
+      text: "Age"
+    },
+    {
+      text: "4"
+    }
+  ],
+    [
+      {
+        text: "Gender"
+      },
+      {
+        text: "Female"
+      }
+    ],
+    [
+      {
+        text: "Native language"
+      },
+      {
+        text: "English"
+      }
+    ]
+  ]
+}) }}
+
+
+{{ govukTable({
+  caption: "Contact details",
+  firstCellIsHeader: true,
+  rows: [
+  [
+      {
+        text: "Consent given to contact"
+      },
+      {
+        text: "Yes"
+      }
+    ],  
+  [
+      {
+        text: "Main contact"
+      },
+      {
+        text: "Diane Bloggs"
+      }
+    ],
+    [
+      {
+        text: "Connection to child"
+      },
+      {
+        text: "Mother"
+      }
+    ],
+    [
+      {
+        text: "Mobile"
+      },
+      {
+        text: "07975 000141"
+      }
+    ],
+    [
+      {
+        text: "Telephone"
+      },
+      {
+        text: "0111 555222"
+      }
+    ],
+    [
+      {
+        text: "Email"
+      },
+      {
+        text: "d.bloggs@name.com"
+      }
+    ]
+  ]
+}) }}
+
+</div>
+</div>
+{% endset -%}
+
+{% set pastWeekHtml %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    <div class="moj-timeline govuk-!-margin-bottom-6">
+      <div class="moj-timeline__item">
+        <strong class="govuk-tag govuk-tag--green">
+          Family support
+        </strong>
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">Appointment</h2>
+    
+          <p class="moj-timeline__byline">-  Social services</p>
+    
+        </div>
+    
+        <p class="moj-timeline__date">
+          <time datetime="2019-06-06T09:12:00.000Z">6 June 2018 at 9:12am</time>
+        </p>
+    
+       
+    
+      </div>
+    </div>
+  
+    
+  
+
+  <div class="moj-timeline govuk-!-margin-bottom-6">
+    <div class="moj-timeline__item">
+      <strong class="govuk-tag govuk-tag--purple">
+        Education
+      </strong>
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">New school</h2>
+  
+        <p class="moj-timeline__byline">- Netherstowe Primary School</p>
+  
+      </div>
+  
+      <p class="moj-timeline__date">
+        <time datetime="2019-06-06T09:12:00.000Z">6 June 2019</time>
+      </p>
+  
+      <div class="moj-timeline__description">
+        
+      
+
+
+      </div>
+  
+    </div>
+  </div>
+
+
+  <div class="moj-timeline govuk-!-margin-bottom-6">
+    <div class="moj-timeline__item">
+      <strong class="govuk-tag govuk-tag--blue">
+        Health 
+      </strong>
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Ongoing appointment</h2>
+  
+        <p class="moj-timeline__byline">- High hospital</p>
+  
+      </div>
+  
+      <p class="moj-timeline__date">
+        <time datetime="2019-05-28T10:45:00.000Z">28 May 2019 at 10:45am</time>
+      </p>
+  
+     
+  
+    </div>
+  
+   </div>
+
+  <div class="moj-timeline govuk-!-margin-bottom-6">
+    <div class="moj-timeline__item">
+      <strong class="govuk-tag govuk-tag--blue">
+        Health 
+            </strong>
+      <div class="moj-timeline__header">    <h2 class="moj-timeline__title">Initial appointment</h2>
+  
+        <p class="moj-timeline__byline">- High hospital</p>
+  
+      </div>
+  
+      <p class="moj-timeline__date">
+        <time datetime="2019-05-21T13:15:00.000Z">21 May 2019 at 1:15pm</time>
+      </p>
+       </div>
+    </div>
+
+
+  <div class="moj-timeline govuk-!-margin-bottom-6">
+    <div class="moj-timeline__item">
+      <strong class="govuk-tag govuk-tag--purple">
+        Education
+      </strong>
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">New attendance</h2>
+  
+        <p class="moj-timeline__byline">- Busy bees Nursery</p>
+  
+      </div>
+  
+      <p class="moj-timeline__date">
+        <time datetime="2019-06-06T09:12:00.000Z">6 June 2018 at 9:12am</time>
+      </p>
+  
+      <div class="moj-timeline__description">
+        No contact details 
+      </div>
+  
+    </div>
+  </div>
+
+
+
+
+  
+
+
+  
+</div>
+
+
+  
+</div>  
+
+
+</div>
+</div>
+{% endset -%}
+
+
+{% set pastMonthHtml %}
+<h2 class="govuk-heading-l">Education</h2>
+<h3 class="govuk-heading-m">
+  Education information will be displayed here
+</h3>
+<p class="govuk-body">
+  This may include:
+<p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      timeline of educational placements the child has been registered with
+    </li>
+    <li>
+      contact details of professionals related to the child's education
+    </li>
+  </ul>
+{% endset -%}
+
+{% set pastYearHtml %}
+<h2 class="govuk-heading-l">Risks </h2>
+<h3 class="govuk-heading-m">
+  Risk information will be displayed here
+</h3>
+<p class="govuk-body">
+  This may include:
+<p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      a summary of risks and warnings related to this child and their family. This will be an accumulation of the other feeds (healthcare, social etc)
+    </li>
+    <li>
+      Police warnings (where we can)
+    </li>
+    <li>
+      List item
+    </li>
+  </ul>
+  
+{% endset -%}
+
+{{ govukTabs({
+  items: [
+    {
+      label: "suitable header?",
+      id: "past-day",
+      panel: {
+        html: pastDayHtml
+      }
+    },
+    {
+      label: "Professional support timeline",
+      id: "past-week",
+      panel: {
+        html: pastWeekHtml
+      }
+    },
+    {
+      label: "Risks and alerts",
+      id: "past-year",
+      panel: {
+        html: pastYearHtml
+      }
+    }
+  ]
+}) }}
+    
+<a href="child-search" class="govuk-link">Search for another child</a>
+
+
+    </div>
+  </div>
+
+{% endblock %}
