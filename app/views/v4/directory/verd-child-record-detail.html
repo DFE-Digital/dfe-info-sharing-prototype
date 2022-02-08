@@ -43,8 +43,12 @@ Info sharing - Directory service
   
 
 <div class="govuk-grid-column-two-thirds">
+<h2 class="govuk-heading-m">
+  About Kate
+</h2>
+
 {{ govukTable({
-  caption: "About Kate",
+  caption: "",
   firstCellIsHeader: true,
   
   rows: [
@@ -95,9 +99,12 @@ Info sharing - Directory service
   ]
 }) }}
 
+<h2 class="govuk-heading-m govuk-!-margin-top-9">
+  Contact details
+</h2>
 
 {{ govukTable({
-  caption: "Contact details",
+  caption: "",
   firstCellIsHeader: true,
   rows: [
   [
@@ -150,7 +157,87 @@ Info sharing - Directory service
     ]
   ]
 }) }}
+<!--education and medical stuff starts-->
+<h2 class="govuk-heading-m govuk-!-margin-top-9">
+  Medical
+</h2>
+{% from "govuk/components/table/macro.njk" import govukTable %}
 
+
+{{ govukTable({
+ 
+  firstCellIsHeader: true,
+
+  rows: [
+    [
+      {
+        text: "Registered GP"
+      },
+      {
+        text: "Dr Paul Brookes"
+      }
+    ],
+    [
+      {
+        text: "GP Contact details"
+      },
+      {
+        html: "<a href='#' class='govuk-link'>0111 000 000</a><br><a href='#' class='govuk-link'>drpb@doc.com</a>"
+      }
+    ],
+    [
+      {
+        text: "
+        GP Address"
+      },
+      {
+        html: "Townsville Clinic<br>Townsville,<br>Countyville, CT12 7YY"
+      }
+    ]
+  ]
+}) }}
+
+
+
+<h2 class="govuk-heading-m govuk-!-margin-top-9">
+  Education
+</h2>
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+
+{{ govukTable({
+ 
+  firstCellIsHeader: true,
+
+  rows: [
+    [
+      {
+        text: "Current school"
+      },
+      {
+        text: "Townsville primary"
+      }
+    ],
+    [
+      {
+        text: "Contact details"
+      },
+      {
+        html: "<a href='#' class='govuk-link'>0111 555 555</a><br><a href='#' class='govuk-link'>info@tvprimary.com</a>"
+      }
+    ],
+    [
+      {
+        text: "
+        GP Address"
+      },
+      {
+        html: "Townsville primary<br>Scotch Orchard Road<br>Townsville,<br>Countyville, CT12 7YY"
+      }
+    ]
+  ]
+}) }}
+<!--education and medical stuff ends-->
 
 </div>
 </div>

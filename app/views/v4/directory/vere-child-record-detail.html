@@ -104,6 +104,147 @@ Info sharing - Directory service
       ]
     ]
   }) }}
+
+  <h2 class="govuk-heading-m govuk-!-margin-top-9">
+    Contact details
+  </h2>
+
+{{ govukTable({
+  
+  firstCellIsHeader: true,
+  rows: [
+  [
+      {
+        text: "Consent given to contact"
+      },
+      {
+        text: "Yes"
+      }
+    ],  
+  [
+      {
+        text: "Main contact"
+      },
+      {
+        text: "Diane Bloggs"
+      }
+    ],
+    [
+      {
+        text: "Connection to child"
+      },
+      {
+        text: "Mother"
+      }
+    ],
+    [
+      {
+        text: "Mobile"
+      },
+      {
+        text: "07975 000141"
+      }
+    ],
+    [
+      {
+        text: "Telephone"
+      },
+      {
+        text: "0111 555222"
+      }
+    ],
+    [
+      {
+        text: "Email"
+      },
+      {
+        text: "d.bloggs@name.com"
+      }
+    ]
+  ]
+}) }}
+
+<!--education and medical stuff starts-->
+<h2 class="govuk-heading-m govuk-!-margin-top-9">
+  Medical
+</h2>
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+
+{{ govukTable({
+ 
+  firstCellIsHeader: true,
+
+  rows: [
+    [
+      {
+        text: "Registered GP"
+      },
+      {
+        text: "Dr Paul Brookes"
+      }
+    ],
+    [
+      {
+        text: "GP Contact details"
+      },
+      {
+        html: "<a href='#' class='govuk-link'>0111 000 000</a><br><a href='#' class='govuk-link'>drpb@doc.com</a>"
+      }
+    ],
+    [
+      {
+        text: "
+        GP Address"
+      },
+      {
+        html: "Townsville Clinic<br>Townsville,<br>Countyville, CT12 7YY"
+      }
+    ]
+  ]
+}) }}
+
+
+
+<h2 class="govuk-heading-m govuk-!-margin-top-9">
+  Education
+</h2>
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+
+{{ govukTable({
+ 
+  firstCellIsHeader: true,
+
+  rows: [
+    [
+      {
+        text: "Current school"
+      },
+      {
+        text: "Townsville primary"
+      }
+    ],
+    [
+      {
+        text: "Contact details"
+      },
+      {
+        html: "<a href='#' class='govuk-link'>0111 555 555</a><br><a href='#' class='govuk-link'>info@tvprimary.com</a>"
+      }
+    ],
+    [
+      {
+        text: "
+        GP Address"
+      },
+      {
+        html: "Townsville primary<br>Scotch Orchard Road<br>Townsville,<br>Countyville, CT12 7YY"
+      }
+    ]
+  ]
+}) }}
+<!--education and medical stuff ends-->
         
         </div>
         </div>
