@@ -103,6 +103,14 @@ Info sharing - Directory service
         }
       ],
       [
+      {
+        text: "Ethnicity"
+      },
+      {
+        text: "White"
+      }
+    ],
+      [
         {
           text: "Native language"
         },
@@ -112,6 +120,63 @@ Info sharing - Directory service
       ]
     ]
   }) }}
+
+
+
+{{ govukTable({
+  caption: "Contact details",
+  firstCellIsHeader: true,
+  rows: [
+  [
+      {
+        text: "Consent given to contact"
+      },
+      {
+        text: "Yes"
+      }
+    ],  
+  [
+      {
+        text: "Main contact"
+      },
+      {
+        text: "Diane Bloggs"
+      }
+    ],
+    [
+      {
+        text: "Connection to child"
+      },
+      {
+        text: "Mother"
+      }
+    ],
+    [
+      {
+        text: "Mobile"
+      },
+      {
+        text: "07975 000141"
+      }
+    ],
+    [
+      {
+        text: "Telephone"
+      },
+      {
+        text: "0111 555222"
+      }
+    ],
+    [
+      {
+        text: "Email"
+      },
+      {
+        text: "d.bloggs@name.com"
+      }
+    ]
+  ]
+}) }}
   
   
   </div>
@@ -244,21 +309,87 @@ Info sharing - Directory service
 
 
 {% set pastMonthHtml %}
-<h2 class="govuk-heading-l">Education</h2>
-<h3 class="govuk-heading-m">
-  Education information will be displayed here
-</h3>
-<p class="govuk-body">
-  This may include:
-<p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>
-      timeline of educational placements the child has been registered with
-    </li>
-    <li>
-      contact details of professionals related to the child's education
-    </li>
-  </ul>
+<!--education and medical stuff starts-->
+<h2 class="govuk-heading-l">
+  Medical
+</h2>
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+
+{{ govukTable({
+ 
+  firstCellIsHeader: true,
+
+  rows: [
+    [
+      {
+        text: "Registered GP"
+      },
+      {
+        text: "Dr Paul Brookes"
+      }
+    ],
+    [
+      {
+        text: "GP Contact details"
+      },
+      {
+        html: "<a href='#' class='govuk-link'>0111 000 000</a><br><a href='#' class='govuk-link'>drpb@doc.com</a>"
+      }
+    ],
+    [
+      {
+        text: "
+        GP Address"
+      },
+      {
+        html: "Townsville Clinic<br>Townsville,<br>Countyville, CT12 7YY"
+      }
+    ]
+  ]
+}) }}
+
+
+
+<h2 class="govuk-heading-l">
+  Education
+</h2>
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+
+{{ govukTable({
+ 
+  firstCellIsHeader: true,
+
+  rows: [
+    [
+      {
+        text: "Current school"
+      },
+      {
+        text: "Townsville primary"
+      }
+    ],
+    [
+      {
+        text: "Contact details"
+      },
+      {
+        html: "<a href='#' class='govuk-link'>0111 555 555</a><br><a href='#' class='govuk-link'>info@tvprimary.com</a>"
+      }
+    ],
+    [
+      {
+        text: "
+        GP Address"
+      },
+      {
+        html: "Townsville primary<br>Scotch Orchard Road<br>Townsville,<br>Countyville, CT12 7YY"
+      }
+    ]
+  ]
+}) }}
+<!--education and medical stuff ends-->
 {% endset -%}
 
 {% set pastYearHtml %}
