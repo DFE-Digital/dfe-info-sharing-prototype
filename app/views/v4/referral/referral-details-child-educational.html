@@ -17,260 +17,211 @@ Info sharing - Referral service
 <div data-module="moj-add-another">
 
   <h2 class="govuk-heading-l" tabindex="-1">Reasons for referral</h2>
-  <h2 class="govuk-heading-m" tabindex="-1">Child's health needs</h2>
 
-  <form method="post">
+  <form method="post">    
+
+{# Set html for revealed code/questions #}
+    
+    
+
+    {% set playschoolplanhtml %}
+        {{ govukInput({
+          id: "abcd",
+          name: "abcd",
+          type: "textarea",
+          spellcheck: true,
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "What is the school plan?"
+          }
+        }) }}
+    {% endset -%}
+
+
+    {% set playhtml %}
+     
+      {{ govukInput({
+        id: "playdetails",
+        name: "playdetails",
+        type: "textarea",
+        spellcheck: true,
+        classes: "govuk-!-width-two-thirds",
+        label: {
+          text: "What is the child's has play and interaction issues?"
+        }
+      }) }}
+      {{ govukRadios({
+        idPrefix: "Qs",
+        name: "Qs",
+        fieldset: {
+          legend: {
+            text: "Is there a school plan in place?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            conditional: {
+              html: playschoolplanhtml
+            }
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      })}}
+    {% endset -%}
+
+  {# END set html for revealed code/questions #}
+
+
+{# EHCP question #}
+  {% set ehcphtml %}
+    {{ govukInput({
+      id: "ehcpdetails",
+      name: "ehcpdetails",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "What are the EHCP's aims and how they are being actioned?"
+      }
+    }) }}
+  {% endset -%}
 
   {{ govukRadios({
-      idPrefix: "childhealth",
-      name: "childhealth",
-      fieldset: {
-        legend: {
-          text: "Growth and development",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--s"
+    idPrefix: "ehcpYN",
+    name: "ehcpYN",
+    fieldset: {
+      legend: {
+        text: "Is there an Educational Health and Care Plan in place?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "Yes",
+        text: "Yes",
+        conditional: {
+          html: ehcphtml
         }
       },
-      items: [
-        {
-          value: "Yes",
-          text: "Yes"
-        },
-        {
-          value: "No",
-          text: "No"
-        }
-      ]
+      {
+        value: "No",
+        text: "No"
+      }
+    ]
+  }) }}
+{# END EHCP question #}
+
+{# Cognitive development #}
+  {% set cognitivedevelopmentschoolplanhtml %}
+    {{ govukInput({
+      id: "abc",
+      name: "abc",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "What is the school plan?"
+      }
     }) }}
-
-    {{ govukRadios({
-        idPrefix: "childhealth",
-        name: "childhealth",
-        fieldset: {
-          legend: {
-            text: "Physical wellbeing",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        items: [
-          {
-            value: "Yes",
-            text: "Yes"
-          },
-          {
-            value: "No",
-            text: "No"
-          }
-        ]
-      }) }}
-
-    {{ govukRadios({
-        idPrefix: "childhealth",
-        name: "childhealth",
-        fieldset: {
-          legend: {
-            text: "Mental wellbeing",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        items: [
-          {
-            value: "Yes",
-            text: "Yes"
-          },
-          {
-            value: "No",
-            text: "No"
-          }
-        ]
-      }) }}
-
-    {{ govukRadios({
-        idPrefix: "childhealth",
-        name: "childhealth",
-        fieldset: {
-          legend: {
-            text: "Substance misuse or dependency",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        items: [
-          {
-            value: "Yes",
-            text: "Yes"
-          },
-          {
-            value: "No",
-            text: "No"
-          }
-        ]
-      }) }}
-
-    {{ govukRadios({
-        idPrefix: "childhealth",
-        name: "childhealth",
-        fieldset: {
-          legend: {
-            text: "Other health impairments",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        items: [
-          {
-            value: "Yes",
-            text: "Yes"
-          },
-          {
-            value: "No",
-            text: "No"
-          }
-        ]
-      }) }}
-
-      {{ govukRadios({
-      idPrefix: "childhealth",
-      name: "childhealth",
-      fieldset: {
-        legend: {
-          text: "Health care issues",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      items: [
-        {
-          value: "Yes",
-          text: "Yes"
-        },
-        {
-          value: "No",
-          text: "No"
-        }
-      ]
-    }) }}
-
-    {{ govukRadios({
-      idPrefix: "childhealth",
-      name: "childhealth",
-      fieldset: {
-        legend: {
-          text: "Dietary issues",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      items: [
-        {
-          value: "Yes",
-          text: "Yes"
-        },
-        {
-          value: "No",
-          text: "No"
-        }
-      ]
-    }) }}
-
-    {{ govukRadios({
-      idPrefix: "childhealth",
-      name: "childhealth",
-      fieldset: {
-        legend: {
-          text: "Immunisations issues",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      items: [
-        {
-          value: "Yes",
-          text: "Yes"
-        },
-        {
-          value: "No",
-          text: "No"
-        }
-      ]
-    }) }}
-
-    {{ govukRadios({
-      idPrefix: "childhealth",
-      name: "childhealth",
-      fieldset: {
-        legend: {
-          text: "Dental issues",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      items: [
-        {
-          value: "Yes",
-          text: "Yes"
-        },
-        {
-          value: "No",
-          text: "No"
-        }
-      ]
-    }) }}
-
-    {{ govukRadios({
-      idPrefix: "childhealth",
-      name: "childhealth",
-      fieldset: {
-        legend: {
-          text: "Optical issues",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      items: [
-        {
-          value: "Yes",
-          text: "Yes"
-        },
-        {
-          value: "No",
-          text: "No"
-        }
-      ]
-    }) }}
-
+  {% endset -%}
+  {% set cognitivedevelopmenthtml %}
     
-
-    {% set childeducationHint %}
-      <p class="govuk-!-margin-top-0">Including any relevant plans i.e. Education Health and Care Plan (EHCP), or any school plans; areas of a child's cognitive development, play and interaction with other children, educational provision, (including early years setting) attendance and attainment levels. </p>
-    {% endset -%}
+    {{ govukInput({
+      id: "cognitivedevelopmentdetails",
+      name: "cognitivedevelopmentdetails",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "What are the child's cognitive development issues?"
+      }
+    }) }}
     {{ govukRadios({
-        idPrefix: "childeducation",
-        name: "childeducation",
-        fieldset: {
-          legend: {
-            text: "Education",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
+      idPrefix: "Qs",
+      name: "Qs",
+      fieldset: {
+        legend: {
+          text: "Is there a school plan in place?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          conditional: {
+            html: cognitivedevelopmentschoolplanhtml
           }
         },
-        hint: {
-          html: childhealthHint
-        },
-        items: [
-          {
-            value: "Yes",
-            text: "Yes"
-          },
-          {
-            value: "No",
-            text: "No"
-          }
-        ]
-      }) }}
-    
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+    })}}
+  {% endset -%}
+
+  {{ govukRadios({
+    idPrefix: "cognitivedevelopment",
+    name: "cognitivedevelopment",
+    fieldset: {
+      legend: {
+        text: "Are there any areas of the child's cognitive development that needs attention?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "Yes",
+        text: "Yes",
+        conditional: {
+          html: cognitivedevelopmenthtml
+        }
+      },
+      {
+        value: "No",
+        text: "No"
+      }
+    ]
+  }) }}
+{# END ognitive development #}
+
+  {{ govukRadios({
+    idPrefix: "play",
+    name: "play",
+    fieldset: {
+      legend: {
+        text: "Are there any areas of the child's play and interaction with other children that need attention?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "Yes",
+        text: "Yes",
+        conditional: {
+          html: playhtml
+        }
+      },
+      {
+        value: "No",
+        text: "No"
+      }
+    ]
+  }) }}
+
+
     {{ govukCheckboxes({
       idPrefix: "reasonsforreferralchild",
       name: "reasonsforreferralchild",
@@ -282,10 +233,6 @@ Info sharing - Referral service
         }
       },
       items: [
-        {
-          value: "health",
-          text: "Health - Including growth and development, physical and mental wellbeing, any other health impairments or substance misuse. Appropriate health care, adequate and nutritious diet, exercise, immunisations and developmental checks, dental and optical care."
-        },
         {
           value: "education",
           text: "Education - Including any relevant plans i.e. Education Health and Care Plan (EHCP), or any school plans; areas of a child's cognitive development, play and interaction with other children, educational provision, (including early years setting) attendance and attainment levels. "
