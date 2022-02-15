@@ -90,7 +90,8 @@ Info sharing - Directory service
   rows: [
   [
       {
-        text: "Consent given to contact"
+        text: "Consent given to contact",
+        classes: 'govuk-!-width-one-half'
       },
       {
         text: "Yes"
@@ -98,7 +99,8 @@ Info sharing - Directory service
     ],
   [
       {
-        text: "Main contact"
+        text: "Main contact",
+        classes: 'govuk-!-width-one-half'
       },
       {
         text: "Diane Bloggs"
@@ -106,7 +108,8 @@ Info sharing - Directory service
     ],
     [
       {
-        text: "Connection to child"
+        text: "Connection to child",
+        classes: 'govuk-!-width-one-half'
       },
       {
         text: "Mother"
@@ -114,7 +117,8 @@ Info sharing - Directory service
     ],
     [
       {
-        text: "Mobile"
+        text: "Mobile",
+        classes: 'govuk-!-width-one-half'
       },
       {
         text: "07975 000141"
@@ -122,7 +126,8 @@ Info sharing - Directory service
     ],
     [
       {
-        text: "Telephone"
+        text: "Telephone",
+        classes: 'govuk-!-width-one-half'
       },
       {
         text: "0111 555222"
@@ -130,7 +135,8 @@ Info sharing - Directory service
     ],
     [
       {
-        text: "Email"
+        text: "Email",
+        classes: 'govuk-!-width-one-half'
       },
       {
         html: "<a href='#' class='govuk-link'>d.bloggs@name.com</a>"
@@ -272,6 +278,15 @@ Info sharing - Directory service
 {% set pastMonthHtml %}
 <!--education and medical stuff starts-->
 
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+  
+
+  
+
+
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
 
@@ -282,7 +297,8 @@ Info sharing - Directory service
   rows: [
     [
       {
-        text: "Current school"
+        text: "Current school",
+        classes: 'govuk-!-width-one-half'
       },
       {
         text: "Townsville primary"
@@ -290,7 +306,8 @@ Info sharing - Directory service
     ],
     [
       {
-        text: "Contact details"
+        text: "Contact details",
+        classes: 'govuk-!-width-one-half'
       },
       {
         html: "0111 555 555<br><a href='#' class='govuk-link'>info@tvprimary.com</a>"
@@ -299,7 +316,8 @@ Info sharing - Directory service
     [
       {
         text: "
-        Address"
+        Address",
+        classes: 'govuk-!-width-one-half'
       },
       {
         html: "Townsville primary<br>Scotch Orchard Road<br>Townsville<br>Countyville<br>CT12 7YY"
@@ -307,10 +325,15 @@ Info sharing - Directory service
     ]
   ]
 }) }}
+</div>
 <!--education and medical stuff ends-->
+</div>
 {% endset -%}
 
 {% set pastYearHtml %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
 
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
@@ -322,7 +345,8 @@ Info sharing - Directory service
   rows: [
     [
       {
-        text: "Registered GP"
+        text: "Registered GP",
+        classes: 'govuk-!-width-one-half'
       },
       {
         text: "Dr Paul Brookes"
@@ -330,7 +354,8 @@ Info sharing - Directory service
     ],
     [
       {
-        text: "Contact details"
+        text: "Contact details",
+        classes: 'govuk-!-width-one-half'
       },
       {
         html: "0111 000 000<br><a href='#' class='govuk-link'>drpb@doc.com</a>"
@@ -339,7 +364,8 @@ Info sharing - Directory service
     [
       {
         text: "
-        Address"
+        Address",
+        classes: 'govuk-!-width-one-half'
       },
       {
         html: "Townsville Clinic<br>Townsville<br>Countyville<br>CT12 7YY"
@@ -348,7 +374,8 @@ Info sharing - Directory service
   ]
 }) }}
 
-
+</div>
+</div>
 
 
 
