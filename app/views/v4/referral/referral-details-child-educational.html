@@ -16,68 +16,10 @@ Info sharing - Referral service
   
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l" tabindex="-1">Reasons for referral</h2>
+  <h2 class="govuk-heading-l" tabindex="-1">Reasons for the request</h2>
+  <h2 class="govuk-heading-m" tabindex="-1">Education</h2>
 
   <form method="post">    
-
-{# Set html for revealed code/questions #}
-    
-    
-
-    {% set playschoolplanhtml %}
-        {{ govukInput({
-          id: "abcd",
-          name: "abcd",
-          type: "textarea",
-          spellcheck: true,
-          classes: "govuk-!-width-two-thirds",
-          label: {
-            text: "What is the school plan?"
-          }
-        }) }}
-    {% endset -%}
-
-
-    {% set playhtml %}
-     
-      {{ govukInput({
-        id: "playdetails",
-        name: "playdetails",
-        type: "textarea",
-        spellcheck: true,
-        classes: "govuk-!-width-two-thirds",
-        label: {
-          text: "What is the child's has play and interaction issues?"
-        }
-      }) }}
-      {{ govukRadios({
-        idPrefix: "Qs",
-        name: "Qs",
-        fieldset: {
-          legend: {
-            text: "Is there a school plan in place?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        items: [
-          {
-            value: "Yes",
-            text: "Yes",
-            conditional: {
-              html: playschoolplanhtml
-            }
-          },
-          {
-            value: "No",
-            text: "No"
-          }
-        ]
-      })}}
-    {% endset -%}
-
-  {# END set html for revealed code/questions #}
-
 
 {# EHCP question #}
   {% set ehcphtml %}
@@ -194,7 +136,57 @@ Info sharing - Referral service
       }
     ]
   }) }}
-{# END ognitive development #}
+{# END cognitive development #}
+
+{# Play #}
+  {% set playschoolplanhtml %}
+    {{ govukInput({
+      id: "playschoolplanhtmlq",
+      name: "playschoolplanhtmlq",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "What is the school plan?"
+      }
+    }) }}
+  {% endset -%}
+  {% set playhtml %}
+    {{ govukInput({
+      id: "playdetails",
+      name: "playdetails",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "What is the child's has play and interaction issues?"
+      }
+    }) }}
+    {{ govukRadios({
+      idPrefix: "playschoolplan",
+      name: "playschoolplan",
+      fieldset: {
+        legend: {
+          text: "Is there a school plan in place?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          conditional: {
+            html: playschoolplanhtml
+          }
+        },
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+    })}}
+  {% endset -%}
 
   {{ govukRadios({
     idPrefix: "play",
@@ -220,107 +212,177 @@ Info sharing - Referral service
       }
     ]
   }) }}
+{# END play #}
 
-
-    {{ govukCheckboxes({
-      idPrefix: "reasonsforreferralchild",
-      name: "reasonsforreferralchild",
-      fieldset: {
-        legend: {
-          text: "What are the children's or young persons' development needs that are currently not being met fully?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      items: [
-        {
-          value: "education",
-          text: "Education - Including any relevant plans i.e. Education Health and Care Plan (EHCP), or any school plans; areas of a child's cognitive development, play and interaction with other children, educational provision, (including early years setting) attendance and attainment levels. "
-        },
-        {
-          value: "emotional and behavioural",
-          text: "Emotional and behavioural development - Including the child/young person's overall development, is it age appropriate? Is the child demonstrating attachments? Does the child/young person display any concerning emotional behaviours?"
-        },
-        {
-          value: "Identity, family and social relationships",
-          text: "Identity/family and social relationships - To include the child/young person's view of self and own abilities, self-image and self-esteem, having a positive sense of individuality, race, religion, age, gender, sexual orientation and disability. Feelings of belonging and acceptance by family, peer group and wider society, including other cultural groups. Does the parent / carer ensure the children/young people keep in contact with important family members and significant others?"
-        },
-        {
-          value: "Self-care skills and social presentation",
-          text: "Self-care skills/social presentation - Including the child having age appropriate self-care skills, appropriate supervision and support to encourage self-care skills and independence? Appropriateness of clothing for age, gender, culture and religion; cleanliness and personal hygiene."
-        }
-      ]
-    }) }}
-
-    {{ govukCheckboxes({
-      idPrefix: "reasonsforreferralparent",
-      name: "reasonsforreferralparent",
-      fieldset: {
-        legend: {
-          text: "Which things do the parent's or guardain's need help help with?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      items: [
-        {
-          value: "Basic care and ensuring safety",
-          text: "Basic care/ensuring safety - Including all the children/young people's basic needs regarding food, clothing, access to health / education and other services. Is the child/young person adequately protected from significant harm or danger?"
-        },
-        {
-          value: "Emotional warmth and stimulation",
-          text: "Emotional warmth/stimulation - Including ensuring the child's requirements for secure, stable and affectionate relationships, with appropriate sensitivity and responsiveness to the child's needs."
-        },
-        {
-          value: "Guidance, boundaries and stability",
-          text: "Guidance, boundaries and stability - Including how the parent / carer provide consistent parenting? Are there any challenging / difficult behaviours of the child(ren), and how are these managed? Is the child(ren) provided with a stable family environment? Does the child(ren) have any regular contact with another parent / significant others?"
-        }
-      ]
-    }) }}
-
-    {{ govukCheckboxes({
-      idPrefix: "reasonsforreferralparent",
-      name: "reasonsforreferralparent",
-      fieldset: {
-        legend: {
-          text: "What family and environmental factors are an issue of concern?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      items: [
-        {
-          value: "Family history and functioning",
-          text: "Family history and functioning - Including parent/carer's history, parent/carer's current and historical relationships, any drug, alcohol misuse, health, mental health, disability, learning disability, periods in care, known history of violence, domestic abuse, offending, anti-social behaviour."
-        },
-        {
-          value: "Wider family and significant others",
-          text: "Wider family and significant others - Including their role and importance to the child(ren) and parents, what additional support do they provide? i.e. emotional, financial, practical, respite, caring responsibilities."
-        },
-        {
-          value: "Housing, employment and income",
-          text: "Housing, employment and income - Including current housing provision, rent arears, appropriate basic amenities of water, heating, cooking facilities, sleeping arrangements and hygiene. Employment status, benefits, debts, support accessed, impact on family member's financial capabilities."
-        },
-        {
-          value: "Social integration and community resources",
-          text: "Family's social integration and community resources - Thinking about if the child/family is part of the local neighbourhood/community. Including universal services: health care, day care and schools, places of worship, transport, shops and leisure activities."
-        }
-      ]
-    }) }}
-
-    {{ govukTextarea({
-      name: "contribution",
-      id: "contribution",
-      autocomplete: "contribution",
-      classes: 'govuk-input--width-30',
+{# educational provision #}
+  {% set eduprovisionchoolplanhtml %}
+    {{ govukInput({
+      id: "educationalprovisionhtmlq",
+      name: "educationalprovisionhtmlq",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
       label: {
-        text: "Reason for undertaking this assessment and details of any presenting issues",
-        classes: 'govuk-!-font-weight-bold'
+        text: "What is the school plan?"
       }
     }) }}
+  {% endset -%}
+  {% set eduprovisionhtml %}
+    {{ govukInput({
+      id: "eduprovision",
+      name: "eduprovision",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "What are the educational provisions?"
+      }
+    }) }}
+    {{ govukRadios({
+      idPrefix: "eduprovisionschoolplan",
+      name: "eduprovisionschoolplan",
+      fieldset: {
+        legend: {
+          text: "Is there a school plan in place?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          conditional: {
+            html: eduprovisionchoolplanhtml
+          }
+        },
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+    })}}
+  {% endset -%}
+
+  {{ govukRadios({
+    idPrefix: "eduprovision",
+    name: "eduprovision",
+    fieldset: {
+      legend: {
+        text: "Are there any areas educational provision that need attention?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    hint: {
+        text: 'Including early year settings'
+    },
+    items: [
+      {
+        value: "Yes",
+        text: "Yes",
+        conditional: {
+          html: eduprovisionhtml
+        }
+      },
+      {
+        value: "No",
+        text: "No"
+      }
+    ]
+  }) }}
+{# END educational provision #}
+
+{# attendance #}
+  {% set attendanceschoolplanhtml %}
+    {{ govukInput({
+      id: "attendancehtmlq",
+      name: "attendancehtmlq",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "What is the school plan?"
+      }
+    }) }}
+  {% endset -%}
+  {% set attendancehtml %}
+    {{ govukInput({
+      id: "attendance",
+      name: "attendance",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "What are the attenance and atainment issues?"
+      }
+    }) }}
+    {{ govukInput({
+      id: "attendancea",
+      name: "attendancea",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "What are the reasons for the attenance and atainment issues?"
+      }
+    }) }}
+    {{ govukRadios({
+      idPrefix: "attendanceschoolplan",
+      name: "attendanceschoolplan",
+      fieldset: {
+        legend: {
+          text: "Is there a school plan in place?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          conditional: {
+            html: attendanceschoolplanhtml
+          }
+        },
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+    })}}
+  {% endset -%}
+
+  {{ govukRadios({
+    idPrefix: "attendance",
+    name: "attendance",
+    fieldset: {
+      legend: {
+        text: "Are there any attenance and atainment issues?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "Yes",
+        text: "Yes",
+        conditional: {
+          html: attendancehtml
+        }
+      },
+      {
+        value: "No",
+        text: "No"
+      }
+    ]
+  }) }}
+{# END attendance #}
+
 
     {{ govukButton({
-      text: 'Continue'
+      text: 'Continue',
+      href: 'referral-details-child-emotional'
     }) }}
 
   </form>
