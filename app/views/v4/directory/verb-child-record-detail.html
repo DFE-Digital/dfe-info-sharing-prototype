@@ -13,26 +13,25 @@ Info sharing - Directory service
       </div>
       </div>
       <h1 class="govuk-heading-xl ">
-        
+
         Fred Bloggs
         <span class="govuk-caption-m">
           Last updated: 22nd Jan 2022
         </span>
       </h1>
-    
+
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           {{ govukTable({
-            caption: "Summary details",
             firstCellIsHeader: true,
-           
+
             rows: [
               [
                 {
                   text: "Date of birth"
                 },
                 {
-                  text: "10 Feb 2018"
+                  text: "10 Feb 2018 (4 years old)"
                 }
               ],
               [
@@ -45,92 +44,48 @@ Info sharing - Directory service
               ],
               [
                 {
+                  text: "Gender"
+                },
+                {
+                  text: "Female"
+                }
+              ],
+              [
+                {
+                  text: "Ethnic group"
+                },
+                {
+                  text: "White"
+                }
+              ],
+              [
+                {
                   text: "Address"
                 },
                 {
                   text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
                 }
-              ],
-              
-              [
-                {
-                  text: "Warnings and risks"
-                },
-                {
-                  html: 
-                  "
-                  <strong class='govuk-tag govuk-tag--red govuk-!-margin-right-3'>
-                    Alert
-                  </strong>
-                  <a href='#past-year' class='govuk-link'>View alerts</a>
-                  "
-                }
               ]
             ]
           }) }}
-          
+
         </div>
       </div>
-     
+
       {% from "govuk/components/tabs/macro.njk" import govukTabs %}
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
 {% set pastDayHtml %}
 
 <div class="govuk-grid-row">
-  
+
 
   <div class="govuk-grid-column-two-thirds">
 
-    <h2 class="govuk-heading-m">
-      About Fred
-    </h2>
-  {{ govukTable({
-    
-    firstCellIsHeader: true,
-    
-    rows: [
-    [
-      {
-        text: "Age"
-      },
-      {
-        text: "4"
-      }
-    ],
-      [
-        {
-          text: "Gender"
-        },
-        {
-          text: "Female"
-        }
-      ],
-      [
-      {
-        text: "Ethnicity"
-      },
-      {
-        text: "White"
-      }
-    ],
-      [
-        {
-          text: "Native language"
-        },
-        {
-          text: "English"
-        }
-      ]
-    ]
-  }) }}
 
-  <h2 class="govuk-heading-m govuk-!-margin-top-9">
-    Contact details
-  </h2>
 
 {{ govukTable({
-  
+
   firstCellIsHeader: true,
   rows: [
   [
@@ -140,7 +95,7 @@ Info sharing - Directory service
       {
         text: "Yes"
       }
-    ],  
+    ],
   [
       {
         text: "Main contact"
@@ -183,8 +138,8 @@ Info sharing - Directory service
     ]
   ]
 }) }}
-  
-  
+
+
   </div>
   </div>
 
@@ -193,8 +148,8 @@ Info sharing - Directory service
 {% set pastWeekHtml %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    
-  
+
+
 {%- from "govuk/components/table/macro.njk" import govukTable -%}
 
 {{ govukTable({
@@ -203,30 +158,30 @@ Info sharing - Directory service
   },
   head: [
     {
-      text: "Type",
+      text: "Profession",
       attributes: {
         "aria-sort": "ascending"
       }
     },
     {
-      text: "Professional name",
+      text: "Name",
       attributes: {
         "aria-sort": "none"
       }
     },
     {
-      text: "Organisation name",
+      text: "Organisation",
       attributes: {
         "aria-sort": "none"
       }
     },
     {
-      text: "Date of incident",
+      text: "Date of contact",
       attributes: {
         "aria-sort": "none"
       }
     }
-    
+
   ],
   rows: [
     [
@@ -234,14 +189,14 @@ Info sharing - Directory service
         text: "Health"
       },
       {
-        text: "NA"
+        text: "N/A"
       },
       {
         text: "St Thomas Hospital"
       },
       {
         text: "20 Feb 2020",
-        
+
         attributes: {
           "data-sort-value": "1897"
         }
@@ -259,7 +214,7 @@ Info sharing - Directory service
       },
       {
         text: "20 Feb 2020",
-        
+
         attributes: {
           "data-sort-value": "1913"
         }
@@ -270,14 +225,14 @@ Info sharing - Directory service
         text: "Police"
       },
       {
-        text: "P.C. Smith"
+        text: "PC Smith"
       },
       {
         text: "Townsville Police station"
       },
       {
         text: "20 Feb 2020",
-        
+
         attributes: {
           "data-sort-value": "1913"
         }
@@ -288,14 +243,14 @@ Info sharing - Directory service
         text: "Health"
       },
       {
-        text: "NA"
+        text: "N/A"
       },
       {
         text: "St Thomas Hospital"
       },
       {
         text: "20 Feb 2020",
-        
+
         attributes: {
           "data-sort-value": "1913"
         }
@@ -316,55 +271,12 @@ Info sharing - Directory service
 
 {% set pastMonthHtml %}
 <!--education and medical stuff starts-->
-<h2 class="govuk-heading-m">
-  Medical
-</h2>
+
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
 
 {{ govukTable({
- 
-  firstCellIsHeader: true,
 
-  rows: [
-    [
-      {
-        text: "Registered GP"
-      },
-      {
-        text: "Dr Paul Brookes"
-      }
-    ],
-    [
-      {
-        text: "GP Contact details"
-      },
-      {
-        html: "<a href='#' class='govuk-link'>0111 000 000</a><br><a href='#' class='govuk-link'>drpb@doc.com</a>"
-      }
-    ],
-    [
-      {
-        text: "
-        GP Address"
-      },
-      {
-        html: "Townsville Clinic<br>Townsville,<br>Countyville, CT12 7YY"
-      }
-    ]
-  ]
-}) }}
-
-
-
-<h2 class="govuk-heading-m govuk-!-margin-top-9">
-  Education
-</h2>
-{% from "govuk/components/table/macro.njk" import govukTable %}
-
-
-{{ govukTable({
- 
   firstCellIsHeader: true,
 
   rows: [
@@ -381,16 +293,16 @@ Info sharing - Directory service
         text: "Contact details"
       },
       {
-        html: "<a href='#' class='govuk-link'>0111 555 555</a><br><a href='#' class='govuk-link'>info@tvprimary.com</a>"
+        html: "0111 555 555<br><a href='#' class='govuk-link'>info@tvprimary.com</a>"
       }
     ],
     [
       {
         text: "
-        GP Address"
+        Address"
       },
       {
-        html: "Townsville primary<br>Scotch Orchard Road<br>Townsville,<br>Countyville, CT12 7YY"
+        html: "Townsville primary<br>Scotch Orchard Road<br>Townsville<br>Countyville<br>CT12 7YY"
       }
     ]
   ]
@@ -399,54 +311,74 @@ Info sharing - Directory service
 {% endset -%}
 
 {% set pastYearHtml %}
-<h2 class="govuk-heading-l">Risks </h2>
-<h3 class="govuk-heading-m">
-  Risk information will be displayed here
-</h3>
-<p class="govuk-body">
-  This may include:
-<p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>
-      a summary of risks and warnings related to this child and their family. This will be an accumulation of the other feeds (healthcare, social etc)
-    </li>
-    <li>
-      Police warnings (where we can)
-    </li>
-    <li>
-      List item
-    </li>
-  </ul>
+
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+
+{{ govukTable({
+
+  firstCellIsHeader: true,
+
+  rows: [
+    [
+      {
+        text: "Registered GP"
+      },
+      {
+        text: "Dr Paul Brookes"
+      }
+    ],
+    [
+      {
+        text: "Contact details"
+      },
+      {
+        html: "0111 000 000<br><a href='#' class='govuk-link'>drpb@doc.com</a>"
+      }
+    ],
+    [
+      {
+        text: "
+        Address"
+      },
+      {
+        html: "Townsville Clinic<br>Townsville<br>Countyville<br>CT12 7YY"
+      }
+    ]
+  ]
+}) }}
+
+
+
+
+
 {% endset -%}
 
 {{ govukTabs({
   items: [
+  {
+    label: "Professional support timeline",
+    id: "past-week",
+    panel: {
+      html: pastWeekHtml
+    }
+  },
     {
-      label: "Family and Fred (working title)",
+      label: "Fred's contact details",
       id: "past-day",
       panel: {
         html: pastDayHtml
       }
     },
     {
-      label: "Education / Medical",
+      label: "Education",
       id: "past-month",
       panel: {
         html: pastMonthHtml
       }
     },
     {
-      label: "Professional support timeline",
-      id: "past-week",
-      panel: {
-        html: pastWeekHtml
-      }
-    },
-    
-  
-    
-    {
-      label: "Risks and alerts",
+      label: "Registered GP",
       id: "past-year",
       panel: {
         html: pastYearHtml
@@ -455,7 +387,7 @@ Info sharing - Directory service
   ]
 }) }}
 
-  
+
 <a href="child-search" class="govuk-link">Search for another child</a>
 
 
