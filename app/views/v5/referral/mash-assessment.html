@@ -1,0 +1,76 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+  
+<div data-module="moj-add-another">
+
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">MASH assessment</h2>
+
+  <form action="mash-assessment" method="post">
+
+  {{ govukDateInput({
+      id: "mash-date",
+      fieldset: {
+        legend: {
+          text: "Last MASH assessment date",
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {},
+      items: [
+        {
+          id: "mash[0][day]",
+          name: "mash[0][day]",
+          label: "Day",
+          classes: "govuk-input--width-2",
+          attributes: {
+            'data-name': 'mash[%index%][day]',
+            'data-id': 'mash[%index%][day]'
+          }
+        },
+        {
+          id: "mash[0][month]",
+          name: "mash[0][month]",
+          label: "Month",
+          classes: "govuk-input--width-2",
+          attributes: {
+            'data-name': 'mash[%index%][month]',
+            'data-id': 'mash[%index%][month]'
+          }
+        },
+        {
+          id: "mash[0][year]",
+          name: "mash[0][year]",
+          label: "Year",
+          classes: "govuk-input--width-2",
+          attributes: {
+            'data-name': 'mash[%index%][year]',
+            'data-id': 'mash[%index%][year]'
+          }
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: 'Continue',
+      href: 'referral-details-child-health'
+    }) }}
+
+  </form>
+
+</div>
+  </div>
+
+{% endblock %}

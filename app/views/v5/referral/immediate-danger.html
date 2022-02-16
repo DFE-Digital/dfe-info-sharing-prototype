@@ -1,0 +1,64 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+  
+<div data-module="moj-add-another">
+
+{{ govukBackLink({
+    text: "Back",
+    href: "/v4/referral"
+  }) }}
+
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Safety of the child</h2>
+  
+   {{ govukInsetText({
+    text: "It is your responsibility to ensure the immediate safety of the child concerned with this request. If you cannot ensure the safety of the child concerned with this request you must dial 999 to report the concern to emergency services."
+  }) }}
+
+  <form action="immediate-danger" method="post">
+
+  {{ govukRadios({
+      idPrefix: "immediatedanger",
+      name: "immediatedanger",
+      fieldset: {
+        legend: {
+          text: "Is the child in any immediate danger?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {},
+      items: [
+        {
+          value: "Yes",
+          text: "Yes"
+        },
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: 'Continue'
+    }) }}
+
+  </form>
+
+</div>
+  </div>
+
+{% endblock %}

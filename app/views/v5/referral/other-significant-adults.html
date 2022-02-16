@@ -1,0 +1,270 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+  
+<div data-module="moj-add-another">
+
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Other significant people who don't live in the house</h2>
+
+  <form action="other-significant-adults" method="post">
+
+    {% call govukFieldset({
+      classes: 'moj-add-another__item',
+      legend: {
+
+        classes: 'moj-add-another__title govuk-fieldset__legend--m',
+        isPageHeading: false
+      }
+    }) %}
+
+    {{ govukInput({
+      label: {
+        text: "Relationship to child",
+        classes: "govuk-label--s",
+        isPageHeading: true
+      },
+      classes: 'govuk-input--width-20',
+      id: "relationship",
+      name: "relationship"
+    }) }}
+
+    {{ govukRadios({
+      idPrefix: "responsibilities",
+      name: "responsibilities",
+      fieldset: {
+        legend: {
+          text: "Parental or guardian responsibilities",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {},
+      items: [
+        {
+          value: "Full time responsibilities",
+          text: "Full time responsibilities"
+        },
+        {
+          value: "Part time responsibilities",
+          text: "Part time responsibilities"
+        },
+        {
+          value: "No responsibilities",
+          text: "No responsibilities"
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "Unknown",
+          text: "Unknown"
+        }
+      ]
+    }) }}
+
+    {{ govukInput({
+      id: 'person[0][first_name]',
+      name: 'person[0][first_name]',
+      label: {
+        html: 'First name',
+        classes: 'govuk-!-font-weight-bold'
+      },
+      classes: 'govuk-input--width-20',
+      attributes: {
+        'data-name': 'person[%index%][first_name]',
+        'data-id': 'person[%index%][first_name]'
+      }
+    }) }}
+
+    {{ govukInput({
+      id: 'person[0][last_name]',
+      name: 'person[0][last_name]',
+      label: {
+        html: 'Last name',
+        classes: 'govuk-!-font-weight-bold'
+      },
+      classes: 'govuk-input--width-20',
+      attributes: {
+        'data-name': 'person[%index%][last_name]',
+        'data-id': 'person[%index%][last_name]'
+      }
+    }) }}
+
+    {{ govukDateInput({
+      id: "date-of-birth",
+      fieldset: {
+        legend: {
+          text: "Date of birth",
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {},
+      items: [
+        {
+          id: "person[0][dob][day]",
+          name: "person[0][dob][day]",
+          label: "Day",
+          classes: "govuk-input--width-2",
+          attributes: {
+            'data-name': 'person[%index%][dob][day]',
+            'data-id': 'person[%index%][dob][day]'
+          }
+        },
+        {
+          id: "person[0][dob][month]",
+          name: "person[0][dob][month]",
+          label: "Month",
+          classes: "govuk-input--width-2",
+          attributes: {
+            'data-name': 'person[%index%][dob][month]',
+            'data-id': 'person[%index%][dob][month]'
+          }
+        },
+        {
+          id: "person[0][dob][year]",
+          name: "person[0][dob][year]",
+          label: "Year",
+          classes: "govuk-input--width-2",
+          attributes: {
+            'data-name': 'person[%index%][dob][year]',
+            'data-id': 'person[%index%][dob][year]'
+          }
+        }
+      ]
+    }) }}
+
+    {{ govukRadios({
+      idPrefix: "gender",
+      name: "gender",
+      fieldset: {
+        legend: {
+          text: "Gender",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "Male",
+          text: "Male"
+        },
+        {
+          value: "Female",
+          text: "Female"
+        },
+        {
+          value: "Other",
+          text: "Other"
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "skip",
+          text: "Unknown"
+        }
+      ]
+    }) }}
+
+    {{ govukInput({
+      id: 'contact-number',
+      name: 'contact-number',
+      label: {
+        html: 'Contact number',
+        classes: 'govuk-!-font-weight-bold'
+      },
+      classes: 'govuk-input--width-10',
+      attributes: {
+        'data-name': 'contact-number',
+        'data-id': 'contact-number'
+      }
+    }) }}
+
+    {{ govukTextarea({
+      name: "address",
+      id: "address",
+      autocomplete: "street-address",
+      classes: 'govuk-input--width-20',
+      label: {
+        text: "Address",
+        classes: 'govuk-!-font-weight-bold'
+      }
+    }) }}
+
+    {{ govukRadios({
+      idPrefix: "ethnicity",
+      name: "ethnicity",
+      fieldset: {
+        legend: {
+          text: "Ethnicity",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "white",
+          text: "White"
+        },
+        {
+          value: "multiple",
+          text: "Mixed or multiple ethnic groups"
+        },
+        {
+          value: "asian",
+          text: "Asian or Asian British"
+        },
+        {
+          value: "black",
+          text: "Black, African, Caribbean or Black British"
+        },
+        {
+          value: "other",
+          text: "Other ethnic group"
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "skip",
+          text: "Unknown"
+        }
+      ]
+    }) }}
+
+
+    {% endcall %}
+
+    <div class="moj-button-action">
+      {{ govukButton({
+        text: 'Add another person',
+        classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4',
+        type: 'button'
+      }) }}
+    </div>
+
+    {{ govukButton({
+      text: 'Continue',
+      href: "are-there-any-other-professionals"
+    }) }}
+
+  </form>
+
+</div>
+  </div>
+
+{% endblock %}

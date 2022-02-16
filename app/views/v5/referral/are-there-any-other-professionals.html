@@ -1,0 +1,56 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+  
+<div data-module="moj-add-another">
+
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Other professionals</h2>
+  
+
+  <form action="are-there-any-other-professionals" method="post">
+
+  {{ govukRadios({
+      idPrefix: "professionals",
+      name: "professionals",
+      fieldset: {
+        legend: {
+          text: "Are there any other professionals working with this child or family excluding yourself?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {},
+      items: [
+        {
+          value: "Yes",
+          text: "Yes"
+        },
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: 'Continue'
+    }) }}
+
+  </form>
+
+</div>
+  </div>
+
+{% endblock %}

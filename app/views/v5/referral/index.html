@@ -1,0 +1,55 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+  
+<div data-module="moj-add-another">
+
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Request for early help and support for aged 0 to 5 targeted services</h2>
+
+  <p class="govuk-body">Refer a child aged 0 to 5 for care services that fall under the statutory care threshold.</p>
+
+  <p class="govuk-body">Request early help and support for someone:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Aged 0 to 5 years old</li>
+    <li>When their needs fall under the satutory care threshold</li>
+    <li>When they are in no immdiate danger or have ongoing safeguarding concerns</li>
+    <li>If you are a professional and not a member of the general public</li>
+  </ul>
+
+ <form method="post">
+
+      {{ govukButton({
+        text: "Start now",
+        href: "referral/immediate-danger",
+        isStartButton: true
+      }) }}
+
+  </form>
+
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+    Before you start a referral
+  </h2>
+
+  <p class="govuk-body">To use this service, you need:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Understanding of the child's needs</li>
+    <li>Consider doing a quick <a>check to see what services a child may be eligible for</a></li>
+    <li>You must have the consent of the parent or guardian to refer the child for a targeted service</li>
+    <li>The details and contact details for the family being referred</li>
+    <li>To ensure the child is not in immediate danger</li>
+  </ul>
+
+</div>
+  </div>
+
+{% endblock %}

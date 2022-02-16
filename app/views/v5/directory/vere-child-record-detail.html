@@ -1,0 +1,461 @@
+
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+Info sharing - Directory service
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <a onclick="history.back()" class="govuk-back-link pointer govuk-!-margin-bottom-6 govuk-!-margin-top-1">Back</a>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+
+        Timothy Bloggs
+        <span class="govuk-caption-m">
+          Last updated: 22nd Jan 2022
+        </span>
+      </h1>
+    <!--  <strong class='govuk-tag govuk-tag--red govuk-!-margin-right-3'>
+        Alert recorded
+      </strong>
+
+      {{ govukDetails({
+        summaryText: "Alert details",
+        classes: "govuk-!-margin-bottom-6",
+        text: "Text of the incident concerned would appear here. What if there was more than one event!?"
+      }) }}
+-->
+
+
+<!-- accordion starts here-->
+
+<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default govuk-!-margin-bottom-6">
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          About Timothy
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+      <!--section1 content starts-->
+      <div class="govuk-grid-row">
+
+
+        <div class="govuk-grid-column-two-thirds">
+        {{ govukTable({
+
+          firstCellIsHeader: true,
+
+          rows: [
+          [
+                {
+                  text: "Date of birth",
+                  classes: 'govuk-!-width-one-half'
+                },
+                {
+                  text: "10 Feb 2018 (age 4)"
+                }
+              ],
+
+              [
+                {
+                  text: "Address"
+                },
+                {
+                  text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
+                }
+              ],
+
+            [
+              {
+                text: "Gender"
+              },
+              {
+                text: "Female"
+              }
+            ],
+            [
+      {
+        text: "Ethnic group"
+      },
+      {
+        text: "White"
+      }
+    ],
+      [
+        {
+          text: "First language"
+        },
+        {
+          text: "English"
+        }
+      ]
+    ]
+  }) }}
+
+  <h2 class="govuk-heading-m govuk-!-margin-top-9">
+    Contact details
+  </h2>
+
+{{ govukTable({
+
+  firstCellIsHeader: true,
+  rows: [
+  [
+      {
+        text: "Consent given to contact",
+        classes: 'govuk-!-width-one-half'
+      },
+      {
+        text: "Yes"
+      }
+    ],
+  [
+      {
+        text: "Main contact"
+      },
+      {
+        text: "Diane Bloggs"
+      }
+    ],
+    [
+      {
+        text: "Connection to child"
+      },
+      {
+        text: "Mother"
+      }
+    ],
+    [
+      {
+        text: "Mobile"
+      },
+      {
+        text: "07975 000141"
+      }
+    ],
+    [
+      {
+        text: "Telephone"
+      },
+      {
+        text: "0111 555222"
+      }
+    ],
+    [
+      {
+        text: "Email"
+      },
+      {
+        html: "<a href='#' class='govuk-link'>d.bloggs@name.com</a>"
+      }
+    ]
+  ]
+}) }}
+
+<!--education and medical stuff starts-->
+<h2 class="govuk-heading-m govuk-!-margin-top-9">
+  Registered GP
+</h2>
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+
+{{ govukTable({
+
+  firstCellIsHeader: true,
+
+  rows: [
+    [
+      {
+        text: "Name",
+        classes: 'govuk-!-width-one-half'
+      },
+      {
+        text: "Dr Paul Brookes"
+      }
+    ],
+    [
+      {
+        text: "Contact details"
+      },
+      {
+        html: "0111 000 000<br><a href='#' class='govuk-link'>drpb@doc.com</a>"
+      }
+    ],
+    [
+      {
+        text: "
+        Address"
+      },
+      {
+        html: "Townsville Clinic<br>Townsville<br>Countyville<br>CT12 7YY"
+      }
+    ]
+  ]
+}) }}
+
+
+
+<h2 class="govuk-heading-m govuk-!-margin-top-9">
+  Education
+</h2>
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+
+{{ govukTable({
+
+  firstCellIsHeader: true,
+
+  rows: [
+    [
+      {
+        text: "Current school",
+        classes: 'govuk-!-width-one-half'
+      },
+      {
+        text: "Townsville primary"
+      }
+    ],
+    [
+      {
+        text: "Contact details"
+      },
+      {
+        html: "0111 555 555<br><a href='#' class='govuk-link'>info@tvprimary.com</a>"
+      }
+    ],
+    [
+      {
+        text: "
+        Address"
+      },
+      {
+        html: "Townsville primary<br>Scotch Orchard Road<br>Townsville<br>Countyville<br>CT12 7YY"
+      }
+    ]
+  ]
+}) }}
+<!--education and medical stuff ends-->
+
+        </div>
+        </div>
+      <!--section 2 content ends-->
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+          Professional support timeline
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+      <!--start of content 2-->
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+
+
+
+
+
+
+
+        <div class="moj-timeline govuk-!-margin-bottom-6">
+          <div class="moj-timeline__item">
+            <strong class="govuk-tag govuk-tag--turquoise">
+              Family support - Social care
+            </strong>
+            <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Appointment</h2>
+
+              <p class="moj-timeline__byline">-  Social services</p>
+
+            </div>
+
+            <p class="moj-timeline__date">
+              <time datetime="2019-06-14T14:01:00.000Z">14 June 2019 at 2:01pm</time>
+            </p>
+
+            <div class="moj-timeline__description">
+              <b>Joe Barker</b><br>
+              Phone: 07754 558866<br>
+              Email: <a href="#" class="govuk-link">j.barker@emailaddress.com</a>
+            </div>
+
+          </div>
+          </div>
+
+
+
+        <div class="moj-timeline govuk-!-margin-bottom-6">
+          <div class="moj-timeline__item">
+            <strong class="govuk-tag govuk-tag--purple">
+              Education
+            </strong>
+            <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">New school</h2>
+
+              <p class="moj-timeline__byline">- Netherstowe Primary School</p>
+
+            </div>
+
+            <p class="moj-timeline__date">
+              <time datetime="2019-06-06T09:12:00.000Z">6 June 2019</time>
+            </p>
+
+            <div class="moj-timeline__description">
+
+              <ul class='govuk-list'>
+
+                <li>
+                     <b>Head teacher:</b> John Ball
+                </li>
+                <li>
+                  <b>Phone:</b> 01225 55487
+                </li>
+                <li>
+                  <b>Email:</b> <a href='#' class='govuk-link'>jb@netherstowe-primary.co.uk</a>
+                </li>
+                <li>
+                  <b>Address:</b> 1 Seargant Road, Townsville, Countyville, DE34 99F
+                </li>
+              </ul>
+
+
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="moj-timeline govuk-!-margin-bottom-6">
+          <div class="moj-timeline__item">
+            <strong class="govuk-tag govuk-tag--blue">
+              Health - Hospital
+            </strong>
+            <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Ongoing appointment</h2>
+
+              <p class="moj-timeline__byline">- High hospital</p>
+
+            </div>
+
+            <p class="moj-timeline__date">
+              <time datetime="2019-05-28T10:45:00.000Z">28 May 2019 at 10:45am</time>
+            </p>
+
+            <div class="moj-timeline__description">
+              Phone: 01285 555444<br>
+              Email: <a href="#" class="govuk-link">info@h.hospital.co.uk</a>
+            </div>
+
+          </div>
+
+          <div class="moj-timeline__item">
+
+            <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Ongoing appointment</h2>
+
+              <p class="moj-timeline__byline">- High hospital</p>
+
+            </div>
+
+            <p class="moj-timeline__date">
+              <time datetime="2019-05-28T10:15:00.000Z">28 May 2019 at 10:15am</time>
+            </p>
+
+
+
+          </div>
+
+          <div class="moj-timeline__item">
+
+            <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Initial appointment</h2>
+
+              <p class="moj-timeline__byline">- High hospital</p>
+
+            </div>
+
+            <p class="moj-timeline__date">
+              <time datetime="2019-05-21T13:15:00.000Z">21 May 2019 at 1:15pm</time>
+            </p>
+
+
+
+
+          </div>
+
+
+
+        </div>
+
+
+        <div class="moj-timeline govuk-!-margin-bottom-6">
+          <div class="moj-timeline__item">
+            <strong class="govuk-tag govuk-tag--purple">
+              Education
+            </strong>
+            <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">New attendance</h2>
+
+              <p class="moj-timeline__byline">- Busy bees Nursery</p>
+
+            </div>
+
+            <p class="moj-timeline__date">
+              <time datetime="2019-06-06T09:12:00.000Z">6 June 2018 at 9:12am</time>
+            </p>
+
+            <div class="moj-timeline__description">
+              No contact details
+            </div>
+
+          </div>
+
+
+
+
+      </div>
+      </div>
+    </div>
+  </div>
+  <!--<div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+          Risks and warnings (working title)
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+      <p class='govuk-body'>This is the content for Know your audience.</p>
+    </div>
+  </div>-->
+</div>
+</div>
+
+<!--accordion ends here-->
+
+
+
+
+
+<a href="child-record-results" class="govuk-link">Return to record results</a>
+<br><br>
+<a href="child-search" class="govuk-link">Search for another child</a>
+
+
+    </div>
+  </div>
+
+{% endblock %}

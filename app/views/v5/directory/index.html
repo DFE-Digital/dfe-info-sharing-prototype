@@ -1,0 +1,49 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Directory service
+{% endblock %}
+
+{% block content %}
+<form action="search-type"  method="post">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <!--<h1 class="govuk-heading-xl ">
+        <span class="govuk-caption-xl">Info sharing - Alpha</span>
+        Professionals directory service
+      </h1>-->
+    
+      {{ govukRadios({
+        idPrefix: "child-or-professionals",
+        name: "child-or-professionals",
+        fieldset: {
+          legend: {
+            text: "Who do you want to search for?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        
+        items: [
+        {
+          value: "Child",
+          text: "Child"
+        },
+          {
+            value: "Professional",
+            text: "Professional"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </div>
+  </div>
+</form>
+
+{% endblock %}

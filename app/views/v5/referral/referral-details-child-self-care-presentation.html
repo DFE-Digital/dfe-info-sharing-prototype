@@ -1,0 +1,245 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+  
+<div data-module="moj-add-another">
+
+  <h2 class="govuk-heading-l" tabindex="-1">Reasons for referral</h2>
+  <h2 class="govuk-heading-m" tabindex="-1">Self care and presentation</h2>
+
+  <form method="post">    
+
+{# self care question #}
+ 
+  {{ govukRadios({
+    idPrefix: "selfcare",
+    name: "selfcare",
+    fieldset: {
+      legend: {
+        text: "Does the child have appropriate self care skills?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    hint: { 
+      text: 'Including appropriate cleanliness and personal hygiene'
+    },
+    items: [
+      {
+        value: "Yes",
+        text: "Yes"
+      },
+      {
+        value: "No",
+        text: "No"
+      },
+      {
+        divider: "or"
+      },
+      {
+        value: "skip",
+        text: "Not applicable due to age or disability"
+      }
+    ]
+  }) }}
+{# END self care question #}
+
+{# self care 2 question #}
+ 
+  {{ govukRadios({
+    idPrefix: "selfcaresupportsuper",
+    name: "selfcaresupportsuper",
+    fieldset: {
+      legend: {
+        text: "Does the child have appropriate supervision and support to encourage self care and independence?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "Yes",
+        text: "Yes"
+      },
+      {
+        value: "No",
+        text: "No"
+      },
+      {
+        divider: "or"
+      },
+      {
+        value: "skip",
+        text: "Not applicable due to age or disability"
+      }
+    ]
+  }) }}
+{# END self care 2 question #}
+
+{# presentation question #}
+  {{ govukCheckboxes({
+    idPrefix: "presentation",
+    name: "presentation",
+    fieldset: {
+      legend: {
+        text: "Select the areas in which the child has inappropriate presentation for their",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "Age",
+        text: "Age"
+      },
+      {
+        value: "Gender",
+        text: "Gender"
+      },
+      {
+        value: "Culture",
+        text: "Culture"
+      },
+      {
+        value: "Religion",
+        text: "Religion"
+      }
+    ]
+  }) }}
+{# END presentation question #}
+
+
+                                      {# {{ govukCheckboxes({
+                                        idPrefix: "reasonsforreferralchild",
+                                        name: "reasonsforreferralchild",
+                                        fieldset: {
+                                          legend: {
+                                            text: "What are the children's or young persons' development needs that are currently not being met fully?",
+                                            isPageHeading: true,
+                                            classes: "govuk-fieldset__legend--s"
+                                          }
+                                        },
+      items: [
+        {
+          value: "Identity, family and social relationships",
+          text: "Identity/family and social relationships - To include the child/young person's 
+        
+                    - view of abilities, 
+                    - view of self-image 
+                    - Self-esteem, 
+                    - having a positive sense of individuality, 
+                    - having a positive sense of race, 
+                    - having a positive sense of religion, 
+                    - having a positive sense of age, 
+                    - having a positive sense of gender, 
+                    - having a positive sense of sexual orientation 
+                    - having a positive sense of disability. 
+                    - Feelings of belonging and acceptance by family, 
+                    - Feelings of belonging and acceptance peer group 
+                    - Feelings of belonging and acceptance in wider society, 
+                    - Feelings of belonging and acceptance in cultural groups. 
+
+                      - Does the parent ensure the children keeps in contact with important family members and significant others?"
+        },
+        {
+          value: "Self-care skills and social presentation",
+          text: "Self-care skills/social presentation - Including the 
+          
+          - child having age appropriate self-care skills, cleanliness and personal hygiene."
+          - appropriate supervision and support to encourage self-care skills and independence? 
+          - Appropriateness of clothing for age, gender, culture and religion; 
+          - 
+        }
+      ]
+    }) }}
+
+    {{ govukCheckboxes({
+      idPrefix: "reasonsforreferralparent",
+      name: "reasonsforreferralparent",
+      fieldset: {
+        legend: {
+          text: "Which things do the parent's or guardain's need help help with?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "Basic care and ensuring safety",
+          text: "Basic care/ensuring safety - Including all the children/young people's basic needs regarding food, clothing, access to health / education and other services. Is the child/young person adequately protected from significant harm or danger?"
+        },
+        {
+          value: "Emotional warmth and stimulation",
+          text: "Emotional warmth/stimulation - Including ensuring the child's requirements for secure, stable and affectionate relationships, with appropriate sensitivity and responsiveness to the child's needs."
+        },
+        {
+          value: "Guidance, boundaries and stability",
+          text: "Guidance, boundaries and stability - Including how the parent / carer provide consistent parenting? Are there any challenging / difficult behaviours of the child(ren), and how are these managed? Is the child(ren) provided with a stable family environment? Does the child(ren) have any regular contact with another parent / significant others?"
+        }
+      ]
+    }) }}
+
+    {{ govukCheckboxes({
+      idPrefix: "reasonsforreferralparent",
+      name: "reasonsforreferralparent",
+      fieldset: {
+        legend: {
+          text: "What family and environmental factors are an issue of concern?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "Family history and functioning",
+          text: "Family history and functioning - Including parent/carer's history, parent/carer's current and historical relationships, any drug, alcohol misuse, health, mental health, disability, learning disability, periods in care, known history of violence, domestic abuse, offending, anti-social behaviour."
+        },
+        {
+          value: "Wider family and significant others",
+          text: "Wider family and significant others - Including their role and importance to the child(ren) and parents, what additional support do they provide? i.e. emotional, financial, practical, respite, caring responsibilities."
+        },
+        {
+          value: "Housing, employment and income",
+          text: "Housing, employment and income - Including current housing provision, rent arears, appropriate basic amenities of water, heating, cooking facilities, sleeping arrangements and hygiene. Employment status, benefits, debts, support accessed, impact on family member's financial capabilities."
+        },
+        {
+          value: "Social integration and community resources",
+          text: "Family's social integration and community resources - Thinking about if the child/family is part of the local neighbourhood/community. Including universal services: health care, day care and schools, places of worship, transport, shops and leisure activities."
+        }
+      ]
+    }) }}
+
+    {{ govukTextarea({
+      name: "contribution",
+      id: "contribution",
+      autocomplete: "contribution",
+      classes: 'govuk-input--width-30',
+      label: {
+        text: "Reason for undertaking this assessment and details of any presenting issues",
+        classes: 'govuk-!-font-weight-bold'
+      }
+    }) }} #}
+
+    {{ govukButton({
+      text: 'Continue',
+      href: 'summary'
+    }) }}
+
+  </form>
+
+</div>
+  </div>
+
+{% endblock %}
