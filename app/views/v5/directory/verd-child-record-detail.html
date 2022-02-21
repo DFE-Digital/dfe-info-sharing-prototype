@@ -26,12 +26,43 @@ Info sharing - Directory service
       </h1>
     </div>
   </div>
-
-
-
-
+  <div class="govuk-grid-row">
+    
+  
       {% from "govuk/components/tabs/macro.njk" import govukTabs %}
 {% from "govuk/components/table/macro.njk" import govukTable %}
+<div class="govuk-grid-column-two-thirds">
+  
+
+      {{ govukTable({
+       
+        rows: [
+          [
+          {
+            text: "Date of birth",
+            classes: 'govuk-!-width-one-quarter'
+          },
+          {
+            text: "20 Mar 2017 (age 5)"
+          }
+          ],
+          [
+          {
+            text: "Address",
+            classes: 'govuk-!-width-one-quarter'
+          },
+          {
+            text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
+          }
+          ]
+        ]
+      }) }}
+    </div>
+   
+  </div>
+  
+
+      
 
 {% set pastDayHtml %}
 <div class="govuk-grid-row">
@@ -47,29 +78,7 @@ Info sharing - Directory service
   firstCellIsHeader: true,
 
   rows: [
-  [
-                {
-                  text: "Date of birth",
-                  classes: 'govuk-!-width-one-half'
-                },
-                {
-                  text: "20 Mar 2017 (age 5)"
-                }
-              ],
-
-              [
-                {
-                  text: "Address",
-                  classes: 'govuk-!-width-one-half'
-                },
-                {
-                  text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
-                }
-              ],
-
-
-
-    [
+      [
       {
         text: "Gender",
         classes: 'govuk-!-width-one-half'
@@ -276,7 +285,7 @@ Info sharing - Directory service
 
   <div class="moj-timeline govuk-!-margin-bottom-6">
     <div class="moj-timeline__item">
-      <strong class="govuk-tag govuk-tag--turquoise">
+      <strong class="govuk-tag ">
         Family support - Social care
       </strong>
       <div class="moj-timeline__header">
@@ -303,7 +312,7 @@ Info sharing - Directory service
 
   <div class="moj-timeline govuk-!-margin-bottom-6">
     <div class="moj-timeline__item">
-      <strong class="govuk-tag govuk-tag--purple">
+      <strong class="govuk-tag ">
         Education
       </strong>
       <div class="moj-timeline__header">
@@ -342,7 +351,7 @@ Info sharing - Directory service
 
   <div class="moj-timeline govuk-!-margin-bottom-6">
     <div class="moj-timeline__item">
-      <strong class="govuk-tag govuk-tag--blue">
+      <strong class="govuk-tag ">
         Health - Hospital
       </strong>
       <div class="moj-timeline__header">
@@ -366,7 +375,7 @@ Info sharing - Directory service
 
   <div class="moj-timeline govuk-!-margin-bottom-6">
     <div class="moj-timeline__item">
-      <strong class="govuk-tag govuk-tag--blue">
+      <strong class="govuk-tag ">
         Health - Hospital
       </strong>
       <div class="moj-timeline__header">
@@ -395,7 +404,7 @@ Info sharing - Directory service
 
   <div class="moj-timeline govuk-!-margin-bottom-6">
     <div class="moj-timeline__item">
-      <strong class="govuk-tag govuk-tag--purple">
+      <strong class="govuk-tag ">
         Education
       </strong>
       <div class="moj-timeline__header">
@@ -457,20 +466,20 @@ Info sharing - Directory service
 
 {{ govukTabs({
   items: [
+  {
+    label: "Professional support timeline",
+    id: "past-week",
+    panel: {
+      html: pastWeekHtml
+    }
+  },
     {
       label: "About Kate",
       id: "past-day",
       panel: {
         html: pastDayHtml
       }
-    },
-    {
-      label: "Professional support timeline",
-      id: "past-week",
-      panel: {
-        html: pastWeekHtml
-      }
-    }
+    }   
   ]
 }) }}
 
