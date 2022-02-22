@@ -1,0 +1,81 @@
+
+{% extends "layout-design-history.html" %}
+
+{% block pageTitle %}
+Directory design history - Agnostic language
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+      {{ govukBreadcrumbs({
+        items: [
+         
+          {
+            text: "Directory Sprints",
+            href: "../../directory-index"
+          },
+          {
+            text: "Info sharing - Directory design history",
+            href: "directory-index"
+          },
+          {
+            text: "Agnostic language",
+            href: "#"
+          }
+        ]
+      }) }}
+      <!--article title here-->
+          <h1 class="govuk-heading-xl govuk-!-margin-top-9">
+            Agnostic language
+          </h1>
+          </div>
+         </div>
+         <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+      <!--article content begins-->
+            <p class="govuk-body">
+              We have changed approach to the language and design of the directory to ensure that we are utilising an agnostic language style. This covers more than the language used within the content of the design though and came from a co-design session that we ran during Sprint 3.
+            <p>
+              <h2 class="govuk-heading-l">
+                Risks and warnings 
+              </h2>
+              <p class="govuk-body">
+                Prior to this approach being agreed, we had a section within the Directory design that had a few working titles but the aim of the function was always to inform users to potential hazardous situations where flags or alerts may be required.
+              <p>
+              <p class="govuk-body">
+                  It was concluded early on during a co-design session that this function not only wasn't requried within the service, but could also create damaging bias to potential user groups.  
+              <p>
+              <h2 class="govuk-heading-l">
+                  Negative bias 
+              </h2>
+              <p class="govuk-body">
+                One of the key user needs for the directory design is "to provide a service with the information regarding touch points for a child and which professionals have been in contact with that child over time, in order for those professionals to be easily contacted". The key point here is to build enough of a picture without distorting the viewpoint for the end user.
+              <p>
+       <!--article content ends-->
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-m">
+        Related content
+      </h1>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+         side
+        </li>
+        <li>
+          Links if 
+        </li>
+        <li>
+          we need them
+        </li>
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}
+
+
