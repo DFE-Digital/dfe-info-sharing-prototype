@@ -8,6 +8,7 @@
   text-underline-offset: 0.1em;
 }
 .grey{color:#b1b4b6 !important}
+.article img{width:100%;height: auto;}
 /*comment*/
 /*! Copyright (c) 2011 by Margaret Calvert & Henrik Kubel. All rights reserved. The font has been customised for exclusive use on gov.uk. This cut is not commercially available. */
 /* stylelint-disable-line scss/comment-no-loud  */
