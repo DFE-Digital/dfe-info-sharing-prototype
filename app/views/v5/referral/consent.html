@@ -13,12 +13,20 @@ Info sharing - Referral service
 
 {% block content %}
 
-  
+
 <div data-module="moj-add-another">
 
+<<<<<<< HEAD
   <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Do you have consent from the parent or guardian of the child</h2>
   
    <p>You must have consent from the parent or guardian of the child requesting early help.</p>
+=======
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Do you have consent from the parent or guardian of the child?</h2>
+
+   {{ govukInsetText({
+    text: "You must have consent from the parent or guardian before continuing with your request."
+  }) }}
+>>>>>>> ec51203c57266b20e24bed942396b97b3deac981
 
   <form action="consent" method="post">
 
