@@ -16,17 +16,16 @@ Info sharing - Referral service
   
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Do you have consent from the parent or guardian of the child</h2>
-  
-   <p>You must have consent from the parent or guardian of the child requesting early help.</p>
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">EHCP</h2>
 
-  <form action="consent" method="post">
+  <form action="ehcp" method="post">
 
   {{ govukRadios({
-      idPrefix: "consent",
-      name: "consent",
+      idPrefix: "ehcp",
+      name: "ehcp",
       fieldset: {
         legend: {
+          text: "Is there an Educational Health Care Plan in place?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--s"
         }

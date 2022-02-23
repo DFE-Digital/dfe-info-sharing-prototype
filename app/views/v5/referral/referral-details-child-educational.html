@@ -16,14 +16,13 @@ Info sharing - Referral service
   
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l" tabindex="-1">Reasons for the request</h2>
-  <h2 class="govuk-heading-m" tabindex="-1">Education</h2>
+  <h2 class="govuk-heading-l" tabindex="-1">Education</h2>
 
   <form method="post">    
 
 {# EHCP question #}
   {% set ehcphtml %}
-    {{ govukInput({
+    {{ govukTextarea({
       id: "ehcpdetails",
       name: "ehcpdetails",
       type: "textarea",

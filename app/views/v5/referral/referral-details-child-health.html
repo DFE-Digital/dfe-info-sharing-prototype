@@ -19,262 +19,42 @@ Info sharing - Referral service
   
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l" tabindex="-1">Reasons for referral</h2>
-  <h2 class="govuk-heading-m" tabindex="-1">Health</h2>
+  <h2 class="govuk-heading-l" tabindex="-1">Heath</h2>
   <form method="post">
 
-  {# Set html for revealed code/questions #}
+  <p class="govuk-body govuk-!-width-two-thirds">You need to consider and record the story for the child by telling us about their health needs. Their health needs should include information on their: </p>
 
-   {% set growthhtml %}
-    {{ govukInput({
-      id: "growth",
-      name: "growth",
-      type: "textarea",
-      spellcheck: true,
-      classes: "govuk-!-width-two-thirds",
-      label: {
-        text: "Tell us the details around how and why the child's needs are not currently being met"
-      }
-    }) }}
-    {% endset -%}
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Growth and development</li>
+    <li>Physical and mental welbeing</li>
+    <li>Substance misuse and dependency</li>
+    <li>Other health impairments</li>
+  </ul>
 
-   {% set developmenthtml %}
-    {{ govukInput({
-      id: "development",
-      name: "development",
-      type: "textarea",
-      spellcheck: true,
-      classes: "govuk-!-width-two-thirds",
-      label: {
-        text: "Tell us the details around how and why the child's needs are not currently being met"
-      }
-    }) }}
-    {% endset -%}
+  <p class="govuk-body">Your answer should include appropriateness of:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Health care</li>
+    <li>Nutrition and diet</li>
+    <li>Exerise</li>
+    <li>Immunisations</li>
+    <li>Development checks</li>
+    <li>Dental and optical care</li>
+  </ul>
 
-    {% set physicalwelbeinghtml %}
-    {{ govukInput({
-      id: "physicalwelbeing",
-      name: "physicalwelbeing",
-      type: "textarea",
-      spellcheck: true,
-      classes: "govuk-!-width-two-thirds",
-      label: {
-        text: "Tell us the details around how and why the child's needs are not currently being met"
-      }
-    }) }}
-    {% endset -%}
+ 
 
-   {% set mentalwelbeinghtml %}
-    {{ govukInput({
-      id: "mentalwelbeing",
-      name: "mentalwelbeing",
-      type: "textarea",
-      spellcheck: true,
-      classes: "govuk-!-width-two-thirds",
-      label: {
-        text: "Tell us the details around how and why the child's needs are not currently being met"
-      }
-    }) }}
-    {% endset -%}
-
-    {% set mentalwelbeinghtml %}
-    {{ govukInput({
-      id: "mentalwelbeing",
-      name: "mentalwelbeing",
-      type: "textarea",
-      spellcheck: true,
-      classes: "govuk-!-width-two-thirds",
-      label: {
-        text: "Tell us the details around how and why the child's needs are not currently being met"
-      }
-    }) }}
-    {% endset -%}
-
-    {% set substancehtml %}
-    {{ govukInput({
-      id: "substance",
-      name: "substance",
-      type: "textarea",
-      spellcheck: true,
-      classes: "govuk-!-width-two-thirds",
-      label: {
-        text: "Tell us the details around how and why the child's needs are not currently being met"
-      }
-    }) }}
-    {% endset -%}
-
-    {% set otherhealthimpairmentshtml %}
-    {{ govukInput({
-      id: "otherhealthimpairments",
-      name: "otherhealthimpairments",
-      type: "textarea",
-      spellcheck: true,
-      classes: "govuk-!-width-two-thirds",
-      label: {
-        text: "Tell us the details around how and why the child's needs are not currently being met"
-      }
-    }) }}
-    {% endset -%}
-
-    {% set healthcarehtml %}
-    {{ govukInput({
-      id: "healthcare",
-      name: "healthcare",
-      type: "textarea",
-      spellcheck: true,
-      classes: "govuk-!-width-two-thirds",
-      label: {
-        text: "Tell us the details around how and why the child's needs are not currently being met"
-      }
-    }) }}
-    {% endset -%}
-
-    {% set dietaryhtml %}
-    {{ govukInput({
-      id: "mdietary",
-      name: "mdietary",
-      type: "textarea",
-      spellcheck: true,
-      classes: "govuk-!-width-two-thirds",
-      label: {
-        text: "Tell us the details around how and why the child's needs are not currently being met"
-      }
-    }) }}
-    {% endset -%}
-
-    {% set immunisationshtml %}
-    {{ govukInput({
-      id: "immunisations",
-      name: "immunisations",
-      type: "textarea",
-      spellcheck: true,
-      classes: "govuk-!-width-two-thirds",
-      label: {
-        text: "Tell us the details around how and why the child's needs are not currently being met"
-      }
-    }) }}
-    {% endset -%}
-
-    {% set dentalhtml %}
-    {{ govukInput({
-      id: "dental",
-      name: "dental",
-      type: "textarea",
-      spellcheck: true,
-      classes: "govuk-!-width-two-thirds",
-      label: {
-        text: "Tell us the details around how and why the child's needs are not currently being met"
-      }
-    }) }}
-    {% endset -%}
-
-    {% set opticalhtml %}
-    {{ govukInput({
-      id: "optical",
-      name: "optical",
-      type: "textarea",
-      spellcheck: true,
-      classes: "govuk-!-width-two-thirds",
-      label: {
-        text: "Tell us the details around how and why the child's needs are not currently being met"
-      }
-    }) }}
-    {% endset -%}
-  {# END set html for revealed code/questions #}
-
-  {{ govukCheckboxes({
-    idPrefix: "health",
-    name: "health",
-    fieldset: {
-      legend: {
-        text: "Health needs not currently being met",
-        isPageHeading: true,
-        classes: "govuk-fieldset__legend--m"
-      }
-    },
-    hint: {
-      text: "Select all the child's health needs that are not currently being met"
-    },
-    items: [
-      {
-        value: "Growth",
-        text: "Growth",
-        conditional: {
-          html: growthhtml
-        }
-      },
-      {
-        value: "Development",
-        text: "Development",
-        conditional: {
-          html: developmenthtml
-        }
-      },
-      {
-        value: "Physical wellbeing",
-        text: "Physical wellbeing",
-        conditional: {
-          html: physicalwelbeinghtml
-        }
-      },
-      {
-        value: "Mental wellbeing",
-        text: "Mental wellbeing",
-        conditional: {
-          html: mentalwelbeinghtml
-        }
-      },
-      {
-        value: "Substance misuse or dependency",
-        text: "Substance misuse or dependency",
-        conditional: {
-          html: substancehtml
-        }
-      },
-      {
-        value: "Other health impairments",
-        text: "Other health impairments",
-        conditional: {
-          html: otherhealthimpairmentshtml
-        }
-      },
-      {
-        value: "Health care",
-        text: "Health care",
-        conditional: {
-          html: healthcarehtml
-        }
-      },
-      {
-        value: "Dietary",
-        text: "Dietary",
-        conditional: {
-          html: dietaryhtml
-        }
-      },
-      {
-        value: "Immunisation issues",
-        text: "Immunisation issues",
-        conditional: {
-          html: immunisationshtml
-        }
-      },
-      {
-        value: "Dental",
-        text: "Dental",
-        conditional: {
-          html: dentalhtml
-        }
-      },
-      {
-        value: "Optical",
-        text: "Optical",
-        conditional: {
-          html: opticalhtml
-        }
-      }
-    ]
+  {{ govukTextarea({
+    id: "growth",
+    name: "growth",
+    type: "textarea",
+    spellcheck: true,
+    classes: "govuk-!-width-two-thirds",
+    label: {
+      text: "Health needs not currently being met",
+      classes: "govuk-!-font-weight-bold"
+    }
   }) }}
+
     
     {{ govukButton({
       text: 'Continue',

@@ -10,6 +10,7 @@ const v5Routes = require('./routes/v5');
 router.use('/', v1Routes);
 router.use('/', v2Routes);
 router.use('/', v3Routes);
+router.use('/', v4Routes);
 router.use('/', v5Routes);
 
 

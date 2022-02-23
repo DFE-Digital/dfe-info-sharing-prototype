@@ -21,29 +21,9 @@ router.post(`/v${verNum}/referral/consent`, function (req, res) {
   let answer = req.session.data['consent'];
 
   if (answer === 'Yes') {
-    res.redirect(`/v${verNum}/referral/child`);
+    res.redirect(`/v${verNum}/referral/mash`);
   } else {
     res.redirect(`/v${verNum}/blocked`);
-  }
-});
-
-router.post(`/v${verNum}/referral/are-there-any-other-significant-adults`, function (req, res) {
-  let answer = req.session.data['significantadults'];
-
-  if (answer === 'Yes') {
-    res.redirect(`/v${verNum}/referral/other-significant-adults`);
-  } else {
-    res.redirect(`/v${verNum}/referral/are-there-any-other-professionals`);
-  }
-});
-
-router.post(`/v${verNum}/referral/are-there-any-other-professionals`, function (req, res) {
-  let answer = req.session.data['professionals'];
-
-  if (answer === 'Yes') {
-    res.redirect(`/v${verNum}/referral/other-professionals`);
-  } else {
-    res.redirect(`/v${verNum}/referral/mash`);
   }
 });
 
@@ -53,7 +33,17 @@ router.post(`/v${verNum}/referral/mash`, function (req, res) {
   if (answer === 'Yes') {
     res.redirect(`/v${verNum}/referral/mash-assessment`);
   } else {
-    res.redirect(`/v${verNum}/referral/referral-details-child-health`);
+    res.redirect(`/v${verNum}/referral/ehcp`);
+  }
+});
+
+router.post(`/v${verNum}/referral/ehcp`, function (req, res) {
+  let answer = req.session.data['ehcp'];
+
+  if (answer === 'Yes') {
+    res.redirect(`/v${verNum}/referral/ehcp-details`);
+  } else {
+    res.redirect(`/v${verNum}/referral/referral-details-child-educational`);
   }
 });
 //* Referral routes END //
