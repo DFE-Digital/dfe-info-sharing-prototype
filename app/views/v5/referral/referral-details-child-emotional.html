@@ -13,13 +13,13 @@ Info sharing - Referral service
 
 {% block content %}
 
-  
+
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l" tabindex="-1">Reasons for referral</h2>
+  <h2 class="govuk-heading-l" tabindex="-1">Reasons for this request</h2>
   <h2 class="govuk-heading-m" tabindex="-1">Emotional and behavioural</h2>
 
-  <form method="post">    
+  <form method="post">
 
 {# development question #}
   {% set developmenthtml %}
@@ -77,7 +77,7 @@ Info sharing - Referral service
     name: "attachment",
     fieldset: {
       legend: {
-        text: "Is the child demonstrating attachments",
+        text: "Is the child demonstrating attachments?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--m"
       }
