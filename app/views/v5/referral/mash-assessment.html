@@ -13,18 +13,18 @@ Info sharing - Referral service
 
 {% block content %}
 
-  
+
 <div data-module="moj-add-another">
 
   <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">MASH assessment</h2>
   <form action="mash-assessment" method="post">
 
-<p>Tell us why a MASH assessment has been conducted, you will need to think about:</p>
+<p>Tell us why a MASH assessment has been conducted. You will need to tell us:</p>
 <ul class="govuk-list govuk-list--bullet">
-  <li>Who requested support</li>
-  <li>How the professional assessor feels the family needs help or support</li>
-  <li>If someone in the family has had dealings with the police</li>
-  <li>If the child has told someone about abuse, either emotional, physical or sexual</li>
+  <li>who requested support</li>
+  <li>how the professional assessor feels the family needs help or support</li>
+  <li>if someone in the family has had dealings with the police</li>
+  <li>if the child has told someone about abuse, either emotional, physical or sexual</li>
 </ul>
 
      {{ govukTextarea({
@@ -34,7 +34,7 @@ Info sharing - Referral service
       spellcheck: true,
       classes: "govuk-!-width-two-thirds",
       label: {
-        text: "Reasons for undertaking this assessment and presenting issues",
+        text: "Reasons for undertaking the assessment",
         classes: "govuk-!-font-weight-bold"
       }
     }) }}
