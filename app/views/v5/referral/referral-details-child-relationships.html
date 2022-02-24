@@ -13,13 +13,13 @@ Info sharing - Referral service
 
 {% block content %}
 
-  
+
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l" tabindex="-1">Reasons for referral</h2>
+  <h2 class="govuk-heading-l" tabindex="-1">Reasons for this request</h2>
   <h2 class="govuk-heading-m" tabindex="-1">Relationships</h2>
 
-  <form method="post">    
+  <form method="post">
 
 {# relationship question #}
   {% set ensurerelationshipshtml %}
@@ -40,7 +40,7 @@ Info sharing - Referral service
     name: "ensurerelationships",
     fieldset: {
       legend: {
-        text: "Does the parent or carers ensure the child keeps in contact with important family members and significant others?",
+        text: "Do the parents or carers ensure the child keeps in contact with important family members and significant others?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--m"
       }
@@ -75,33 +75,33 @@ Info sharing - Referral service
       items: [
         {
           value: "Identity, family and social relationships",
-          text: "Identity/family and social relationships - To include the child/young person's 
-        
-                    - view of abilities, 
-                    - view of self-image 
-                    - Self-esteem, 
-                    - having a positive sense of individuality, 
-                    - having a positive sense of race, 
-                    - having a positive sense of religion, 
-                    - having a positive sense of age, 
-                    - having a positive sense of gender, 
-                    - having a positive sense of sexual orientation 
-                    - having a positive sense of disability. 
-                    - Feelings of belonging and acceptance by family, 
-                    - Feelings of belonging and acceptance peer group 
-                    - Feelings of belonging and acceptance in wider society, 
-                    - Feelings of belonging and acceptance in cultural groups. 
+          text: "Identity/family and social relationships - To include the child/young person's
+
+                    - view of abilities,
+                    - view of self-image
+                    - Self-esteem,
+                    - having a positive sense of individuality,
+                    - having a positive sense of race,
+                    - having a positive sense of religion,
+                    - having a positive sense of age,
+                    - having a positive sense of gender,
+                    - having a positive sense of sexual orientation
+                    - having a positive sense of disability.
+                    - Feelings of belonging and acceptance by family,
+                    - Feelings of belonging and acceptance peer group
+                    - Feelings of belonging and acceptance in wider society,
+                    - Feelings of belonging and acceptance in cultural groups.
 
                       - Does the parent ensure the children keeps in contact with important family members and significant others?"
         },
         {
           value: "Self-care skills and social presentation",
-          text: "Self-care skills/social presentation - Including the 
-          
+          text: "Self-care skills/social presentation - Including the
+
           - child having age appropriate self-care skills, cleanliness and personal hygiene."
-          - appropriate supervision and support to encourage self-care skills and independence? 
-          - Appropriateness of clothing for age, gender, culture and religion; 
-          - 
+          - appropriate supervision and support to encourage self-care skills and independence?
+          - Appropriateness of clothing for age, gender, culture and religion;
+          -
         }
       ]
     }) }}
