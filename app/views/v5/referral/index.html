@@ -14,16 +14,22 @@ Info sharing - Referral service
 
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Request for early help and support for aged 0 to 5 targeted services</h2>
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Request early help and support from Children's Services</h2>
 
-  <p class="govuk-body">Refer a child aged 0 to 5 for care services that fall under the statutory care threshold.</p>
+  <p class="govuk-body">This service is for professionals working with children aged 0 to 5 who wish to request additonal support for a child.</p>
+  {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
-  <p class="govuk-body">Request early help and support for a child:</p>
+  {{ govukWarningText({
+    text: "Do not use this form if you believe the child is being harmed or is in immediate danger. Call the police on 999 instead.",
+    iconFallbackText: "Warning"
+  }) }}
+  <p class="govuk-body"></p>
+  <p class="govuk-body">To use this service, you will need:</p>
   <ul class="govuk-list govuk-list--bullet">
-    <li>aged 0 to 5 years old</li>
-    <li>if you are a professional working with the child</li>
-    <li>when their needs fall under the statutory care threshold</li>
-    <li>when they are not in immediate danger and there are no ongoing safeguarding concerns</li>
+    <li>consent of the parent or guardian to refer the child for a targeted service</li>
+    <li>an understanding of the child’s needs and the <a href="#">services they may be eligible for</a></li>
+    <li>to have satisfied yourself that they meet the <a href="#">thresholds for a targeted service</a></li>
+    <li>the details (including contact details) of the child being referred</li>
   </ul>
 
  <form method="post">
@@ -36,7 +42,7 @@ Info sharing - Referral service
 
   </form>
 
-  <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+  <!--<h2 class="govuk-heading-m govuk-!-margin-bottom-1">
     Before you start a referral
   </h2>
 
@@ -47,7 +53,7 @@ Info sharing - Referral service
     <li>consent of the parent or guardian to refer the child for a targeted service</li>
     <li>details and contact details for the child being referred</li>
     <li>to ensure the child is not in immediate danger</li>
-  </ul>
+  </ul>-->
 
 </div>
   </div>
