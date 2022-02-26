@@ -34,31 +34,7 @@ Info sharing - Referral service
     }) }}
   {% endset -%}
 
-  {{ govukRadios({
-    idPrefix: "ehcpYN",
-    name: "ehcpYN",
-    fieldset: {
-      legend: {
-        text: "Is there an EHCP in place?",
-        isPageHeading: true,
-        classes: "govuk-fieldset__legend--m"
-      }
-    },
-    items: [
-      {
-        value: "Yes",
-        text: "Yes",
-        conditional: {
-          html: ehcphtml
-        }
-      },
-      {
-        value: "No",
-        text: "No"
-      }
-    ]
-  }) }}
-{# END EHCP question #}
+
 
 {# Cognitive development #}
   {% set cognitivedevelopmentschoolplanhtml %}
@@ -69,7 +45,7 @@ Info sharing - Referral service
       spellcheck: true,
       classes: "govuk-!-width-two-thirds",
       label: {
-        text: "What is the school plan?"
+        text: "Describe how the plan aims to address these"
       }
     }) }}
   {% endset -%}
@@ -82,7 +58,7 @@ Info sharing - Referral service
       spellcheck: true,
       classes: "govuk-!-width-two-thirds",
       label: {
-        text: "What are the child's cognitive development issues?"
+        text: "Describe the areas that need attention"
       }
     }) }}
     {{ govukRadios({
@@ -146,7 +122,7 @@ Info sharing - Referral service
       spellcheck: true,
       classes: "govuk-!-width-two-thirds",
       label: {
-        text: "What is the school plan?"
+        text: "Describe how the plan aims to address these"
       }
     }) }}
   {% endset -%}
@@ -158,7 +134,7 @@ Info sharing - Referral service
       spellcheck: true,
       classes: "govuk-!-width-two-thirds",
       label: {
-        text: "What is the child's has play and interaction issues?"
+        text: "Describe the areas that need attention"
       }
     }) }}
     {{ govukRadios({
@@ -222,7 +198,7 @@ Info sharing - Referral service
       spellcheck: true,
       classes: "govuk-!-width-two-thirds",
       label: {
-        text: "What is the school plan?"
+        text: "Describe how the plan aims to address these"
       }
     }) }}
   {% endset -%}
@@ -234,7 +210,7 @@ Info sharing - Referral service
       spellcheck: true,
       classes: "govuk-!-width-two-thirds",
       label: {
-        text: "What are the educational provisions?"
+        text: "Describe the areas that need attention"
       }
     }) }}
     {{ govukRadios({
@@ -274,7 +250,7 @@ Info sharing - Referral service
       }
     },
     hint: {
-        text: 'Including early year settings'
+        text: 'Including early years settings'
     },
     items: [
       {
@@ -301,7 +277,7 @@ Info sharing - Referral service
       spellcheck: true,
       classes: "govuk-!-width-two-thirds",
       label: {
-        text: "What is the school plan?"
+        text: "Describe how the plan aims to address these"
       }
     }) }}
   {% endset -%}
@@ -313,7 +289,7 @@ Info sharing - Referral service
       spellcheck: true,
       classes: "govuk-!-width-two-thirds",
       label: {
-        text: "What are the attenance and atainment issues?"
+        text: "Describe the areas that need attention"
       }
     }) }}
     {{ govukInput({
@@ -323,7 +299,7 @@ Info sharing - Referral service
       spellcheck: true,
       classes: "govuk-!-width-two-thirds",
       label: {
-        text: "What are the reasons for the attenance and atainment issues?"
+        text: "Describe the reasons for these issues"
       }
     }) }}
     {{ govukRadios({
