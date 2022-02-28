@@ -1,0 +1,69 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+  
+<div data-module="moj-add-another">
+
+  <h2 class="govuk-heading-l" tabindex="-1">Heath</h2>
+  <form method="post">
+
+  <p class="govuk-body govuk-!-width-two-thirds">You need to consider and record the story for the child by telling us about their health needs. Their health needs should include information on their: </p>
+
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Growth and development</li>
+    <li>Physical and mental welbeing</li>
+    <li>Substance misuse and dependency</li>
+    <li>Other health impairments</li>
+  </ul>
+
+  <p class="govuk-body">Your answer should include appropriateness of:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Health care</li>
+    <li>Nutrition and diet</li>
+    <li>Exerise</li>
+    <li>Immunisations</li>
+    <li>Development checks</li>
+    <li>Dental and optical care</li>
+  </ul>
+
+ 
+
+  {{ govukTextarea({
+    id: "growth",
+    name: "growth",
+    type: "textarea",
+    spellcheck: true,
+    classes: "govuk-!-width-two-thirds",
+    label: {
+      text: "Health needs not currently being met",
+      classes: "govuk-!-font-weight-bold"
+    }
+  }) }}
+
+    
+    {{ govukButton({
+      text: 'Continue',
+      href: 'referral-details-child-educational'
+    }) }}
+
+  </form>
+
+</div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Directory service
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+           <h1 class="govuk-heading-xl ">
+        <!--<span class="govuk-caption-xl">Info sharing - Alpha</span>-->
+        Search
+      </h1>
+    
+      {%- from "moj/components/search/macro.njk" import mojSearch -%}
+
+      {{ mojSearch({
+        action: 'verb-child-record-detail-ur',
+        method: 'post',
+        input: {
+          id: 'search',
+          name: 'search'
+        },
+        
+        
+        button: {
+          text: 'Search'
+        }
+      }) }}
+      
+      
+     
+
+    </div>
+  </div>
+
+{% endblock %}

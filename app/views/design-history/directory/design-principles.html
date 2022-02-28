@@ -1,0 +1,128 @@
+
+{% extends "layout-design-history.html" %}
+
+{% block pageTitle %}
+DfE - Info sharing
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+      {{ govukBreadcrumbs({
+        items: [
+         
+          {
+            text: "Directory Sprints",
+            href: "../../directory-index"
+          },
+          {
+            text: "Info sharing - Directory design history",
+            href: "directory-index"
+          },
+          {
+            text: "Design principles",
+            href: "#"
+          }
+        ]
+      }) }}
+      <!--article title here-->
+          <h1 class="govuk-heading-xl govuk-!-margin-top-9">
+            Design principles
+          </h1>
+          </div>
+         </div>
+         <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <!--article content begins-->
+            <p class="govuk-body">
+              We've created a set of design principles that will sit alongside the GDS design principles. These will be used in partnership during the coming sprints and will help to drive the choices we make for the design of the directory service.
+            <p>
+              <h2 class="govuk-heading-l">
+                 Standard GDS principles
+              </h2>
+              <p class="govuk-body">
+                Gov.uk created a set of <a href="https://www.gov.uk/guidance/government-design-principles" class="govuk-link">GDS design principles</a> in 2012 and over time these have been updated and iterated in line with needs and findings. While these will of course be utilised within the design of the Directory - info sharing alpha, we felt that it would be a good exercise to at least discuss the idea of extending those principles and including additional ones to be used that would be unique to our alpha. The findings were quite surprising. 
+              <p>
+
+                <h2 class="govuk-heading-l">
+                  Borne out of discussion
+               </h2>
+               <p class="govuk-body">
+                 Our pricniples came as a result of numerous discussions, conversations and workshops that had taken place during the first few sprints within alpha.
+               <p>
+
+                <p class="govuk-body">
+                  Working within the UCD team as well as the wider team, we agreed on the following principles:
+                <p>
+
+                 <ul class="govuk-list">
+                   <li class="govuk-!-margin-bottom-6">
+                    <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+                      1. Agnostic design
+                   </h2>
+                    The data we will be displaying and the service that we will be offering could easily create bias for a child and their situation, with this in mind everything that is designed, including language, must be done in a totally agnostic manner. This approach will help to remove any potential bias from the end user.
+                    </li>
+                    <li class="govuk-!-margin-bottom-6">
+                      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+                      2. Consider sensitivity and security
+                   </h2>
+                   When thinking about when and where the service could be used, we need to ensure that data security and sensitivity is recognised and included. 
+This goes past how data is technically stored, and more into where data may be viewed.  Users may be on a train, or in public places where they may need to be protected against inadvertently displaying information that shouldn't be shared or seen by non-users of the service.
+                   </li>
+                   <li class="govuk-!-margin-bottom-6">
+                    <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+                      3. Provide confidence
+                   </h2>
+                   One of the findings from Discovery was that users weren't always sure if they should be looking at the data they had access to, this needs to be considered when designing sections of the service flow that may be considered sensitive, or where a user's cognition needs to be focused on finding the right person to speak to and away from worries or concerns over data that they should or should not have access to.
+                   </li>
+                   <li class="govuk-!-margin-bottom-6">
+                    <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+                      4. Remember the bigger picture
+                   </h2>
+                   Different local authorities will have access to different levels of information, but this shouldn't diminish the offering for those users.
+                   <br><br>
+                   Create a service that will allow for differing taxonomies and still offer context for the end-user.
+                   </li>
+                   <li class="govuk-!-margin-bottom-6">
+                    <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+                      5. Create a succinct journey
+                   </h2>
+                   One of the key aims (if not 'the' key aim) of the service is to help professionals provide the correct type of support for a family. This will happen quicker if we are thinking about the journey of finding the correct records and the following journey of finding the right professional, ultimately with the net result of providing the ability to get professionals talking to each other sooner.
+                   </li>
+                   <li class="govuk-!-margin-bottom-6">
+                    <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+                      6. Think about the story - Don't join all the dots
+                   </h2>
+                   The aim of the service is not to offer a complete picture of the child and their situation, but to offer enough information to allow professionals to easily and quickly speak to each other.
+                    <br><br>
+                    When looking at data, it's important that we don't provide too much information as this may introduce bias and actually create a delay with the goal of the child receiving the help that is needed.
+                   </li>
+                 </ul> 
+                 <h2 class="govuk-heading-l">
+                  Moving forward
+               </h2>
+               <p class="govuk-body">
+                 Our approach in furture sprints will be to ensure that these principles are treated as much of a priority in any choices that are made as the official GDS principles. We may also add to the principles in line with further conversations that are had during the course of alpha.
+               <p>
+
+            <!--article content ends-->
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-m">
+        Related content
+      </h3>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+        <a href="https://lucid.app/lucidspark/3a3b310a-f2d9-4a64-87bb-6fb2f7e04cda/edit#" target="_blank" class="govuk-link">Lucid board - Sprint 4</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}
+
+

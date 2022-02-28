@@ -1,0 +1,61 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+
+<div data-module="moj-add-another">
+
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Request early help and support from Children's Services</h2>
+
+  <p class="govuk-body">This service is for professionals to request additonal support for a child they are working with.</p>
+  {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+  {{ govukWarningText({
+    text: "Do not use this service if you believe the child is being harmed or is in immediate danger. Call the police on 999 instead.",
+    iconFallbackText: "Warning"
+  }) }}
+  <p class="govuk-body"></p>
+  <p class="govuk-body">To use this service, you will need:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>consent from the parent or guardian to refer the child for a targeted service</li>
+    <li>an understanding of the child’s needs and the <a href="#">services they may be eligible for</a></li>
+    <li>to have satisfied yourself that they meet the <a href="#">thresholds for a targeted service</a></li>
+    <li>the details (including contact details) of the child being referred</li>
+  </ul>
+
+ <form method="post">
+
+      {{ govukButton({
+        text: "Start now",
+        href: "referral/immediate-danger",
+        isStartButton: true
+      }) }}
+
+  </form>
+
+  <!--<h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+    Before you start a referral
+  </h2>
+
+  <p class="govuk-body">To use this service, you need:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>an understanding of the child's needs</li>
+    <li>to <a>check what services the child may be eligible for</a></li>
+    <li>consent of the parent or guardian to refer the child for a targeted service</li>
+    <li>details and contact details for the child being referred</li>
+    <li>to ensure the child is not in immediate danger</li>
+  </ul>-->
+
+</div>
+  </div>
+
+{% endblock %}

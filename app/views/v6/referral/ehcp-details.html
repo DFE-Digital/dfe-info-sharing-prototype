@@ -1,0 +1,53 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+
+<div data-module="moj-add-another">
+
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Describe the EHCP aims and how they are being actioned</h2>
+
+  <form action="mash-assessment" method="post">
+
+  <p>You should include:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>how independent supporters are planning or have helped the family and child through an SEN assessment process</li>
+    <li>if a statement of special educational needs is present with a new EHCP</li>
+    <li>if the child has been moved from a learning difficulty assessment (LDA) to an EHCP</li>
+  </ul>
+
+  {{ govukTextarea({
+      id: "ehcpdetails",
+      name: "ehcpdetails",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "",
+        classes: "govuk-!-font-weight-bold"
+      }
+    }) }}
+
+
+    {{ govukButton({
+      text: 'Continue',
+      href: 'referral-details-child-educational'
+    }) }}
+
+  </form>
+
+</div>
+  </div>
+
+{% endblock %}
