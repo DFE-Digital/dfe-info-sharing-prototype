@@ -16,17 +16,17 @@ Info sharing - Referral service
 
 {% block content %}
 
-  
+
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l" tabindex="-1">Heath</h2>
+  <h2 class="govuk-heading-l" tabindex="-1">Health</h2>
   <form method="post">
 
-  <p class="govuk-body govuk-!-width-two-thirds">You need to consider and record the story for the child by telling us about their health needs. Their health needs should include information on their: </p>
+  <p class="govuk-body govuk-!-width-two-thirds">You need to consider and record the story for the child by telling us about their health needs. You should include information on their: </p>
 
   <ul class="govuk-list govuk-list--bullet">
     <li>Growth and development</li>
-    <li>Physical and mental welbeing</li>
+    <li>Physical and mental wellbeing</li>
     <li>Substance misuse and dependency</li>
     <li>Other health impairments</li>
   </ul>
@@ -35,13 +35,13 @@ Info sharing - Referral service
   <ul class="govuk-list govuk-list--bullet">
     <li>Health care</li>
     <li>Nutrition and diet</li>
-    <li>Exerise</li>
+    <li>Exercise</li>
     <li>Immunisations</li>
     <li>Development checks</li>
     <li>Dental and optical care</li>
   </ul>
 
- 
+
 
   {{ govukTextarea({
     id: "growth",
@@ -55,7 +55,7 @@ Info sharing - Referral service
     }
   }) }}
 
-    
+
     {{ govukButton({
       text: 'Continue',
       href: 'referral-details-child-educational'
