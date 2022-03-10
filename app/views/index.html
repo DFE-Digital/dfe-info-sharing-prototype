@@ -22,16 +22,56 @@
       <p class="govuk-body">
         All documents and links <i>will be</i> collected on a <a href="#" class="govuk-link">Confluence page</a>.
       <p>-->
-        <h2 class="govuk-heading-m">
+
+      <h2 class="govuk-heading-l">
+        Alpha designs
+      </h2>
+      <p class="govuk-body">
+        In alpha the project team are looking at 2 ideas:
+      <p>
+      <h3 class="govuk-heading-m">
+        Directory of professionals service
+      </h3>
+
+              {{ govukButton({
+                text: "Directory service designs",
+                href: "directory-index"
+              }) }}
+      <br><br>
+      <h3 class="govuk-heading-m">
+        Digital referral service
+      </h3>
+
+            <p class="govuk-body">
+              For Professionals actively working with families within a local Authority who need to understand the availability and make actionable referrals to targeted services that families are eligible for.
+            <p>
+              {{ govukButton({
+                text: "Referral service designs",
+                href: "referral-index"
+              }) }}
+
+        <hr class="govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+
+        <h2 class="govuk-heading-l">
           Project design team
         </h2>
-        <h3 class="govuk-heading-s">
+
+        <h3 class="govuk-heading-m">
           User-centred design lead
         </h3>
         <ul class="govuk-list govuk-list--bullet">
             <li><a href="mailto:jessica.ferguson@education.gov.uk" class="govuk-link">Jessie Ferguson</a></li>
         </ul>
-        <h3 class="govuk-heading-s">
+
+        <h3 class="govuk-heading-m">
+          Service designers
+        </h3>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="mailto:debbie.kitchen@digital.education.gov.uk" class="govuk-link">Debbie Kitchen</a></li>
+            <li><a href="mailto:daniel.tuitt@digital.education.gov.uk" class="govuk-link">Daniel Tuitt</a></li>
+        </ul>
+
+        <h3 class="govuk-heading-m">
           User Researchers
         </h3>
         <ul class="govuk-list govuk-list--bullet">
@@ -39,7 +79,8 @@
             <li><a href="mailto:ismail.murad@digital.education.gov.uk" class="govuk-link">Ismail Murad</a></li>
             <li><a href="mailto:elizabeth.hitchins@digital.education.gov.uk" class="govuk-link">Liz Hitchins</a></li>
         </ul>
-        <h3 class="govuk-heading-s">
+
+        <h3 class="govuk-heading-m">
           Content Designer
         </h3>
         <ul class="govuk-list govuk-list--bullet">
@@ -47,7 +88,8 @@
             <a href="mailto:tom.simcox@education.gov.uk" class="govuk-link">Tom Simcox</a>
           </li>
         </ul>
-        <h3 class="govuk-heading-s">
+
+        <h3 class="govuk-heading-m">
           Interaction Designers
         </h3>
         <ul class="govuk-list govuk-list--bullet">
@@ -60,35 +102,6 @@
             <a href="mailto:ben.watson@digital.education.gov.uk" class="govuk-link">Ben Watson</a>
           </li>
         </ul>
-
-        <hr class="govuk-!-margin-top-9 govuk-!-margin-bottom-7">
-        <h2 class="govuk-heading-l">
-          Alpha designs
-        </h2>
-        <p class="govuk-body">
-          In alpha the project team are looking at 2 ideas:
-        <p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>
-              <a href="directory-index" class="govuk-link">Directory of professionals who have interacted with a child/family</a>
-             <br><br>
-                {{ govukButton({
-                  text: "Go to the Directory designs",
-                  href: "directory-index"
-                }) }}
-            </li>
-            <li>
-              <a href="referral-index" class="govuk-link">Digital referral service</a>
-              <p class="govuk-body">
-                For Professionals actively working with families within a local Authority who need to understand the availability and make actionable referrals to targeted services that families are eligible for.
-              <p>
-                {{ govukButton({
-                  text: "Go to the Referral Service designs",
-                  href: "referral-index"
-                }) }}
-            </li>
-
-          </ul>
 
     </div>
   </div>
