@@ -16,33 +16,24 @@ Info sharing - Referral service
 
 <div data-module="moj-add-another">
 
-  <form action="mash" method="post">
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">What are the behaviours demonstrated effecting?</h2>
+  <form method="post">
 
-  {{ govukRadios({
-      idPrefix: "mash",
-      name: "mash",
-      fieldset: {
-        legend: {
-          text: "Has a Multi Agency Safeguarding Hub (MASH) assessment been carried out?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
-        }
-      },
-      hint: {},
-      items: [
-        {
-          value: "Yes",
-          text: "Yes"
-        },
-        {
-          value: "No",
-          text: "No"
-        }
-      ]
+     {{ govukTextarea({
+      id: "behavioureffectdesc",
+      name: "behavioureffectdesc",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "",
+        classes: "govuk-!-font-weight-bold"
+      }
     }) }}
 
     {{ govukButton({
-      text: 'Continue'
+      text: 'Continue',
+      href: 'behaviour-5'
     }) }}
 
   </form>

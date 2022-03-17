@@ -16,18 +16,12 @@ Info sharing - Referral service
 
 <div data-module="moj-add-another">
 
-  <form action="mash" method="post">
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Have actions been taken already to try remedy the behaviour?</h2>
+  <form action="behaviour-5" method="post">
 
-  {{ govukRadios({
-      idPrefix: "mash",
-      name: "mash",
-      fieldset: {
-        legend: {
-          text: "Has a Multi Agency Safeguarding Hub (MASH) assessment been carried out?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
-        }
-      },
+    {{ govukRadios({
+      idPrefix: "behaviourprevious",
+      name: "behaviourprevious",
       hint: {},
       items: [
         {
