@@ -64,7 +64,7 @@
                             {{ govukDetails({
                                 summaryText: "Interaction details",
                                 classes: "govuk-!-margin-bottom-0",
-                                text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
+                                text: "Fred has settled with no notable concern."
                             }) }}
 
                         </div>
@@ -89,10 +89,27 @@
                         </p>
 
                         <div class="moj-timeline__description">
-                            Phone: 01285 555444<br>
-                            Email: <a href="#" class="govuk-link">info@h.hospital.co.uk</a>
-                        </div>
+                            <p>Phone: 01285 555444<br>
+                                Email: <a href="#" class="govuk-link">info@h.hospital.co.uk</a></p>
 
+
+                            {{ govukDetails({
+                                summaryText: "Interaction details",
+                                classes: "govuk-!-margin-bottom-0",
+                                html: govukSummaryList({
+                                    rows: [
+                                        {
+                                            key: {
+                                            text: "Consultant"
+                                        },
+                                            value: {
+                                            text: "Dr Sarah Philips"
+                                        }
+                                        }
+                                    ]
+                                })
+                            }) }}
+                        </div>
                     </div>
                 </div>
 
