@@ -1,0 +1,148 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+
+<div data-module="moj-add-another">
+
+  <!--<h2 class="govuk-heading-l" tabindex="-1">Reasons for this request</h2>-->
+  <h2 class="govuk-heading-l" tabindex="-1">Emotions and behaviour</h2>
+
+  <form method="post">
+
+{# development question #}
+  {% set developmenthtml %}
+    {{ govukInput({
+      id: "developmentdetails",
+      name: "developmentdetails",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Describe what is not age-appropriate about their development"
+      }
+    }) }}
+    {{ govukInput({
+      id: "developmentdetailswhy",
+      name: "developmentdetailswhy",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Describe the reasons contributing to this"
+      }
+    }) }}
+  {% endset -%}
+
+  {{ govukRadios({
+    idPrefix: "ehcpYN",
+    name: "ehcpYN",
+    fieldset: {
+      legend: {
+        text: "Is the child's development appropriate for their age?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "Yes",
+        text: "Yes"
+      },
+      {
+        value: "No",
+        text: "No",
+        conditional: {
+          html: developmenthtml
+        }
+      }
+    ]
+  }) }}
+{# END EHCP question #}
+
+{# attachment development #}
+  {{ govukRadios({
+    idPrefix: "attachment",
+    name: "attachment",
+    fieldset: {
+      legend: {
+        text: "Is the child demonstrating attachments?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "Yes",
+        text: "Yes"
+      },
+      {
+        value: "No",
+        text: "No"
+      }
+    ]
+  }) }}
+{# END attachment development #}
+
+{# Emotional behaviours #}
+  {% set playhtml %}
+    {{ govukInput({
+      id: "emotionalbehavioursdetails",
+      name: "emotionalbehavioursdetails",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Describe these behaviours"
+      }
+    }) }}
+  {% endset -%}
+
+  {{ govukRadios({
+    idPrefix: "emotionalbehaviours",
+    name: "emotionalbehaviours",
+    fieldset: {
+      legend: {
+        text: "Does the child display any concerning emotional behaviours?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "Yes",
+        text: "Yes",
+        conditional: {
+          html: playhtml
+        }
+      },
+      {
+        value: "No",
+        text: "No"
+      }
+    ]
+  }) }}
+{# END emotional behaviours #}
+
+    {{ govukButton({
+      text: 'Continue',
+      href: 'referral-details-child-relationships'
+    }) }}
+
+  </form>
+
+</div>
+  </div>
+
+{% endblock %}
