@@ -1,492 +1,82 @@
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Info sharing - Directory service
+    Info sharing - Directory service
 {% endblock %}
 
 {% block content %}
+    {% include './includes/record-header-a.html' %}
 
-<div class="govuk-grid-row govuk-!-margin-bottom-6">
-  <div class="govuk-grid-column-full">
-    <a href="child-record-results" class="govuk-link ">Back to results</a>
+
+    <div class="govuk-grid-row">
+
+
+        {% from "govuk/components/tabs/macro.njk" import govukTabs %}
+        {% from "govuk/components/table/macro.njk" import govukTable %}
+        <div class="govuk-grid-column-two-thirds">
+
+
+            {{ govukTable({
+
+                rows: [
+                    [
+                        {
+                            text: "Date of birth",
+                            classes: 'govuk-!-width-one-quarter'
+                        },
+                        {
+                            text: "20 Mar 2017 (age 5)"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Address",
+                            classes: 'govuk-!-width-one-quarter'
+                        },
+                        {
+                            text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
+                        }
+                    ]
+                ]
+            }) }}
+        </div>
+
     </div>
-    </div>
-      <div class="govuk-grid-row govuk-!-margin-bottom-6">
-
-      <div class="govuk-grid-column-full">
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">
 
-        Kate Bloggs
-        <span class="govuk-caption-m">
-          Last updated: 22nd Jan 2022
-        </span>
-      </h1>
-    </div>
-  </div>
-  <div class="govuk-grid-row">
-    
-  
-      {% from "govuk/components/tabs/macro.njk" import govukTabs %}
-{% from "govuk/components/table/macro.njk" import govukTable %}
-<div class="govuk-grid-column-two-thirds">
-  
 
-      {{ govukTable({
-       
-        rows: [
-          [
-          {
-            text: "Date of birth",
-            classes: 'govuk-!-width-one-quarter'
-          },
-          {
-            text: "20 Mar 2017 (age 5)"
-          }
-          ],
-          [
-          {
-            text: "Address",
-            classes: 'govuk-!-width-one-quarter'
-          },
-          {
-            text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
-          }
-          ]
+    {% set aboutHTML %}
+        {% include './includes/about-a.html' %}
+    {% endset -%}
+
+    {% set timelineHTML %}
+        {% include './includes/timeline-a.html' %}
+    {% endset %}
+
+    {{ govukTabs({
+        items: [
+            {
+                label: "Professional support timeline",
+                id: "timeline",
+                panel: {
+                html: timelineHTML
+            }
+            },
+            {
+                label: "About Kate",
+                id: "about",
+                panel: {
+                html: aboutHTML
+            }
+            }
         ]
-      }) }}
-    </div>
-   
-  </div>
-  
+    }) }}
 
-      
+    <a href="child-search" class="govuk-link">Search for another child</a>
 
-{% set pastDayHtml %}
-<div class="govuk-grid-row">
-
-
-<div class="govuk-grid-column-two-thirds">
-<h2 class="govuk-heading-m">
-  Summary information
-</h2>
-
-{{ govukTable({
-  caption: "",
-  firstCellIsHeader: true,
-
-  rows: [
-      [
-      {
-        text: "Gender",
-        classes: 'govuk-!-width-one-half'
-      },
-      {
-        text: "Female"
-      }
-    ],
-    [
-    {
-      text: "Ethnic group",
-      classes: 'govuk-!-width-one-half'
-    },
-    {
-      text: "White"
-    }
-  ],
-    [
-      {
-        text: "First language",
-        classes: 'govuk-!-width-one-half'
-      },
-      {
-        text: "English"
-      }
-    ]
-  ]
-}) }}
-
-<h2 class="govuk-heading-m govuk-!-margin-top-9">
-  Contact details
-</h2>
-
-{{ govukTable({
-  caption: "",
-  firstCellIsHeader: true,
-  rows: [
-  [
-      {
-        text: "Consent given to contact",
-        classes: 'govuk-!-width-one-half'
-      },
-      {
-        text: "Yes"
-      }
-    ],
-  [
-      {
-        text: "Main contact",
-        classes: 'govuk-!-width-one-half'
-      },
-      {
-        text: "Diane Bloggs"
-      }
-    ],
-    [
-      {
-        text: "Connection to child",
-        classes: 'govuk-!-width-one-half'
-      },
-      {
-        text: "Mother"
-      }
-    ],
-    [
-      {
-        text: "Mobile",
-        classes: 'govuk-!-width-one-half'
-      },
-      {
-        text: "07975 000141"
-      }
-    ],
-    [
-      {
-        text: "Telephone",
-        classes: 'govuk-!-width-one-half'
-      },
-      {
-        text: "0111 555222"
-      }
-    ],
-    [
-      {
-        text: "Email",
-        classes: 'govuk-!-width-one-half'
-      },
-      {
-        html: "<a href='#' class='govuk-link'>d.bloggs@name.com</a>"
-      }
-    ]
-  ]
-}) }}
-<!--education and medical stuff starts-->
-<h2 class="govuk-heading-m govuk-!-margin-top-9">
-  Registered GP
-</h2>
-{% from "govuk/components/table/macro.njk" import govukTable %}
-
-
-{{ govukTable({
-
-  firstCellIsHeader: true,
-
-  rows: [
-    [
-      {
-        text: "Name",
-        classes: 'govuk-!-width-one-half'
-      },
-      {
-        text: "Dr Paul Brookes"
-      }
-    ],
-    [
-      {
-        text: "Contact details",
-        classes: 'govuk-!-width-one-half'
-      },
-      {
-        html: "0111 000 000<br><a href='#' class='govuk-link'>drpb@doc.com</a>"
-      }
-    ],
-    [
-      {
-        text: "
-        Address",
-        classes: 'govuk-!-width-one-half'
-      },
-      {
-        html: "Townsville Clinic<br>Townsville<br>Countyville<br>CT12 7YY"
-      }
-    ]
-  ]
-}) }}
-
-
-
-<h2 class="govuk-heading-m govuk-!-margin-top-9">
-  Education
-</h2>
-{% from "govuk/components/table/macro.njk" import govukTable %}
-
-
-{{ govukTable({
-
-  firstCellIsHeader: true,
-
-  rows: [
-    [
-      {
-        text: "Current school",
-        classes: 'govuk-!-width-one-half'
-      },
-      {
-        text: "Townsville primary"
-      }
-    ],
-    [
-      {
-        text: "Contact details",
-        classes: 'govuk-!-width-one-half'
-      },
-      {
-        html: "0111 555 555<br><a href='#' class='govuk-link'>info@tvprimary.com</a>"
-      }
-    ],
-    [
-      {
-        text: "
-        Address",
-        classes: 'govuk-!-width-one-half'
-      },
-      {
-        html: "Townsville primary<br>Scotch Orchard Road<br>Townsville<br>Countyville</br>CT12 7YY"
-      }
-    ]
-  ]
-}) }}
-<!--education and medical stuff ends-->
-
-</div>
-</div>
-{% endset -%}
-
-{% set pastWeekHtml %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-
-
-
-
-
-
-
-
-
-
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-
-
-  <div class="moj-timeline govuk-!-margin-bottom-6">
-    <div class="moj-timeline__item">
-      <strong class="govuk-tag ">
-        Family support - Social care
-      </strong>
-      <div class="moj-timeline__header">
-        <h2 class="moj-timeline__title">Appointment</h2>
-
-        <p class="moj-timeline__byline">-  Social services</p>
-
-      </div>
-
-      <p class="moj-timeline__date">
-        <time datetime="2019-06-14T14:01:00.000Z">14 June 2019 at 2:01pm</time>
-      </p>
-
-      <div class="moj-timeline__description">
-        Joe Barker<br>
-        Phone: 07754 558866<br>
-        Email: <a href="#" class="govuk-link">j.barker@emailaddress.com</a>
-      </div>
 
     </div>
     </div>
-
-
-
-  <div class="moj-timeline govuk-!-margin-bottom-6">
-    <div class="moj-timeline__item">
-      <strong class="govuk-tag ">
-        Education
-      </strong>
-      <div class="moj-timeline__header">
-        <h2 class="moj-timeline__title">New school</h2>
-
-        <p class="moj-timeline__byline">- Netherstowe Primary School</p>
-
-      </div>
-
-      <p class="moj-timeline__date">
-        <time datetime="2019-06-06T09:12:00.000Z">6 June 2019</time>
-      </p>
-
-      <div class="moj-timeline__description">
-
-        <ul class='govuk-list'>
-
-          <li>
-               John Ball (Headteacher)
-          </li>
-          <li>
-            Phone: 01225 55487
-          </li>
-          <li>
-            Email: <a href='#' class='govuk-link'>jb@netherstowe-primary.co.uk</a>
-          </li>
-
-        </ul>
-
-
-      </div>
-
-    </div>
-  </div>
-
-
-  <div class="moj-timeline govuk-!-margin-bottom-6">
-    <div class="moj-timeline__item">
-      <strong class="govuk-tag ">
-        Health - Hospital
-      </strong>
-      <div class="moj-timeline__header">
-        <h2 class="moj-timeline__title">Ongoing appointment</h2>
-
-        <p class="moj-timeline__byline">- High hospital</p>
-
-      </div>
-
-      <p class="moj-timeline__date">
-        <time datetime="2019-05-28T10:45:00.000Z">28 May 2019 at 10:45am</time>
-      </p>
-
-      <div class="moj-timeline__description">
-        Phone: 01285 555444<br>
-        Email: <a href="#" class="govuk-link">info@h.hospital.co.uk</a>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="moj-timeline govuk-!-margin-bottom-6">
-    <div class="moj-timeline__item">
-      <strong class="govuk-tag ">
-        Health - Hospital
-      </strong>
-      <div class="moj-timeline__header">
-        <h2 class="moj-timeline__title">Initial appointment</h2>
-
-        <p class="moj-timeline__byline">- High hospital</p>
-
-      </div>
-
-      <p class="moj-timeline__date">
-        <time datetime="2019-05-28T10:45:00.000Z">21 May 2019 at 10:15am</time>
-      </p>
-
-      <div class="moj-timeline__description">
-        Phone: 01285 555444<br>
-        Email: <a href="#" class="govuk-link">info@h.hospital.co.uk</a>
-      </div>
-
-    </div>
-
-
-
-
-
-  </div>
-
-  <div class="moj-timeline govuk-!-margin-bottom-6">
-    <div class="moj-timeline__item">
-      <strong class="govuk-tag ">
-        Education
-      </strong>
-      <div class="moj-timeline__header">
-        <h2 class="moj-timeline__title">New attendance</h2>
-
-        <p class="moj-timeline__byline">- Busy bees Nursery</p>
-
-      </div>
-
-      <p class="moj-timeline__date">
-        <time datetime="2019-06-06T09:12:00.000Z">6 June 2018 at 9:12am</time>
-      </p>
-
-      <div class="moj-timeline__description">
-        No contact details
-      </div>
-
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-</div>
-
-
-
-</div>
-
-
-</div>
-</div>
-{% endset -%}
-
-
-{% set pastMonthHtml %}
-<h2 class="govuk-heading-l">Education</h2>
-<h3 class="govuk-heading-m">
-  Education information will be displayed here
-</h3>
-<p class="govuk-body">
-  This may include:
-<p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>
-      timeline of educational placements the child has been registered with
-    </li>
-    <li>
-      contact details of professionals related to the child's education
-    </li>
-  </ul>
-{% endset -%}
-
-
-
-{{ govukTabs({
-  items: [
-  {
-    label: "Professional support timeline",
-    id: "past-week",
-    panel: {
-      html: pastWeekHtml
-    }
-  },
-    {
-      label: "About Kate",
-      id: "past-day",
-      panel: {
-        html: pastDayHtml
-      }
-    }   
-  ]
-}) }}
-
-<a href="child-search" class="govuk-link">Search for another child</a>
-
-
-    </div>
-  </div>
 
 {% endblock %}

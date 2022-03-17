@@ -1,0 +1,120 @@
+
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+Info sharing - Directory service
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-full">
+      <a href="child-record-results-ur" class="govuk-link ">Back to results</a>
+      </div>
+      </div>
+      <h1 class="govuk-heading-xl ">
+
+        Fred Bloggs
+        <span class="govuk-caption-m">
+          Last updated: 22nd Jan 2022
+        </span>
+      </h1>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          {{ govukTable({
+            firstCellIsHeader: true,
+
+            rows: [
+              [
+                {
+                  text: "Date of birth"
+                },
+                {
+                  text: "10 Feb 2016 (age 6)"
+                }
+              ],
+              [
+                {
+                  text: "Unique identifier"
+                },
+                {
+                  text: "746-987-3432"
+                }
+              ],
+              [
+                {
+                  text: "Gender"
+                },
+                {
+                  text: "Male"
+                }
+              ],
+              [
+                {
+                  text: "Ethnic group"
+                },
+                {
+                  text: "White"
+                }
+              ],
+              [
+                {
+                  text: "Address"
+                },
+                {
+                  text: "12 Compton Street, Townsville, Countyville, DR34 5TO"
+                }
+              ]
+            ]
+          }) }}
+
+        </div>
+      </div>
+
+      {% from "govuk/components/tabs/macro.njk" import govukTabs %}
+      {% from "govuk/components/table/macro.njk" import govukTable %}
+
+
+
+{% set timelineHTML %}
+
+{% endset -%}
+
+
+
+
+{{ govukTabs({
+  items: [
+  {
+    label: "Professional support timeline",
+    id: "timeline",
+    panel: {
+      html: timelineHTML
+    }
+  },
+    {
+      label: "Tab B",
+      id: "tabB",
+      panel: {
+      html: ''
+    }
+    },
+    {
+      label: "Tab C",
+      id: "tabC",
+      panel: {
+      html: ''
+    }
+    }
+  ]
+}) }}
+
+
+<a href="child-search-ur" class="govuk-link">Search for another child</a>
+
+
+    </div>
+  </div>
+
+{% endblock %}

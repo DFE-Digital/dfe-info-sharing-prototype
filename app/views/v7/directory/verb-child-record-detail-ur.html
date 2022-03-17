@@ -1,5 +1,5 @@
 
-{% extends "layout.html" %}
+{% extends "layout_unbranded.html" %}
 
 {% block pageTitle %}
 Info sharing - Directory service
@@ -9,7 +9,7 @@ Info sharing - Directory service
 
   <div class="govuk-grid-row govuk-!-margin-bottom-6">
     <div class="govuk-grid-column-full">
-      <a href="child-record-results" class="govuk-link ">Back to results</a>
+      <a href="child-record-results-ur" class="govuk-link ">Back to results</a>
       </div>
       </div>
       <h1 class="govuk-heading-xl ">
@@ -115,6 +115,12 @@ Info sharing - Directory service
     },
     {
       text: "Type of interaction"
+    },
+    {
+      text: "Significant interaction",
+      attributes: {
+      "aria-sort": "none"
+    }
     }
 
   ],
@@ -138,6 +144,9 @@ Info sharing - Directory service
       },
       {
         text: "Phone call"
+      },
+      {
+        html: ''
       }
     ],
     [
@@ -159,6 +168,11 @@ Info sharing - Directory service
       },
       {
         text: "Email"
+      },
+      {
+        html: govukTag({
+          text: "Significant"
+        })
       }
     ],
     [
@@ -180,6 +194,9 @@ Info sharing - Directory service
       },
       {
         text: "Home visit"
+      },
+      {
+        html: ''
       }
     ],
     [
@@ -201,6 +218,9 @@ Info sharing - Directory service
       },
       {
         text: "Appointment"
+      },
+      {
+        html: ''
       }
     ]
   ]
@@ -217,16 +237,23 @@ Info sharing - Directory service
   items: [
   {
     label: "Professional support timeline",
-    id: "past-week",
+    id: "timeline",
     panel: {
       html: pastWeekHtml
     }
-  }
+  },
+    {
+      label: "Case summary",
+      id: "summary",
+      panel: {
+      html: ''
+    }
+    }
   ]
 }) }}
 
 
-<a href="child-search" class="govuk-link">Search for another child</a>
+<a href="child-search-ur" class="govuk-link">Search for another child</a>
 
 
     </div>
