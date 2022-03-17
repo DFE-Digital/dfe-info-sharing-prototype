@@ -1,0 +1,368 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+
+<div data-module="moj-add-another">
+
+  <h2 class="govuk-heading-l" tabindex="-1">Education</h2>
+
+  <form method="post">
+
+{# EHCP question #}
+  {% set ehcphtml %}
+    {{ govukTextarea({
+      id: "ehcpdetails",
+      name: "ehcpdetails",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "What are the EHCP's aims and how they are being actioned?"
+      }
+    }) }}
+  {% endset -%}
+
+
+
+{# Cognitive development #}
+  {% set cognitivedevelopmentschoolplanhtml %}
+    {{ govukInput({
+      id: "abc",
+      name: "abc",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Describe how the plan aims to address these"
+      }
+    }) }}
+  {% endset -%}
+  {% set cognitivedevelopmenthtml %}
+
+    {{ govukInput({
+      id: "cognitivedevelopmentdetails",
+      name: "cognitivedevelopmentdetails",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Describe the areas that need attention"
+      }
+    }) }}
+    {{ govukRadios({
+      idPrefix: "Qs",
+      name: "Qs",
+      fieldset: {
+        legend: {
+          text: "Is there a school plan in place?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          conditional: {
+            html: cognitivedevelopmentschoolplanhtml
+          }
+        },
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+    })}}
+  {% endset -%}
+
+  {{ govukRadios({
+    idPrefix: "cognitivedevelopment",
+    name: "cognitivedevelopment",
+    fieldset: {
+      legend: {
+        text: "Are there any areas of the child's cognitive development that need attention?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "Yes",
+        text: "Yes",
+        conditional: {
+          html: cognitivedevelopmenthtml
+        }
+      },
+      {
+        value: "No",
+        text: "No"
+      }
+    ]
+  }) }}
+{# END cognitive development #}
+
+{# Play #}
+  {% set playschoolplanhtml %}
+    {{ govukInput({
+      id: "playschoolplanhtmlq",
+      name: "playschoolplanhtmlq",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Describe how the plan aims to address these"
+      }
+    }) }}
+  {% endset -%}
+  {% set playhtml %}
+    {{ govukInput({
+      id: "playdetails",
+      name: "playdetails",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Describe the areas that need attention"
+      }
+    }) }}
+    {{ govukRadios({
+      idPrefix: "playschoolplan",
+      name: "playschoolplan",
+      fieldset: {
+        legend: {
+          text: "Is there a school plan in place?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          conditional: {
+            html: playschoolplanhtml
+          }
+        },
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+    })}}
+  {% endset -%}
+
+  {{ govukRadios({
+    idPrefix: "play",
+    name: "play",
+    fieldset: {
+      legend: {
+        text: "Are there any areas of the child's play and interaction with other children that need attention?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "Yes",
+        text: "Yes",
+        conditional: {
+          html: playhtml
+        }
+      },
+      {
+        value: "No",
+        text: "No"
+      }
+    ]
+  }) }}
+{# END play #}
+
+{# educational provision #}
+  {% set eduprovisionchoolplanhtml %}
+    {{ govukInput({
+      id: "educationalprovisionhtmlq",
+      name: "educationalprovisionhtmlq",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Describe how the plan aims to address these"
+      }
+    }) }}
+  {% endset -%}
+  {% set eduprovisionhtml %}
+    {{ govukInput({
+      id: "eduprovision",
+      name: "eduprovision",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Describe the areas that need attention"
+      }
+    }) }}
+    {{ govukRadios({
+      idPrefix: "eduprovisionschoolplan",
+      name: "eduprovisionschoolplan",
+      fieldset: {
+        legend: {
+          text: "Is there a school plan in place?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          conditional: {
+            html: eduprovisionchoolplanhtml
+          }
+        },
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+    })}}
+  {% endset -%}
+
+  {{ govukRadios({
+    idPrefix: "eduprovision",
+    name: "eduprovision",
+    fieldset: {
+      legend: {
+        text: "Are there any areas of educational provision that need attention?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    hint: {
+        text: 'Including early years settings'
+    },
+    items: [
+      {
+        value: "Yes",
+        text: "Yes",
+        conditional: {
+          html: eduprovisionhtml
+        }
+      },
+      {
+        value: "No",
+        text: "No"
+      }
+    ]
+  }) }}
+{# END educational provision #}
+
+{# attendance #}
+  {% set attendanceschoolplanhtml %}
+    {{ govukInput({
+      id: "attendancehtmlq",
+      name: "attendancehtmlq",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Describe how the plan aims to address these"
+      }
+    }) }}
+  {% endset -%}
+  {% set attendancehtml %}
+    {{ govukInput({
+      id: "attendance",
+      name: "attendance",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Describe the areas that need attention"
+      }
+    }) }}
+    {{ govukInput({
+      id: "attendancea",
+      name: "attendancea",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Describe the reasons for these issues"
+      }
+    }) }}
+    {{ govukRadios({
+      idPrefix: "attendanceschoolplan",
+      name: "attendanceschoolplan",
+      fieldset: {
+        legend: {
+          text: "Is there a school plan in place?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          conditional: {
+            html: attendanceschoolplanhtml
+          }
+        },
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+    })}}
+  {% endset -%}
+
+  {{ govukRadios({
+    idPrefix: "attendance",
+    name: "attendance",
+    fieldset: {
+      legend: {
+        text: "Are there any attendance and attainment issues?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "Yes",
+        text: "Yes",
+        conditional: {
+          html: attendancehtml
+        }
+      },
+      {
+        value: "No",
+        text: "No"
+      }
+    ]
+  }) }}
+{# END attendance #}
+
+
+    {{ govukButton({
+      text: 'Continue',
+      href: 'referral-details-child-emotional'
+    }) }}
+
+  </form>
+
+</div>
+  </div>
+
+{% endblock %}

@@ -1,455 +1,522 @@
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-DfE - Info sharing
+    DfE - Info sharing
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
+<div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <a onclick="history.back()" class="govuk-back-link pointer govuk-!-margin-bottom-6 govuk-!-margin-top-1">Back</a>
+        <a onclick="history.back()"
+           class="govuk-back-link pointer govuk-!-margin-bottom-6 govuk-!-margin-top-1">Back</a>
 
-      <h1 class="govuk-heading-xl">
-        <span class="govuk-caption-xl">Info sharing - Alpha</span>
-        Directory service designs
-      </h1>
-      <h2 class="govuk-heading-l">
-        What is the directory service?
-      </h2>
-      <p class="govuk-body">
-        A service for professionals working with families within a local authority who need to understand the full picture of a child’s interactions with services.
-      <p>
-
-      <p class="govuk-body">
-        We want to help save professionals time trying to identify previous touchpoints, and help them understand a child’s complete journey in order to provide the best support possible.
-      <p>
-
-        <h3 class='govuk-heading-m govuk-!-margin-bottom-1'>
-          Design history
-        </h3>
+        <h1 class="govuk-heading-xl">
+            <span class="govuk-caption-xl">Info sharing - Alpha</span>
+            Directory service designs
+        </h1>
+        <h2 class="govuk-heading-l">
+            What is the directory service?
+        </h2>
         <p class="govuk-body">
-          Currently a work in progress, we have been creating a design history to go alongside the prototype for the directory service. This will develop throughout alpha, highlighting some of the design choices that we made and why.
+            A service for professionals working with families within a local authority who need to understand the full
+            picture of a child’s interactions with services.
         <p>
 
-<p class="govuk-body">
-  You can see our <a href="design-history/directory/directory-index" class="govuk-link" target="_blank">Design history here.</a>
-<p>
+        <p class="govuk-body">
+            We want to help save professionals time trying to identify previous touchpoints, and help them understand a
+            child’s complete journey in order to provide the best support possible.
+        <p>
 
-      <h2 class="govuk-heading-l">
+        <h3 class='govuk-heading-m govuk-!-margin-bottom-1'>
+            Design history
+        </h3>
+        <p class="govuk-body">
+            Currently a work in progress, we have been creating a design history to go alongside the prototype for the
+            directory service. This will develop throughout alpha, highlighting some of the design choices that we made
+            and why.
+        <p>
+
+        <p class="govuk-body">
+            You can see our <a href="design-history/directory/directory-index" class="govuk-link" target="_blank">Design
+                history here.</a>
+        <p>
+
+        <h2 class="govuk-heading-l">
         <span class="govuk-caption-l">
           {{ govukTag({
-            text: "Current sprint"
+              text: "Current sprint"
           }) }}
         </span>
-        Sprint 5
-      </h2>
+            Sprint 6
+        </h2>
 
 
-
-      <h3 class='govuk-heading-m govuk-!-margin-bottom-1'>
-        Sprint goals
-      </h3>
-      <ul class='govuk-list govuk-list--bullet'>
-       <li>
-         tbc
-      </li>
-      </ul>
-
-
-
-      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
-        Design asset and information links
-      </h3>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="https://docs.google.com/document/d/1bTOWDopyqZX4v8Bmq3ekBWkzPwhCtAUzxZNob_gyZHQ/edit" class="govuk-link" target="_blank">Decision log</a>
-        </li>
-        <li>
-          <a href="https://lucid.app/lucidspark/21d1c860-552d-41af-820e-2f017b0c9e73/edit#" class="govuk-link" target="_blank">Lucid board</a>
-        </li>
-
-      </ul>
-      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
-        Prototype links
-      </h3>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="v6/directory/child-search" class="govuk-link">Sprint 5 prototype</a>
-        </li>
-      </ul>
+        <h3 class='govuk-heading-m govuk-!-margin-bottom-1'>
+            Sprint goals
+        </h3>
+        <ul class='govuk-list govuk-list--bullet'>
+            <li>
+                Better understand the type of the information different user groups need to perform their role
+                {{ govukTag({
+                    text: "Ongoing",
+                    classes: "govuk-tag--pink"
+                }) }}
+            </li>
+        </ul>
 
 
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+            Design asset and information links
+        </h3>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+                <a href="https://docs.google.com/document/d/1bTOWDopyqZX4v8Bmq3ekBWkzPwhCtAUzxZNob_gyZHQ/edit"
+                   class="govuk-link" target="_blank">Decision log</a>
+            </li>
+            <li>
+                <a href="https://lucid.app/lucidspark/21d1c860-552d-41af-820e-2f017b0c9e73/edit#" class="govuk-link"
+                   target="_blank">Lucid board</a>
+            </li>
+
+        </ul>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+            Prototype links
+        </h3>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+                <a href="v7/directory/child-search" class="govuk-link">Sprint 6 prototype</a>
+            </li>
+            <li>
+                <a href="v7/directory/ur" class="govuk-link">Sprint 6 UR prompts</a>
+            </li>
+        </ul>
 
 
-      <!--current sprint ends here-->
-<hr class="govuk-!-margin-bottom-9 govuk-!-margin-top-9">
-      <h2 class="govuk-heading-l">
-        Previous sprints
-      </h2>
-      <p class="govuk-body">
-        Links to prototypes and other design assets for each sprint.
-      <p>
-      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-        <!--section starts here-->
-        <div class="govuk-accordion__section ">
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+        <!--current sprint ends here-->
+        <hr class="govuk-!-margin-bottom-9 govuk-!-margin-top-9">
+        <h2 class="govuk-heading-l">
+            Previous sprints
+        </h2>
+        <p class="govuk-body">
+            Links to prototypes and other design assets for each sprint.
+        <p>
 
-                Sprint 4
-
-              </span>
-            </h2>
-          </div>
-          <!--content starts-->
-          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-
-            <h2 class="govuk-heading-l">
-              Sprint 4
-            </h2>
-            <h3 class='govuk-heading-m govuk-!-margin-bottom-1'>
-              Sprint goals
-            </h3>
-            <ul class='govuk-list govuk-list--bullet'>
-              <li>
-                Establish design principles ahead of UR feedback in future sprints
-                <strong class='govuk-tag govuk-tag--green'>
-                 Goal achieved
-               </strong>
-              </li>
-              <li>
-               Set up a design history within the prototype -  <a href="design-history/directory/directory-index" class="govuk-link" target="_blank">Design history</a>
-               <strong class='govuk-tag govuk-tag--green'>
-                 Goal achieved
-               </strong>
-             </li>
-             <li>
-               Establish and agree the prototypes required for round 1 of user research
-               <strong class='govuk-tag govuk-tag--green'>
-                 Goal achieved
-               </strong>
-               <ul class='govuk-list govuk-list--bullet'>
-                 <li><a href="v5/directory/child-search-ur" class="govuk-link">Search page</a></li>
-                 <li><a href="v5/directory/verb-child-record-detail-ur" class="govuk-link">Child data - timeline only</a></li>
-                 <li><a href="https://docs.google.com/presentation/d/1Up4lpxfBaKFx_kvPMDRu5CQZkhnuNTlcBSB4mI3Awbo/edit#slide=id.g1173ae2da17_0_0" target="_blank" class="govuk-link">UR Images within presentation</a></li>
-               </ul>
-             </li>
-
-            </ul>
-
-
-
-            <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
-              Design asset links
-            </h3>
-            <ul class="govuk-list govuk-list--bullet">
-              <li>
-                <a href="https://lucid.app/lucidspark/3a3b310a-f2d9-4a64-87bb-6fb2f7e04cda/edit?invitationId=inv_c20ce1c6-ce49-4474-bbe9-92f1cd534e7c#" class="govuk-link" target="_blank">Lucid board</a>
-              </li>
-            </ul>
-            <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
-              Prototype links
-            </h3>
-            <ul class="govuk-list govuk-list--bullet">
-              <li>
-                <a href="v5/directory/child-search" class="govuk-link">Sprint 4 prototype</a>
-              </li>
-            </ul>
-
-
-            <h3 class='govuk-heading-m govuk-!-margin-bottom-1'>
-              What we learned this sprint
-             </h3>
-             <p class="govuk-body">
-               Biggest 'learn' came from a Co-design session around 'Risks and Warnings'. Original thinking for this section of the design was around the ability to forewarn key users of situations where more care may need to be taken, however, it was discovered during the co
-             <p>
-               <p class="govuk-body">
-                 Conclusion was to remove the 'risks and warnings' reference from the service, a side but key outcome of the conversation was to ensure that the service must remain 'Agnostic' so as to remove any bias to the key user group about any situation around a child.
-               <p>
-
-            <!--content ends-->
-          </div>
-          <div class="govuk-accordion__section ">
-            <div class="govuk-accordion__section-header">
-              <h2 class="govuk-accordion__section-heading">
-                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-
-                  Sprint 3
-
-                </span>
-              </h2>
-            </div>
-            <!--content starts-->
-            <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-
-              <h2 class="govuk-heading-l">
-                Sprint 3
-              </h2>
-              <h3 class='govuk-heading-m govuk-!-margin-bottom-1'>
-                Sprint goals
-              </h3>
-              <ul class='govuk-list govuk-list--bullet'>
-                <li>
-                 Use content established in Sprint 1 to refine the child data records, ready for usability UR
-                 <strong class='govuk-tag govuk-tag--green'>
-                  Goal achieved
+            {% set Sprint5 %}
+        <h2 class="govuk-heading-l">
+            Sprint 5
+        </h2>
+        <h3 class='govuk-heading-m govuk-!-margin-bottom-1'>
+            Sprint goals
+        </h3>
+        <ul class='govuk-list govuk-list--bullet'>
+            <li>
+                Use content established in Sprint 1 to refine the child data records, ready for usability UR
+                <strong class='govuk-tag govuk-tag--pink'>
+                    Ongoing
                 </strong>
-                </li>
-                <li>
-                  Use design work carried out in Sprint 1 to refine timeline designs, ready for usability UR
-                  <strong class='govuk-tag govuk-tag--green'>
-                    Goal achieved
-                  </strong>
-                </li>
-                <li>
-                  Agree new terminology for 'Risks and Warnings' section
-                  <strong class='govuk-tag govuk-tag--green'>
-                    Goal achieved
-                  </strong>
-                </li>
-
-              </ul>
-
-
-
-              <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
-                Design asset links
-              </h3>
-              <ul class="govuk-list govuk-list--bullet">
-                <li>
-                  <a href="https://docs.google.com/document/d/1bTOWDopyqZX4v8Bmq3ekBWkzPwhCtAUzxZNob_gyZHQ/edit" class="govuk-link" target="_blank">Decision log</a>
-                </li>
-                <li>
-                  <a href="https://lucid.app/lucidspark/79ecc98c-e3ee-419d-8ddb-bc3b7865f568/edit#" class="govuk-link" target="_blank">Lucid board</a>
-                </li>
-              </ul>
-              <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
-                Prototype links
-              </h3>
-              <ul class="govuk-list govuk-list--bullet">
-                <li>
-                  <a href="v4/directory/child-search" class="govuk-link">Sprint 3 prototype</a>
-                </li>
-              </ul>
-
-
-              <h3 class='govuk-heading-m govuk-!-margin-bottom-1'>
-                What we learned this sprint
-               </h3>
-               <p class="govuk-body">
-                 Biggest 'learn' came from a Co-design session around 'Risks and Warnings'. Original thinking for this section of the design was around the ability to forewarn key users of situations where more care may need to be taken, however, it was discovered during the co
-               <p>
-                 <p class="govuk-body">
-                   Conclusion was to remove the 'risks and warnings' reference from the service, a side but key outcome of the conversation was to ensure that the service must remain 'Agnostic' so as to remove any bias to the key user group about any situation around a child.
-                 <p>
-
-              <!--content ends-->
-            </div>
-
-        </div>
-        <!--section ends here-->
-        <div class="govuk-accordion__section ">
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-
-                Sprint 2
-
-              </span>
-            </h2>
-          </div>
-          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-            <!--content starts-->
-            <h2 class="govuk-heading-l">
-              Sprint 2
-            </h2>
-            <h3 class='govuk-heading-m govuk-!-margin-bottom-1'>
-              Sprint goals
-            </h3>
-            <ul class='govuk-list govuk-list--bullet'>
-              <li>
-               Use content established in Sprint 1 to refine the child data records, ready for usability UR
-               <strong class='govuk-tag govuk-tag--pink'>
-                Ongoing
-              </strong>
-              </li>
-              <li>
+            </li>
+            <li>
                 Use design work carried out in Sprint 1 to refine timeline designs, ready for usability UR
                 <strong class='govuk-tag govuk-tag--pink'>
-                  Ongoing
+                    Ongoing
                 </strong>
-              </li>
-              <li>
+            </li>
+            <li>
                 Baseline for search and filter facilities within the design
                 <strong class='govuk-tag govuk-tag--pink'>
-                  Ongoing
+                    Ongoing
                 </strong>
-              </li>
+            </li>
+
+        </ul>
+
+
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+            Design asset links
+        </h3>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+                <a href="https://lucid.app/lucidspark/3939ae4b-939a-48f1-b478-e3c368c4c1dc/edit?invitationId=inv_3f65416f-f104-48c9-96ee-94e82b6b8a35#"
+                   class="govuk-link" target="_blank">Lucid board</a>
+            </li>
+        </ul>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+            Prototype links
+        </h3>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+                <a href="v6/directory/child-search" class="govuk-link">Sprint 5 prototype</a>
+            </li>
+        </ul>
+        {% endset %}
+        {% set Sprint4 %}
+            <h2 class="govuk-heading-l">
+                Sprint 4
+            </h2>
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+                Sprint goals
+            </h3>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>
+                    Establish design principles ahead of UR feedback in future sprints
+                    <strong class="govuk-tag govuk-tag--green">
+                        Goal achieved
+                    </strong>
+                </li>
+                <li>
+                    Set up a design history within the prototype - <a href="design-history/directory/directory-index"
+                                                                      class="govuk-link" target="_blank">Design
+                        history</a>
+                    <strong class="govuk-tag govuk-tag--green">
+                        Goal achieved
+                    </strong>
+                </li>
+                <li>
+                    Establish and agree the prototypes required for round 1 of user research
+                    <strong class="govuk-tag govuk-tag--green">
+                        Goal achieved
+                    </strong>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li><a href="v5/directory/child-search-ur" class="govuk-link">Search page</a></li>
+                        <li><a href="v5/directory/verb-child-record-detail-ur" class="govuk-link">Child data - timeline
+                                only</a></li>
+                        <li>
+                            <a href="https://docs.google.com/presentation/d/1Up4lpxfBaKFx_kvPMDRu5CQZkhnuNTlcBSB4mI3Awbo/edit#slide=id.g1173ae2da17_0_0"
+                               target="_blank" class="govuk-link">UR Images within presentation</a></li>
+                    </ul>
+                </li>
 
             </ul>
 
 
-              <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
                 Design asset links
-              </h3>
-              <ul class="govuk-list govuk-list--bullet">
+            </h3>
+            <ul class="govuk-list govuk-list--bullet">
                 <li>
-                  <a href="https://lucid.app/lucidspark/3939ae4b-939a-48f1-b478-e3c368c4c1dc/edit?invitationId=inv_3f65416f-f104-48c9-96ee-94e82b6b8a35#" class="govuk-link" target="_blank">Lucid board</a>
+                    <a href="https://lucid.app/lucidspark/3a3b310a-f2d9-4a64-87bb-6fb2f7e04cda/edit?invitationId=inv_c20ce1c6-ce49-4474-bbe9-92f1cd534e7c#"
+                       class="govuk-link" target="_blank">Lucid board</a>
                 </li>
-              </ul>
-              <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+            </ul>
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
                 Prototype links
-              </h3>
-              <ul class="govuk-list govuk-list--bullet">
+            </h3>
+            <ul class="govuk-list govuk-list--bullet">
                 <li>
-                  <a href="v3/directory/child-search" class="govuk-link">Sprint 2 prototype</a>
+                    <a href="v5/directory/child-search" class="govuk-link">Sprint 4 prototype</a>
                 </li>
-              </ul>
+            </ul>
 
-            <!--content ends-->
-          </div>
-        </div>
-        <div class="govuk-accordion__section ">
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
 
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+                What we learned this sprint
+            </h3>
+            <p class="govuk-body">
+                Biggest 'learn' came from a Co-design session around 'Risks and Warnings'. Original thinking for this
+                section of the design was around the ability to forewarn key users of situations where more care may
+                need to be taken, however, it was discovered during the co
+            </p><p>
+        </p><p class="govuk-body">
+            Conclusion was to remove the 'risks and warnings' reference from the service, a side but key outcome of the
+            conversation was to ensure that the service must remain 'Agnostic' so as to remove any bias to the key user
+            group about any situation around a child.
+        </p>
+        {% endset %}
+        {% set Sprint3 %}
+        <h2 class="govuk-heading-l">
+            Sprint 3
+        </h2>
+        <h3 class='govuk-heading-m govuk-!-margin-bottom-1'>
+            Sprint goals
+        </h3>
+        <ul class='govuk-list govuk-list--bullet'>
+            <li>
+                Use content established in Sprint 1 to refine the child data records, ready for
+                usability UR
+                <strong class='govuk-tag govuk-tag--green'>
+                    Goal achieved
+                </strong>
+            </li>
+            <li>
+                Use design work carried out in Sprint 1 to refine timeline designs, ready for usability
+                UR
+                <strong class='govuk-tag govuk-tag--green'>
+                    Goal achieved
+                </strong>
+            </li>
+            <li>
+                Agree new terminology for 'Risks and Warnings' section
+                <strong class='govuk-tag govuk-tag--green'>
+                    Goal achieved
+                </strong>
+            </li>
+
+        </ul>
+
+
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+            Design asset links
+        </h3>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+                <a href="https://docs.google.com/document/d/1bTOWDopyqZX4v8Bmq3ekBWkzPwhCtAUzxZNob_gyZHQ/edit"
+                   class="govuk-link" target="_blank">Decision log</a>
+            </li>
+            <li>
+                <a href="https://lucid.app/lucidspark/79ecc98c-e3ee-419d-8ddb-bc3b7865f568/edit#"
+                   class="govuk-link" target="_blank">Lucid board</a>
+            </li>
+        </ul>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+            Prototype links
+        </h3>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+                <a href="v4/directory/child-search" class="govuk-link">Sprint 3 prototype</a>
+            </li>
+        </ul>
+
+
+        <h3 class='govuk-heading-m govuk-!-margin-bottom-1'>
+            What we learned this sprint
+        </h3>
+        <p class="govuk-body">
+            Biggest 'learn' came from a Co-design session around 'Risks and Warnings'. Original thinking
+            for this section of the design was around the ability to forewarn key users of situations
+            where more care may need to be taken, however, it was discovered during the co
+        <p>
+        <p class="govuk-body">
+            Conclusion was to remove the 'risks and warnings' reference from the service, a side but key
+            outcome of the conversation was to ensure that the service must remain 'Agnostic' so as to
+            remove any bias to the key user group about any situation around a child.
+        <p>
+            {% endset %}
+            {% set Sprint2 %}
+        <h2 class="govuk-heading-l">
+            Sprint 2
+        </h2>
+        <h3 class='govuk-heading-m govuk-!-margin-bottom-1'>
+            Sprint goals
+        </h3>
+        <ul class='govuk-list govuk-list--bullet'>
+            <li>
+                Use content established in Sprint 1 to refine the child data records, ready for usability UR
+                <strong class='govuk-tag govuk-tag--pink'>
+                    Ongoing
+                </strong>
+            </li>
+            <li>
+                Use design work carried out in Sprint 1 to refine timeline designs, ready for usability UR
+                <strong class='govuk-tag govuk-tag--pink'>
+                    Ongoing
+                </strong>
+            </li>
+            <li>
+                Baseline for search and filter facilities within the design
+                <strong class='govuk-tag govuk-tag--pink'>
+                    Ongoing
+                </strong>
+            </li>
+
+        </ul>
+
+
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+            Design asset links
+        </h3>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+                <a href="https://lucid.app/lucidspark/3939ae4b-939a-48f1-b478-e3c368c4c1dc/edit?invitationId=inv_3f65416f-f104-48c9-96ee-94e82b6b8a35#"
+                   class="govuk-link" target="_blank">Lucid board</a>
+            </li>
+        </ul>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+            Prototype links
+        </h3>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+                <a href="v3/directory/child-search" class="govuk-link">Sprint 2 prototype</a>
+            </li>
+        </ul>
+        {% endset %}
+        {% set Sprint1 %}
+            <h2 class="govuk-heading-l">
                 Sprint 1
-
-              </span>
-            </h2>
-          </div>
-          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-            <!--content starts-->
-            <h2 class="govuk-heading-l">
-              Sprint 1
             </h2>
             <h3 class='govuk-heading-m govuk-!-margin-bottom-1'>
-              Sprint goals
+                Sprint goals
             </h3>
             <ul class='govuk-list govuk-list--bullet'>
-              <li>
-               Establish a baseline for the type of data to be viewed on each child record <strong class='govuk-tag govuk-tag--green'>
-                Goal achieved
-              </strong>
-              </li>
-              <li>
-                Establish a baseline for the type of data to be viewed on each professional record <strong class='govuk-tag govuk-tag--orange'>
-                  Goal partially achieved
-                </strong>
-              </li>
-              <li>
-                Baseline for search and filter facilities within the design <strong class='govuk-tag govuk-tag--orange'>
-                  Goal partially achieved
-                </strong>
-              </li>
+                <li>
+                    Establish a baseline for the type of data to be viewed on each child record <strong
+                            class='govuk-tag govuk-tag--green'>
+                        Goal achieved
+                    </strong>
+                </li>
+                <li>
+                    Establish a baseline for the type of data to be viewed on each professional record
+                    <strong class='govuk-tag govuk-tag--orange'>
+                        Goal partially achieved
+                    </strong>
+                </li>
+                <li>
+                    Baseline for search and filter facilities within the design <strong
+                            class='govuk-tag govuk-tag--orange'>
+                        Goal partially achieved
+                    </strong>
+                </li>
 
             </ul>
             <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
-              What we learned during this sprint
+                What we learned during this sprint
             </h3>
             <p class="govuk-body">
-              Original thinking included botha child record as well as a professional record, during Sprint 1 it was established through workshops and conversations with stakeholders that the user only needed a child level record but with contacts details on professionals displayed within the timeline. This approach drove the content that was to be displayed within the timeline.
+                Original thinking included botha child record as well as a professional record, during
+                Sprint 1 it was established through workshops and conversations with stakeholders that the
+                user only needed a child level record but with contacts details on professionals displayed
+                within the timeline. This approach drove the content that was to be displayed within the
+                timeline.
             <p>
-              <p class="govuk-body">
-               While working on the Child record search screen it was decided to make this as open as possible at this stage. This will form part of the usability testing user research, where we will discover how users want to find the relevant records.
-              <p>
-                <p class="govuk-body">
-                  Filters on the timeline were addressed, initial ideas are to include basic high level filters and then to further pursue this during UR usability testing.
-                <p>
-             <p class="govuk-body">
-               It was established that the data being fed into the service may change between local authorities, especially when looking at the timeline and the taxonomy used by each Family Hub/LA etc. With this in mind consideration needs to be made when designing how the timeline displays data, we need to ensure that we are allowing for varying levels of data whilst maintaining an eye on the data being useful and actionable by the user groups.
-             <p>
+            <p class="govuk-body">
+                While working on the Child record search screen it was decided to make this as open as
+                possible at this stage. This will form part of the usability testing user research, where we
+                will discover how users want to find the relevant records.
+            <p>
+            <p class="govuk-body">
+                Filters on the timeline were addressed, initial ideas are to include basic high level
+                filters and then to further pursue this during UR usability testing.
+            <p>
+            <p class="govuk-body">
+                It was established that the data being fed into the service may change between local
+                authorities, especially when looking at the timeline and the taxonomy used by each Family
+                Hub/LA etc. With this in mind consideration needs to be made when designing how the timeline
+                displays data, we need to ensure that we are allowing for varying levels of data whilst
+                maintaining an eye on the data being useful and actionable by the user groups.
+            <p>
 
             <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
-              Prototype links
+                Prototype links
             </h3>
             <ul class="govuk-list govuk-list--bullet">
-              <li>
-                <a href="v2/directory/index" class="govuk-link">Sprint 1 - very high level flow</a>
-              </li>
+                <li>
+                    <a href="v2/directory/index" class="govuk-link">Sprint 1 - very high level flow</a>
+                </li>
             </ul>
-
-            <!--content ends-->
-          </div>
-        </div>
-        <div class="govuk-accordion__section ">
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-
+        {% endset %}
+        {% set Sprint0 %}
+            <h2 class="govuk-heading-l">
                 Sprint 0
-
-              </span>
             </h2>
-          </div>
-          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-            <!--content starts-->
-            <h2 class="govuk-heading-l">
-              Sprint 0
-            </h2>
-
-
-
             <h3 class='govuk-heading-m govuk-!-margin-bottom-1'>
-              Sprint goals
+                Sprint goals
             </h3>
             <ul class='govuk-list govuk-list--bullet'>
-              <li>
-                to gain a better understanding of pain points and requirements
-                <strong class='govuk-tag govuk-tag--green'>
-                  Goal achieved
-                </strong>
-              </li>
-              <li>
-                use this information to build out a number of work flows of varying degree of complexity
-                <strong class='govuk-tag govuk-tag--green'>
-                  Goal achieved
-                </strong>
-              </li>
+                <li>
+                    to gain a better understanding of pain points and requirements
+                    <strong class='govuk-tag govuk-tag--green'>
+                        Goal achieved
+                    </strong>
+                </li>
+                <li>
+                    use this information to build out a number of work flows of varying degree of complexity
+                    <strong class='govuk-tag govuk-tag--green'>
+                        Goal achieved
+                    </strong>
+                </li>
             </ul>
             <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
-              What we learned during this sprint
+                What we learned during this sprint
             </h3>
             <p class="govuk-body">
-              A <a href="https://lucid.app/lucidspark/c2e3ac31-80b6-4448-b327-bb5b8e7fecc2/edit?beaconFlowId=9C68C262C560A7E4&invitationId=inv_069741d1-9c08-4163-a0ba-ad3bd7cc123a#" class="govuk-link" target="_blank">high level flow</a> has been established, this will form the basis of our various iterations, both for searching for child records as well as professional records.
+                A
+                <a href="https://lucid.app/lucidspark/c2e3ac31-80b6-4448-b327-bb5b8e7fecc2/edit?beaconFlowId=9C68C262C560A7E4&invitationId=inv_069741d1-9c08-4163-a0ba-ad3bd7cc123a#"
+                   class="govuk-link" target="_blank">high level flow</a> has been established, this will
+                form the basis of our various iterations, both for searching for child records as well as
+                professional records.
             <p>
-              <p class="govuk-body">
-                The term 'family' has been deemed out of scope as it is currently difficult too define the makeup of a family. Instead, we are focussing efforts around the child's record and their touchpoints with professionals.
-              <p>
-                <p class="govuk-body">
-                  While the project aim is for a nationwide service, cross LA address tracking is considered a post MVS action at present.
-                <p>
+            <p class="govuk-body">
+                The term 'family' has been deemed out of scope as it is currently difficult too define the
+                makeup of a family. Instead, we are focussing efforts around the child's record and their
+                touchpoints with professionals.
+            <p>
+            <p class="govuk-body">
+                While the project aim is for a nationwide service, cross LA address tracking is considered a
+                post MVS action at present.
+            <p>
             <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
-              Design asset links
+                Design asset links
             </h3>
             <ul class="govuk-list govuk-list--bullet">
-              <li>
-                <a href="https://lucid.app/lucidspark/c2e3ac31-80b6-4448-b327-bb5b8e7fecc2/edit?beaconFlowId=9C68C262C560A7E4&invitationId=inv_069741d1-9c08-4163-a0ba-ad3bd7cc123a#" class="govuk-link" target="_blank">Lucid board</a>
-              </li>
+                <li>
+                    <a href="https://lucid.app/lucidspark/c2e3ac31-80b6-4448-b327-bb5b8e7fecc2/edit?beaconFlowId=9C68C262C560A7E4&invitationId=inv_069741d1-9c08-4163-a0ba-ad3bd7cc123a#"
+                       class="govuk-link" target="_blank">Lucid board</a>
+                </li>
             </ul>
             <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
-              Prototype links
+                Prototype links
             </h3>
             <ul class="govuk-list govuk-list--bullet">
-              <li>
-                <a href="v1/directory/index" class="govuk-link">Sprint 0 - very high level flow</a>
-              </li>
+                <li>
+                    <a href="v1/directory/index" class="govuk-link">Sprint 0 - very high level flow</a>
+                </li>
             </ul>
 
-            <!--content ends-->
-          </div>
-        </div>
+        {% endset %}
 
+        {{ govukAccordion({
+            id: "accordion-default",
+            items: [
+                {
+                    heading: {
+                    text: "Sprint 5"
+                },
+                    content: {
+                    html: Sprint5
+                }
+                },
+                {
+                    heading: {
+                    text: "Sprint 4"
+                },
+                    content: {
+                    html: Sprint4
+                }
+                },
+                {
+                    heading: {
+                    text: "Sprint 3"
+                },
+                    content: {
+                    html: Sprint3
+                }
+                },
+                {
+                    heading: {
+                    text: "Sprint 2"
+                },
+                    content: {
+                    html: Sprint2
+                }
+                },
+                {
+                    heading: {
+                    text: "Sprint 1"
+                },
+                    content: {
+                    html: Sprint1
+                }
+                },
+                {
+                    heading: {
+                    text: "Sprint 0"
+                },
+                    content: {
+                    html: Sprint0
+                }
+                }
+            ]
+        }) }}
 
-      </div>
-
-
-
-
-    </div>
-  </div>
-
-{% endblock %}
+        {% endblock %}

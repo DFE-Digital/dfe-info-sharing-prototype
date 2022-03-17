@@ -10,3 +10,4 @@ lib/extensions/_extensions.scss
 .port.tmp
 node_modules/*
 .tmuxp.*
+.idea
