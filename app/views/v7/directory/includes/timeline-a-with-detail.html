@@ -268,6 +268,135 @@
                     </div>
                 </div>
 
+                <div class="moj-timeline govuk-!-margin-bottom-6">
+                    <div class="moj-timeline__item">
+                        <strong class="govuk-tag ">
+                            Health - Home visit
+                        </strong>
+                        <div class="moj-timeline__header">
+                            <h2 class="moj-timeline__title">Second visit</h2>
+
+{#                            <p class="moj-timeline__byline">- High hospital</p>#}
+
+                        </div>
+
+                        <p class="moj-timeline__date">
+                            <time datetime="2015-02-20T10:45:00.000Z">20 Feb 2015</time>
+                        </p>
+
+                        <div class="moj-timeline__description">
+                            <p>
+                                Phone: 01285 4445536 (extension 345)<br>
+                                Email: <a href="#" class="govuk-link">barry.wilson@h.hospital.co.uk</a>
+                            </p>
+
+                            {{ govukDetails({
+                                summaryText: "Further details",
+                                classes: "govuk-!-margin-bottom-0",
+                                html: govukSummaryList({
+                                    rows: [
+                                        {
+                                            key: {
+                                            text: "Attendee"
+                                        },
+                                            value: {
+                                            text: "Barry Wilson"
+                                        }
+                                        },
+                                        {
+                                            key: {
+                                            text: "Details"
+                                        },
+                                            value: {
+                                            text: "Day 10 home visit"
+                                        }
+                                        },
+                                        {
+                                            key: {
+                                            text: "Observations"
+                                        },
+                                            value: {
+                                            text: "Child continues to demonstrate difficulty latching"
+                                        }
+                                        },
+                                        {
+                                            key: {
+                                            text: "Outcomes"
+                                        },
+                                            value: {
+                                            text: "Referred to local support to assist with breastfeeding and/or alternative paths"
+                                        }
+                                        }
+                                    ]
+                                })
+                            }) }}
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="moj-timeline govuk-!-margin-bottom-6">
+                    <div class="moj-timeline__item">
+                        <strong class="govuk-tag ">
+                            Health - Home visit
+                        </strong>
+                        <div class="moj-timeline__header">
+                            <h2 class="moj-timeline__title">Initial visit</h2>
+
+{#                            <p class="moj-timeline__byline">- High hospital</p>#}
+
+                        </div>
+
+                        <p class="moj-timeline__date">
+                            <time datetime="2015-02-13T10:45:00.000Z">13 Feb 2015</time>
+                        </p>
+
+                        <div class="moj-timeline__description">
+                            <p>
+                                Phone: 01285 4445536 (extension 345)<br>
+                                Email: <a href="#" class="govuk-link">barry.wilson@h.hospital.co.uk</a>
+                            </p>
+
+                            {{ govukDetails({
+                                summaryText: "Further details",
+                                classes: "govuk-!-margin-bottom-0",
+                                html: govukSummaryList({
+                                    rows: [
+                                        {
+                                            key: {
+                                            text: "Attendee"
+                                        },
+                                            value: {
+                                            text: "Barry Wilson"
+                                        }
+                                        },
+                                        {
+                                            key: {
+                                            text: "Details"
+                                        },
+                                            value: {
+                                            text: "Day 3 home visit"
+                                        }
+                                        },
+                                        {
+                                            key: {
+                                            text: "Observations"
+                                        },
+                                            value: {
+                                            text: "Child has difficulty latching"
+                                        }
+                                        }
+                                    ]
+                                })
+                            }) }}
+                        </div>
+
+                    </div>
+
+                </div>
+
+
             </div>
 
         </div>
