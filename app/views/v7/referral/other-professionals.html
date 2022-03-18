@@ -18,11 +18,23 @@
   
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Your details</h2>
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Other professionals</h2>
+   {{ govukInsetText({
+    text: "You do not need to tell us your details here. Please give details of the professionals involved with the child and family."
+  }) }}
 
-  <form method="post">
+  <form action="other-significant-adults" method="post">
 
-  {{ govukInput({
+    {% call govukFieldset({
+      classes: 'moj-add-another__item',
+      legend: {
+
+        classes: 'moj-add-another__title govuk-fieldset__legend--m',
+        isPageHeading: false
+      }
+    }) %}
+
+    {{ govukInput({
       id: 'job-title',
       name: 'job-title',
       label: {
@@ -117,11 +129,31 @@
       }
     }) }}
 
+    {{ govukTextarea({
+      name: "contribution",
+      id: "contribution",
+      autocomplete: "contribution",
+      classes: 'govuk-input--width-30',
+      label: {
+        text: "How has this professional contributed to the request?",
+        classes: 'govuk-!-font-weight-bold'
+      }
+    }) }}
 
+    {% endcall %}
+
+    <div class="moj-button-action">
       {{ govukButton({
-        text: 'Continue',
-        href: 'task-list-5'
+        text: 'Add another professional',
+        classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4',
+        type: 'button'
       }) }}
+    </div>
+
+    {{ govukButton({
+      text: 'Continue',
+      href: "mash"
+    }) }}
 
   </form>
 

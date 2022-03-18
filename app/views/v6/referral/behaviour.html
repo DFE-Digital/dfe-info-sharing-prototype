@@ -1,0 +1,70 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+
+<div data-module="moj-add-another">
+
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">When did Barry start exhibiting the behaviour issues?</h2>
+  <form method="post">
+
+
+    {{ govukDateInput({
+      id: "behaviour-date",
+      hint: {},
+      items: [
+        {
+          id: "behaviour[0][day]",
+          name: "behaviour[0][day]",
+          label: "Day",
+          classes: "govuk-input--width-2",
+          attributes: {
+            'data-name': 'behaviour[%index%][day]',
+            'data-id': 'behaviour[%index%][day]'
+          }
+        },
+        {
+          id: "behaviour[0][month]",
+          name: "behaviour[0][month]",
+          label: "Month",
+          classes: "govuk-input--width-2",
+          attributes: {
+            'data-name': 'behaviour[%index%][month]',
+            'data-id': 'behaviour[%index%][month]'
+          }
+        },
+        {
+          id: "behaviour[0][year]",
+          name: "behaviour[0][year]",
+          label: "Year",
+          classes: "govuk-input--width-2",
+          attributes: {
+            'data-name': 'behaviour[%index%][year]',
+            'data-id': 'behaviour[%index%][year]'
+          }
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: 'Continue',
+      href: 'behaviour-2'
+    }) }}
+
+  </form>
+
+</div>
+  </div>
+
+{% endblock %}

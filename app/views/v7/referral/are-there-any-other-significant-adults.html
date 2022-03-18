@@ -13,19 +13,25 @@ Info sharing - Referral service
 
 {% block content %}
 
-
+  
 <div data-module="moj-add-another">
 
-  <form action="mash" method="post">
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Other significant people</h2>
+  
+   {{ govukInsetText({
+    text: "This should not include relationships with professionals"
+  }) }}
+
+  <form action="are-there-any-other-significant-adults" method="post">
 
   {{ govukRadios({
-      idPrefix: "mash",
-      name: "mash",
+      idPrefix: "significantadults",
+      name: "significantadults",
       fieldset: {
         legend: {
-          text: "Has a Multi Agency Safeguarding Hub (MASH) assessment been carried out?",
+          text: "Are there any other significant adults related to this request who don't live in the house?",
           isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
+          classes: "govuk-fieldset__legend--s"
         }
       },
       hint: {},

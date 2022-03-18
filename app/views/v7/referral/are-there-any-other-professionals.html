@@ -13,19 +13,22 @@ Info sharing - Referral service
 
 {% block content %}
 
-
+  
 <div data-module="moj-add-another">
 
-  <form action="mash" method="post">
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Other professionals</h2>
+  
+
+  <form action="are-there-any-other-professionals" method="post">
 
   {{ govukRadios({
-      idPrefix: "mash",
-      name: "mash",
+      idPrefix: "professionals",
+      name: "professionals",
       fieldset: {
         legend: {
-          text: "Has a Multi Agency Safeguarding Hub (MASH) assessment been carried out?",
+          text: "Are there any other professionals working with this child or family excluding yourself?",
           isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
+          classes: "govuk-fieldset__legend--s"
         }
       },
       hint: {},

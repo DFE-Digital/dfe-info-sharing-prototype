@@ -14,18 +14,26 @@ Info sharing - Referral service
 {% block content %}
 
 
-<div data-module="moj-add-another">
 
-  <form action="mash" method="post">
+{{ govukBackLink({
+    text: "Back",
+    href: "/v5/referral"
+  }) }}
+
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Safety of the child</h2>
+
+  <p>It is your responsibility to ensure the immediate safety of the child you are requesting help and support for. If you are concerned about their safety, you must dial 999 to report it to the police.</p>
+
+  <form action="immediate-danger" method="post">
 
   {{ govukRadios({
-      idPrefix: "mash",
-      name: "mash",
+      idPrefix: "immediatedanger",
+      name: "immediatedanger",
       fieldset: {
         legend: {
-          text: "Has a Multi Agency Safeguarding Hub (MASH) assessment been carried out?",
+          text: "Is the child in any immediate danger?",
           isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
+          classes: "govuk-fieldset__legend--s"
         }
       },
       hint: {},
@@ -46,8 +54,5 @@ Info sharing - Referral service
     }) }}
 
   </form>
-
-</div>
-  </div>
 
 {% endblock %}

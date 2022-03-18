@@ -5,10 +5,12 @@
 {%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
 {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Info sharing - Referral service
+  Info sharing - Referral service
 {% endblock %}
 
 {% block content %}
@@ -16,9 +18,90 @@ Info sharing - Referral service
 
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">About the child</h2>
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Adults living in the house</h2>
 
   <form method="post">
+
+    {% call govukFieldset({
+      classes: 'moj-add-another__item',
+      legend: {
+        text: 'Family members and adults living in the house',
+        classes: 'moj-add-another__title govuk-fieldset__legend--m',
+        isPageHeading: false
+      }
+    }) %}
+
+    {{ govukRadios({
+      idPrefix: "relationship",
+      name: "relationship",
+      fieldset: {
+        legend: {
+          text: "Relationship to the child",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {},
+      items: [
+        {
+          value: "Mother",
+          text: "Mother"
+        },
+        {
+          value: "Father",
+          text: "Father"
+        },
+        {
+          value: "Guardian",
+          text: "Legal guardian"
+        },
+        {
+          value: "Sibling",
+          text: "Sibling"
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "other",
+          text: "Other"
+        }
+      ]
+    }) }}
+
+    {{ govukRadios({
+      idPrefix: "responsibilities",
+      name: "responsibilities",
+      fieldset: {
+        legend: {
+          text: "Parental responsibilities",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {},
+      items: [
+        {
+          value: "Full-time",
+          text: "Full-time"
+        },
+        {
+          value: "Part-time",
+          text: "Part-time"
+        },
+        {
+          value: "None",
+          text: "None"
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "Unknown",
+          text: "Unknown"
+        }
+      ]
+    }) }}
 
     {{ govukInput({
       id: 'person[0][first_name]',
@@ -124,44 +207,29 @@ Info sharing - Referral service
       ]
     }) }}
 
+    {{ govukInput({
+      id: 'contact-number',
+      name: 'contact-number',
+      label: {
+        html: 'Contact number',
+        classes: 'govuk-!-font-weight-bold'
+      },
+      classes: 'govuk-input--width-10',
+      attributes: {
+        'data-name': 'contact-number',
+        'data-id': 'contact-number'
+      }
+    }) }}
+
     {{ govukTextarea({
       name: "address",
       id: "address",
       autocomplete: "street-address",
       classes: 'govuk-input--width-20',
       label: {
-        text: "Primary address",
+        text: "Address",
         classes: 'govuk-!-font-weight-bold'
       }
-    }) }}
-
-{{ govukCheckboxes({
-      idPrefix: "disability",
-      name: "disability",
-      fieldset: {
-        legend: {
-          text: "Disabilities",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      items: [
-        {
-          value: "Mental impairment",
-          text: "Mental impairment"
-        },
-        {
-          value: "Physical impairment",
-          text: "Physical impairment"
-        },
-        {
-          divider: "or"
-        },
-        {
-          value: "None of the above",
-          text: "None of the above"
-        }
-      ]
     }) }}
 
     {{ govukRadios({
@@ -205,40 +273,23 @@ Info sharing - Referral service
       ]
     }) }}
 
-    {{ govukRadios({
-      idPrefix: "languageneeds",
-      name: "languageneeds",
-      fieldset: {
-        legend: {
-          text: "Does this child need a translator?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      items: [
-        {
-          value: "Yes",
-          text: "Yes"
-        },
-        {
-          value: "No",
-          text: "No"
-        },
-        {
-          divider: "or"
-        },
-        {
-          value: "skip",
-          text: "Unknown"
-        }
-      ]
-    }) }}
 
-    {{ govukButton({
-      text: 'Continue',
-      href: 'task-list-2'
-    }) }}
+    {% endcall %}
 
+    <div class="moj-button-action">
+      {{ govukButton({
+        text: 'Add another adult',
+        classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4',
+        type: 'button'
+      }) }}
+    </div>
+
+    <div class="moj-button-action">
+      {{ govukButton({
+        text: 'Continue',
+        href: 'are-there-any-other-significant-adults'
+      }) }}
+    </div>
 
   </form>
 

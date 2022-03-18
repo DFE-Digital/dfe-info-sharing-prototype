@@ -13,19 +13,19 @@ Info sharing - Referral service
 
 {% block content %}
 
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Do you have consent from the parent or guardian of the child?</h2>
 
-<div data-module="moj-add-another">
+   <p>You must have consent from the parent or guardian before continuing.</p>
 
-  <form action="mash" method="post">
+  <form action="consent" method="post">
 
   {{ govukRadios({
-      idPrefix: "mash",
-      name: "mash",
+      idPrefix: "consent",
+      name: "consent",
       fieldset: {
         legend: {
-          text: "Has a Multi Agency Safeguarding Hub (MASH) assessment been carried out?",
           isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
+          classes: "govuk-fieldset__legend--s"
         }
       },
       hint: {},
@@ -46,8 +46,5 @@ Info sharing - Referral service
     }) }}
 
   </form>
-
-</div>
-  </div>
 
 {% endblock %}

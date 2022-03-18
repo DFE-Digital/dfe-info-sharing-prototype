@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const verNum = 6;
+const verNum = 7;
 
 //* Directory routes //
 //* Directory routes END //
@@ -21,22 +21,11 @@ router.post(`/v${verNum}/referral/consent`, function (req, res) {
   let answer = req.session.data['consent'];
 
   if (answer === 'Yes') {
-    res.redirect(`/v${verNum}/referral/task-list`);
+    res.redirect(`/v${verNum}/referral/mash`);
   } else {
     res.redirect(`/v${verNum}/blocked`);
   }
 });
-
-router.post(`/v${verNum}/referral/are-there-any-other-significant-adults`, function (req, res) {
-  let answer = req.session.data['significantadults'];
-
-  if (answer === 'Yes') {
-    res.redirect(`/v${verNum}/referral/other-significant-adults`);
-  } else {
-    res.redirect(`/v${verNum}/referral/task-list-4`);
-  }
-});
-
 
 router.post(`/v${verNum}/referral/mash`, function (req, res) {
   let answer = req.session.data['mash'];
@@ -44,20 +33,19 @@ router.post(`/v${verNum}/referral/mash`, function (req, res) {
   if (answer === 'Yes') {
     res.redirect(`/v${verNum}/referral/mash-assessment`);
   } else {
-    res.redirect(`/v${verNum}/referral/barry-white-task-list-2`);
+    res.redirect(`/v${verNum}/referral/ehcp`);
   }
 });
 
-router.post(`/v${verNum}/referral/behaviour-5`, function (req, res) {
-  let answer = req.session.data['behaviourprevious'];
+router.post(`/v${verNum}/referral/ehcp`, function (req, res) {
+  let answer = req.session.data['ehcp'];
 
   if (answer === 'Yes') {
-    res.redirect(`/v${verNum}/referral/behaviour-6`);
+    res.redirect(`/v${verNum}/referral/ehcp-details`);
   } else {
-    res.redirect(`/v${verNum}/referral/barry-white-task-list-4`);
+    res.redirect(`/v${verNum}/referral/referral-details-child-educational`);
   }
 });
-
 //* Referral routes END //
 
 //*routes to be placed above this line//

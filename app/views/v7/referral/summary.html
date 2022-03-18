@@ -1,0 +1,332 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+
+<div data-module="moj-add-another">
+
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Summary</h2>
+
+  <form action="mash" method="post">
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+<h3 class="govuk-heading-m moj-add-another__heading" tabindex="-1">Section</h3>
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Example"
+      },
+      value: {
+        text: "Sarah Philips"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Example"
+      },
+      value: {
+        text: "5 January 1978"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Example"
+      },
+      value: {
+        html: "72 Guild Street<br>London<br>SE23 6FH"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Example"
+      },
+      value: {
+        html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.philips@example.com</p>'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+<h3 class="govuk-heading-m moj-add-another__heading" tabindex="-1">Section</h3>
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Example"
+      },
+      value: {
+        text: "Sarah Philips"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Example"
+      },
+      value: {
+        text: "5 January 1978"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Example"
+      },
+      value: {
+        html: "72 Guild Street<br>London<br>SE23 6FH"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Example"
+      },
+      value: {
+        html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.philips@example.com</p>'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+<h3 class="govuk-heading-m moj-add-another__heading" tabindex="-1">Section</h3>
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Example"
+      },
+      value: {
+        text: "Sarah Philips"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Example"
+      },
+      value: {
+        text: "5 January 1978"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Example"
+      },
+      value: {
+        html: "72 Guild Street<br>London<br>SE23 6FH"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Example"
+      },
+      value: {
+        html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.philips@example.com</p>'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+<h3 class="govuk-heading-m moj-add-another__heading" tabindex="-1">Section</h3>
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Example"
+      },
+      value: {
+        text: "Sarah Philips"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Example"
+      },
+      value: {
+        text: "5 January 1978"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Example"
+      },
+      value: {
+        html: "72 Guild Street<br>London<br>SE23 6FH"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Example"
+      },
+      value: {
+        html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.philips@example.com</p>'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+
+    {{ govukButton({
+      text: 'Continue',
+      href: 'confirm'
+    }) }}
+
+  </form>
+
+</div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,80 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+
+<div data-module="moj-add-another">
+
+  <h2 class="govuk-heading-l" tabindex="-1">Concern areas</h2>
+
+  <form method="post">
+    {{ govukCheckboxes({
+      idPrefix: "concernareas",
+      name: "concernareas",
+      fieldset: {
+        legend: {
+          text: "Select the areas where Barry has concerns",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "Health",
+          text: "Health"
+        },
+        {
+          value: "Behaviour",
+          text: "Behaviour"
+        },
+        {
+          value: "Childcare, education, training and work",
+          text: "Childcare, education, training and work"
+        },
+        {
+          value: "Support for children with Special Education Needs and Disability (SEND)",
+          text: "Support for children with Special Education Needs and Disability (SEND)"
+        },
+        {
+          value: "Family Help and Support for Vulnerable Children and Families",
+          text: "Family Help and Support for Vulnerable Children and Families"
+
+        },
+        {
+          value: "Support for Looked After Children",
+          text: "Support for Looked After Children"
+        },
+        {
+          value: "Food provision",
+          text: "Food provision"
+        },
+        {
+          value: "Support from the Justice system",
+          text: "Support from the Justice system"
+        }
+      ]
+    }) }}
+
+
+    {{ govukButton({
+      text: 'Continue',
+      href: 'barry-white-task-list-3'
+    }) }}
+
+  </form>
+
+</div>
+  </div>
+
+{% endblock %}
