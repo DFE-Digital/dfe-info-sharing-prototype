@@ -21,7 +21,7 @@ router.post(`/v${verNum}/referral/consent`, function (req, res) {
   let answer = req.session.data['consent'];
 
   if (answer === 'Yes') {
-    res.redirect(`/v${verNum}/referral/task-list`);
+    res.redirect(`/v${verNum}/referral/locality`);
   } else {
     res.redirect(`/v${verNum}/blocked`);
   }
