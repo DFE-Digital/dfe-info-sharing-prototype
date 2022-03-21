@@ -54,7 +54,7 @@ router.post(`/v${verNum}/referral/behaviour-5`, function (req, res) {
   if (answer === 'Yes') {
     res.redirect(`/v${verNum}/referral/behaviour-6`);
   } else {
-    res.redirect(`/v${verNum}/referral/barry-white-task-list-4`);
+    res.redirect(`/v${verNum}/referral/behvaiour-8`);
   }
 });
 
