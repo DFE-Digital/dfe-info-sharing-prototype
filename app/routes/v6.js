@@ -37,6 +37,15 @@ router.post(`/v${verNum}/referral/are-there-any-other-significant-adults`, funct
   }
 });
 
+router.post(`/v${verNum}/referral/are-there-any-other-professionals`, function (req, res) {
+  let answer = req.session.data['significantadults3a'];
+
+  if (answer === 'Yes') {
+    res.redirect(`/v${verNum}/referral/other-professionals`);
+  } else {
+    res.redirect(`/v${verNum}/referral/task-list-5a`);
+  }
+});
 
 router.post(`/v${verNum}/referral/mash`, function (req, res) {
   let answer = req.session.data['mash'];
@@ -54,7 +63,17 @@ router.post(`/v${verNum}/referral/behaviour-5`, function (req, res) {
   if (answer === 'Yes') {
     res.redirect(`/v${verNum}/referral/behaviour-6`);
   } else {
-    res.redirect(`/v${verNum}/referral/behvaiour-8`);
+    res.redirect(`/v${verNum}/referral/behaviour-8`);
+  }
+});
+
+router.post(`/v${verNum}/referral/family-history`, function (req, res) {
+  let answer = req.session.data['familyhistory'];
+
+  if (answer === 'Yes') {
+    res.redirect(`/v${verNum}/referral/family-history-details`);
+  } else {
+    res.redirect(`/v${verNum}/referral/task-list-9`);
   }
 });
 

@@ -22,15 +22,63 @@ Info sharing - Referral service
 
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
-<h3 class="govuk-heading-m moj-add-another__heading" tabindex="-1">Section</h3>
+<h3 class="govuk-heading-m moj-add-another__heading" tabindex="-1">Safety of the child</h3>
 {{ govukSummaryList({
   rows: [
     {
       key: {
-        text: "Example"
+        text: "Is the child in any immediate danger?
+        "
       },
       value: {
-        text: "Sarah Philips"
+        text: "No"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+<h3 class="govuk-heading-m moj-add-another__heading" tabindex="-1">Consent</h3>
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Do you have consent from the parent or guardian of the child?
+        "
+      },
+      value: {
+        text: "Yes"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+<h3 class="govuk-heading-m moj-add-another__heading" tabindex="-1">Locality</h3>
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Primary post code of the family"
+      },
+      value: {
+        text: "HD9 4NW"
       },
       actions: {
         items: [
@@ -44,53 +92,10 @@ Info sharing - Referral service
     },
     {
       key: {
-        text: "Example"
+        text: "Local authority"
       },
       value: {
-        text: "5 January 1978"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "date of birth"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Example"
-      },
-      value: {
-        html: "72 Guild Street<br>London<br>SE23 6FH"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "address"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Example"
-      },
-      value: {
-        html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.philips@example.com</p>'
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "contact details"
-          }
-        ]
+        text: "Kirklees Council"
       }
     }
   ]
