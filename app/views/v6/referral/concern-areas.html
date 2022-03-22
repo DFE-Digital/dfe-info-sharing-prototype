@@ -16,7 +16,7 @@ Info sharing - Referral service
 
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l" tabindex="-1">Concern areas</h2>
+  <h2 class="govuk-heading-l" tabindex="-1">What areas of concern do you have about Barry?</h2>
 
   <form method="post">
     {{ govukCheckboxes({
@@ -24,10 +24,13 @@ Info sharing - Referral service
       name: "concernareas",
       fieldset: {
         legend: {
-          text: "Select the areas where there are concerns about Barry",
+          text: "",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m"
         }
+      },
+      hint: {
+        text: "Select all that apply."
       },
       items: [
         {
