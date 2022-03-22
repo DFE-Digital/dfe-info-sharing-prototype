@@ -15,10 +15,10 @@
 
 {% block content %}
 
-  
+
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Other significant people who don't live in the house</h2>
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Other significant person</h2>
 
   <form action="other-significant-adults" method="post">
 
@@ -33,7 +33,7 @@
 
     {{ govukInput({
       label: {
-        text: "Relationship to child",
+        text: "Describe their relationship with the person you're making the request for",
         classes: "govuk-label--s",
         isPageHeading: true
       },
@@ -55,16 +55,16 @@
       hint: {},
       items: [
         {
-          value: "Full time responsibilities",
-          text: "Full time responsibilities"
+          value: "Full-time",
+          text: "Full-time"
         },
         {
-          value: "Part time responsibilities",
-          text: "Part time responsibilities"
+          value: "Part-time",
+          text: "Part-time"
         },
         {
-          value: "No responsibilities",
-          text: "No responsibilities"
+          value: "None",
+          text: "None"
         },
         {
           divider: "or"
@@ -184,7 +184,7 @@
       id: 'contact-number',
       name: 'contact-number',
       label: {
-        html: 'Contact number',
+        html: 'Telephone number',
         classes: 'govuk-!-font-weight-bold'
       },
       classes: 'govuk-input--width-10',
@@ -258,7 +258,7 @@
     </div>
 
     {{ govukButton({
-      text: 'Continue',
+      text: 'Add',
       href: "task-list-4"
     }) }}
 

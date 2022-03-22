@@ -13,13 +13,13 @@ Info sharing - Referral service
 
 {% block content %}
 
-  
+
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Other significant people</h2>
-  
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Are there any other significant people relating to this request?</h2>
+
    {{ govukInsetText({
-    text: "This should not include relationships with professionals"
+    text: "Do not include people who are living with the person, or professionals working with them."
   }) }}
 
   <form action="are-there-any-other-significant-adults" method="post">
@@ -29,7 +29,7 @@ Info sharing - Referral service
       name: "significantadults",
       fieldset: {
         legend: {
-          text: "Are there any other significant adults related to this request who don't live in the house?",
+          text: "",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--s"
         }
