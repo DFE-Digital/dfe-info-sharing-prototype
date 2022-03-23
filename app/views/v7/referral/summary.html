@@ -16,21 +16,69 @@ Info sharing - Referral service
 
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Summary</h2>
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Check your answers before sending your request</h2>
 
   <form action="mash" method="post">
 
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
-<h3 class="govuk-heading-m moj-add-another__heading" tabindex="-1">Section</h3>
+<h3 class="govuk-heading-m moj-add-another__heading" tabindex="-1">Safety of the child</h3>
 {{ govukSummaryList({
   rows: [
     {
       key: {
-        text: "Example"
+        text: "Is the child in any immediate danger?
+        "
       },
       value: {
-        text: "Sarah Philips"
+        text: "No"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+<h3 class="govuk-heading-m moj-add-another__heading" tabindex="-1">Consent</h3>
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Do you have consent from the parent or guardian of the child?
+        "
+      },
+      value: {
+        text: "Yes"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+<h3 class="govuk-heading-m moj-add-another__heading" tabindex="-1">Locality</h3>
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Primary post code of the family"
+      },
+      value: {
+        text: "HD9 4NW"
       },
       actions: {
         items: [
@@ -44,10 +92,41 @@ Info sharing - Referral service
     },
     {
       key: {
-        text: "Example"
+        text: "Local authority"
       },
       value: {
-        text: "5 January 1978"
+        text: "Kirklees Council"
+      }
+    }
+  ]
+}) }}
+
+<h3 class="govuk-heading-m moj-add-another__heading" tabindex="-1">People aged 0 to 19 (or 25 with SEN)</h3>
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "First name"
+      },
+      value: {
+        text: "Barry"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Last name"
+      },
+      value: {
+        text: "Grayson"
       },
       actions: {
         items: [
@@ -61,10 +140,10 @@ Info sharing - Referral service
     },
     {
       key: {
-        text: "Example"
+        text: "Date of birth"
       },
       value: {
-        html: "72 Guild Street<br>London<br>SE23 6FH"
+        html: "16 December 2018"
       },
       actions: {
         items: [
@@ -78,10 +157,78 @@ Info sharing - Referral service
     },
     {
       key: {
-        text: "Example"
+        text: "Gender"
       },
       value: {
-        html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.philips@example.com</p>'
+        html: 'Male'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Primary address"
+      },
+      value: {
+        html: '<p>29 Howard Way <br>Meltham <br>Holmfirth <br>HD9 4NW'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Disabilities"
+      },
+      value: {
+        html: 'None'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Ethnicity"
+      },
+      value: {
+        html: 'White'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Does the child need a translator?"
+      },
+      value: {
+        html: 'No'
       },
       actions: {
         items: [
@@ -96,15 +243,15 @@ Info sharing - Referral service
   ]
 }) }}
 
-<h3 class="govuk-heading-m moj-add-another__heading" tabindex="-1">Section</h3>
+<h3 class="govuk-heading-m moj-add-another__heading" tabindex="-1">Adults living in the house</h3>
 {{ govukSummaryList({
   rows: [
     {
       key: {
-        text: "Example"
+        text: "Relationship to child"
       },
       value: {
-        text: "Sarah Philips"
+        text: "Mother"
       },
       actions: {
         items: [
@@ -118,10 +265,10 @@ Info sharing - Referral service
     },
     {
       key: {
-        text: "Example"
+        text: "Parental responsibilities"
       },
       value: {
-        text: "5 January 1978"
+        text: "Full-time"
       },
       actions: {
         items: [
@@ -135,10 +282,10 @@ Info sharing - Referral service
     },
     {
       key: {
-        text: "Example"
+        text: "Name"
       },
       value: {
-        html: "72 Guild Street<br>London<br>SE23 6FH"
+        html: "Mary"
       },
       actions: {
         items: [
@@ -152,10 +299,97 @@ Info sharing - Referral service
     },
     {
       key: {
-        text: "Example"
+        text: "Last name"
       },
       value: {
-        html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.philips@example.com</p>'
+        html: 'Grayson'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        html: '5 May 1990'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+    ,
+    {
+      key: {
+        text: "Gender"
+      },
+      value: {
+        html: 'Female'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    },
+
+    {
+      key: {
+        text: "Contact number"
+      },
+      value: {
+        html: '07123456789'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Primary address"
+      },
+      value: {
+        html: '<p>29 Howard Way <br>Meltham <br>Holmfirth <br>HD9 4NW'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Ethnicity"
+      },
+      value: {
+        html: 'White'
       },
       actions: {
         items: [
@@ -170,15 +404,39 @@ Info sharing - Referral service
   ]
 }) }}
 
-<h3 class="govuk-heading-m moj-add-another__heading" tabindex="-1">Section</h3>
+<h3 class="govuk-heading-m moj-add-another__heading" tabindex="-1">Significant other people</h3>
 {{ govukSummaryList({
   rows: [
     {
       key: {
-        text: "Example"
+        text: "Are there any other significant adults related to this request who don't live in the house?
+        "
       },
       value: {
-        text: "Sarah Philips"
+        text: "No"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+<h3 class="govuk-heading-m moj-add-another__heading" tabindex="-1">Your details</h3>
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Job title"
+      },
+      value: {
+        text: "Head Teacher"
       },
       actions: {
         items: [
@@ -192,10 +450,10 @@ Info sharing - Referral service
     },
     {
       key: {
-        text: "Example"
+        text: "First name"
       },
       value: {
-        text: "5 January 1978"
+        text: "Patricia"
       },
       actions: {
         items: [
@@ -209,10 +467,10 @@ Info sharing - Referral service
     },
     {
       key: {
-        text: "Example"
+        text: "Last name"
       },
       value: {
-        html: "72 Guild Street<br>London<br>SE23 6FH"
+        html: "Smith"
       },
       actions: {
         items: [
@@ -226,10 +484,65 @@ Info sharing - Referral service
     },
     {
       key: {
-        text: "Example"
+        text: "Contact number"
       },
       value: {
-        html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.philips@example.com</p>'
+        html: '07123456789'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Email address"
+      },
+      value: {
+        html: 'psmith@school.com'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Organisation"
+      },
+      value: {
+        html: 'Northern School Trust'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+    ,
+    {
+      key: {
+        text: "Address"
+      },
+      value: {
+        html: 'Northern School Trust<br>
+        11 Daisy Way<br>
+        North Leeds<br>
+        LS26 TYD'
       },
       actions: {
         items: [
@@ -244,15 +557,16 @@ Info sharing - Referral service
   ]
 }) }}
 
-<h3 class="govuk-heading-m moj-add-another__heading" tabindex="-1">Section</h3>
+<h3 class="govuk-heading-m moj-add-another__heading" tabindex="-1">Other professionals</h3>
 {{ govukSummaryList({
   rows: [
     {
       key: {
-        text: "Example"
+        text: "Are there any other professionals working with this child or family excluding yourself?
+        "
       },
       value: {
-        text: "Sarah Philips"
+        text: "No"
       },
       actions: {
         items: [
@@ -263,54 +577,222 @@ Info sharing - Referral service
           }
         ]
       }
-    },
+    }
+  ]
+}) }}
+
+<h3 class="govuk-heading-m moj-add-another__heading" tabindex="-1">Services required by</h3>
+{{ govukSummaryList({
+  rows: [
     {
       key: {
-        text: "Example"
+        text: "Who the services are required by
+        "
       },
       value: {
-        text: "5 January 1978"
+        text: "Barry Grayson"
       },
       actions: {
         items: [
           {
             href: "#",
             text: "Change",
-            visuallyHiddenText: "date of birth"
+            visuallyHiddenText: "name"
           }
         ]
+      }
+    }
+  ]
+}) }}
+
+
+<h3 class="govuk-heading-m moj-add-another__heading" tabindex="-1">Request reasons</h3>
+{{ govukSummaryList({
+  rows: [
+  {
+    key: {
+      text: "Barry Grayson"
+    }
+  },
+  {
+    key: {
+      text: "Has a Multi Agency Safeguarding Hub (MASH) assessment been carried out?"
+    },
+    value: {
+      text: "No"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+        }
+      ]
+    }
+  },
+  {
+    key: {
+      text: "Concern area"
+    },
+    value: {
+      text: "Behaviour"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+        }
+      ]
+    }
+  },
+  {
+    key: {
+      text: "When did Barry start exhibiting the behaviour issues?"
+    },
+    value: {
+      text: "1 January 2015"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+        }
+      ]
+    }
+  },
+  {
+    key: {
+      text: "Describe the behaviour"
+    },
+    value: {
+      text: "Example"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+        }
+      ]
+    }
+  },
+  {
+    key: {
+      text: "What looks to be the cause of the concern?"
+    },
+    value: {
+      text: "The student is very shy in classroom and is having trouble making friends.  He is constantly worrying about things at home which is distracting him from his learning."
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+        }
+      ]
+    }
+  },
+  {
+    key: {
+      text: "What are the behaviours demonstrated affecting?"
+    },
+    value: {
+      text: "Were unclear of what might be causing this behaviour but he appears very anxious, especially when new tasks are introduced."
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+        }
+      ]
+    }
+  },
+  {
+    key: {
+      text: "Have actions been taken already to try remedy the behaviour?"
+    },
+    value: {
+      text: "Yes"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+        }
+      ]
+    }
+  },
+  {
+    key: {
+      text: "What actions have been taken that have not worked?"
+    },
+    value: {
+      text: "As of late he is very resistant to attend these learning mentor meetings, often uncontrollably crying when mentioned.  The parent is unsure what to do next and needs support."
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+        }
+      ]
+    }
+  },
+  {
+    key: {
+      text: "What actions have been taken that have worked?"
+    },
+    value: {
+      text: "The student has reacted well to calming activities such as drawing or doodling.  These do not keep him calm always, but sometimes keep him from disrupting the class"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+        }
+      ]
+    }
+  }
+  ]
+})}}
+
+<h3 class="govuk-heading-m moj-add-another__heading" tabindex="-1">Other family history</h3>
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Mary Grayson
+        "
       }
     },
     {
       key: {
-        text: "Example"
+        text: "Tell us the details around the historical concerns Mary has had
+        "
       },
       value: {
-        html: "72 Guild Street<br>London<br>SE23 6FH"
+        text: "Nary has suffered a history of anxiety and panic attacks although they are being treated and are under control."
       },
       actions: {
         items: [
           {
             href: "#",
             text: "Change",
-            visuallyHiddenText: "address"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Example"
-      },
-      value: {
-        html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.philips@example.com</p>'
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "contact details"
+            visuallyHiddenText: "name"
           }
         ]
       }
@@ -320,7 +802,7 @@ Info sharing - Referral service
 
 
     {{ govukButton({
-      text: 'Continue',
+      text: 'Send request',
       href: 'confirm'
     }) }}
 

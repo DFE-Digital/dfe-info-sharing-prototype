@@ -16,35 +16,25 @@ Info sharing - Referral service
 
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Are there any other professionals working with this person or family?</h2>
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">What are Barry's views on the situation and the request for help and support?</h2>
+  
+  <form method="post">
 
-  <form action="are-there-any-other-professionals" method="post">
-
-  {{ govukRadios({
-      idPrefix: "significantadults3a",
-      name: "significantadults3a",
-      fieldset: {
-        legend: {
-          text: "",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      hint: {},
-      items: [
-        {
-          value: "Yes",
-          text: "Yes"
-        },
-        {
-          value: "No",
-          text: "No"
-        }
-      ]
+     {{ govukTextarea({
+      id: "view",
+      name: "view",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "",
+        classes: "govuk-!-font-weight-bold"
+      }
     }) }}
 
     {{ govukButton({
-      text: 'Continue'
+      text: 'Continue',
+      href: 'behaviour-9'
     }) }}
 
   </form>

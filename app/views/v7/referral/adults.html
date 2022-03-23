@@ -18,14 +18,14 @@
 
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Adults living in the house</h2>
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Add a family member or guardian</h2>
 
   <form method="post">
 
     {% call govukFieldset({
       classes: 'moj-add-another__item',
       legend: {
-        text: 'Family members and adults living in the house',
+        text: '',
         classes: 'moj-add-another__title govuk-fieldset__legend--m',
         isPageHeading: false
       }
@@ -211,7 +211,7 @@
       id: 'contact-number',
       name: 'contact-number',
       label: {
-        html: 'Contact number',
+        html: 'Telephone number',
         classes: 'govuk-!-font-weight-bold'
       },
       classes: 'govuk-input--width-10',
@@ -278,7 +278,7 @@
 
     <div class="moj-button-action">
       {{ govukButton({
-        text: 'Add another adult',
+        text: 'Add another family member or guardian',
         classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4',
         type: 'button'
       }) }}
@@ -286,8 +286,8 @@
 
     <div class="moj-button-action">
       {{ govukButton({
-        text: 'Continue',
-        href: 'are-there-any-other-significant-adults'
+        text: 'Add',
+        href: 'task-list-3'
       }) }}
     </div>
 
