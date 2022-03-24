@@ -1,15 +1,3 @@
-const addToDate = function (years, months, days) {
-  const date = new Date(this.valueOf())
-  if (years) {
-    days += (years * 365)
-  }
-  if (months) {
-    days += (months * 30)
-  }
-  date.setDate(date.getDate() + days)
-  return date
-}
-
 const eventTimeline = [
   {
     id: '1',
@@ -292,4 +280,5 @@ const events = [
   }
 ]
 
-export default events
+exports.events = events
+exports.eventTimeline = eventTimeline
