@@ -23,8 +23,7 @@ const createEvents = function (childId, timelineId) {
     const idsInArray = events.events.filter(x => (x.id == id))
     idsInArray.map(y => {
       y.events.map(c => theEvents.push(c))
-    }
-    )
+    })
   }
   )
   // Insert relevant dates (relative to child)
@@ -41,8 +40,7 @@ const createEvents = function (childId, timelineId) {
   })
   // Order chronologically? Split into 'sections' etc.
   mappedEvents.sort((x, y) => y.timestamp - x.timestamp)
-  // todo - do not add events that are outside of the individuals lifespan
-  return mappedEvents
+  return mappedEvents.filter(a => new Date(a.timestamp) <= new Date())
 }
 
 const createProfile = function (id = 1) {
