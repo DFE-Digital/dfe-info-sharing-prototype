@@ -4,7 +4,7 @@ const router = express.Router()
 const data = require(`../views/v${verNum}/directory/data/functions`)
 
 //* Directory routes //
-router.get([`/v${verNum}/directory/record/:childId`, `/v${verNum}/directory/record/:childId/:variantType`, `/v${verNum}/directory/record/`], function (req, res) {
+router.get([`/v${verNum}/directory/record/:childId`, `/v${verNum}/directory/record/:childId/:eventTimelineId`, `/v${verNum}/directory/record/`], function (req, res) {
   const childId = req.params.childId || '1'
   const eventTimelineId = req.params.eventTimelineId || '1'
   res.render(`v${verNum}/directory/child-record-dynamic.html`, {

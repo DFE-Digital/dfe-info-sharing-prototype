@@ -3,8 +3,7 @@ const events = require('./events')
 
 // Data Functions
 const addToDate = function (ogDate, years, months, days) {
-  let date = new Date(ogDate * 1000)
-  console.log(date)
+  const date = new Date(ogDate * 1000)
   if (years) {
     days += (years * 365)
   }
@@ -14,10 +13,20 @@ const addToDate = function (ogDate, years, months, days) {
   date.setDate(date.getDate() + days)
   return date
 }
+
 const createEvents = function (childId, timelineId) {
   // Get events from event object
-  const theEvents = events.events[0].events
-  // console.log(theEvents)
+  timelineId = timelineId || 1
+  const theEventTimeline = events.eventTimeline.filter(x => x.id === timelineId)[0].events
+  const theEvents = []
+  theEventTimeline.map(id => {
+    const idsInArray = events.events.filter(x => (x.id == id))
+    idsInArray.map(y => {
+      y.events.map(c => theEvents.push(c))
+    }
+    )
+  }
+  )
   // Insert relevant dates (relative to child)
   const theChild = individuals.individuals.filter(x => x.id === childId)[0]
   // console.log(theChild)
@@ -32,7 +41,6 @@ const createEvents = function (childId, timelineId) {
   })
   // Order chronologically? Split into 'sections' etc.
   mappedEvents.sort((x, y) => y.timestamp - x.timestamp)
-  console.log(mappedEvents)
   // todo - do not add events that are outside of the individuals lifespan
   return mappedEvents
 }
