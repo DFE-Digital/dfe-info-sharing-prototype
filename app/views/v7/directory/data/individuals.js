@@ -22,6 +22,18 @@ const individuals = [
     gender: 'Female',
     ethnicity: 'White British',
     address: '412 Felix Road, Townsville, Countyville, DR32 7RE'
+  },
+  {
+    id: '3',
+    firstName: 'Forest',
+    lastName: 'Taylor',
+    dob: '13 Jan 2019',
+    dobTimestamp: 1547370077,
+    age: '3',
+    uniqueIdentifier: '987-638-9265',
+    gender: 'Male',
+    ethnicity: 'White British',
+    address: '412 Felix Road, Townsville, Countyville, DR32 7RE'
   }
 ]
 
