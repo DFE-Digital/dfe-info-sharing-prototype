@@ -14,6 +14,9 @@
                             <h2 class="moj-timeline__title">
                                 {{ event.title }}
                             </h2>
+                            <p>
+                                {{ event.dateString }}
+                            </p>
                             {% if category.location != null %}
                             <p class="moj-timeline__byline">{{ category.location }}</p>
                             {% endif %}
