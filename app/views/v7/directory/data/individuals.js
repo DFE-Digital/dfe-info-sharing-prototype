@@ -37,4 +37,4 @@ const individuals = [
   }
 ]
 
-export default individuals
+exports.individuals = individuals
