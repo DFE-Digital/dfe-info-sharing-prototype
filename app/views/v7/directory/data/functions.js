@@ -1,7 +1,7 @@
 const individuals = require('./individuals')
 const events = require('./events')
-// Data Functions
 
+// Data Functions
 const addToDate = function (ogDate, years, months, days) {
   let date = new Date(ogDate * 1000)
   console.log(date)
@@ -33,15 +33,8 @@ const createEvents = function (childId, timelineId) {
   // Order chronologically? Split into 'sections' etc.
   mappedEvents.sort((x, y) => y.timestamp - x.timestamp)
   console.log(mappedEvents)
-
+  // todo - do not add events that are outside of the individuals lifespan
   return mappedEvents
-  // return [
-  //   {
-  //     title: 'New attendance',
-  //     location: 'Netherstowe Primary School',
-  //     category: 'EDUCATION'
-  //   }
-  // ]
 }
 
 const createProfile = function (id = 1) {
