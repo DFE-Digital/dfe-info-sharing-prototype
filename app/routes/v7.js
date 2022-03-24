@@ -1,42 +1,16 @@
-const express = require('express');
-const router = express.Router();
+// import { createProfile } from "../views/v7/directory/data/functions"
 
-const verNum = 7;
+const verNum = 7
+const express = require('express')
+const router = express.Router()
+const data = require(`../views/v${verNum}/directory/data/functions`)
+// const data = require(`../views/v${verNum}/directory/data/functions`)
 
-// Data Functions
-const createEvents = function () {
-  // Get events from event object
-  // Insert relavent dates (relative to child)
-  // Order chronologically? Split into 'sections' etc.
-  return [
-    {
-      title: 'New attendance',
-      location: 'Netherstowe Primary School',
-      category: 'EDUCATION'
-    }
-  ]
-}
-
-const createProfile = function () {
-  // To dynamically create profile of child
-  return {
-    id: '1',
-    firstName: 'Fred',
-    lastName: 'Bloggs',
-    dob: '10 Feb 2015',
-    dobTimestamp: 1423558877,
-    age: '7',
-    uniqueIdentifier: '746-987-3432',
-    gender: 'Male',
-    ethnicity: 'White British',
-    address: '12 Compton Street, Townsville, Countyville, DR34 5TO'
-  }
-}
 //* Directory routes //
 router.get([`/v${verNum}/directory/record/:childId`, `/v${verNum}/directory/record/:childId/:variantType`], function (req, res) {
   res.render(`v${verNum}/directory/child-record-dynamic.html`, {
-    events: createEvents(),
-    profile: createProfile()
+    events: data.createEvents(),
+    profile: data.createProfile()
   })
 })
 //* Directory routes END //
