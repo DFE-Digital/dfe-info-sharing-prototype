@@ -10,6 +10,12 @@ const eventTimeline = [
     description: 'Partial timeline (starting from school) including significant events such as exclusion',
     categories: ['education'],
     events: [4]
+  },
+  {
+    id: '3',
+    description: 'Full timeline (starting from birth) including significant events such as exclusion',
+    categories: ['education'],
+    events: [1, 2, 4]
   }
 ]
 
