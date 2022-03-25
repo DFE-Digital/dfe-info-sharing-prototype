@@ -9,6 +9,7 @@ const individuals = [
     uniqueIdentifier: '746-987-3432',
     gender: 'Male',
     ethnicity: 'White British',
+    firstLanguage: 'English',
     address: '12 Compton Street, Townsville, Countyville, DR34 5TO'
   },
   {
@@ -21,6 +22,7 @@ const individuals = [
     uniqueIdentifier: '537-173-2762',
     gender: 'Female',
     ethnicity: 'White British',
+    firstLanguage: 'English',
     address: '412 Felix Road, Townsville, Countyville, DR32 7RE'
   },
   {
@@ -33,6 +35,7 @@ const individuals = [
     uniqueIdentifier: '987-638-9265',
     gender: 'Male',
     ethnicity: 'White British',
+    firstLanguage: 'English',
     address: '412 Felix Road, Townsville, Countyville, DR32 7RE'
   },
   {
@@ -45,8 +48,54 @@ const individuals = [
     uniqueIdentifier: '987-638-9265',
     gender: 'Male',
     ethnicity: 'White British',
+    firstLanguage: 'English',
     address: '82 Sackville Road, Townsville, Countyville, DR31 4EH'
   }
 ]
 
+const contacts = [
+  {
+    id: '1',
+    type: 'health',
+    title: 'Registered GP',
+    name: 'Dr Paul Brookes',
+    contact: {
+      phone: '0111 000 000',
+      email: 'drpb@doc.com',
+      address: 'Townsville Clinic\n' +
+        'Townsville\n' +
+        'Countyville\n' +
+        'CT12 7YY'
+    }
+  },
+  {
+    id: '2',
+    type: 'education',
+    title: 'Primary school',
+    name: 'Townsville primary',
+    contact: {
+      phone: '0111 555 555',
+      email: 'info@tvprimary.com',
+      address: 'Townsville primary\n' +
+        'Scotch Orchard Road\n' +
+        'Townsville\n' +
+        'Countyville\n' +
+        'CT12 7YY'
+    }
+  },
+  {
+    id: '3',
+    type: 'contact',
+    name: 'Diane Bloggs',
+    consent: true,
+    connection: 'Mother',
+    contact: {
+      phone: '07975 000141',
+      landline: '0111 555222',
+      email: 'd.bloggs@name.com'
+    }
+  }
+]
+
 exports.individuals = individuals
+exports.contacts = contacts
