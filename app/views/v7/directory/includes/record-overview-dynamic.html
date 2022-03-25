@@ -1,9 +1,27 @@
 <div class="govuk-grid-column-two-thirds">
 
-
-    {{ govukTable({
-
-        rows: [
+    {% set rows =  [
+        [
+            {
+                text: "Date of birth",
+                classes: 'govuk-!-width-one-quarter'
+            },
+            {
+                text: profile.dob + " (age " + profile.age + ")"
+            }
+        ],
+        [
+            {
+                text: "Address",
+                classes: 'govuk-!-width-one-quarter'
+            },
+            {
+                text: profile.address
+            }
+        ]
+    ] %}
+    {% if designVariant === 'B' %}
+        {% set rows =  [
             [
                 {
                     text: "Date of birth",
@@ -15,6 +33,33 @@
             ],
             [
                 {
+                    text: "Unique identifier",
+                    classes: 'govuk-!-width-one-quarter'
+                },
+                {
+                    text: profile.uniqueIdentifier
+                }
+            ],
+            [
+                {
+                    text: "Gender",
+                    classes: 'govuk-!-width-one-quarter'
+                },
+                {
+                    text: profile.gender
+                }
+            ],
+            [
+                {
+                    text: "Ethic group",
+                    classes: 'govuk-!-width-one-quarter'
+                },
+                {
+                    text: profile.ethnicity
+                }
+            ],
+            [
+                {
                     text: "Address",
                     classes: 'govuk-!-width-one-quarter'
                 },
@@ -22,6 +67,10 @@
                     text: profile.address
                 }
             ]
-        ]
+        ] %}
+    {% endif %}
+    {{ govukTable({
+        firstCellIsHeader: true,
+        rows: rows
     }) }}
 </div>

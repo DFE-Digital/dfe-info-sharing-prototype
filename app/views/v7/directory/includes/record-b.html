@@ -7,13 +7,33 @@
     {% include './record-overview-dynamic.html' %}
 </div>
 
-{% set aboutHTML %}
-    {% include './about-dynamic.html' %}
+{% set timelineHTML %}
+    {% include './timeline-table-dynamic.html' %}
 {% endset -%}
 
-    {% set timelineHTML %}
-        {% include './timeline-dynamic.html' %}
+    {% set contactHTML %}
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                {% include './contact-dynamic.html' %}
+            </div>
+        </div>
     {% endset %}
+
+{% set healthHTML %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            {% include './health-dynamic.html' %}
+        </div>
+    </div>
+{% endset %}
+
+{% set educationHTML %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            {% include './education-dynamic.html' %}
+        </div>
+    </div>
+{% endset %}
 
     {{ govukTabs({
         items: [
@@ -25,10 +45,24 @@
             }
             },
             {
-                label: "About " + profile.firstName,
-                id: "about",
+                label: profile.firstName + "'s contact details",
+                id: "contact",
                 panel: {
-                html: aboutHTML
+                html: contactHTML
+            }
+            },
+            {
+                label: "Education",
+                id: "education",
+                panel: {
+                html: educationHTML
+            }
+            },
+            {
+                label: "Registered GP",
+                id: "health",
+                panel: {
+                html: healthHTML
             }
             }
         ]

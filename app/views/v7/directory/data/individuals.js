@@ -12,7 +12,7 @@ const individuals = [
     firstLanguage: 'English',
     address: '12 Compton Street, Townsville, Countyville, DR34 5TO',
     contacts: {
-      mainContact: { id: 3 },
+      mainContact: { id: 4 },
       gp: { id: 1 },
       education: { id: 2 }
     }
