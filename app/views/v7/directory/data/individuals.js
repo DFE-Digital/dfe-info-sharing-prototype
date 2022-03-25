@@ -82,10 +82,11 @@ const contacts = [
     contact: {
       phone: '0111 000 000',
       email: 'drpb@doc.com',
-      address: 'Townsville Clinic\n' +
-        'Townsville\n' +
-        'Countyville\n' +
-        'CT12 7YY'
+      address: 'Townsville Clinic, \n' +
+        'Main Road, \n' +
+        'Townsville, \n' +
+        'Countyville, \n' +
+        'CT12 3ER'
     }
   },
   {
@@ -96,10 +97,10 @@ const contacts = [
     contact: {
       phone: '0111 555 555',
       email: 'info@tvprimary.com',
-      address: 'Townsville primary\n' +
-        'Scotch Orchard Road\n' +
-        'Townsville\n' +
-        'Countyville\n' +
+      address: 'Townsville primary, \n' +
+        'Scotch Orchard Road, \n' +
+        'Townsville, \n' +
+        'Countyville, \n' +
         'CT12 7YY'
     }
   },

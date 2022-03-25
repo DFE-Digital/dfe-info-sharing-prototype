@@ -142,7 +142,7 @@
                         classes: 'govuk-!-width-one-half'
                     },
                     {
-                        html: "Townsville Clinic<br>Townsville<br>Countyville<br>CT12 7YY"
+                        html: profile.contacts.gp.contact.address
                     }
                 ]
             ]
@@ -166,7 +166,7 @@
                         classes: 'govuk-!-width-one-half'
                     },
                     {
-                        text: "Townsville primary"
+                        text: profile.contacts.education.name
                     }
                 ],
                 [
@@ -175,7 +175,7 @@
                         classes: 'govuk-!-width-one-half'
                     },
                     {
-                        html: "0111 555 555<br><a href='#' class='govuk-link'>info@tvprimary.com</a>"
+                        html: profile.contacts.education.contact.phone + "<br><a href='#' class='govuk-link'>" + profile.contacts.education.contact.email + "</a>"
                     }
                 ],
                 [
@@ -185,11 +185,12 @@
                         classes: 'govuk-!-width-one-half'
                     },
                     {
-                        html: "Townsville primary<br>Scotch Orchard Road<br>Townsville<br>Countyville</br>CT12 7YY"
+                        html: profile.contacts.education.contact.address
                     }
                 ]
             ]
         }) }}
+
         <!--education and medical stuff ends-->
 
     </div>
