@@ -64,7 +64,7 @@
                         classes: 'govuk-!-width-one-half'
                     },
                     {
-                        text: "Diane Bloggs"
+                        text: profile.contacts.mainContact.name
                     }
                 ],
                 [
@@ -73,7 +73,7 @@
                         classes: 'govuk-!-width-one-half'
                     },
                     {
-                        text: "Mother"
+                        text: profile.contacts.mainContact.relationship
                     }
                 ],
                 [
@@ -82,7 +82,7 @@
                         classes: 'govuk-!-width-one-half'
                     },
                     {
-                        text: "07975 000141"
+                        text: profile.contacts.mainContact.contact.phone
                     }
                 ],
                 [
@@ -91,7 +91,7 @@
                         classes: 'govuk-!-width-one-half'
                     },
                     {
-                        text: "0111 555222"
+                        text: profile.contacts.mainContact.contact.landline
                     }
                 ],
                 [
@@ -100,7 +100,7 @@
                         classes: 'govuk-!-width-one-half'
                     },
                     {
-                        html: "<a href='#' class='govuk-link'>d.bloggs@name.com</a>"
+                        html: "<a href='#' class='govuk-link'>" + profile.contacts.mainContact.contact.email + "</a>"
                     }
                 ]
             ]

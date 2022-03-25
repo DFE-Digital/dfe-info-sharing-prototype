@@ -10,7 +10,10 @@ const individuals = [
     gender: 'Male',
     ethnicity: 'White British',
     firstLanguage: 'English',
-    address: '12 Compton Street, Townsville, Countyville, DR34 5TO'
+    address: '12 Compton Street, Townsville, Countyville, DR34 5TO',
+    contacts: {
+      mainContact: 3
+    }
   },
   {
     id: '2',
@@ -23,7 +26,10 @@ const individuals = [
     gender: 'Female',
     ethnicity: 'White British',
     firstLanguage: 'English',
-    address: '412 Felix Road, Townsville, Countyville, DR32 7RE'
+    address: '412 Felix Road, Townsville, Countyville, DR32 7RE',
+    contacts: {
+      mainContact: 3
+    }
   },
   {
     id: '3',
@@ -36,7 +42,10 @@ const individuals = [
     gender: 'Male',
     ethnicity: 'White British',
     firstLanguage: 'English',
-    address: '412 Felix Road, Townsville, Countyville, DR32 7RE'
+    address: '412 Felix Road, Townsville, Countyville, DR32 7RE',
+    contacts: {
+      mainContact: 4
+    }
   },
   {
     id: '4',
@@ -49,7 +58,10 @@ const individuals = [
     gender: 'Male',
     ethnicity: 'White British',
     firstLanguage: 'English',
-    address: '82 Sackville Road, Townsville, Countyville, DR31 4EH'
+    address: '82 Sackville Road, Townsville, Countyville, DR31 4EH',
+    contacts: {
+      mainContact: 4
+    }
   }
 ]
 
@@ -86,13 +98,24 @@ const contacts = [
   {
     id: '3',
     type: 'contact',
-    name: 'Diane Bloggs',
+    firstName: 'Diane',
     consent: true,
-    connection: 'Mother',
+    relationship: 'Mother',
     contact: {
       phone: '07975 000141',
       landline: '0111 555222',
       email: 'd.bloggs@name.com'
+    }
+  },
+  {
+    id: '4',
+    type: 'contact',
+    firstName: 'Michael',
+    consent: true,
+    relationship: 'Father',
+    contact: {
+      phone: '07853 000122',
+      email: 'massivefootyfan87@name.com'
     }
   }
 ]

@@ -14,8 +14,17 @@ const addToDate = function (ogDate, years, months, days) {
   return date
 }
 
-const createContacts = function () {
-  return [{ name: 'Barry' }]
+const createMainContact = function (id, childLastName) {
+  const contact = individuals.contacts.filter(x => x.id == id)[0]
+  return {
+    ...contact,
+    name: contact.firstName + ' ' + childLastName
+  }
+}
+
+const createContacts = function (childData) {
+  console.log(childData)
+  return { mainContact: createMainContact(childData.contacts.mainContact, childData.lastName) }
 }
 
 const createEvents = function (childId, timelineId) {
@@ -32,7 +41,6 @@ const createEvents = function (childId, timelineId) {
   )
   // Insert relevant dates (relative to child)
   const theChild = individuals.individuals.filter(x => x.id === childId)[0]
-  // console.log(theChild)
   const theDob = theChild.dobTimestamp
   const mappedEvents = theEvents.map(x => {
     const theEventDate = addToDate(theDob, x.offsetTime.years, x.offsetTime.months, x.offsetTime.days)
@@ -49,8 +57,7 @@ const createEvents = function (childId, timelineId) {
 
 const createProfile = function (id = 1) {
   const individual = individuals.individuals.filter(x => x.id === id)[0]
-  // Todo - decorate with relatives and GP details etc.
-  individual.contacts = createContacts()
+  individual.contacts = createContacts(individual)
   return individual
 }
 
