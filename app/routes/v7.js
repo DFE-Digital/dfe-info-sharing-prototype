@@ -4,12 +4,14 @@ const router = express.Router()
 const data = require(`../views/v${verNum}/directory/data/functions`)
 
 //* Directory routes //
-router.get([`/v${verNum}/directory/record/:childId`, `/v${verNum}/directory/record/:childId/:eventTimelineId`, `/v${verNum}/directory/record/`], function (req, res) {
+router.get([`/v${verNum}/directory/record/:childId`, `/v${verNum}/directory/record/:childId/:designVariant`, `/v${verNum}/directory/record/`], function (req, res) {
   const childId = req.params.childId || '1'
-  const eventTimelineId = req.params.eventTimelineId || '1'
+  const designVariant = req.params.designVariant || 'A'
+  const eventTimelineId = req.query.eventTimelineId || '1'
   res.render(`v${verNum}/directory/child-record-dynamic.html`, {
     events: data.createEvents(childId, eventTimelineId),
-    profile: data.createProfile(childId)
+    profile: data.createProfile(childId),
+    designVariant: designVariant
   })
 })
 //* Directory routes END //
