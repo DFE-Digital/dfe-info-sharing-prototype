@@ -14,19 +14,16 @@
                             <h2 class="moj-timeline__title">
                                 {{ event.title }}
                             </h2>
-                            <p>
-                                {{ event.dateString }}
-                            </p>
-                            {% if category.location != null %}
-                            <p class="moj-timeline__byline">{{ category.location }}</p>
+                            {% if event.location != null %}
+                                <p class="moj-timeline__byline"> - {{ event.location }}</p>
                             {% endif %}
 
+                            <p class="moj-timeline__date">
+                                <time datetime="{{ event.datestamp }}">{{ event.dateString }}</time>
+                            </p>
+
                         </div>
-
-                        <p class="moj-timeline__date">
-                            <time datetime="{{ event.datestamp }}">{{ event.date }}</time>
-                        </p>
-
+                        {% if designVariant !== 'C' %}
                         <div class="moj-timeline__description">
                             <p>
                                 Joe Barker<br>
@@ -67,6 +64,8 @@
                                 ]
                             })
                         }) }}
+
+                        {% endif %}
 
                     </div>
                 </div>

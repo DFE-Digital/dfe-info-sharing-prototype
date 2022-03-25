@@ -18,17 +18,17 @@
     {{ govukTabs({
         items: [
             {
-                label: "Professional support timeline",
-                id: "timeline",
-                panel: {
-                html: timelineHTML
-            }
-            },
-            {
                 label: "About " + profile.firstName,
                 id: "about",
                 panel: {
                 html: aboutHTML
+            }
+            },
+            {
+                label: "Professional support timeline",
+                id: "timeline",
+                panel: {
+                html: timelineHTML
             }
             }
         ]
