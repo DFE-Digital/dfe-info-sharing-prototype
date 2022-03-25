@@ -1,6 +1,9 @@
 <div class="govuk-grid-row govuk-!-margin-bottom-6">
     <div class="govuk-grid-column-full">
-        <a href="child-record-results" class="govuk-link ">Back to results</a>
+        {{ govukBackLink({
+            text: "Back to results",
+            href: "/v" + verNum + "/directory/child-record-results"
+        }) }}
     </div>
 </div>
 <div class="govuk-grid-row govuk-!-margin-bottom-6">
