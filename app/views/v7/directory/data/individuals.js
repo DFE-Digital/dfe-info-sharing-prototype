@@ -68,7 +68,7 @@ const individuals = [
     contacts: {
       mainContact: { id: 3 },
       gp: { id: 1 },
-      education: { id: 2 }
+      education: { id: 5 }
     }
   }
 ]
@@ -126,7 +126,22 @@ const contacts = [
       phone: '07853 000122',
       email: 'massivefootyfan87@name.com'
     }
-  }
+  },
+  {
+    id: '5',
+    type: 'education',
+    title: 'Secondary school',
+    name: 'Townsville High School',
+    contact: {
+      phone: '0111 666 566',
+      email: 'info@tvsecondary.com',
+      address: 'Townsville High School, \n' +
+        'Farmers Hill Road, \n' +
+        'Townsville, \n' +
+        'Countyville, \n' +
+        'CT12 6WD'
+    }
+  },
 ]
 
 exports.individuals = individuals
