@@ -12,7 +12,9 @@ const individuals = [
     firstLanguage: 'English',
     address: '12 Compton Street, Townsville, Countyville, DR34 5TO',
     contacts: {
-      mainContact: 3
+      mainContact: { id: 3 },
+      gp: { id: 1 },
+      education: { id: 2 }
     }
   },
   {
@@ -28,7 +30,9 @@ const individuals = [
     firstLanguage: 'English',
     address: '412 Felix Road, Townsville, Countyville, DR32 7RE',
     contacts: {
-      mainContact: 3
+      mainContact: { id: 3 },
+      gp: { id: 1 },
+      education: { id: 2 }
     }
   },
   {
@@ -44,7 +48,9 @@ const individuals = [
     firstLanguage: 'English',
     address: '412 Felix Road, Townsville, Countyville, DR32 7RE',
     contacts: {
-      mainContact: 4
+      mainContact: { id: 3 },
+      gp: { id: 1 },
+      education: { id: 2 }
     }
   },
   {
@@ -60,7 +66,9 @@ const individuals = [
     firstLanguage: 'English',
     address: '82 Sackville Road, Townsville, Countyville, DR31 4EH',
     contacts: {
-      mainContact: 4
+      mainContact: { id: 3 },
+      gp: { id: 1 },
+      education: { id: 2 }
     }
   }
 ]

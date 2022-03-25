@@ -14,7 +14,21 @@ const addToDate = function (ogDate, years, months, days) {
   return date
 }
 
+const createEducationContacts = function (id) {
+  const contact = individuals.contacts.filter(x => x.id == id)[0]
+  return {
+    ...contact
+  }
+}
+const createHealthContacts = function (id) {
+  const contact = individuals.contacts.filter(x => x.id == id)[0]
+  return {
+    ...contact
+  }
+}
+
 const createMainContact = function (id, childLastName) {
+  console.log(id)
   const contact = individuals.contacts.filter(x => x.id == id)[0]
   return {
     ...contact,
@@ -23,8 +37,13 @@ const createMainContact = function (id, childLastName) {
 }
 
 const createContacts = function (childData) {
-  console.log(childData)
-  return { mainContact: createMainContact(childData.contacts.mainContact, childData.lastName) }
+  const contacts = {
+    mainContact: createMainContact(childData.contacts.mainContact.id, childData.lastName),
+    gp: createHealthContacts(childData.contacts.gp.id),
+    education: createEducationContacts(childData.contacts.education.id)
+  }
+  // console.log(contacts)
+  return contacts
 }
 
 const createEvents = function (childId, timelineId) {

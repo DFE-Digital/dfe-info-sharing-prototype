@@ -123,7 +123,7 @@
                         classes: 'govuk-!-width-one-half'
                     },
                     {
-                        text: "Dr Paul Brookes"
+                        text: profile.contacts.gp.name
                     }
                 ],
                 [
@@ -132,7 +132,7 @@
                         classes: 'govuk-!-width-one-half'
                     },
                     {
-                        html: "0111 000 000<br><a href='#' class='govuk-link'>drpb@doc.com</a>"
+                        html: profile.contacts.gp.contact.phone + "<br><a href='#' class='govuk-link'>" + profile.contacts.gp.contact.email + "</a>"
                     }
                 ],
                 [
