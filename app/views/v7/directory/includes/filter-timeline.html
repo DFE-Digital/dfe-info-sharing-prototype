@@ -8,7 +8,7 @@
             <div class="govuk-grid-column-two-thirds">
 
                 {% for event in events %}
-                    <div class="moj-timeline govuk-!-margin-bottom-6">
+                    <div class="moj-timeline govuk-!-margin-bottom-6" data-category="{{ event.slug }}">
                         <div class="moj-timeline__item">
                             <strong class="govuk-tag ">
                                 {{ event.category }}

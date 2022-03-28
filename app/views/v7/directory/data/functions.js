@@ -65,6 +65,7 @@ const createEvents = function (childId, timelineId) {
     const theEventDate = addToDate(theDob, x.offsetTime.years, x.offsetTime.months, x.offsetTime.days)
     return {
       ...x,
+      slug: camelize(x.category),
       timestamp: theEventDate,
       dateString: theEventDate.toLocaleString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })
     }
