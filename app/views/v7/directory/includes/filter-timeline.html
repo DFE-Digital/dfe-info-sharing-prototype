@@ -1,0 +1,82 @@
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+                <p>asd</p>
+                {% include '../includes/filters/filter-a.html' %}
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+
+                {% for event in events %}
+                    <div class="moj-timeline govuk-!-margin-bottom-6">
+                        <div class="moj-timeline__item">
+                            <strong class="govuk-tag ">
+                                {{ event.category }}!
+                            </strong>
+                            <div class="moj-timeline__header">
+                                <h2 class="moj-timeline__title">
+                                    {{ event.title }}
+                                </h2>
+                                {% if event.location != null %}
+                                    <p class="moj-timeline__byline"> - {{ event.location }}</p>
+                                {% endif %}
+
+                                <p class="moj-timeline__date">
+                                    <time datetime="{{ event.datestamp }}">{{ event.dateString }}</time>
+                                </p>
+
+                            </div>
+                            {% if designVariant !== 'C' %}
+                                <div class="moj-timeline__description">
+                                    <p>
+                                        Joe Barker<br>
+                                        Phone: 07754 558866<br>
+                                        Email: <a href="#" class="govuk-link">j.barker@emailaddress.com</a>
+                                    </p>
+                                </div>
+
+                                {{ govukDetails({
+                                    summaryText: "Further details",
+                                    classes: "govuk-!-margin-bottom-0",
+                                    html: govukSummaryList({
+                                        rows: [
+                                            {
+                                                key: {
+                                                text: "Type"
+                                            },
+                                                value: {
+                                                text: "Home visit"
+                                            }
+                                            },
+                                            {
+                                                key: {
+                                                text: "Details"
+                                            },
+                                                value: {
+                                                text: "Discussed ongoing parental conflict"
+                                            }
+                                            },
+                                            {
+                                                key: {
+                                                text: "Outcome"
+                                            },
+                                                value: {
+                                                text: "Parents to attend parenting course"
+                                            }
+                                            }
+                                        ]
+                                    })
+                                }) }}
+
+                            {% endif %}
+
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+    </div>
+</div>

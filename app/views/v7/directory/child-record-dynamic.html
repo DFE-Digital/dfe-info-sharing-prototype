@@ -6,10 +6,12 @@
 
 {% block content %}
 
-    {% if designVariant === 'C' %}
-        {% include './includes/record-c.html' %}
-    {% elseif designVariant === 'B' %}
+    {% if designVariant === 'B' %}
         {% include './includes/record-b.html' %}
+    {% elseif designVariant === 'C' %}
+        {% include './includes/record-c.html' %}
+    {% elseif designVariant === 'D' %}
+        {% include './includes/record-d.html' %}
     {% elseif designVariant === 'E' %}
         {% include './includes/record-e.html' %}
     {% else %}
