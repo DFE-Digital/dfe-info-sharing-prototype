@@ -6,7 +6,7 @@
         idPrefix: 'docType',
         name: 'docType',
         classes: "govuk-checkboxes--small",
-        items: pageObject.docTypeItems
+        items: interactionTypes
     }) }}
 
 {% endset %}
@@ -35,6 +35,8 @@
         name: "dateTo"
     }) }}
 {% endset %}
+
+<!-- todo - consider dropdown rather than date range - eg last 6 months, 5 years, from birth etc. -->
 
 
 {{ searchFilter({

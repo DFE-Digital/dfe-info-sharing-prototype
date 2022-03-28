@@ -80,5 +80,42 @@ const createProfile = function (id = 1) {
   return individual
 }
 
+const getInteractionCountByType = function (interactions, interactionType) {
+  const count = interactions.filter(item => item.category === interactionType)
+  return count.length.toString()
+}
+
+const getInteractionTypes = function (interactions) {
+  const interactionTypes = []
+  const map = new Map()
+  for (const item of interactions) {
+    if (!map.has(item.category)) {
+      map.set(item.category, true)
+      const count = getInteractionCountByType(interactions, item.category)
+      interactionTypes.push({
+        text: item.category + ' (' + count + ')',
+        value: item.category,
+        slug: camelize(item.category),
+        count: count
+      })
+    }
+  }
+
+  return interactionTypes
+}
+
+const camelize = function (str) {
+  return str.toLowerCase().replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {
+    return index === 0 ? word.toLowerCase() : word.toUpperCase()
+  }).replace(/\s+/g, '')
+}
+
+const createInteractionTypes = function (timeline) {
+  // console.log(timeline)
+  console.log(getInteractionTypes(timeline))
+  return getInteractionTypes(timeline)
+}
+
 exports.createProfile = createProfile
 exports.createEvents = createEvents
+exports.createInteractionTypes = createInteractionTypes

@@ -14,9 +14,11 @@ router.get([`/v${verNum}/directory/record/:childId`, `/v${verNum}/directory/reco
   const childId = req.params.childId || '1'
   const designVariant = req.params.designVariant || 'A'
   const eventTimelineId = req.query.eventTimelineId || '1'
+  const events = data.createEvents(childId, eventTimelineId)
   res.render(`v${verNum}/directory/child-record-dynamic.html`, {
-    events: data.createEvents(childId, eventTimelineId),
+    events: events,
     profile: data.createProfile(childId),
+    interactionTypes: data.createInteractionTypes(events),
     designVariant: designVariant
   })
 })
