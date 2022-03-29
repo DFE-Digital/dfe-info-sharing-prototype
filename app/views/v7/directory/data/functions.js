@@ -95,7 +95,7 @@ const getInteractionTypes = function (interactions) {
       const count = getInteractionCountByType(interactions, item.category)
       interactionTypes.push({
         text: item.category + ' (' + count + ')',
-        value: item.category,
+        value: camelize(item.category),
         slug: camelize(item.category),
         count: count
       })

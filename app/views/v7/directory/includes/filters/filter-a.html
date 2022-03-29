@@ -61,7 +61,7 @@
     let fileTypeArray = []
     let interactionArray = []
 
-    const parentSelector = '.asd'
+    const parentSelector = '.moj-timeline__wrapper .moj-timeline'
     const filterSource = '#facet-wrapper input'
 
     // $(".finder-results").find(`[data-permittype='Compliance']`).css('background', 'red')
@@ -76,28 +76,11 @@
       return itemsShowing.length
     }
 
-    function showHideResults(parentSelector, permitData, documentData, interactionTypeData) {
-      if (permitData.length && documentData.length && interactionTypeData.length) {
+    function showHideResults(parentSelector, permitData, interactionTypeData) {
+      if (permitData.length && interactionTypeData.length) {
+        console.log('hit ' + 1)
         $(parentSelector).each(function () {
-          if (permitData.includes($(this).data('permit-type')) && documentData.includes($(this).data('document-type')) && interactionTypeData.includes($(this).data('file-type'))) {
-            $(this).show()
-          } else {
-            $(this).hide()
-          }
-        })
-        // $('.finder-results li').attr(['data-permittype', 'Compliance']).css(['background', 'red'])
-      } else if (permitData.length) {
-        $(parentSelector).each(function () {
-          if (permitData.includes($(this).data('permit-type'))) {
-            $(this).show()
-          } else {
-            $(this).hide()
-          }
-        })
-        // $('.finder-results li').attr(['data-permittype', 'Compliance']).css(['background', 'red'])
-      } else if (documentData.length) {
-        $(parentSelector).each(function () {
-          if (documentData.includes($(this).data('document-type'))) {
+          if (permitData.includes($(this).data('interaction-type')) && interactionTypeData.includes($(this).data('interaction-type'))) {
             $(this).show()
           } else {
             $(this).hide()
@@ -105,6 +88,19 @@
         })
         // $('.finder-results li').attr(['data-permittype', 'Compliance']).css(['background', 'red'])
       } else if (interactionTypeData.length) {
+        console.log('hit ' + 2)
+        $(parentSelector).each(function () {
+          console.log($(this).data('interaction-type'))
+          console.log(interactionTypeData)
+          if (interactionTypeData.includes($(this).data('interaction-type'))) {
+            $(this).show()
+          } else {
+            $(this).hide()
+          }
+        })
+        // $('.finder-results li').attr(['data-permittype', 'Compliance']).css(['background', 'red'])
+      } else if (interactionTypeData.length) {
+        console.log('hit ' + 4)
         $(parentSelector).each(function () {
           if (interactionTypeData.includes($(this).data('file-type'))) {
             $(this).show()
@@ -114,6 +110,7 @@
         })
         // $('.finder-results li').attr(['data-permittype', 'Compliance']).css(['background', 'red'])
       } else {
+        console.log('hit ' + 5)
         $(parentSelector).show()
       }
       $('#resultCounter').text(countResults())
@@ -155,7 +152,7 @@
       console.log('Interaction: ' + interactionArray)
       // showHideResults(searchArray)
 
-      showHideResults(permitArray, interactionArray, fileTypeArray)
+      showHideResults(parentSelector, permitArray, interactionArray, fileTypeArray)
     })
   })
 
