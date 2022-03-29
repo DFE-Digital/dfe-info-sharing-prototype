@@ -3,8 +3,8 @@
 {% set interactionTypeOptionsHtml %}
 
     {{ govukCheckboxes({
-        idPrefix: 'docType',
-        name: 'docType',
+        idPrefix: 'interactionType',
+        name: 'interactionType',
         classes: "govuk-checkboxes--small",
         items: interactionTypes
     }) }}
@@ -59,13 +59,16 @@
     let searchArray = []
     let permitArray = []
     let fileTypeArray = []
-    let documentArray = []
+    let interactionArray = []
+
+    const parentSelector = '.asd'
+    const filterSource = '#facet-wrapper input'
 
     // $(".finder-results").find(`[data-permittype='Compliance']`).css('background', 'red')
 
-    function countResults() {
+    function countResults(parentSelector) {
       let itemsShowing = []
-      $('.finder-results li.gem-c-document-list__item').each(function () {
+      $(parentSelector).each(function () {
         if ($(this).is(":visible")) {
           itemsShowing.push(this)
         }
@@ -73,10 +76,10 @@
       return itemsShowing.length
     }
 
-    function showHideResults(permitData, documentData, fileTypeData) {
-      if (permitData.length && documentData.length && fileTypeData.length) {
-        $(".finder-results li.gem-c-document-list__item").each(function () {
-          if (permitData.includes($(this).data('permit-type')) && documentData.includes($(this).data('document-type')) && fileTypeData.includes($(this).data('file-type'))) {
+    function showHideResults(parentSelector, permitData, documentData, interactionTypeData) {
+      if (permitData.length && documentData.length && interactionTypeData.length) {
+        $(parentSelector).each(function () {
+          if (permitData.includes($(this).data('permit-type')) && documentData.includes($(this).data('document-type')) && interactionTypeData.includes($(this).data('file-type'))) {
             $(this).show()
           } else {
             $(this).hide()
@@ -84,7 +87,7 @@
         })
         // $('.finder-results li').attr(['data-permittype', 'Compliance']).css(['background', 'red'])
       } else if (permitData.length) {
-        $(".finder-results li.gem-c-document-list__item").each(function () {
+        $(parentSelector).each(function () {
           if (permitData.includes($(this).data('permit-type'))) {
             $(this).show()
           } else {
@@ -93,7 +96,7 @@
         })
         // $('.finder-results li').attr(['data-permittype', 'Compliance']).css(['background', 'red'])
       } else if (documentData.length) {
-        $(".finder-results li.gem-c-document-list__item").each(function () {
+        $(parentSelector).each(function () {
           if (documentData.includes($(this).data('document-type'))) {
             $(this).show()
           } else {
@@ -101,9 +104,9 @@
           }
         })
         // $('.finder-results li').attr(['data-permittype', 'Compliance']).css(['background', 'red'])
-      } else if (fileTypeData.length) {
-        $(".finder-results li.gem-c-document-list__item").each(function () {
-          if (fileTypeData.includes($(this).data('file-type'))) {
+      } else if (interactionTypeData.length) {
+        $(parentSelector).each(function () {
+          if (interactionTypeData.includes($(this).data('file-type'))) {
             $(this).show()
           } else {
             $(this).hide()
@@ -111,40 +114,15 @@
         })
         // $('.finder-results li').attr(['data-permittype', 'Compliance']).css(['background', 'red'])
       } else {
-        $('.finder-results li.gem-c-document-list__item').show()
+        $(parentSelector).show()
       }
-
-      // if(permitData.length) {
-      //     $(".finder-results li.gem-c-document-list__item").each(function() {
-      //         if(data.includes($(this).data('permit-type'))) {
-      //             $(this).show()
-      //         } else {
-      //             $(this).hide()
-      //         }
-      //     })
-      //     // $('.finder-results li').attr(['data-permittype', 'Compliance']).css(['background', 'red'])
-      // } else {
-      //     $('.finder-results li.gem-c-document-list__item').show()
-      // }
-      // if(documentData.length) {
-      //     $(".finder-results li.gem-c-document-list__item").each(function() {
-      //         if(data.includes($(this).data('document-type'))) {
-      //             $(this).show()
-      //         } else {
-      //             $(this).hide()
-      //         }
-      //     })
-      //     // $('.finder-results li').attr(['data-permittype', 'Compliance']).css(['background', 'red'])
-      // } else {
-      //     $('.finder-results li.gem-c-document-list__item').show()
-      // }
       $('#resultCounter').text(countResults())
 
     }
 
-    $('#facet-wrapper input').on('click', (e) => {
+    $(filterSource).on('click', (e) => {
       //
-      console.log(e.target.checked)
+      console.log(e.target.value + ' = ' + e.target.checked)
       let checked = e.target.value
       if (e.target.checked) {
         if (e.target.name === 'permitType') {
@@ -153,16 +131,16 @@
         if (e.target.name === 'docFileType') {
           fileTypeArray.push(e.target.value)
         }
-        if (e.target.name === 'docType') {
-          documentArray.push(e.target.value)
+        if (e.target.name === 'interactionType') {
+          interactionArray.push(e.target.value)
         }
         searchArray.push(e.target.value)
       } else {
         if (e.target.name === 'permitType') {
           permitArray.splice($.inArray(checked, permitArray), 1)
         }
-        if (e.target.name === 'docType') {
-          documentArray.splice($.inArray(checked, documentArray), 1)
+        if (e.target.name === 'interactionType') {
+          interactionArray.splice($.inArray(checked, interactionArray), 1)
         }
         if (e.target.name === 'docFileType') {
           fileTypeArray.splice($.inArray(checked, fileTypeArray), 1)
@@ -171,13 +149,13 @@
       }
 
 
-      console.log('Search: ' + searchArray)
+      console.log('Filter by: ' + searchArray)
       console.log('Permit: ' + permitArray)
       console.log('FileType: ' + fileTypeArray)
-      console.log('Doc: ' + documentArray)
+      console.log('Interaction: ' + interactionArray)
       // showHideResults(searchArray)
 
-      showHideResults(permitArray, documentArray, fileTypeArray)
+      showHideResults(permitArray, interactionArray, fileTypeArray)
     })
   })
 
