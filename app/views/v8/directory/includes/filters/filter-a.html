@@ -145,16 +145,16 @@
       let dateFilterTimeStamp = ''
       switch (dateFilterValue) {
         case 'sixmonths':
-          dateFilterTimeStamp = new Date(new Date().setMonth(new Date().getMonth()-6))
+          dateFilterTimeStamp = new Date(new Date().setMonth(new Date().getMonth() - 6))
           break
         case 'oneyear':
-          dateFilterTimeStamp = new Date(new Date().setFullYear(new Date().getFullYear()-1))
+          dateFilterTimeStamp = new Date(new Date().setFullYear(new Date().getFullYear() - 1))
           break
         case 'fiveyears':
-          dateFilterTimeStamp = new Date(new Date().setFullYear(new Date().getFullYear()-5))
+          dateFilterTimeStamp = new Date(new Date().setFullYear(new Date().getFullYear() - 5))
           break
         default:
-          dateFilterTimeStamp =  new Date()
+          dateFilterTimeStamp = new Date()
       }
       // console.log(dateFilterTimeStamp)
       return dateFilterTimeStamp
@@ -173,7 +173,7 @@
       if (significantEventsData === 'true' && interactionTypeData.length) {
         console.log('hit ' + 1)
         $(parentSelector).each(function () {
-          if ($(this).data('interaction-type') && interactionTypeData.includes($(this).data('interaction-type')) && ($(this).data('significant-event') && significantEventsData === 'true')) {
+          if ($(this).data('interaction-type') && interactionTypeData.includes($(this).data('interaction-type')) && ($(this).data('significant-event') && significantEventsData === 'true') && isEventInTimeFilterRange($(this).data('timestamp'))) {
             $(this).show()
           } else {
             $(this).hide()
@@ -185,7 +185,7 @@
         $(parentSelector).each(function () {
           // console.log($(this).data('interaction-type'))
           // console.log(interactionTypeData)
-          if (interactionTypeData.includes($(this).data('interaction-type'))) {
+          if (interactionTypeData.includes($(this).data('interaction-type')) && isEventInTimeFilterRange($(this).data('timestamp'))) {
             $(this).show()
           } else {
             $(this).hide()
@@ -193,7 +193,7 @@
         })
         // $('.finder-results li').attr(['data-permittype', 'Compliance']).css(['background', 'red'])
       } else if (significantEventsData === 'true') {
-        console.log('hit ' + 4)
+        console.log('hit ' + 3)
         $(parentSelector).each(function () {
           if ($(this).data('significant-event') && significantEventsData === 'true' && isEventInTimeFilterRange($(this).data('timestamp'))) {
             // console.log(isEventInTimeFilterRange($(this).data('timestamp')))
@@ -203,6 +203,15 @@
           }
         })
         // $('.finder-results li').attr(['data-permittype', 'Compliance']).css(['background', 'red'])
+      } else if (dateFilterValue) {
+        console.log('hit ' + 4)
+        $(parentSelector).each(function () {
+          if (isEventInTimeFilterRange($(this).data('timestamp'))) {
+            $(this).show()
+          } else {
+            $(this).hide()
+          }
+        })
       } else {
         console.log('hit ' + 5)
         $(parentSelector).show()
