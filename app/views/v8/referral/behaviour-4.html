@@ -1,0 +1,44 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+
+<div data-module="moj-add-another">
+
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">What impact do these behaviours have on Barry and the people around him?</h2>
+  <form method="post">
+
+     {{ govukTextarea({
+      id: "behavioureffectdesc",
+      name: "behavioureffectdesc",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "",
+        classes: "govuk-!-font-weight-bold"
+      }
+    }) }}
+
+    {{ govukButton({
+      text: 'Continue',
+      href: 'behaviour-5'
+    }) }}
+
+  </form>
+
+</div>
+  </div>
+
+{% endblock %}
