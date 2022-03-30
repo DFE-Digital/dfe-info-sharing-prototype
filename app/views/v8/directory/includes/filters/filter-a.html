@@ -66,15 +66,15 @@
 
 {% set dateOptionsSelectHtml %}
     {{ govukSelect({
-        id: "date",
-        name: "date",
+        id: "dateFilter",
+        name: "dateFilter",
         classes: "govuk-!-display-block govuk-width-full",
         label: {
             text: "Show interactions from"
         },
         items: [
             {
-                value: "all",
+                value: null,
                 text: "All time",
                 selected: true
             },
@@ -124,9 +124,10 @@
     let fileTypeArray = []
     let interactionArray = []
     let significantEventsValue = false
+    let dateFilterValue = null
 
     const parentSelector = '.event--filterable'
-    const filterSource = '#facet-wrapper input'
+    const filterSource = '#facet-wrapper input, #facet-wrapper select'
 
     // $(".finder-results").find(`[data-permittype='Compliance']`).css('background', 'red')
 
@@ -140,7 +141,7 @@
       return itemsShowing.length
     }
 
-    function showHideResults(parentSelector, significantEventsData, interactionTypeData) {
+    function showHideResults(parentSelector, significantEventsData, interactionTypeData, dateFilter) {
       if (significantEventsData === 'true' && interactionTypeData.length) {
         console.log('hit ' + 1)
         $(parentSelector).each(function () {
@@ -182,7 +183,7 @@
 
     }
 
-    $(filterSource).on('click', (e) => {
+    $(filterSource).on('change', (e) => {
       // console.log(e.target.value + ' = ' + e.target.checked)
       let checked = e.target.value
       if (e.target.checked) {
@@ -202,6 +203,10 @@
           console.log(2)
           // significantEventsValue
         }
+        if (e.target.name === 'dateFilter') {
+          console.log(3)
+          dateFilterValue = e.target.value
+        }
         if (e.target.name === 'interactionType') {
           interactionArray.splice($.inArray(checked, interactionArray), 1)
         }
@@ -215,9 +220,10 @@
       // console.log('Filter by: ' + searchArray)
       console.log('Significant Events Only: ' + significantEventsValue)
       console.log('Interaction: ' + interactionArray)
+      console.log('Date filter: ' + dateFilterValue)
       // showHideResults(searchArray)
 
-      showHideResults(parentSelector, significantEventsValue, interactionArray, fileTypeArray)
+      showHideResults(parentSelector, significantEventsValue, interactionArray, fileTypeArray, dateFilterValue)
     })
   })
 
