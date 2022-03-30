@@ -1,0 +1,95 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+
+<div data-module="moj-add-another">
+
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Describe why a MASSH assessment was conducted</h2>
+  <form action="mash-assessment" method="post">
+
+<p>You will need to include:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>who requested support</li>
+  <li>how the professional assessor feels the family needs help or support</li>
+  <li>if someone in the family has had dealings with the police</li>
+  <li>if the child has told someone about abuse, either emotional, physical or sexual</li>
+</ul>
+
+     {{ govukTextarea({
+      id: "mashreason",
+      name: "mashreason",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "",
+        classes: "govuk-!-font-weight-bold"
+      }
+    }) }}
+
+    {{ govukDateInput({
+      id: "mash-date",
+      fieldset: {
+        legend: {
+          text: "MASSH assessment date",
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {},
+      items: [
+        {
+          id: "mash[0][day]",
+          name: "mash[0][day]",
+          label: "Day",
+          classes: "govuk-input--width-2",
+          attributes: {
+            'data-name': 'mash[%index%][day]',
+            'data-id': 'mash[%index%][day]'
+          }
+        },
+        {
+          id: "mash[0][month]",
+          name: "mash[0][month]",
+          label: "Month",
+          classes: "govuk-input--width-2",
+          attributes: {
+            'data-name': 'mash[%index%][month]',
+            'data-id': 'mash[%index%][month]'
+          }
+        },
+        {
+          id: "mash[0][year]",
+          name: "mash[0][year]",
+          label: "Year",
+          classes: "govuk-input--width-2",
+          attributes: {
+            'data-name': 'mash[%index%][year]',
+            'data-id': 'mash[%index%][year]'
+          }
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: 'Continue',
+      href: 'barry-white-task-list-2'
+    }) }}
+
+  </form>
+
+</div>
+  </div>
+
+{% endblock %}

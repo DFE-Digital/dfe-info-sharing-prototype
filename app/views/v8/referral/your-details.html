@@ -1,0 +1,131 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+
+<div data-module="moj-add-another">
+
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Your details</h2>
+
+  <form method="post">
+
+  {{ govukInput({
+      id: 'job-title',
+      name: 'job-title',
+      label: {
+        html: 'Job title',
+        classes: 'govuk-!-font-weight-bold'
+      },
+      classes: 'govuk-input--width-10',
+      attributes: {
+        'data-name': 'job-title',
+        'data-id': 'job-title'
+      }
+    }) }}
+
+    {{ govukInput({
+      id: 'person[0][first_name]',
+      name: 'person[0][first_name]',
+      label: {
+        html: 'First name',
+        classes: 'govuk-!-font-weight-bold'
+      },
+      classes: 'govuk-input--width-20',
+      attributes: {
+        'data-name': 'person[%index%][first_name]',
+        'data-id': 'person[%index%][first_name]'
+      }
+    }) }}
+
+    {{ govukInput({
+      id: 'person[0][last_name]',
+      name: 'person[0][last_name]',
+      label: {
+        html: 'Last name',
+        classes: 'govuk-!-font-weight-bold'
+      },
+      classes: 'govuk-input--width-20',
+      attributes: {
+        'data-name': 'person[%index%][last_name]',
+        'data-id': 'person[%index%][last_name]'
+      }
+    }) }}
+
+    {{ govukInput({
+      id: 'contact-number',
+      name: 'contact-number',
+      label: {
+        html: 'Telephone number',
+        classes: 'govuk-!-font-weight-bold'
+      },
+      classes: 'govuk-input--width-10',
+      attributes: {
+        'data-name': 'contact-number',
+        'data-id': 'contact-number'
+      }
+    }) }}
+
+    {{ govukInput({
+      id: 'email-address',
+      name: 'email-address',
+      label: {
+        html: 'Email address',
+        classes: 'govuk-!-font-weight-bold'
+      },
+      classes: 'govuk-input--width-10',
+      attributes: {
+        'data-name': 'email-address',
+        'data-id': 'email-address'
+      }
+    }) }}
+
+    {{ govukInput({
+      id: 'organisation',
+      name: 'organisation',
+      label: {
+        html: 'Organisation',
+        classes: 'govuk-!-font-weight-bold'
+      },
+      classes: 'govuk-input--width-10',
+      attributes: {
+        'data-name': 'organisation',
+        'data-id': 'organisation'
+      }
+    }) }}
+
+    {{ govukTextarea({
+      name: "address",
+      id: "address",
+      autocomplete: "street-address",
+      classes: 'govuk-input--width-20',
+      label: {
+        text: "Address",
+        classes: 'govuk-!-font-weight-bold'
+      }
+    }) }}
+
+
+      {{ govukButton({
+        text: 'Continue',
+        href: 'task-list-5'
+      }) }}
+
+  </form>
+
+</div>
+  </div>
+
+{% endblock %}
