@@ -83,7 +83,7 @@
                 text: "Last 6 months"
             },
             {
-                value: "year",
+                value: "oneyear",
                 text: "Last 1 year"
             },
             {
@@ -131,17 +131,45 @@
 
     // $(".finder-results").find(`[data-permittype='Compliance']`).css('background', 'red')
 
-    function countResults(parentSelector) {
+    function countResults (parentSelector) {
       let itemsShowing = []
       $(parentSelector).each(function () {
-        if ($(this).is(":visible")) {
+        if ($(this).is(':visible')) {
           itemsShowing.push(this)
         }
       })
       return itemsShowing.length
     }
 
-    function showHideResults(parentSelector, significantEventsData, interactionTypeData, dateFilter) {
+    function getTimeStampFromRange () {
+      let dateFilterTimeStamp = ''
+      switch (dateFilterValue) {
+        case 'sixmonths':
+          dateFilterTimeStamp = new Date(new Date().setMonth(new Date().getMonth()-6))
+          break
+        case 'oneyear':
+          dateFilterTimeStamp = new Date(new Date().setFullYear(new Date().getFullYear()-1))
+          break
+        case 'fiveyears':
+          dateFilterTimeStamp = new Date(new Date().setFullYear(new Date().getFullYear()-5))
+          break
+        default:
+          dateFilterTimeStamp =  new Date()
+      }
+      // console.log(dateFilterTimeStamp)
+      return dateFilterTimeStamp
+    }
+
+    function isEventInTimeFilterRange (timestamp) {
+      if (dateFilterValue === null || dateFilterValue === '') {
+        return true
+      } else {
+        return new Date(timestamp).getTime() >= new Date(getTimeStampFromRange().getTime())
+      }
+    }
+
+    function showHideResults (parentSelector, significantEventsData, interactionTypeData, dateFilter) {
+
       if (significantEventsData === 'true' && interactionTypeData.length) {
         console.log('hit ' + 1)
         $(parentSelector).each(function () {
@@ -166,9 +194,9 @@
         // $('.finder-results li').attr(['data-permittype', 'Compliance']).css(['background', 'red'])
       } else if (significantEventsData === 'true') {
         console.log('hit ' + 4)
-        console.log(significantEventsData)
         $(parentSelector).each(function () {
-          if ($(this).data('significant-event') && significantEventsData === 'true') {
+          if ($(this).data('significant-event') && significantEventsData === 'true' && isEventInTimeFilterRange($(this).data('timestamp'))) {
+            // console.log(isEventInTimeFilterRange($(this).data('timestamp')))
             $(this).show()
           } else {
             $(this).hide()
@@ -215,7 +243,6 @@
         }
         searchArray.splice($.inArray(checked, searchArray), 1)
       }
-
 
       // console.log('Filter by: ' + searchArray)
       console.log('Significant Events Only: ' + significantEventsValue)
