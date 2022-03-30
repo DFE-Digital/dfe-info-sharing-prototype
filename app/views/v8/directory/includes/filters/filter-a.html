@@ -11,6 +11,17 @@
 
 {% endset %}
 
+{% set significantEventsOptionsHtml %}
+
+    {{ govukCheckboxes({
+        idPrefix: 'significantEvents',
+        name: 'significantEvents',
+        classes: "govuk-checkboxes--small",
+        items: significantEvents
+    }) }}
+
+{% endset %}
+
 {% set dateOptionsHtml %}
     {{ govukInput({
         label: {
@@ -60,8 +71,9 @@
     let permitArray = []
     let fileTypeArray = []
     let interactionArray = []
+    let significantEventsArray = []
 
-    const parentSelector = '.moj-timeline__wrapper .moj-timeline'
+    const parentSelector = '.event--filterable'
     const filterSource = '#facet-wrapper input'
 
     // $(".finder-results").find(`[data-permittype='Compliance']`).css('background', 'red')
