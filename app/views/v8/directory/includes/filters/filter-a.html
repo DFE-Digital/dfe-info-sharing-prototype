@@ -13,11 +13,28 @@
 
 {% set significantEventsOptionsHtml %}
 
-    {{ govukCheckboxes({
-        idPrefix: 'significantEvents',
-        name: 'significantEvents',
-        classes: "govuk-checkboxes--small",
-        items: significantEvents
+    {{ govukRadios({
+        classes: "govuk-radios--small",
+        idPrefix: "significantEvents",
+        name: "significantEvents",
+        fieldset: {
+            legend: {
+                text: "Filter by significant events",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s govuk-visually-hidden"
+            }
+        },
+        items: [
+            {
+                value: false,
+                text: "All",
+                checked: true
+            },
+            {
+                value: true,
+                text: "Significant events only"
+            }
+        ]
     }) }}
 
 {% endset %}
@@ -53,7 +70,12 @@
 {{ searchFilter({
     rows: [
         {
-            title: 'Interaction Type',
+            title: 'Significant events',
+            body: significantEventsOptionsHtml | safe,
+            expanded: 'true'
+        },
+        {
+            title: 'Interaction type',
             body: interactionTypeOptionsHtml | safe,
             expanded: 'true'
         },
@@ -71,7 +93,7 @@
     let permitArray = []
     let fileTypeArray = []
     let interactionArray = []
-    let significantEventsArray = []
+    let significantEventsValue = false
 
     const parentSelector = '.event--filterable'
     const filterSource = '#facet-wrapper input'
@@ -88,11 +110,11 @@
       return itemsShowing.length
     }
 
-    function showHideResults(parentSelector, permitData, interactionTypeData) {
-      if (permitData.length && interactionTypeData.length) {
+    function showHideResults(parentSelector, significantEventsData, interactionTypeData) {
+      if (significantEventsData === 'true' && interactionTypeData.length) {
         console.log('hit ' + 1)
         $(parentSelector).each(function () {
-          if (permitData.includes($(this).data('interaction-type')) && interactionTypeData.includes($(this).data('interaction-type'))) {
+          if ($(this).data('interaction-type') && interactionTypeData.includes($(this).data('interaction-type')) && ($(this).data('significant-event') && significantEventsData === 'true')) {
             $(this).show()
           } else {
             $(this).hide()
@@ -102,8 +124,8 @@
       } else if (interactionTypeData.length) {
         console.log('hit ' + 2)
         $(parentSelector).each(function () {
-          console.log($(this).data('interaction-type'))
-          console.log(interactionTypeData)
+          // console.log($(this).data('interaction-type'))
+          // console.log(interactionTypeData)
           if (interactionTypeData.includes($(this).data('interaction-type'))) {
             $(this).show()
           } else {
@@ -111,10 +133,11 @@
           }
         })
         // $('.finder-results li').attr(['data-permittype', 'Compliance']).css(['background', 'red'])
-      } else if (interactionTypeData.length) {
+      } else if (significantEventsData === 'true') {
         console.log('hit ' + 4)
+        console.log(significantEventsData)
         $(parentSelector).each(function () {
-          if (interactionTypeData.includes($(this).data('file-type'))) {
+          if ($(this).data('significant-event') && significantEventsData === 'true') {
             $(this).show()
           } else {
             $(this).hide()
@@ -130,12 +153,12 @@
     }
 
     $(filterSource).on('click', (e) => {
-      //
-      console.log(e.target.value + ' = ' + e.target.checked)
+      // console.log(e.target.value + ' = ' + e.target.checked)
       let checked = e.target.value
       if (e.target.checked) {
-        if (e.target.name === 'permitType') {
-          permitArray.push(e.target.value)
+        if (e.target.name === 'significantEvents') {
+          console.log(1)
+          significantEventsValue = e.target.value
         }
         if (e.target.name === 'docFileType') {
           fileTypeArray.push(e.target.value)
@@ -145,8 +168,9 @@
         }
         searchArray.push(e.target.value)
       } else {
-        if (e.target.name === 'permitType') {
-          permitArray.splice($.inArray(checked, permitArray), 1)
+        if (e.target.name === 'significantEvents') {
+          console.log(2)
+          // significantEventsValue
         }
         if (e.target.name === 'interactionType') {
           interactionArray.splice($.inArray(checked, interactionArray), 1)
@@ -158,13 +182,12 @@
       }
 
 
-      console.log('Filter by: ' + searchArray)
-      console.log('Permit: ' + permitArray)
-      console.log('FileType: ' + fileTypeArray)
+      // console.log('Filter by: ' + searchArray)
+      console.log('Significant Events Only: ' + significantEventsValue)
       console.log('Interaction: ' + interactionArray)
       // showHideResults(searchArray)
 
-      showHideResults(parentSelector, permitArray, interactionArray, fileTypeArray)
+      showHideResults(parentSelector, significantEventsValue, interactionArray, fileTypeArray)
     })
   })
 
