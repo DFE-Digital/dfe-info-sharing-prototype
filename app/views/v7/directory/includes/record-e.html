@@ -1,0 +1,36 @@
+{% include './record-header-dynamic.html' %}
+
+{% set aboutHTML %}
+    {% include './about-dynamic.html' %}
+{% endset -%}
+
+    {% set timelineHTML %}
+        {% include './timeline-dynamic.html' %}
+    {% endset %}
+
+{{ govukAccordion({
+    id: "accordion-default",
+    items: [
+        {
+            heading: {
+            text: "About " + profile.firstName
+        },
+            content: {
+            html: aboutHTML
+        }
+        },
+        {
+            heading: {
+            text: "Professional support timeline"
+        },
+            content: {
+            html: timelineHTML
+        }
+        }
+    ]
+}) }}
+
+<a href="child-search" class="govuk-link">Search for another child</a>
+
+</div>
+</div>

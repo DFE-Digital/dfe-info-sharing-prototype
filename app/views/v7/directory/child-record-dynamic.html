@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Info sharing - Directory service
+{% endblock %}
+
+{% block content %}
+
+    {% if designVariant === 'B' %}
+        {% include './includes/record-b.html' %}
+    {% elseif designVariant === 'C' %}
+        {% include './includes/record-c.html' %}
+    {% elseif designVariant === 'D' %}
+        {% include './includes/record-d.html' %}
+    {% elseif designVariant === 'E' %}
+        {% include './includes/record-e.html' %}
+    {% else %}
+        {% include './includes/record-a.html' %}
+    {% endif %}
+
+{% endblock %}
