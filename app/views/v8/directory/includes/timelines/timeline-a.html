@@ -1,7 +1,7 @@
 <div class="moj-timeline__wrapper">
     {% for event in events %}
         <div class="moj-timeline event--filterable govuk-!-margin-bottom-6"
-             data-interaction-type="{{ event.slug }}" {% if event.significantEvent %} data-significant-event="{{ event.significantEvent }}" {% endif %}>
+             data-interaction-type="{{ event.slug }}" data-timestamp="{{ event.timestamp }}" {% if event.significantEvent %} data-significant-event="{{ event.significantEvent }}" {% endif %} >
             <div class="moj-timeline__item">
                 <strong class="govuk-tag ">
                     {{ event.category }}

@@ -64,6 +64,36 @@
     }) }}
 {% endset %}
 
+{% set dateOptionsSelectHtml %}
+    {{ govukSelect({
+        id: "date",
+        name: "date",
+        classes: "govuk-!-display-block govuk-width-full",
+        label: {
+            text: "Show interactions from"
+        },
+        items: [
+            {
+                value: "all",
+                text: "All time",
+                selected: true
+            },
+            {
+                value: "sixmonths",
+                text: "Last 6 months"
+            },
+            {
+                value: "year",
+                text: "Last 1 year"
+            },
+            {
+                value: "fiveyears",
+                text: "Last 5 years"
+            }
+        ]
+    }) }}
+{% endset %}
+
 <!-- todo - consider dropdown rather than date range - eg last 6 months, 5 years, from birth etc. -->
 
 
@@ -81,7 +111,7 @@
         },
         {
             title: 'Date',
-            body: dateOptionsHtml | safe
+            body: dateOptionsSelectHtml | safe
         }
     ]
 }) }}
