@@ -18,7 +18,6 @@ Info sharing - Referral service
       </h1>
 
       <ol class="app-task-list">
-
         <li>
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">1. </span>Pre-request requirements
@@ -142,7 +141,7 @@ Info sharing - Referral service
                   Add a person
                 </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              <strong class="govuk-tag app-task-list__tag" id="list-convictions-status">Completed</strong>
             </li>
           </ul>
         </li>
@@ -159,7 +158,7 @@ Info sharing - Referral service
                   Select people
                 </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              <strong class="govuk-tag app-task-list__tag" id="list-convictions-status">Completed</strong>
             </li>
           </ul>
         </li>
@@ -171,8 +170,12 @@ Info sharing - Referral service
           <ul class="app-task-list__items">
 
             <li class="app-task-list__item">
-              <span class="app-task-list__task-name">Give reasons for your request for help and support</span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
+              <span class="app-task-list__task-name">
+                <a href="barry-white-task-list" aria-describedby="eligibility-status">
+                 Barry Grayson
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="list-convictions-status">Completed</strong>
             </li>
           </ul>
         </li>
@@ -184,15 +187,22 @@ Info sharing - Referral service
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                  Give details of the family's history
+                <a href="family-history" aria-describedby="eligibility-status">
+                  Family history
+                </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
+              <strong class="govuk-tag app-task-list__tag" id="list-convictions-status">Completed</strong>
             </li>
           </ul>
         </li>
 
-
       </ol>
+
+      {{ govukButton({
+        text: 'Review your request',
+        href: 'summary'
+      }) }}
+
     </div>
   </div>
 

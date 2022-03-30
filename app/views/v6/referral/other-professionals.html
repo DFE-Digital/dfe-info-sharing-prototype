@@ -15,13 +15,13 @@
 
 {% block content %}
 
-  
+
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Other professionals</h2>
-   {{ govukInsetText({
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Details of another professional</h2>
+   <!--{{ govukInsetText({
     text: "You do not need to tell us your details here. Please give details of the professionals involved with the child and family."
-  }) }}
+  }) }}-->
 
   <form action="other-significant-adults" method="post">
 
@@ -80,7 +80,7 @@
       id: 'contact-number',
       name: 'contact-number',
       label: {
-        html: 'Contact number',
+        html: 'Telephone number',
         classes: 'govuk-!-font-weight-bold'
       },
       classes: 'govuk-input--width-10',
@@ -135,7 +135,7 @@
       autocomplete: "contribution",
       classes: 'govuk-input--width-30',
       label: {
-        text: "How has this professional contributed to the request?",
+        text: "Describe any contribution they have made to this request",
         classes: 'govuk-!-font-weight-bold'
       }
     }) }}
@@ -152,7 +152,7 @@
 
     {{ govukButton({
       text: 'Continue',
-      href: "mash"
+      href: "task-list-5a"
     }) }}
 
   </form>

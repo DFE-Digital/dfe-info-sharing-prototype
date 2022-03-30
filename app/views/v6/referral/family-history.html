@@ -16,30 +16,32 @@ Info sharing - Referral service
 
 <div data-module="moj-add-another">
 
-  <form action="mash" method="post">
+  <!--<h2 class="govuk-heading-l" tabindex="-1">Reasons for this request</h2>-->
+  <h2 class="govuk-heading-l" tabindex="-1">Other family history</h2>
+
+  <form action="family-history" method="post">
 
   {{ govukRadios({
-      idPrefix: "mash",
-      name: "mash",
-      fieldset: {
-        legend: {
-          text: "Has a Multi Agency Safeguarding Hub (MASSH) assessment been carried out?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
-        }
+    idPrefix: "familyhistory",
+    name: "familyhistory",
+    fieldset: {
+      legend: {
+        text: "Are there any important details about the family history that should be taken into consideration when reviewing this request?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "Yes",
+        text: "Yes"
       },
-      hint: {},
-      items: [
-        {
-          value: "Yes",
-          text: "Yes"
-        },
-        {
-          value: "No",
-          text: "No"
-        }
-      ]
-    }) }}
+      {
+        value: "No",
+        text: "No"
+      }
+    ]
+  }) }}
 
     {{ govukButton({
       text: 'Continue'

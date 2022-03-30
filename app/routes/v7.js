@@ -39,11 +39,31 @@ router.post(`/v${verNum}/referral/consent`, function (req, res) {
   let answer = req.session.data['consent']
 
   if (answer === 'Yes') {
-    res.redirect(`/v${verNum}/referral/mash`)
+    res.redirect(`/v${verNum}/referral/locality`);
   } else {
     res.redirect(`/v${verNum}/blocked`)
   }
 })
+
+router.post(`/v${verNum}/referral/are-there-any-other-significant-adults`, function (req, res) {
+  let answer = req.session.data['significantadults'];
+
+  if (answer === 'Yes') {
+    res.redirect(`/v${verNum}/referral/other-significant-adults`);
+  } else {
+    res.redirect(`/v${verNum}/referral/task-list-4`);
+  }
+});
+
+router.post(`/v${verNum}/referral/are-there-any-other-professionals`, function (req, res) {
+  let answer = req.session.data['significantadults3a'];
+
+  if (answer === 'Yes') {
+    res.redirect(`/v${verNum}/referral/other-professionals`);
+  } else {
+    res.redirect(`/v${verNum}/referral/task-list-5a`);
+  }
+});
 
 router.post(`/v${verNum}/referral/mash`, function (req, res) {
   let answer = req.session.data['mash']
@@ -51,19 +71,30 @@ router.post(`/v${verNum}/referral/mash`, function (req, res) {
   if (answer === 'Yes') {
     res.redirect(`/v${verNum}/referral/mash-assessment`)
   } else {
-    res.redirect(`/v${verNum}/referral/ehcp`)
+    res.redirect(`/v${verNum}/referral/barry-white-task-list-2`);
   }
 })
 
-router.post(`/v${verNum}/referral/ehcp`, function (req, res) {
-  let answer = req.session.data['ehcp']
+router.post(`/v${verNum}/referral/behaviour-5`, function (req, res) {
+  let answer = req.session.data['behaviourprevious'];
 
   if (answer === 'Yes') {
-    res.redirect(`/v${verNum}/referral/ehcp-details`)
+    res.redirect(`/v${verNum}/referral/behaviour-6`);
   } else {
-    res.redirect(`/v${verNum}/referral/referral-details-child-educational`)
+    res.redirect(`/v${verNum}/referral/behaviour-8`);
   }
-})
+});
+
+router.post(`/v${verNum}/referral/family-history`, function (req, res) {
+  let answer = req.session.data['familyhistory'];
+
+  if (answer === 'Yes') {
+    res.redirect(`/v${verNum}/referral/family-history-details`);
+  } else {
+    res.redirect(`/v${verNum}/referral/task-list-9`);
+  }
+});
+
 //* Referral routes END //
 
 //*routes to be placed above this line//
