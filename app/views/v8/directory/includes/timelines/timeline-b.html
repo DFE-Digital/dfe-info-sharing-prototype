@@ -1,35 +1,70 @@
-<div class="moj-timeline__wrapper">
-    <h2>Variant B</h2>
-</div>
+{% set tableRowData = [] %}
+<table class="govuk-table" data-module="moj-sortable-table">
+    <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
 
-{% set tableRowData =
-    [
-    {
-    text: "Health"
-    },
-    {
-    html: "N/A<br>0580 223123"
-    },
-    {
-    text: "St Thomas Hospital"
-    },
-    {
-    text: "20 Feb 2020",
+        <th scope="col" class="govuk-table__header" aria-sort="descending">
+            <button type="button" data-index="0">Category</button>
+        </th>
 
-    attributes: {
-    "data-sort-value": "1897"
-    }
-    }
-    ] %}
+        <th scope="col" class="govuk-table__header" aria-sort="none">
+            <button type="button" data-index="1">Name and contact</button>
+        </th>
 
+        <th scope="col" class="govuk-table__header" aria-sort="none">
+            <button type="button" data-index="2">Organisation</button>
+        </th>
 
+        <th scope="col" class="govuk-table__header" aria-sort="none">
+            <button type="button" data-index="3">Date of contact</button>
+        </th>
+
+    </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+
+    {% for event in events %}
+
+        <tr class="govuk-table__row event--filterable" data-interaction-type="{{ event.slug }}" data-timestamp="{{ event.timestamp }}" {% if event.significantEvent %} data-significant-event="{{ event.significantEvent }}"{% endif %}>
+
+            <td class="govuk-table__cell">{{ event.category }}</td>
+
+            <td class="govuk-table__cell">{{ event.contact.name }}</td>
+
+            <td class="govuk-table__cell">{{ event.title }}</td>
+
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="{{ event.timestamp }}">{{ event.dateString }}</td>
+
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{# {% for event in events %} #}
+{# {% set tableRowData = (tableRowData.push([{ #}
+{# text: event.category #}
+{# }, #}
+{# { #}
+{# html: event.contact.name + ", " + event.contact.email #}
+{# }, #}
+{# { #}
+{# text: event.location #}
+{# }, #}
+{# { #}
+{# text: event.dateString, #}
+
+{# attributes: { #}
+{# "data-sort-value": event.timestamp #}
+{# } #}
+{# }]), tableRowData) %} #}
+{# {% endfor %} #}
+{#
 {{ govukTable({
     attributes: {
         'data-module': 'moj-sortable-table'
     },
     head: [
         {
-            text: "Profession",
+            text: "Category",
             attributes: {
             "aria-sort": "ascending"
         }
@@ -56,4 +91,4 @@
     ],
     rows: tableRowData
 }) }}
-
+ #}

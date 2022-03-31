@@ -131,13 +131,15 @@
 
     // $(".finder-results").find(`[data-permittype='Compliance']`).css('background', 'red')
 
-    function countResults (parentSelector) {
+    function countResults () {
       let itemsShowing = []
       $(parentSelector).each(function () {
+        // console.log(this)
         if ($(this).is(':visible')) {
           itemsShowing.push(this)
         }
       })
+      // console.log(itemsShowing)
       return itemsShowing.length
     }
 
@@ -261,6 +263,8 @@
 
       showHideResults(parentSelector, significantEventsValue, interactionArray, fileTypeArray, dateFilterValue)
     })
+    $('#resultCounter').text(countResults())
+
   })
 
 </script>
