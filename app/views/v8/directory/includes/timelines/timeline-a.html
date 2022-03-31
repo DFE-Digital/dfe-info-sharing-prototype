@@ -1,7 +1,8 @@
 <div class="moj-timeline__wrapper">
     {% for event in events %}
         <div class="moj-timeline event--filterable govuk-!-margin-bottom-6"
-             data-interaction-type="{{ event.slug }}" data-timestamp="{{ event.timestamp }}" {% if event.significantEvent %} data-significant-event="{{ event.significantEvent }}" {% endif %} >
+             data-interaction-type="{{ event.slug }}"
+             data-timestamp="{{ event.timestamp }}" {% if event.significantEvent %} data-significant-event="{{ event.significantEvent }}" {% endif %} >
             <div class="moj-timeline__item">
                 <strong class="govuk-tag ">
                     {{ event.category }}
@@ -26,44 +27,58 @@
 
                 </div>
                 {% if designVariant !== 'C' %}
-                    <div class="moj-timeline__description">
-                        <p>
-                            Joe Barker<br>
-                            Phone: 07754 558866<br>
-                            Email: <a href="#" class="govuk-link">j.barker@emailaddress.com</a>
-                        </p>
-                    </div>
-
                     {{ govukDetails({
-                        summaryText: "Further details",
-                        classes: "govuk-!-margin-bottom-0",
+                        summaryText: "Contact details",
+                        classes: "govuk-!-margin-bottom-0 govuk-!-margin-top-2",
                         html: govukSummaryList({
                             rows: [
                                 {
                                     key: {
-                                    text: "Type"
+                                    text: "Name"
                                 },
                                     value: {
-                                    text: "Home visit"
+                                    text: event.contact.name
                                 }
                                 },
                                 {
                                     key: {
-                                    text: "Details"
+                                    text: "Phone"
                                 },
                                     value: {
-                                    text: "Discussed ongoing parental conflict"
+                                    text: event.contact.phone
                                 }
                                 },
                                 {
                                     key: {
-                                    text: "Outcome"
+                                    text: "Email"
                                 },
                                     value: {
-                                    text: "Parents to attend parenting course"
+                                    text: event.contact.email
                                 }
                                 }
                             ]
+                        })
+                    }) }}
+
+                    {% set interactionDetails = [] %}
+                    {% for detail in event.details %}
+                        {% set interactionDetails = (interactionDetails.push(
+                            {
+                                key: {
+                                text: detail.key
+                            },
+                                value: {
+                                text: detail.value
+                            }
+                            }
+                        ), interactionDetails) %}
+                    {% endfor %}
+
+                    {{ govukDetails({
+                        summaryText: "Interaction details",
+                        classes: "govuk-!-margin-bottom-0",
+                        html: govukSummaryList({
+                            rows: interactionDetails
                         })
                     }) }}
 
