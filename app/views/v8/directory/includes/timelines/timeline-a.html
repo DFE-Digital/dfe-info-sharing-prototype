@@ -1,0 +1,90 @@
+<div class="moj-timeline__wrapper">
+    {% for event in events %}
+        <div class="moj-timeline event--filterable govuk-!-margin-bottom-6"
+             data-interaction-type="{{ event.slug }}"
+             data-timestamp="{{ event.timestamp }}" {% if event.significantEvent %} data-significant-event="{{ event.significantEvent }}" {% endif %} >
+            <div class="moj-timeline__item">
+                <strong class="govuk-tag ">
+                    {{ event.category }}
+                </strong>
+                {% if event.significantEvent %}
+                    {{ govukTag({
+                        text: "Significant Event",
+                        classes: "govuk-tag--red"
+                    }) }}
+                {% endif %}
+                <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">
+                        {{ event.title }}
+                    </h2>
+                    {% if event.location != null %}
+                        <p class="moj-timeline__byline"> - {{ event.location }}</p>
+                    {% endif %}
+
+                    <p class="moj-timeline__date">
+                        <time datetime="{{ event.datestamp }}">{{ event.dateString }}</time>
+                    </p>
+
+                </div>
+                {% if designVariant !== 'C' %}
+                    {{ govukDetails({
+                        summaryText: "Contact details",
+                        classes: "govuk-!-margin-bottom-0 govuk-!-margin-top-2",
+                        html: govukSummaryList({
+                            rows: [
+                                {
+                                    key: {
+                                    text: "Name"
+                                },
+                                    value: {
+                                    text: event.contact.name
+                                }
+                                },
+                                {
+                                    key: {
+                                    text: "Phone"
+                                },
+                                    value: {
+                                    text: event.contact.phone
+                                }
+                                },
+                                {
+                                    key: {
+                                    text: "Email"
+                                },
+                                    value: {
+                                    text: event.contact.email
+                                }
+                                }
+                            ]
+                        })
+                    }) }}
+
+                    {% set interactionDetails = [] %}
+                    {% for detail in event.details %}
+                        {% set interactionDetails = (interactionDetails.push(
+                            {
+                                key: {
+                                text: detail.key
+                            },
+                                value: {
+                                text: detail.value
+                            }
+                            }
+                        ), interactionDetails) %}
+                    {% endfor %}
+
+                    {{ govukDetails({
+                        summaryText: "Interaction details",
+                        classes: "govuk-!-margin-bottom-0",
+                        html: govukSummaryList({
+                            rows: interactionDetails
+                        })
+                    }) }}
+
+                {% endif %}
+
+            </div>
+        </div>
+    {% endfor %}
+</div>
