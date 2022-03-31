@@ -14,12 +14,15 @@ router.get([`/v${verNum}/directory/record/:childId`, `/v${verNum}/directory/reco
   const childId = req.params.childId || '1'
   const designVariant = req.params.designVariant || 'A'
   const eventTimelineId = req.query.eventTimelineId || '1'
+  const timelineVariant = req.query.timelineVariant || 'A'
+  // const filterVariant = req.query.filterVariant || 'A'
   const events = data.createEvents(childId, eventTimelineId)
   res.render(`v${verNum}/directory/child-record-dynamic.html`, {
     events: events,
     profile: data.createProfile(childId),
     interactionTypes: data.createInteractionTypes(events),
-    designVariant: designVariant
+    designVariant: designVariant,
+    timelineVariant: timelineVariant
   })
 })
 //* Directory routes END //

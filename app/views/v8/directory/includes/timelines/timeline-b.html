@@ -1,0 +1,59 @@
+<div class="moj-timeline__wrapper">
+    <h2>Variant B</h2>
+</div>
+
+{% set tableRowData =
+    [
+    {
+    text: "Health"
+    },
+    {
+    html: "N/A<br>0580 223123"
+    },
+    {
+    text: "St Thomas Hospital"
+    },
+    {
+    text: "20 Feb 2020",
+
+    attributes: {
+    "data-sort-value": "1897"
+    }
+    }
+    ] %}
+
+
+{{ govukTable({
+    attributes: {
+        'data-module': 'moj-sortable-table'
+    },
+    head: [
+        {
+            text: "Profession",
+            attributes: {
+            "aria-sort": "ascending"
+        }
+        },
+        {
+            text: "Name and contact",
+            attributes: {
+            "aria-sort": "none"
+        }
+        },
+        {
+            text: "Organisation",
+            attributes: {
+            "aria-sort": "none"
+        }
+        },
+        {
+            text: "Date of contact",
+            attributes: {
+            "aria-sort": "none"
+        }
+        }
+
+    ],
+    rows: tableRowData
+}) }}
+
