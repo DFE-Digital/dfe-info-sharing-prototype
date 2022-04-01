@@ -17,8 +17,8 @@
                     <h2 class="moj-timeline__title">
                         {{ event.title }}
                     </h2>
-                    {% if event.location != null %}
-                        <p class="moj-timeline__byline"> - {{ event.location }}</p>
+                    {% if event.organisation.title != null %}
+                        <p class="moj-timeline__byline"> - {{ event.organisation.title }}</p>
                     {% endif %}
 
                     <p class="moj-timeline__date">

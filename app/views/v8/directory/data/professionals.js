@@ -58,6 +58,7 @@ const professionals = {
       firstName: '',
       lastName: '',
       position: ' ',
+      organisation: organisations.default.welfare[0],
       category: '',
       contact: {
         phone: '',
@@ -71,6 +72,7 @@ const professionals = {
       firstName: '',
       lastName: '',
       position: ' ',
+      organisation: organisations.default.social[0],
       category: '',
       contact: {
         phone: '',
