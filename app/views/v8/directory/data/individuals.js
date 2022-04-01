@@ -10,7 +10,7 @@ const individuals = [
     gender: 'Male',
     ethnicity: 'White British',
     firstLanguage: 'English',
-    address: '12 Compton Street, Townsville, Countyville, DR34 5TO',
+    address: '12 Compton Street, Townsville, Countyville, TV3 5TO',
     contacts: {
       mainContact: { id: 4 },
       gp: { id: 1 },
@@ -28,7 +28,7 @@ const individuals = [
     gender: 'Female',
     ethnicity: 'White British',
     firstLanguage: 'English',
-    address: '412 Felix Road, Townsville, Countyville, DR32 7RE',
+    address: '412 Felix Road, Townsville, Countyville, TV3 7RE',
     contacts: {
       mainContact: { id: 3 },
       gp: { id: 1 },
@@ -46,7 +46,7 @@ const individuals = [
     gender: 'Male',
     ethnicity: 'White British',
     firstLanguage: 'English',
-    address: '412 Felix Road, Townsville, Countyville, DR32 7RE',
+    address: '412 Felix Road, Townsville, Countyville, TV3 7RE',
     contacts: {
       mainContact: { id: 3 },
       gp: { id: 1 },
@@ -64,7 +64,7 @@ const individuals = [
     gender: 'Male',
     ethnicity: 'White British',
     firstLanguage: 'English',
-    address: '82 Sackville Road, Townsville, Countyville, DR31 4EH',
+    address: '82 Sackville Road, Townsville, Countyville, TV3 4EH',
     contacts: {
       mainContact: { id: 3 },
       gp: { id: 1 },
@@ -101,7 +101,7 @@ const contacts = [
         'Scotch Orchard Road, \n' +
         'Townsville, \n' +
         'Countyville, \n' +
-        'CT12 7YY'
+        'TV3 7YY'
     }
   },
   {

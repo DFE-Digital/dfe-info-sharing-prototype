@@ -17,8 +17,8 @@
                     <h2 class="moj-timeline__title">
                         {{ event.title }}
                     </h2>
-                    {% if event.location != null %}
-                        <p class="moj-timeline__byline"> - {{ event.location }}</p>
+                    {% if event.organisation.title != null %}
+                        <p class="moj-timeline__byline"> - {{ event.organisation.title }}</p>
                     {% endif %}
 
                     <p class="moj-timeline__date">
@@ -73,14 +73,15 @@
                             }
                         ), interactionDetails) %}
                     {% endfor %}
-
-                    {{ govukDetails({
-                        summaryText: "Interaction details",
-                        classes: "govuk-!-margin-bottom-0",
-                        html: govukSummaryList({
-                            rows: interactionDetails
-                        })
-                    }) }}
+                    {% if interactionDetails.length %}
+                        {{ govukDetails({
+                            summaryText: "Interaction details",
+                            classes: "govuk-!-margin-bottom-0",
+                            html: govukSummaryList({
+                                rows: interactionDetails
+                            })
+                        }) }}
+                    {% endif %}
 
                 {% endif %}
 
