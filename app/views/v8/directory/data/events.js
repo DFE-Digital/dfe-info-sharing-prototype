@@ -32,6 +32,12 @@ const eventTimeline = [
     description: 'Full timeline (starting from birth) including significant events such as exclusion',
     categories: ['education', 'health', 'welfare', 'social'],
     events: [1, 2, 4, 5, 7, 9]
+  },
+  {
+    id: '5',
+    description: 'Scenario to fit UR round 3 - significant events around primary school and no further significant events at secondary',
+    categories: ['education', 'health', 'welfare', 'social'],
+    events: [1, 2, 5, 7, 9, 10]
   }
 ]
 
@@ -271,8 +277,8 @@ const events = [
   {
     id: '5',
     type: 'simple',
-    description: 'Welfare involvement',
-    category: 'welfare',
+    description: 'Social involvement',
+    category: 'Family support',
     events: [
       {
         title: 'Home visit',
@@ -283,8 +289,8 @@ const events = [
           months: 11,
           days: 15
         },
-        contact: generateProfessionalContactDetails(professionals.default.welfare[0]),
-        organisation: professionals.default.welfare[0].organisation,
+        contact: generateProfessionalContactDetails(professionals.default.social[0]),
+        organisation: professionals.default.social[0].organisation
       }
     ]
   },
@@ -304,7 +310,7 @@ const events = [
           days: 15
         },
         contact: generateProfessionalContactDetails(professionals.default.welfare[0]),
-        organisation: professionals.default.welfare[0].organisation,
+        organisation: professionals.default.welfare[0].organisation
       }
     ]
   },
@@ -393,7 +399,71 @@ const events = [
         ]
       }
     ]
+  },
+  {
+    id: '10',
+    type: 'complex',
+    description: 'Mixed health record, dental, GP visits and A&E',
+    category: 'health',
+    events: [
+      {
+        title: 'Immunisations',
+        category: 'Health',
+        offsetTime: {
+          years: 1,
+          months: 2,
+          days: 2
+        },
+        contact: generateProfessionalContactDetails(professionals.default.health[2]),
+        organisation: professionals.default.health[2].organisation,
+        details: [
+          {
+            key: 'Details',
+            value: 'Routine immunisations administered'
+          }
+        ]
+      },
+      {
+        title: 'New attendance',
+        category: 'Health',
+        offsetTime: {
+          years: 3,
+          months: 1,
+          days: 12
+        },
+        contact: generateProfessionalContactDetails(professionals.default.health[1]),
+        organisation: professionals.default.health[1].organisation,
+        details: [
+          {
+            key: 'Details',
+            value: 'Mother concerned about allergic reactions to certain foods notably those containing wheat'
+          },
+          {
+            key: 'Outcomes',
+            value: 'Mother to observe child\'s reactions to foods and return if issues continue'
+          }
+        ]
+      },
+      {
+        title: 'Injury',
+        category: 'Health',
+        offsetTime: {
+          years: 5,
+          months: 6,
+          days: 8
+        },
+        contact: generateProfessionalContactDetails(professionals.default.health[3]),
+        organisation: professionals.default.health[3].organisation,
+        details: [
+          {
+            key: 'Details',
+            value: 'Child has attended A&E with a broken finger. Injury was acquired whilst playing football with friends in the garden.'
+          }
+        ]
+      }
+    ]
   }
+
 ]
 
 exports.events = events

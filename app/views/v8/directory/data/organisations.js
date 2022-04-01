@@ -29,6 +29,21 @@ const organisations = {
         phone: '0111 6534 2311',
         email: 'reception@tgp.com'
       }
+    },
+    {
+      id: '3',
+      category: 'health',
+      title: 'Royal Townsville Hospital Accident & Emergency',
+      system: 'EHM',
+      address: {
+        line1: '165 George Street',
+        town: 'Townsville',
+        postcode: 'TV3 9IP'
+      },
+      contact: {
+        phone: '0111 2453 6773',
+        email: 'a&e@rt.hospital.com'
+      }
     }
   ],
   education: [
@@ -93,7 +108,23 @@ const organisations = {
     }
   ],
   welfare: [],
-  social: []
+  social: [
+    {
+      id: '1',
+      category: 'social',
+      title: 'The Townsville Family Service',
+      system: 'EDU-1',
+      address: {
+        line1: '23 Erikson Way',
+        town: 'Townsville',
+        postcode: 'TV3 2DT'
+      },
+      contact: {
+        phone: '0111 3442 3231',
+        email: 'contact@thetfs.co.uk'
+      }
+    }
+  ]
 }
 
 exports.default = organisations

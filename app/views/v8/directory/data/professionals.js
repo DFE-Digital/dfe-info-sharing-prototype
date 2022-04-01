@@ -13,6 +13,42 @@ const professionals = {
         phone: '07765437682',
         email: 's.brady@h.hospital.com'
       }
+    },
+    {
+      id: '2',
+      firstName: 'Selena',
+      lastName: 'Khalid',
+      position: 'General Practitioner',
+      category: 'health',
+      organisation: organisations.default.health[1],
+      contact: {
+        phone: '07765437682',
+        email: 'dr.s.khalid@tgp.com'
+      }
+    },
+    {
+      id: '3',
+      firstName: 'Tom',
+      lastName: 'Mackenzie',
+      position: 'Senior nurse',
+      category: 'health',
+      organisation: organisations.default.health[1],
+      contact: {
+        phone: '07767520910',
+        email: 't.mackenzie@tgp.com'
+      }
+    },
+    {
+      id: '4',
+      firstName: 'Michael',
+      lastName: 'Smith',
+      position: 'Administrative assistant',
+      category: 'health',
+      organisation: organisations.default.health[2],
+      contact: {
+        phone: '0111 7266 9277 (ext. 33)',
+        email: 'm.smith@h.hospital.com'
+      }
     }
   ],
   education: [
@@ -81,14 +117,14 @@ const professionals = {
   social: [
     {
       id: '1',
-      firstName: '',
-      lastName: '',
-      position: ' ',
+      firstName: 'Mohammed',
+      lastName: 'Stevens',
+      position: 'Liaison Officer',
       organisation: organisations.default.social[0],
-      category: '',
+      category: 'social',
       contact: {
-        phone: '',
-        email: ''
+        phone: '077453627876',
+        email: 'm.stevens@thetfs.co.uk'
       }
     }
   ]
