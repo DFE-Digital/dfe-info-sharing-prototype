@@ -44,6 +44,21 @@ const organisations = {
         phone: '0111 2453 6773',
         email: 'a&e@rt.hospital.com'
       }
+    },
+    {
+      id: '4',
+      category: 'health',
+      title: 'Townsville Dental',
+      system: 'EHM',
+      address: {
+        line1: '16 Carver Terrace',
+        town: 'Townsville',
+        postcode: 'TV3 5TR'
+      },
+      contact: {
+        phone: '0111 3421 1127',
+        email: 'admin@tvdental.com'
+      }
     }
   ],
   education: [

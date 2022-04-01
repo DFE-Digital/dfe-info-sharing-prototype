@@ -49,6 +49,18 @@ const professionals = {
         phone: '0111 7266 9277 (ext. 33)',
         email: 'm.smith@h.hospital.com'
       }
+    },
+    {
+      id: '5',
+      firstName: 'Jeremy',
+      lastName: 'Kinder',
+      position: 'Dentist',
+      category: 'health',
+      organisation: organisations.default.health[3],
+      contact: {
+        phone: '0111 3322 5433 (ext. 3)',
+        email: 'j.kinder@tvdental.com'
+      }
     }
   ],
   education: [

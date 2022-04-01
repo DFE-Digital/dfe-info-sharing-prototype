@@ -460,6 +460,99 @@ const events = [
             value: 'Child has attended A&E with a broken finger. Injury was acquired whilst playing football with friends in the garden.'
           }
         ]
+      },
+      {
+        title: 'New attendance',
+        category: 'Health',
+        offsetTime: {
+          years: 7,
+          months: 3,
+          days: 15
+        },
+        contact: generateProfessionalContactDetails(professionals.default.health[1]),
+        organisation: professionals.default.health[1].organisation,
+        details: [
+          {
+            key: 'Details',
+            value: 'Child has experienced difficulty breathing on a number of occasions recently'
+          },
+          {
+            key: 'Outcomes',
+            value: 'Suspect child may be suffering with asthma and an inhaler has been issued'
+          }
+        ]
+      },
+      {
+        title: 'Return appointment',
+        category: 'Health',
+        offsetTime: {
+          years: 8,
+          months: 1,
+          days: 5
+        },
+        contact: generateProfessionalContactDetails(professionals.default.health[1]),
+        organisation: professionals.default.health[1].organisation,
+        details: [
+          {
+            key: 'Details',
+            value: 'Child continues to experience difficulty breathing despite use of inhaler'
+          },
+          {
+            key: 'Outcomes',
+            value: 'Prescribed alternative cartridge for inhaler'
+          }
+        ]
+      },
+      {
+        title: 'Return appointment',
+        category: 'Health',
+        offsetTime: {
+          years: 10,
+          months: 8,
+          days: 19
+        },
+        contact: generateProfessionalContactDetails(professionals.default.health[1]),
+        organisation: professionals.default.health[1].organisation,
+        details: [
+          {
+            key: 'Details',
+            value: 'Child has experienced a flare up in existing breathing difficulties'
+          },
+          {
+            key: 'Outcomes',
+            value: 'Prescribed alternative cartridge for inhaler'
+          }
+        ]
+      },
+      {
+        title: 'Injury',
+        category: 'Health',
+        offsetTime: {
+          years: 15,
+          months: 6,
+          days: 19
+        },
+        contact: generateProfessionalContactDetails(professionals.default.health[3]),
+        organisation: professionals.default.health[3].organisation,
+        details: [
+          {
+            key: 'Details',
+            value: 'Child has experienced a moderate concussion whilst playing an organised rugby match'
+          }
+        ]
+      },
+      {
+        title: 'Did not attend',
+        category: 'Health',
+        offsetTime: {
+          years: 10,
+          months: 2,
+          days: 19
+        },
+        contact: generateProfessionalContactDetails(professionals.default.health[4]),
+        organisation: professionals.default.health[4].organisation,
+        details: [
+        ]
       }
     ]
   }
