@@ -75,6 +75,21 @@ const organisations = {
         phone: '0111 2111 2233',
         email: 'office@fairwayschool.com'
       }
+    },
+    {
+      id: '4',
+      category: 'education',
+      title: 'St Lukes High School',
+      system: 'EDU-1',
+      address: {
+        line1: '103 Chase Place',
+        town: 'Townsville',
+        postcode: 'TV3 9TC'
+      },
+      contact: {
+        phone: '0111 3442 3231',
+        email: 'contact@stlukes-townsville.com'
+      }
     }
   ],
   welfare: [],

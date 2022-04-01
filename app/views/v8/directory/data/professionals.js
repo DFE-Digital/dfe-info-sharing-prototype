@@ -22,7 +22,7 @@ const professionals = {
       lastName: 'Harrison',
       position: 'Manager',
       category: 'education',
-      organisation: organisations.default.education[1],
+      organisation: organisations.default.education[0],
       contact: {
         phone: '0111 7625 2266'
       }
@@ -33,7 +33,7 @@ const professionals = {
       lastName: 'Ball',
       position: 'Head Teacher',
       category: 'education',
-      organisation: organisations.default.education[2],
+      organisation: organisations.default.education[1],
       contact: {
         phone: '0111 7625 2266',
         email: 'j.ball@netherstoweschool.com'
@@ -44,11 +44,23 @@ const professionals = {
       firstName: 'Mary',
       lastName: 'Spicer',
       position: 'Head Teacher',
-      organisation: organisations.default.education[3],
+      organisation: organisations.default.education[2],
       category: 'education',
       contact: {
         phone: '0111 111 2233',
         email: 'm.spicer@fairwayschool.com'
+      }
+    },
+    {
+      id: '4',
+      firstName: 'Simon',
+      lastName: 'Trench',
+      position: 'Head Teacher',
+      organisation: organisations.default.education[3],
+      category: 'education',
+      contact: {
+        phone: '0111 3442 3231 (ext. 23)',
+        email: 'simon.trench@stlukes-townsville.com'
       }
     }
   ],

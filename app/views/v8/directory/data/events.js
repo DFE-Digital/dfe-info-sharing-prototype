@@ -252,6 +252,19 @@ const events = [
             value: 'Child has been permanently excluded for unacceptable behaviour on school grounds'
           }
         ]
+      },
+      {
+        title: 'New attendance',
+        // location: 'Fairway High School',
+        category: 'Education',
+        offsetTime: {
+          years: 16,
+          months: 1,
+          days: 1
+        },
+        contact: generateProfessionalContactDetails(professionals.default.education[3]),
+        organisation: professionals.default.education[3].organisation,
+        details: []
       }
     ]
   },
