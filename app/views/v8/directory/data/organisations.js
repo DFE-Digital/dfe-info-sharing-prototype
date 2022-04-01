@@ -109,7 +109,7 @@ const organisations = {
     {
       id: '4',
       category: 'education',
-      title: 'St Lukes High School',
+      title: 'St Lukes Primary School',
       system: 'EDU-1',
       address: {
         line1: '103 Chase Place',

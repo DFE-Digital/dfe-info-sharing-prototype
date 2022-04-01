@@ -37,7 +37,7 @@ const eventTimeline = [
     id: '5',
     description: 'Scenario to fit UR round 3 - significant events around primary school and no further significant events at secondary',
     categories: ['education', 'health', 'welfare', 'social'],
-    events: [1, 2, 5, 7, 9, 10]
+    events: [1, 5, 6, 10]
   }
 ]
 
@@ -276,41 +276,106 @@ const events = [
   },
   {
     id: '5',
-    type: 'simple',
-    description: 'Social involvement',
-    category: 'Family support',
+    type: 'complex',
+    description: 'School at 5 with suspension and exclusion early on and improvements thereafter',
+    category: 'education',
     events: [
       {
-        title: 'Home visit',
-        location: 'Home visit',
-        category: 'Welfare',
+        title: 'New attendance',
+        category: 'Education',
         offsetTime: {
           years: 4,
-          months: 11,
-          days: 15
+          months: 8,
+          days: 10
         },
-        contact: generateProfessionalContactDetails(professionals.default.social[0]),
-        organisation: professionals.default.social[0].organisation
+        contact: generateProfessionalContactDetails(professionals.default.education[1]),
+        organisation: professionals.default.education[1].organisation,
+        details: []
+      },
+      {
+        title: 'Challenging behavior',
+        significantEvent: true,
+        category: 'Education',
+        offsetTime: {
+          years: 7,
+          months: 2,
+          days: 5
+        },
+        contact: generateProfessionalContactDetails(professionals.default.education[1]),
+        organisation: professionals.default.education[1].organisation,
+        details: [
+          {
+            key: 'Details',
+            value: 'The child became increasingly disruptive and confrontational during a lesson and ended up throwing a chair at a wall.'
+          },
+          {
+            key: 'Outcomes',
+            value: 'The child was told to see the head teacher and a verbal reprimand was given and their father was informed of what had happened at the end of the school day.'
+          }
+        ]
+      },
+      {
+        title: 'New attendance',
+        significantEvent: true,
+        category: 'Education',
+        offsetTime: {
+          years: 7,
+          months: 6,
+          days: 8
+        },
+        contact: generateProfessionalContactDetails(professionals.default.education[3]),
+        organisation: professionals.default.education[3].organisation,
+        details: []
       }
     ]
   },
   {
     id: '6',
     type: 'complex',
-    description: 'Welfare involvement',
-    category: 'welfare',
+    description: 'Family Support involvement',
+    category: 'social',
     events: [
       {
         title: 'Home visit',
-        location: 'Home visit',
-        category: 'Welfare',
+        category: 'Family support',
         offsetTime: {
-          years: 4,
-          months: 11,
+          years: 6,
+          months: 3,
           days: 15
         },
-        contact: generateProfessionalContactDetails(professionals.default.welfare[0]),
-        organisation: professionals.default.welfare[0].organisation
+        contact: generateProfessionalContactDetails(professionals.default.social[0]),
+        organisation: professionals.default.social[0].organisation,
+        details: [
+          {
+            key: 'Observations',
+            value: 'Parental conflict following a split. Supporting mother with parenting and managing child’s behaviour.'
+          },
+          {
+            key: 'Outcomes',
+            value: 'Assessment has been conducted to identify areas of need within the family. Direct support is required'
+          }
+        ]
+      },
+      {
+        title: 'Case review',
+        category: 'Family support',
+        offsetTime: {
+          years: 7,
+          months: 1,
+          days: 1
+        },
+        contact: generateProfessionalContactDetails(professionals.default.social[0]),
+        organisation: professionals.default.social[0].organisation,
+        details: [
+          {
+            key: 'Observations',
+            value: 'The plan in place with the family has been working well, and a noticeable improvement has been noted in the child’s behaviour, both in school and at home.'
+          },
+          {
+            key: 'Outcomes',
+            value: 'The case will be closed as the family are coping well and further involvement is not needed at this time.'
+          }
+        ]
       }
     ]
   },
@@ -551,8 +616,7 @@ const events = [
         },
         contact: generateProfessionalContactDetails(professionals.default.health[4]),
         organisation: professionals.default.health[4].organisation,
-        details: [
-        ]
+        details: []
       }
     ]
   }
