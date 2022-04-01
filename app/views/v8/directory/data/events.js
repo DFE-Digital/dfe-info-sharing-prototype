@@ -326,6 +326,53 @@ const events = [
         contact: generateProfessionalContactDetails(professionals.default.education[3]),
         organisation: professionals.default.education[3].organisation,
         details: []
+      },
+      {
+        title: 'Interim report',
+        category: 'Education',
+        offsetTime: {
+          years: 7,
+          months: 11,
+          days: 28
+        },
+        contact: generateProfessionalContactDetails(professionals.default.education[3]),
+        organisation: professionals.default.education[3].organisation,
+        details: [
+          {
+            key: 'Observations',
+            value: 'Following the managed move from previous school, feedback has been overwhelmingly positive. Academically, things appear to be on track and I find the student to be very polite.'
+          }
+        ]
+      },
+      {
+        title: 'New attendance',
+        significantEvent: true,
+        category: 'Education',
+        offsetTime: {
+          years: 11,
+          months: 6,
+          days: 8
+        },
+        contact: generateProfessionalContactDetails(professionals.default.education[2]),
+        organisation: professionals.default.education[2].organisation,
+        details: []
+      },
+      {
+        title: 'Interim report',
+        category: 'Education',
+        offsetTime: {
+          years: 14,
+          months: 10,
+          days: 18
+        },
+        contact: generateProfessionalContactDetails(professionals.default.education[2]),
+        organisation: professionals.default.education[2].organisation,
+        details: [
+          {
+            key: 'Observations',
+            value: 'Performing better than projected across all subjects and continues to be a popular and well liked child.'
+          }
+        ]
       }
     ]
   },
