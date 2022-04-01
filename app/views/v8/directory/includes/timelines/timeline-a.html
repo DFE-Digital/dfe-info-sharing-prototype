@@ -73,14 +73,15 @@
                             }
                         ), interactionDetails) %}
                     {% endfor %}
-
-                    {{ govukDetails({
-                        summaryText: "Interaction details",
-                        classes: "govuk-!-margin-bottom-0",
-                        html: govukSummaryList({
-                            rows: interactionDetails
-                        })
-                    }) }}
+                    {% if interactionDetails.length %}
+                        {{ govukDetails({
+                            summaryText: "Interaction details",
+                            classes: "govuk-!-margin-bottom-0",
+                            html: govukSummaryList({
+                                rows: interactionDetails
+                            })
+                        }) }}
+                    {% endif %}
 
                 {% endif %}
 
