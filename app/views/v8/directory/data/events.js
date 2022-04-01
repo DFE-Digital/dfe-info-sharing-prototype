@@ -16,6 +16,12 @@ const eventTimeline = [
     description: 'Full timeline (starting from birth) including significant events such as exclusion',
     categories: ['education'],
     events: [1, 2, 4]
+  },
+  {
+    id: '4',
+    description: 'Full timeline (starting from birth) including significant events such as exclusion',
+    categories: ['education', 'health', 'welfare', 'social'],
+    events: [1, 2, 4, 5, 7]
   }
 ]
 
@@ -281,6 +287,78 @@ const events = [
             value: 'Child has been permanently excluded for unacceptable behaviour on school grounds'
           }
         ]
+      }
+    ]
+  },
+  {
+    id: '5',
+    type: 'simple',
+    description: 'Welfare involvement',
+    category: 'welfare',
+    events: [
+      {
+        title: 'Home visit',
+        location: 'Home visit',
+        category: 'Welfare',
+        offsetTime: {
+          years: 4,
+          months: 11,
+          days: 15
+        }
+      }
+    ]
+  },
+  {
+    id: '6',
+    type: 'complex',
+    description: 'Welfare involvement',
+    category: 'welfare',
+    events: [
+      {
+        title: 'Home visit',
+        location: 'Home visit',
+        category: 'Welfare',
+        offsetTime: {
+          years: 4,
+          months: 11,
+          days: 15
+        }
+      }
+    ]
+  },
+  {
+    id: '7',
+    type: 'simple',
+    description: 'Parents have separated',
+    category: 'social',
+    events: [
+      {
+        title: 'Home visit',
+        significantEvent: true,
+        category: 'Social',
+        offsetTime: {
+          years: 5,
+          months: 3,
+          days: 5
+        }
+      }
+    ]
+  },
+  {
+    id: '8',
+    type: 'complex',
+    description: 'Parents have separated',
+    category: 'social',
+    events: [
+      {
+        title: 'Home visit',
+        significantEvent: true,
+        category: 'Social',
+        offsetTime: {
+          years: 5,
+          months: 3,
+          days: 5
+        }
       }
     ]
   }
