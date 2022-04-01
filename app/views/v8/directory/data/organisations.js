@@ -122,7 +122,23 @@ const organisations = {
       }
     }
   ],
-  welfare: [],
+  welfare: [
+    {
+      id: '1',
+      category: 'welfare',
+      title: 'Townsville Police',
+      system: 'BP2',
+      address: {
+        line1: '10 King Street',
+        town: 'Townsville',
+        postcode: 'TV3 5TD'
+      },
+      contact: {
+        phone: '0111 4432 1114',
+        email: 'contact@townsville.police.gov.uk'
+      }
+    }
+  ],
   social: [
     {
       id: '1',

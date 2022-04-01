@@ -37,7 +37,7 @@ const eventTimeline = [
     id: '5',
     description: 'Scenario to fit UR round 3 - significant events around primary school and no further significant events at secondary',
     categories: ['education', 'health', 'welfare', 'social'],
-    events: [1, 5, 6, 10]
+    events: [1, 5, 6, 10, 11]
   }
 ]
 
@@ -288,8 +288,8 @@ const events = [
           months: 8,
           days: 10
         },
-        contact: generateProfessionalContactDetails(professionals.default.education[1]),
-        organisation: professionals.default.education[1].organisation,
+        contact: generateProfessionalContactDetails(professionals.default.education[4]),
+        organisation: professionals.default.education[4].organisation,
         details: []
       },
       {
@@ -311,6 +311,48 @@ const events = [
           {
             key: 'Outcomes',
             value: 'The child was told to see the head teacher and a verbal reprimand was given and their father was informed of what had happened at the end of the school day.'
+          }
+        ]
+      },
+      {
+        title: 'Phone call',
+        category: 'Family support',
+        offsetTime: {
+          years: 7,
+          months: 2,
+          days: 21
+        },
+        contact: generateProfessionalContactDetails(professionals.default.social[0]),
+        organisation: professionals.default.social[0].organisation,
+        details: [
+          {
+            key: 'Details',
+            value: 'A conversation with the child’s mum to talk about recent behavioural problems at school and what help and support is needed.'
+          },
+          {
+            key: 'Outcomes',
+            value: 'Agreed that further direct support is required and to speak with the child’s dad and the school to get a wider perspective of the issues and how best the team can support the child and family.'
+          }
+        ]
+      },
+      {
+        title: 'Phone call',
+        category: 'Family support',
+        offsetTime: {
+          years: 7,
+          months: 2,
+          days: 23
+        },
+        contact: generateProfessionalContactDetails(professionals.default.social[0]),
+        organisation: professionals.default.social[0].organisation,
+        details: [
+          {
+            key: 'Details',
+            value: 'A conversation with the child’s dad to talk about recent behavioural problems at school and what help and support is needed.'
+          },
+          {
+            key: 'Outcomes',
+            value: 'Agreed that further direct support is required and that a meeting with all parties at school should be the next step in addressing ongoing issues.'
           }
         ]
       },
@@ -664,6 +706,31 @@ const events = [
         contact: generateProfessionalContactDetails(professionals.default.health[4]),
         organisation: professionals.default.health[4].organisation,
         details: []
+      }
+    ]
+  },
+  {
+    id: '11',
+    type: 'simple',
+    description: 'Single event - police called to residence',
+    category: 'welfare',
+    events: [
+      {
+        title: 'Police called to family home',
+        category: 'Welfare',
+        offsetTime: {
+          years: 13,
+          months: 2,
+          days: 2
+        },
+        contact: generateProfessionalContactDetails(professionals.default.welfare[0]),
+        organisation: professionals.default.welfare[0].organisation,
+        details: [
+          {
+            key: 'Details',
+            value: 'Response to call from neighbours about a domestic disturbance'
+          }
+        ]
       }
     ]
   }

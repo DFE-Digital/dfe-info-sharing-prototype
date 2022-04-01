@@ -110,19 +110,31 @@ const professionals = {
         phone: '0111 3442 3231 (ext. 23)',
         email: 'simon.trench@stlukes-townsville.com'
       }
+    },
+    {
+      id: '5',
+      firstName: 'Sarah',
+      lastName: 'MacDonald',
+      position: 'Head Teacher',
+      category: 'education',
+      organisation: organisations.default.education[1],
+      contact: {
+        phone: '0111 7625 2266',
+        email: 's.macdonald@netherstoweschool.com'
+      }
     }
   ],
   welfare: [
     {
       id: '1',
-      firstName: '',
-      lastName: '',
-      position: ' ',
+      firstName: 'Sam',
+      lastName: 'Yardie',
+      position: 'Community Support Officer',
       organisation: organisations.default.welfare[0],
-      category: '',
+      category: 'Welfare',
       contact: {
-        phone: '',
-        email: ''
+        phone: '0111 2652 8266',
+        email: 'sam.yardie@townsville.police.gov.uk'
       }
     }
   ],
