@@ -25,6 +25,14 @@ router.get([`/v${verNum}/directory/record/:childId`, `/v${verNum}/directory/reco
     timelineVariant: timelineVariant
   })
 })
+
+router.get([`/v${verNum}/directory/search-results`, `/v${verNum}/directory/child-record-results`], function (req, res) {
+  const searchTerm = req.query.search || null
+  const searchResults = data.createSearchResults(searchTerm)
+  res.render(`v${verNum}/directory/search-results-dynamic.html`, {
+    searchResults: searchResults
+  })
+})
 //* Directory routes END //
 
 //* Referral routes //
