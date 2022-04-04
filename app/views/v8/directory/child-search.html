@@ -17,8 +17,8 @@ Info sharing - Directory service
       {%- from "moj/components/search/macro.njk" import mojSearch -%}
 
       {{ mojSearch({
-        action: 'child-record-results',
-        method: 'post',
+        action: 'search-results',
+        method: 'get',
         input: {
           id: 'search',
           name: 'search'

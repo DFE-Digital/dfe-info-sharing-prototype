@@ -13,16 +13,28 @@ router.use((req, res, next) => {
 router.get([`/v${verNum}/directory/record/:childId`, `/v${verNum}/directory/record/:childId/:designVariant`, `/v${verNum}/directory/record/`], function (req, res) {
   const childId = req.params.childId || '1'
   const designVariant = req.params.designVariant || 'A'
-  const eventTimelineId = req.query.eventTimelineId || '1'
+  const profile = data.createProfile(childId)
+  let eventTimelineId = req.query.eventTimelineId || '1'
+  if (profile.timelineId) {
+    eventTimelineId = profile.timelineId.toString()
+  }
   const timelineVariant = req.query.timelineVariant || 'A'
   // const filterVariant = req.query.filterVariant || 'A'
   const events = data.createEvents(childId, eventTimelineId)
   res.render(`v${verNum}/directory/child-record-dynamic.html`, {
     events: events,
-    profile: data.createProfile(childId),
+    profile: profile,
     interactionTypes: data.createInteractionTypes(events),
     designVariant: designVariant,
     timelineVariant: timelineVariant
+  })
+})
+
+router.get([`/v${verNum}/directory/search-results`, `/v${verNum}/directory/child-record-results`], function (req, res) {
+  const searchTerm = req.query.search || null
+  const searchResults = data.createSearchResults(searchTerm)
+  res.render(`v${verNum}/directory/search-results-dynamic.html`, {
+    searchResults: searchResults
   })
 })
 //* Directory routes END //

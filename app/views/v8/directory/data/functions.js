@@ -45,6 +45,13 @@ const createContacts = function (childData) {
   // console.log(contacts)
   return contacts
 }
+const createSearchResults = function (searchTerm) {
+  let results = individuals.individuals
+  if (searchTerm != null) {
+    results = results.filter(x => x.lastName.toLowerCase() === searchTerm.toLowerCase())
+  }
+  return results
+}
 
 const createEvents = function (childId, timelineId) {
   // Get events from event object
@@ -119,4 +126,5 @@ const createInteractionTypes = function (timeline) {
 
 exports.createProfile = createProfile
 exports.createEvents = createEvents
+exports.createSearchResults = createSearchResults
 exports.createInteractionTypes = createInteractionTypes
