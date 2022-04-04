@@ -104,81 +104,6 @@
       }
     }) }}
 
-    {{ govukDateInput({
-      id: "date-of-birth",
-      fieldset: {
-        legend: {
-          text: "Date of birth",
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      hint: {},
-      items: [
-        {
-          id: "person[0][dob][day]",
-          name: "person[0][dob][day]",
-          label: "Day",
-          classes: "govuk-input--width-2",
-          attributes: {
-            'data-name': 'person[%index%][dob][day]',
-            'data-id': 'person[%index%][dob][day]'
-          }
-        },
-        {
-          id: "person[0][dob][month]",
-          name: "person[0][dob][month]",
-          label: "Month",
-          classes: "govuk-input--width-2",
-          attributes: {
-            'data-name': 'person[%index%][dob][month]',
-            'data-id': 'person[%index%][dob][month]'
-          }
-        },
-        {
-          id: "person[0][dob][year]",
-          name: "person[0][dob][year]",
-          label: "Year",
-          classes: "govuk-input--width-2",
-          attributes: {
-            'data-name': 'person[%index%][dob][year]',
-            'data-id': 'person[%index%][dob][year]'
-          }
-        }
-      ]
-    }) }}
-
-    {{ govukRadios({
-      idPrefix: "gender",
-      name: "gender",
-      fieldset: {
-        legend: {
-          text: "Gender",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      items: [
-        {
-          value: "Male",
-          text: "Male"
-        },
-        {
-          value: "Female",
-          text: "Female"
-        },
-        {
-          value: "Other",
-          text: "Other"
-        },
-        {
-          divider: "or"
-        },
-        {
-          value: "skip",
-          text: "Unknown"
-        }
-      ]
-    }) }}
 
     {{ govukInput({
       id: 'contact-number',
@@ -203,47 +128,6 @@
         text: "Address",
         classes: 'govuk-!-font-weight-bold'
       }
-    }) }}
-
-    {{ govukRadios({
-      idPrefix: "ethnicity",
-      name: "ethnicity",
-      fieldset: {
-        legend: {
-          text: "Ethnicity",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      items: [
-        {
-          value: "white",
-          text: "White"
-        },
-        {
-          value: "multiple",
-          text: "Mixed or multiple ethnic groups"
-        },
-        {
-          value: "asian",
-          text: "Asian or Asian British"
-        },
-        {
-          value: "black",
-          text: "Black, African, Caribbean or Black British"
-        },
-        {
-          value: "other",
-          text: "Other ethnic group"
-        },
-        {
-          divider: "or"
-        },
-        {
-          value: "skip",
-          text: "Unknown"
-        }
-      ]
     }) }}
 
 
