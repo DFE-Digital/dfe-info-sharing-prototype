@@ -25,7 +25,16 @@
                             html: "<a href='./record/" + result.id + "/D' class='govuk-link'>" + result.firstName + ' ' + result.lastName + "</a>"
                         },
                         {
-                            text: result.dob
+                            text: result.dob,
+                            attributes: {
+                            "data-sort-value": result.dobTimestamp
+                            }
+                        },
+                        {
+                            text: result.age,
+                            attributes: {
+                            "data-sort-value": result.dobTimestamp
+                        }
                         },
                         {
                             text: result.address
@@ -68,6 +77,12 @@
                     },
                     {
                         text: "Date of birth",
+                        attributes: {
+                        "aria-sort": "ascending"
+                        }
+                    },
+                    {
+                        text: "Age",
                         attributes: {
                         "aria-sort": "ascending"
                         }
