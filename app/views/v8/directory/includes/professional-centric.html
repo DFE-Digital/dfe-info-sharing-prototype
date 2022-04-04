@@ -4,5 +4,12 @@
             Professional contacts
         </h2>
 
+        {% for pro in professionalInteractions %}
+            <p>
+                Name: {{ pro.name }} <br />
+                Category: {{ pro.category }} <br />
+            </p>
+        {% endfor %}
+
     </div>
 </div>

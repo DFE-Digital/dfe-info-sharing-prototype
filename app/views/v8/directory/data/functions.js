@@ -93,6 +93,17 @@ const getInteractionCountByType = function (interactions, interactionType) {
   return count.length.toString()
 }
 
+const groupByProfessional = function (events) {
+  return [
+    {
+      name: 'Example',
+      category: 'health',
+      contact: {},
+      interactions: []
+    }
+  ]
+}
+
 const getInteractionTypes = function (interactions) {
   const interactionTypes = []
   const map = new Map()
@@ -127,4 +138,5 @@ const createInteractionTypes = function (timeline) {
 exports.createProfile = createProfile
 exports.createEvents = createEvents
 exports.createSearchResults = createSearchResults
+exports.groupByProfessional = groupByProfessional
 exports.createInteractionTypes = createInteractionTypes
