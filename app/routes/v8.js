@@ -40,6 +40,35 @@ router.get([`/v${verNum}/directory/search-results`, `/v${verNum}/directory/child
 //* Directory routes END //
 
 //* Referral routes //
+
+
+router.post(`/v${verNum}/referral/assessment/can-be-met-universal-answer`, function (req, res) {
+  let answer = req.session.data['have-you-assessed'];
+
+    res.redirect(`/v${verNum}/referral/consent`);
+
+});
+
+router.post(`/v${verNum}/referral/assessment/have-you-assessed-answer`, function (req, res) {
+  let answer = req.session.data['have-you-assessed'];
+
+    res.redirect(`/v${verNum}/referral/assessment/can-be-met-universal`);
+
+});
+
+router.post(`/v${verNum}/referral/urgency`, function (req, res) {
+  let answer = req.session.data['urgency'];
+
+  if (answer === 'immediate') {
+    res.redirect(`/v${verNum}/referral/exit-points/use-emergency-services`);
+  } else if (answer === 'safeguarding') {
+    res.redirect(`/v${verNum}/referral/exit-points/safeguarding`);
+
+  } else {
+    res.redirect(`/v${verNum}/referral/assessment/have-you-assessed`);
+  }
+});
+
 router.post(`/v${verNum}/referral/immediate-danger`, function (req, res) {
   let answer = req.session.data['immediatedanger']
 
@@ -114,4 +143,3 @@ router.post(`/v${verNum}/referral/family-history`, function (req, res) {
 
 //*routes to be placed above this line//
 module.exports = router
-
