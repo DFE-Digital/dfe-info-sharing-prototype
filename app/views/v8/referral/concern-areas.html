@@ -16,7 +16,7 @@ Info sharing - Referral service
 
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l" tabindex="-1">What areas of concern do you have about Barry?</h2>
+  <h2 class="govuk-heading-l" tabindex="-1">What areas does Barry needs help with?</h2>
 
   <form method="post">
     {{ govukCheckboxes({
@@ -35,35 +35,23 @@ Info sharing - Referral service
       items: [
         {
           value: "Health",
-          text: "Health"
+          text: "Health - physical and developmental issues
+"
         },
         {
-          value: "Behaviour",
-          text: "Behaviour"
+          value: "Social or emotional",
+          text: "Social or emotional - issues with their mental or behavioural impulses
+"
         },
         {
           value: "Education",
-          text: "Education"
+          text: "Education - issues with learning
+"
         },
         {
-          value: "Training and work",
-          text: "Training and work"
-        },
-        {
-          value: "Special Education Needs and Disability (SEND)",
-          text: "Special Education Needs and Disability (SEND)"
-        },
-        {
-          value: "Family Help and Support for Vulnerable Children and Families",
-          text: "Family Help and Support for Vulnerable Children and Families"
-        },
-        {
-          value: "Food provision",
-          text: "Food provision"
-        },
-        {
-          value: "Support from the Justice system",
-          text: "Support from the Justice system"
+          value: "Welfare",
+          text: "Welfare - issues around their safety, support and well-being
+"
         }
       ]
     }) }}

@@ -16,20 +16,21 @@ Info sharing - Referral service
 
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Describe the behavioural issues</h2>
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">How long has Barry struggled with these problems?</h2>
   <form method="post">
 
-     {{ govukTextarea({
-      id: "behaviourdesc",
-      name: "behaviourdesc",
-      type: "textarea",
-      spellcheck: true,
-      classes: "govuk-!-width-two-thirds",
+    {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+    {{ govukTextarea({
+      name: "more-detail",
+      id: "more-detail",
       label: {
         text: "",
-        classes: "govuk-!-font-weight-bold"
+        classes: "govuk-label--l",
+        isPageHeading: true
       }
     }) }}
+
 
     {{ govukButton({
       text: 'Continue',

@@ -16,45 +16,19 @@ Info sharing - Referral service
 
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">When did Barry's behavioural issues start?</h2>
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Describe the social or emotional problems Barry has</h2>
   <form method="post">
 
-
-    {{ govukDateInput({
-      id: "behaviour-date",
-      hint: {},
-      items: [
-        {
-          id: "behaviour[0][day]",
-          name: "behaviour[0][day]",
-          label: "Day",
-          classes: "govuk-input--width-2",
-          attributes: {
-            'data-name': 'behaviour[%index%][day]',
-            'data-id': 'behaviour[%index%][day]'
-          }
-        },
-        {
-          id: "behaviour[0][month]",
-          name: "behaviour[0][month]",
-          label: "Month",
-          classes: "govuk-input--width-2",
-          attributes: {
-            'data-name': 'behaviour[%index%][month]',
-            'data-id': 'behaviour[%index%][month]'
-          }
-        },
-        {
-          id: "behaviour[0][year]",
-          name: "behaviour[0][year]",
-          label: "Year",
-          classes: "govuk-input--width-2",
-          attributes: {
-            'data-name': 'behaviour[%index%][year]',
-            'data-id': 'behaviour[%index%][year]'
-          }
-        }
-      ]
+     {{ govukTextarea({
+      id: "behaviourdesc",
+      name: "behaviourdesc",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "",
+        classes: "govuk-!-font-weight-bold"
+      }
     }) }}
 
     {{ govukButton({
