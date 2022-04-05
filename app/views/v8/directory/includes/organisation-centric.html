@@ -1,15 +1,35 @@
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">
-            Organisations involved
-        </h2>
-
+    <div class="govuk-grid-column-full">
+        {% set orgItems = [] %}
         {% for org in organisationInteractions %}
-            <p>
-                Name: {{ org.title }} <br />
-                Events: {{ org.events.length }} <br />
-            </p>
+            {% set orgDetails = [] %}
+            {% for contactItem in org %}
+                {% set orgDetails = (orgDetails.push(
+                {
+                    key: {
+                        text: 'contactItem'
+                    },
+                    value: {
+                        text: 'contactItem'
+                    }
+                }
+            ), orgDetails) %}
+            {% endfor %}
+            {% set orgItems = (orgItems.push(
+                {
+                    heading: {
+                    text: org.title + ' (' + org.events.length + ' interactions)'
+                },
+                    content: {
+                        html:  govukSummaryList({ rows: orgDetails })
+                    }
+                }), orgItems) %}
         {% endfor %}
+
+        {{ govukAccordion({
+            id: "organisations",
+            items: orgItems
+        }) }}
 
     </div>
 </div>
