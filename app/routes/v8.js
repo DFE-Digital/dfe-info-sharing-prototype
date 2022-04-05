@@ -119,6 +119,32 @@ router.post(`/v${verNum}/referral/mash`, function (req, res) {
   }
 })
 
+router.post(`/v${verNum}/referral/mash-assessment`, function (req, res) {
+  let answer = req.session.data['mash-assessment']
+
+  if (answer === 'Yes') {
+    res.redirect(`/v${verNum}/referral/upload-assessment`)
+  } else {
+    res.redirect(`/v${verNum}/referral/assessment-date`);
+  }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 router.post(`/v${verNum}/referral/behaviour-5`, function (req, res) {
   let answer = req.session.data['behaviourprevious'];
 

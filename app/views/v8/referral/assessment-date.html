@@ -16,29 +16,21 @@ Info sharing - Referral service
 
 <div data-module="moj-add-another">
 
-  <form action="mash-assessment" method="post">
+  <form action="barry-white-task-list-2" method="post">
 
-  {{ govukRadios({
-      idPrefix: "mash-assessment",
-      name: "mash-assessment",
+    {{ govukDateInput({
+      id: "passport-issued",
+      namePrefix: "passport-issued",
       fieldset: {
         legend: {
-          text: "Do you have a copy of the assessment?",
+          text: "When was the assessment carried out?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }
       },
-      hint: {},
-      items: [
-        {
-          value: "Yes",
-          text: "Yes"
-        },
-        {
-          value: "No",
-          text: "No"
-        }
-      ]
+      hint: {
+        text: "For example, 27 3 2007"
+      }
     }) }}
 
     {{ govukButton({

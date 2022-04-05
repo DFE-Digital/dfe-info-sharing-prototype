@@ -13,36 +13,24 @@ Info sharing - Referral service
 
 {% block content %}
 
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Share a copy of the assessment</h2>
 
 <div data-module="moj-add-another">
 
-  <form action="mash-assessment" method="post">
+  <form action="barry-white-task-list-2" method="post">
 
-  {{ govukRadios({
-      idPrefix: "mash-assessment",
-      name: "mash-assessment",
-      fieldset: {
-        legend: {
-          text: "Do you have a copy of the assessment?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
-        }
-      },
-      hint: {},
-      items: [
-        {
-          value: "Yes",
-          text: "Yes"
-        },
-        {
-          value: "No",
-          text: "No"
-        }
-      ]
+    {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+    {{ govukFileUpload({
+      id: "file-upload-1",
+      name: "file-upload-1",
+      label: {
+        text: "Select a file to upload."
+      }
     }) }}
 
     {{ govukButton({
-      text: 'Continue'
+      text: 'Upload'
     }) }}
 
   </form>

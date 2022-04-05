@@ -23,12 +23,14 @@ Info sharing - Referral service
       name: "mash",
       fieldset: {
         legend: {
-          text: "Has a Multi Agency Safeguarding Hub (MASH) assessment been carried out?",
+          text: "Has an assessment of Barry's additional support needs been carried out?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }
       },
-      hint: {},
+      hint: {
+        text: "This includes..."
+      },
       items: [
         {
           value: "Yes",
@@ -37,6 +39,10 @@ Info sharing - Referral service
         {
           value: "No",
           text: "No"
+        },
+        {
+          value: "I don't know",
+          text: "I don't know"
         }
       ]
     }) }}
