@@ -114,8 +114,10 @@ const groupByOrganisation = function (events) {
   const grouped = []
   const map = new Map()
   for (const item of events) {
-    if (!map.has(item.organisation.id)) {
-      map.set(item.organisation.id, true)
+    const uniqueId = item.organisation.category + item.organisation.id
+    console.log(uniqueId)
+    if (!map.has(uniqueId)) {
+      map.set(uniqueId, true)
       grouped.push({
         ...item.organisation,
         events: events.filter(x => x.organisation.title === item.organisation.title)
