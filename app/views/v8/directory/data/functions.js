@@ -106,12 +106,26 @@ const groupByProfessional = function (events) {
       })
     }
   }
-  console.log(grouped)
   grouped.sort((x, y) => y.events.length - x.events.length)
   return grouped
 }
 
-// todo - groupByOrg - same as above but org centric
+const groupByOrganisation = function (events) {
+  const grouped = []
+  const map = new Map()
+  for (const item of events) {
+    if (!map.has(item.organisation.id)) {
+      map.set(item.organisation.id, true)
+      grouped.push({
+        ...item.organisation,
+        events: events.filter(x => x.organisation.title === item.organisation.title)
+      })
+    }
+  }
+  console.log(grouped)
+  grouped.sort((x, y) => y.events.length - x.events.length)
+  return grouped
+}
 
 const getInteractionTypes = function (interactions) {
   const interactionTypes = []
@@ -139,8 +153,6 @@ const camelize = function (str) {
 }
 
 const createInteractionTypes = function (timeline) {
-  // console.log(timeline)
-  // console.log(getInteractionTypes(timeline))
   return getInteractionTypes(timeline)
 }
 
@@ -148,4 +160,5 @@ exports.createProfile = createProfile
 exports.createEvents = createEvents
 exports.createSearchResults = createSearchResults
 exports.groupByProfessional = groupByProfessional
+exports.groupByOrganisation = groupByOrganisation
 exports.createInteractionTypes = createInteractionTypes

@@ -27,7 +27,8 @@ router.get([`/v${verNum}/directory/record/:childId`, `/v${verNum}/directory/reco
     interactionTypes: data.createInteractionTypes(events),
     designVariant: designVariant,
     timelineVariant: timelineVariant,
-    professionalInteractions: data.groupByProfessional(events)
+    professionalInteractions: data.groupByProfessional(events),
+    organisationInteractions: data.groupByOrganisation(events)
   })
 })
 

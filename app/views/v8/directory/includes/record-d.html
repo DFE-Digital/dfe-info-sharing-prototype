@@ -19,6 +19,10 @@
     {% include './professional-centric.html' %}
 {% endset %}
 
+{% set organisationHTML %}
+    {% include './organisation-centric.html' %}
+{% endset %}
+
     {{ govukTabs({
         items: [
             {
@@ -40,6 +44,13 @@
                 id: "professional",
                 panel: {
                 html: professionalHTML
+            }
+            },
+            {
+                label: "Organisations",
+                id: "organisations",
+                panel: {
+                html: organisationHTML
             }
             }
         ]
