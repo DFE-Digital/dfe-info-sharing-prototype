@@ -135,67 +135,34 @@ Info sharing - Referral service
       }
     }) }}
 
-
-
-
-
-{% set disabilityHtml %}
-    {{ govukTextarea({
-      name: "more-detail",
-      id: "more-detail",
-      label: {
-        text: "Give details of any disabilities",
-        isPageHeading: false
-      },
-      hint: {}
-    }) }}
-{% endset -%}
-
-
-    {{ govukRadios({
-      idPrefix: "contact",
-      name: "contact",
+{{ govukCheckboxes({
+      idPrefix: "disability",
+      name: "disability",
       fieldset: {
         legend: {
-          text: "Do they have any disabilites?",
+          text: "Disabilities",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--s"
         }
       },
-      hint: {},
       items: [
         {
-          value: "yes",
-          text: "Yes",
-          checked: true,
-          conditional: {
-            html: disabilityHtml
-          }
+          value: "Mental impairment",
+          text: "Mental impairment"
         },
         {
-          value: "no",
-          text: "No"
+          value: "Physical impairment",
+          text: "Physical impairment"
         },
         {
-          value: "don't know",
-          text: "I don't know",
-          conditional: {
-            html: phoneHtml
-          }
+          divider: "or"
+        },
+        {
+          value: "None of the above",
+          text: "None of the above"
         }
       ]
     }) }}
-
-
-
-
-
-
-
-
-
-
-
 
     {{ govukRadios({
       idPrefix: "ethnicity",
