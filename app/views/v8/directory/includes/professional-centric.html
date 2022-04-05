@@ -7,7 +7,8 @@
         {% for pro in professionalInteractions %}
             <p>
                 Name: {{ pro.name }} <br />
-                Category: {{ pro.category }} <br />
+                {{ pro.organisation.title }}
+                Events: {{ pro.events.length }} <br />
             </p>
         {% endfor %}
 

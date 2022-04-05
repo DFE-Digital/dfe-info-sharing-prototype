@@ -100,11 +100,14 @@ const groupByProfessional = function (events) {
     if (!map.has(item.contact.id)) {
       map.set(item.contact.id, true)
       grouped.push({
-        ...item.contact
+        ...item.contact,
+        organisation: item.organisation,
+        events: events.filter(x => x.contact.id === item.contact.id)
       })
     }
   }
   console.log(grouped)
+  grouped.sort((x, y) => y.events.length - x.events.length)
   return grouped
 }
 
