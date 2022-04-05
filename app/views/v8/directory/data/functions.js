@@ -94,15 +94,21 @@ const getInteractionCountByType = function (interactions, interactionType) {
 }
 
 const groupByProfessional = function (events) {
-  return [
-    {
-      name: 'Example',
-      category: 'health',
-      contact: {},
-      interactions: []
+  const grouped = []
+  const map = new Map()
+  for (const item of events) {
+    if (!map.has(item.contact.id)) {
+      map.set(item.contact.id, true)
+      grouped.push({
+        ...item.contact
+      })
     }
-  ]
+  }
+  console.log(grouped)
+  return grouped
 }
+
+// todo - groupByOrg - same as above but org centric
 
 const getInteractionTypes = function (interactions) {
   const interactionTypes = []
@@ -131,7 +137,7 @@ const camelize = function (str) {
 
 const createInteractionTypes = function (timeline) {
   // console.log(timeline)
-  console.log(getInteractionTypes(timeline))
+  // console.log(getInteractionTypes(timeline))
   return getInteractionTypes(timeline)
 }
 
