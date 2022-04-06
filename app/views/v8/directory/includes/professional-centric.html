@@ -3,14 +3,47 @@
         <h2 class="govuk-heading-m">
             Professional contacts
         </h2>
-    {# todo - add sortable table #}
+        {# todo - add sortable table #}
+        {% set tableRows = [] %}
         {% for pro in professionalInteractions %}
-            <p>
-                Name: {{ pro.name }} <br />
-                {{ pro.organisation.title }}
-                Events: {{ pro.events.length }} <br />
-            </p>
+            {% set tableRows = (tableRows.push(
+                [
+                    {
+                        text: pro.name
+                    },
+                    {
+                        text: pro.organisation.title
+                    },
+                    {
+                        text: pro.events.length
+                    }
+                ]
+            ), tableRows) %}
         {% endfor %}
 
-    </div>
+{{ govukTable({
+    attributes: {
+        'data-module': 'moj-sortable-table'
+    },
+    head: [
+        {
+            text: "Name"
+        },
+        {
+            text: "Organisation",
+            attributes: {
+             "aria-sort": "none"
+            }
+        },
+        {
+            text: "Interactions",
+            attributes: {
+             "aria-sort": "descending"
+            }
+        }
+    ],
+    rows: tableRows
+}) }}
+
+</div>
 </div>
