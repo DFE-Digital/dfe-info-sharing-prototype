@@ -1,0 +1,27 @@
+
+{% set uniqueHtml %}
+    {% include './search-a.html' %}
+{% endset %}
+
+{% set personalHtml %}
+    {% include './search-b.html' %}
+{% endset %}
+
+{{ govukTabs({
+    items: [
+        {
+            label: "Unique identifeir",
+            id: "unique",
+            panel: {
+                html: uniqueHtml
+            }
+        },
+        {
+            label: "Personal information",
+            id: "personal",
+            panel: {
+               html: personalHtml
+            }
+        }
+        ]
+}) }}
