@@ -3,14 +3,14 @@
         {% set orgItems = [] %}
         {% for org in organisationInteractions %}
             {% set orgDetails = [] %}
-            {% for contactItem in org %}
+            {% for k, v in org.contact %}
                 {% set orgDetails = (orgDetails.push(
                 {
                     key: {
-                        text: 'contactItem'
+                        text: k
                     },
                     value: {
-                        text: 'contactItem'
+                        text: v
                     }
                 }
             ), orgDetails) %}
@@ -25,7 +25,6 @@
                     }
                 }), orgItems) %}
         {% endfor %}
-
         {{ govukAccordion({
             id: "organisations",
             items: orgItems
