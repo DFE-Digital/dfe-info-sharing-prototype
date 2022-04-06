@@ -13,8 +13,10 @@
             </h1>
             {% if searchVariant === 'B' %}
                 {% include './includes/search/search-b.html' %}
-            {% else %}
+            {% elseif searchVariant === 'C' %}
                 {% include './includes/search/search-c.html' %}
+            {% else %}
+                {% include './includes/search/search-a.html' %}
             {% endif %}
 
         </div>
