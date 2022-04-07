@@ -11,9 +11,17 @@
     {% include './about-dynamic.html' %}
 {% endset -%}
 
-    {% set timelineHTML %}
-        {% include './filter-timeline.html' %}
-    {% endset %}
+{% set timelineHTML %}
+    {% include './filter-timeline.html' %}
+{% endset %}
+
+{% set professionalHTML %}
+    {% include './professional-centric.html' %}
+{% endset %}
+
+{% set organisationHTML %}
+    {% include './organisation-centric.html' %}
+{% endset %}
 
     {{ govukTabs({
         items: [
@@ -29,6 +37,20 @@
                 id: "about",
                 panel: {
                 html: aboutHTML
+            }
+            },
+            {
+                label: "Professional contacts",
+                id: "professional",
+                panel: {
+                html: professionalHTML
+            }
+            },
+            {
+                label: "Organisations",
+                id: "organisations",
+                panel: {
+                html: organisationHTML
             }
             }
         ]
