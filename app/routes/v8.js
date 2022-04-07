@@ -37,6 +37,14 @@ router.get([`/v${verNum}/directory/search-results`, `/v${verNum}/directory/child
     searchResults: searchResults
   })
 })
+
+router.get([`/v${verNum}/directory/search`, `/v${verNum}/directory/child-search`], function (req, res) {
+  const searchVariant = req.query.searchVariant || null
+  res.render(`v${verNum}/directory/child-search.html`, {
+    searchVariant: searchVariant
+  })
+})
+
 //* Directory routes END //
 
 //* Referral routes //

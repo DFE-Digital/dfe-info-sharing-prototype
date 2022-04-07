@@ -1,39 +1,25 @@
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Info sharing - Directory service
+    Info sharing - Directory service
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-           <h1 class="govuk-heading-xl ">
-        <!--<span class="govuk-caption-xl">Info sharing - Alpha</span>-->
-        Child search
-      </h1>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl ">
+                Child search
+            </h1>
+            {% if searchVariant === 'B' %}
+                {% include './includes/search/search-b.html' %}
+            {% elseif searchVariant === 'C' %}
+                {% include './includes/search/search-c.html' %}
+            {% else %}
+                {% include './includes/search/search-a.html' %}
+            {% endif %}
 
-      {%- from "moj/components/search/macro.njk" import mojSearch -%}
-
-      {{ mojSearch({
-        action: 'search-results',
-        method: 'get',
-        input: {
-          id: 'search',
-          name: 'search'
-        },
-
-
-        button: {
-          text: 'Search'
-        }
-      }) }}
-
-
-
-
+        </div>
     </div>
-  </div>
 
 {% endblock %}
