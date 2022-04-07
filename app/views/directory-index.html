@@ -52,45 +52,7 @@
         </h2>
 
 
-        <h3 class='govuk-heading-m govuk-!-margin-bottom-1'>
-            Sprint goals
-        </h3>
-        <ul class='govuk-list govuk-list--bullet'>
-            <li>
-                Better understand the type of the information different user groups need to perform their role
-                {{ govukTag({
-                    text: "Ongoing",
-                    classes: "govuk-tag--pink"
-                }) }}
-            </li>
-        </ul>
-
-
-        <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
-            Design asset and information links
-        </h3>
-        <ul class="govuk-list govuk-list--bullet">
-            <li>
-                <a href="https://docs.google.com/document/d/1bTOWDopyqZX4v8Bmq3ekBWkzPwhCtAUzxZNob_gyZHQ/edit"
-                   class="govuk-link" target="_blank">Decision log</a>
-            </li>
-            <li>
-                <a href="https://lucid.app/lucidspark/21d1c860-552d-41af-820e-2f017b0c9e73/edit#" class="govuk-link"
-                   target="_blank">Lucid board</a>
-            </li>
-
-        </ul>
-        <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
-            Prototype links
-        </h3>
-        <ul class="govuk-list govuk-list--bullet">
-            <li>
-                <a href="v8/directory/child-search" class="govuk-link">Sprint 7 prototype</a>
-            </li>
-            <li>
-                <a href="v8/directory/ur" class="govuk-link">Sprint 7 UR prompts</a>
-            </li>
-        </ul>
+        {% include './v8/directory/design-goals.html' %}
 
 
         <!--current sprint ends here-->
