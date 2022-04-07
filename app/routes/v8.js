@@ -157,6 +157,16 @@ router.post(`/v${verNum}/referral/family-history`, function (req, res) {
   }
 });
 
+router.post(`/v${verNum}/referral/supporting-documents`, function (req, res) {
+  let answer = req.session.data['supporting-documents'];
+
+  if (answer === 'Yes') {
+    res.redirect(`/v${verNum}/referral/supporting-documents-upload`);
+  } else {
+    res.redirect(`/v${verNum}/referral/task-list-10`);
+  }
+});
+
 //* Referral routes END //
 
 
