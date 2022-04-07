@@ -58,12 +58,20 @@
 </h3>
         <h4 class="govuk-heading-s">Timelines</h4>
         <ul class="govuk-list govuk-list--bullet">
-            <li><a href="/v8/directory/record/1/D" class="govuk-link">Timeline with filter</a> - uses GOV.UK global search filter style and filter items that we have understood to be useful, namely 'Significant Events', 'Interaction Types' and 'Dates of interactions'.</li>
-            <li><a href="/v8/directory/record/1/F" class="govuk-link">Timeline with filter and professional centric views</a> - a variant that displays the same data in a grouping relative to professionals and organisations.</li>
+            <li><a href="/v8/directory/record/1/D" class="govuk-link">Timeline with filter</a> - (variant D) uses GOV.UK global search filter style and filter items that we have understood to be useful, namely 'Significant Events', 'Interaction Types' and 'Dates of interactions'.</li>
+            <li><a href="/v8/directory/record/1/F" class="govuk-link">Timeline with filter and professional centric views</a> - (variant F) a variant that displays the same data in a grouping relative to professionals and organisations.</li>
         </ul>
+{% set listHtml %}
+    <ul class="govuk-list govuk-list--bullet">
+        <li><a href="/v8/directory/record/1/B/" class="govuk-link">Variant A</a> - timeline of interactions without filters</li>
+        <li><a href="/v8/directory/record/1/B/" class="govuk-link">Variant B</a> - sortable table of events</li>
+        <li><a href="/v8/directory/record/1/C/" class="govuk-link">Variant C</a> - inverted version of variant A</li>
+        <li><a href="/v8/directory/record/1/E/" class="govuk-link">Variant E</a> - same details presented in an accordion</li>
+    </ul>
+{% endset %}
     {{ govukDetails({
         summaryText: "Other design variants",
-        html: ''
+        html: listHtml
     }) }}
 
         <h4 class="govuk-heading-s">Search</h4>
