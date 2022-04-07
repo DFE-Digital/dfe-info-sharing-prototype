@@ -1,0 +1,65 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+
+
+{{ govukBackLink({
+    text: "Back",
+    href: "/v8/referral"
+  }) }}
+
+  <form action="priority-rating" method="post">
+
+    {{ govukRadios({
+      idPrefix: "time-scale",
+      name: "time-scale",
+      fieldset: {
+        legend: {
+          text: "When does the family need the help providing for this request?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "Urgency of the families need for help"
+      },
+      items: [
+        {
+          value: "Within the month",
+          text: "Within the month"
+        },
+        {
+          value: "Within the next two weeks",
+          text: "Within the next two weeks"
+        },
+        {
+          value: "This week",
+          text: "This week"
+        },
+        {
+          value: "Today",
+          text: "Today"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: 'Continue',
+      href: 'how-vulnerable'
+    }) }}
+
+  </form>
+
+{% endblock %}

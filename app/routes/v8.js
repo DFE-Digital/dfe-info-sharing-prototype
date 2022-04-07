@@ -40,8 +40,6 @@ router.get([`/v${verNum}/directory/search-results`, `/v${verNum}/directory/child
 //* Directory routes END //
 
 //* Referral routes //
-
-
 router.post(`/v${verNum}/referral/assessment/can-be-met-universal-answer`, function (req, res) {
   let answer = req.session.data['have-you-assessed'];
 
@@ -129,22 +127,6 @@ router.post(`/v${verNum}/referral/mash-assessment`, function (req, res) {
   }
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 router.post(`/v${verNum}/referral/behaviour-5`, function (req, res) {
   let answer = req.session.data['behaviourprevious'];
 
@@ -166,6 +148,29 @@ router.post(`/v${verNum}/referral/family-history`, function (req, res) {
 });
 
 //* Referral routes END //
+
+
+//* Referral Priority Indicator routes //
+router.post(`/v${verNum}/referral-priority-indicator/urgency`, function (req, res) {
+  let answer = req.session.data['urgency'];
+
+  if (answer === 'immediate') {
+    res.redirect(`/v${verNum}/referral-priority-indicator/exit-points/use-emergency-services`);
+  } else if (answer === 'safeguarding') {
+    res.redirect(`/v${verNum}/referral-priority-indicator/exit-points/safeguarding`);
+
+  } else {
+    res.redirect(`/v${verNum}/referral-priority-indicator/assessment/have-you-assessed`);
+  }
+});
+
+router.post(`/v${verNum}/referral-priority-indicator/assessment/have-you-assessed-answer`, function (req, res) {
+  let answer = req.session.data['have-you-assessed'];
+
+    res.redirect(`/v${verNum}/referral-priority-indicator/assessment/can-be-met-universal`);
+
+});
+//* Referral Priority Indicator routes END //
 
 //*routes to be placed above this line//
 module.exports = router
