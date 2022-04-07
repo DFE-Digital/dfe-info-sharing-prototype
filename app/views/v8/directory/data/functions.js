@@ -93,6 +93,42 @@ const getInteractionCountByType = function (interactions, interactionType) {
   return count.length.toString()
 }
 
+const groupByProfessional = function (events) {
+  const grouped = []
+  const map = new Map()
+  for (const item of events) {
+    if (!map.has(item.contact.id)) {
+      map.set(item.contact.id, true)
+      grouped.push({
+        ...item.contact,
+        organisation: item.organisation,
+        events: events.filter(x => x.contact.id === item.contact.id)
+      })
+    }
+  }
+  grouped.sort((x, y) => y.events.length - x.events.length)
+  return grouped
+}
+
+const groupByOrganisation = function (events) {
+  const grouped = []
+  const map = new Map()
+  for (const item of events) {
+    const uniqueId = item.organisation.category + item.organisation.id
+    console.log(uniqueId)
+    if (!map.has(uniqueId)) {
+      map.set(uniqueId, true)
+      grouped.push({
+        ...item.organisation,
+        events: events.filter(x => x.organisation.title === item.organisation.title)
+      })
+    }
+  }
+  console.log(grouped)
+  grouped.sort((x, y) => y.events.length - x.events.length)
+  return grouped
+}
+
 const getInteractionTypes = function (interactions) {
   const interactionTypes = []
   const map = new Map()
@@ -119,12 +155,12 @@ const camelize = function (str) {
 }
 
 const createInteractionTypes = function (timeline) {
-  // console.log(timeline)
-  console.log(getInteractionTypes(timeline))
   return getInteractionTypes(timeline)
 }
 
 exports.createProfile = createProfile
 exports.createEvents = createEvents
 exports.createSearchResults = createSearchResults
+exports.groupByProfessional = groupByProfessional
+exports.groupByOrganisation = groupByOrganisation
 exports.createInteractionTypes = createInteractionTypes
