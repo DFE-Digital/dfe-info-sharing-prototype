@@ -92,6 +92,55 @@
       }
     }) }}
 
+
+{% set notifyHtml %}
+{{ govukInput({
+  name: "notifyemail",
+  id: "notifyemail",
+  label: {
+    text: "Give details of these",
+    isPageHeading: false
+  },
+  hint: {}
+}) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  idPrefix: "contact",
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "Would you like email notification of this submission?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {},
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: notifyHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+
+
+
+
+
+
+
+
+
     {{ govukInput({
       id: 'organisation',
       name: 'organisation',

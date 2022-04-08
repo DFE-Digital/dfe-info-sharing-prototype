@@ -175,6 +175,16 @@ router.post(`/v${verNum}/referral/supporting-documents`, function (req, res) {
   }
 });
 
+router.post(`/v${verNum}/referral/email-notification`, function (req, res) {
+  let answer = req.session.data['emailnotification'];
+
+  if (answer === 'Yes') {
+    res.redirect(`/v${verNum}/referral/email-notification-location`);
+  } else {
+    res.redirect(`/v${verNum}/referral/summary`);
+  }
+});
+
 //* Referral routes END //
 
 
