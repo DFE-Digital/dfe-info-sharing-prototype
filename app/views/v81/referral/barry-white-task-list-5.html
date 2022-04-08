@@ -45,7 +45,7 @@ Info sharing - Referral service
                   Select areas of help needed
                 </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              <strong class="govuk-tag app-task-list__tag" id="list-convictions-status">Completed</strong>
             </li>
           </ul>
         </li>
@@ -57,7 +57,12 @@ Info sharing - Referral service
           <ul class="app-task-list__items">
 
             <li class="app-task-list__item">
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
+              <span class="app-task-list__task-name">
+                <a href="behaviour" aria-describedby="eligibility-status">
+                  Social or emotional
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="list-convictions-status">Completed</strong>
             </li>
           </ul>
         </li>
@@ -69,16 +74,22 @@ Info sharing - Referral service
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-      
+                <a href="desired-outcome" aria-describedby="eligibility-status">
                   Desired outcome
-
+                </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
+              <strong class="govuk-tag app-task-list__tag" id="list-convictions-status">Completed</strong>
             </li>
           </ul>
         </li>
 
       </ol>
+
+      {{ govukButton({
+        text: 'Continue',
+        href: 'task-list-7'
+      }) }}
+
     </div>
   </div>
 

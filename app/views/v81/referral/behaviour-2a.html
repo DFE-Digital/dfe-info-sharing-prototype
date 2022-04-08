@@ -16,25 +16,27 @@ Info sharing - Referral service
 
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">What are Mary's thoughts on this request for help and support and what outcome do they wish for?</h2>
-
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">How have Barry's issues changed or developed over time?</h2>
+  <p>Tell us if they started gradually or over a period of time, or if they have changed over time.</p>
   <form method="post">
 
-     {{ govukTextarea({
-      id: "view2",
-      name: "view2",
-      type: "textarea",
-      spellcheck: true,
-      classes: "govuk-!-width-two-thirds",
+    {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+    {{ govukTextarea({
+      name: "more-detail",
+      id: "more-detail",
       label: {
         text: "",
-        classes: "govuk-!-font-weight-bold"
-      }
+        classes: "govuk-label--l",
+        isPageHeading: true
+      },
+      classes: "govuk-!-width-two-thirds"
     }) }}
+
 
     {{ govukButton({
       text: 'Continue',
-      href: 'barry-white-task-list-4'
+      href: 'behaviour-3'
     }) }}
 
   </form>

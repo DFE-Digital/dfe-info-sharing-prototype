@@ -16,13 +16,12 @@ Info sharing - Referral service
 
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">What are Mary's thoughts on this request for help and support and what outcome do they wish for?</h2>
-
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">What is your desired outcome?</h2>
   <form method="post">
 
      {{ govukTextarea({
-      id: "view2",
-      name: "view2",
+      id: "desiredoutcome",
+      name: "desiredoutcome",
       type: "textarea",
       spellcheck: true,
       classes: "govuk-!-width-two-thirds",
@@ -32,9 +31,11 @@ Info sharing - Referral service
       }
     }) }}
 
+
+
     {{ govukButton({
       text: 'Continue',
-      href: 'barry-white-task-list-4'
+      href: 'barry-white-task-list-5'
     }) }}
 
   </form>

@@ -91,38 +91,6 @@ Info sharing - Referral service
       ]
     }) }}
 
-    {{ govukRadios({
-      idPrefix: "gender",
-      name: "gender",
-      fieldset: {
-        legend: {
-          text: "Gender",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      items: [
-        {
-          value: "Male",
-          text: "Male"
-        },
-        {
-          value: "Female",
-          text: "Female"
-        },
-        {
-          value: "Other",
-          text: "Other"
-        },
-        {
-          divider: "or"
-        },
-        {
-          value: "skip",
-          text: "Unknown"
-        }
-      ]
-    }) }}
 
     {{ govukTextarea({
       name: "address",
@@ -134,8 +102,6 @@ Info sharing - Referral service
         classes: 'govuk-!-font-weight-bold'
       }
     }) }}
-
-
 
 
 
@@ -167,7 +133,6 @@ Info sharing - Referral service
         {
           value: "yes",
           text: "Yes",
-          checked: true,
           conditional: {
             html: disabilityHtml
           }
@@ -233,7 +198,7 @@ Info sharing - Referral service
         },
         {
           value: "skip",
-          text: "Unknown"
+          text: "I don't know"
         }
       ]
     }) }}

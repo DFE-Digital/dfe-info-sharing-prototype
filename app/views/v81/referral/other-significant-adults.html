@@ -119,6 +119,7 @@
       }
     }) }}
 
+    {% set addressHtml %}
     {{ govukTextarea({
       name: "address",
       id: "address",
@@ -129,21 +130,41 @@
         classes: 'govuk-!-font-weight-bold'
       }
     }) }}
+{% endset -%}
+
+    {{ govukRadios({
+      idPrefix: "address1",
+      name: "address1",
+      fieldset: {
+        legend: {
+          text: "Is their primary address the same as Barry Grayson's?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {},
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "No",
+          text: "No",
+          conditional: {
+            html: addressHtml
+          }
+        }
+      ]
+    }) }}
 
 
     {% endcall %}
 
-    <div class="moj-button-action">
-      {{ govukButton({
-        text: 'Add another person',
-        classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4',
-        type: 'button'
-      }) }}
-    </div>
 
     {{ govukButton({
-      text: 'Add',
-      href: "task-list-4"
+      text: 'Continue',
+      href: "task-list-5"
     }) }}
 
   </form>
