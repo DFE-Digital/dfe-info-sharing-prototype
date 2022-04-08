@@ -1,0 +1,141 @@
+{{ govukTable({
+  attributes: {
+    'data-module': 'moj-sortable-table'
+  },
+  head: [
+    {
+      text: 'Profession',
+      attributes: {
+        'aria-sort': 'ascending'
+      }
+    },
+    {
+      text: 'Name and contact',
+      attributes: {
+        'aria-sort': 'none'
+      }
+    },
+    {
+      text: 'Organisation',
+      attributes: {
+        'aria-sort': 'none'
+      }
+    },
+    {
+      text: 'Date',
+      attributes: {
+        'aria-sort': 'none'
+      }
+    },
+    {
+      text: 'Type of interaction'
+    },
+    {
+      text: 'Significant interaction',
+      attributes: {
+        'aria-sort': 'none'
+      }
+    }
+
+  ],
+  rows: [
+    [
+      {
+        text: 'Health'
+      },
+      {
+        html: 'N/A<br>0580 223123'
+      },
+      {
+        text: 'St Thomas Hospital'
+      },
+      {
+        text: '20 Feb 2020',
+
+        attributes: {
+          'data-sort-value': '1897'
+        }
+      },
+      {
+        text: 'Phone call'
+      },
+      {
+        html: ''
+      }
+    ],
+    [
+      {
+        text: 'Social care'
+      },
+      {
+        html: "Tracy Smith<br>07745 999999<br> <a href='#' class='govuk-link'>tsmith@adc.com</a>"
+      },
+      {
+        text: 'Arthur Daily Centre'
+      },
+      {
+        text: '01 Feb 2020',
+
+        attributes: {
+          'data-sort-value': '1896'
+        }
+      },
+      {
+        text: 'Email'
+      },
+      {
+        html: govukTag({
+          text: 'Significant'
+        })
+      }
+    ],
+    [
+      {
+        text: 'Police'
+      },
+      {
+        html: 'PC Smith<br>0580 887445'
+      },
+      {
+        text: 'Townsville Police station'
+      },
+      {
+        text: '20 Aug 2019',
+
+        attributes: {
+          'data-sort-value': '1895'
+        }
+      },
+      {
+        text: 'Home visit'
+      },
+      {
+        html: ''
+      }
+    ],
+    [
+      {
+        text: 'Health'
+      },
+      {
+        html: 'N/A<br>0580 223123'
+      },
+      {
+        text: 'St Thomas Hospital'
+      },
+      {
+        text: '05 Apr 2019',
+
+        attributes: {
+          'data-sort-value': '1894'
+        }
+      },
+      {
+        text: 'Appointment'
+      },
+      {
+        html: ''
+      }
+    ]
+  ]
+}) }}

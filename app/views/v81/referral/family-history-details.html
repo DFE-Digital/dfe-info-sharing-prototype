@@ -1,0 +1,90 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+
+<div data-module="moj-add-another">
+
+  <h2 class="govuk-heading-l" tabindex="-1">Other family history</h2>
+  <form method="post">
+
+    {% set barryhtml %}
+    {{ govukTextarea({
+      id: "barryhistory",
+      name: "barryhistory",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Tell us the details around the historical concerns Barry has had"
+      }
+    }) }}
+    {% endset -%}
+
+    {% set maryhtml %}
+    {{ govukTextarea({
+      id: "maryhistory",
+      name: "maryhistory",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Tell us the details around the historical concerns Mary has had"
+      }
+    }) }}
+    {% endset -%}
+
+    {{ govukCheckboxes({
+      idPrefix: "health",
+      name: "health",
+      fieldset: {
+        legend: {
+          text: "Who in the family has had other historical concerns that you have not already told us about?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "Barry Grayson",
+          text: "Barry Grayson",
+          conditional: {
+            html: barryhtml
+          }
+        },
+        {
+          value: "Mary Grayson",
+          text: "Mary Grayson",
+          conditional: {
+            html: maryhtml
+          }
+        }
+      ]
+    }) }}
+
+
+    {{ govukButton({
+      text: 'Continue',
+      href: 'task-list-8'
+    }) }}
+
+  </form>
+
+</div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,72 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+
+
+{{ govukBackLink({
+    text: "Back",
+    href: "/v8/referral"
+  }) }}
+
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Select all the people you want to request help and support for</h2>
+
+  <form action="personinneed" method="post">
+
+  {{ govukCheckboxes({
+    idPrefix: "childneeding",
+    name: "childneeding",
+    fieldset: {
+      legend: {
+        text: "People 0 to 19 (or up to 25 with SEN)",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    hint: {},
+    items: [
+      {
+        value: "Barry Grayson",
+        text: "Barry Grayson"
+      }
+    ]
+  }) }}
+
+  {{ govukCheckboxes({
+    idPrefix: "childneeding",
+    name: "childneeding",
+    fieldset: {
+      legend: {
+        text: "Family members or guardians",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    hint: {},
+    items: [
+      {
+        value: "Mary Grayson",
+        text: "Mary Grayson"
+      }
+    ]
+  }) }}
+
+    {{ govukButton({
+      text: 'Continue',
+      href: 'task-list-6'
+    }) }}
+
+  </form>
+
+{% endblock %}
