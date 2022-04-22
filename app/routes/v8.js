@@ -10,9 +10,6 @@ router.use((req, res, next) => {
 })
 
 //* Directory routes //
-// router.get([`/v${verNum}/directory`, `/v${verNum}/directory/`], function (req, res) {
-//   res.redirect('/directory-index')
-// })
 
 router.get([`/v${verNum}/directory/record/:childId`, `/v${verNum}/directory/record/:childId/:designVariant`, `/v${verNum}/directory/record/`], function (req, res) {
   const childId = req.params.childId || '1'
