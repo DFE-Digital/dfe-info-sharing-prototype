@@ -1,4 +1,4 @@
-const verNum = 81
+const verNum = 9
 const express = require('express')
 const router = express.Router()
 const data = require(`../views/v${verNum}/directory/data/functions`)
