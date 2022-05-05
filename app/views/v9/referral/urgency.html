@@ -1,0 +1,58 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+
+
+{{ govukBackLink({
+    text: "Back",
+    href: "/v8/referral"
+  }) }}
+
+  <form action="urgency" method="post">
+
+  {{ govukRadios({
+      idPrefix: "urgency",
+      name: "urgency",
+      fieldset: {
+        legend: {
+          text: "What do you need to report?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {},
+      items: [
+        {
+          value: "immediate",
+          text: "A child is in immediate danger or is being harmed"
+        },
+        {
+          value: "safeguarding",
+          text: "I have an urgent safeguarding concern"
+        },
+        {
+          value: "less-urgent",
+          text: "I need to report something less urgent"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: 'Continue'
+    }) }}
+
+  </form>
+
+{% endblock %}

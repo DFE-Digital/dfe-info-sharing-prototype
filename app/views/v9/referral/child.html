@@ -1,0 +1,246 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+
+<div data-module="moj-add-another">
+
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">About the person</h2>
+
+  <form method="post">
+
+    {{ govukInput({
+      id: 'person[0][first_name]',
+      name: 'person[0][first_name]',
+      label: {
+        html: 'First name',
+        classes: 'govuk-!-font-weight-bold'
+      },
+      classes: 'govuk-input--width-20',
+      attributes: {
+        'data-name': 'person[%index%][first_name]',
+        'data-id': 'person[%index%][first_name]'
+      }
+    }) }}
+
+    {{ govukInput({
+      id: 'person[0][last_name]',
+      name: 'person[0][last_name]',
+      label: {
+        html: 'Last name',
+        classes: 'govuk-!-font-weight-bold'
+      },
+      classes: 'govuk-input--width-20',
+      attributes: {
+        'data-name': 'person[%index%][last_name]',
+        'data-id': 'person[%index%][last_name]'
+      }
+    }) }}
+
+    {{ govukDateInput({
+      id: "date-of-birth",
+      fieldset: {
+        legend: {
+          text: "Date of birth",
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {},
+      items: [
+        {
+          id: "person[0][dob][day]",
+          name: "person[0][dob][day]",
+          label: "Day",
+          classes: "govuk-input--width-2",
+          attributes: {
+            'data-name': 'person[%index%][dob][day]',
+            'data-id': 'person[%index%][dob][day]'
+          }
+        },
+        {
+          id: "person[0][dob][month]",
+          name: "person[0][dob][month]",
+          label: "Month",
+          classes: "govuk-input--width-2",
+          attributes: {
+            'data-name': 'person[%index%][dob][month]',
+            'data-id': 'person[%index%][dob][month]'
+          }
+        },
+        {
+          id: "person[0][dob][year]",
+          name: "person[0][dob][year]",
+          label: "Year",
+          classes: "govuk-input--width-2",
+          attributes: {
+            'data-name': 'person[%index%][dob][year]',
+            'data-id': 'person[%index%][dob][year]'
+          }
+        }
+      ]
+    }) }}
+
+
+    {{ govukTextarea({
+      name: "address",
+      id: "address",
+      autocomplete: "street-address",
+      classes: 'govuk-input--width-20',
+      label: {
+        text: "Primary address",
+        classes: 'govuk-!-font-weight-bold'
+      }
+    }) }}
+
+
+
+{% set disabilityHtml %}
+    {{ govukTextarea({
+      name: "more-detail",
+      id: "more-detail",
+      label: {
+        text: "Give details of these",
+        isPageHeading: false
+      },
+      hint: {}
+    }) }}
+{% endset -%}
+
+
+    {{ govukRadios({
+      idPrefix: "contact",
+      name: "contact",
+      fieldset: {
+        legend: {
+          text: "Do they have any disabilities or long-term health conditions?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {},
+      items: [
+        {
+          value: "yes",
+          text: "Yes",
+          conditional: {
+            html: disabilityHtml
+          }
+        },
+        {
+          value: "no",
+          text: "No"
+        },
+        {
+          value: "don't know",
+          text: "I don't know",
+          conditional: {
+            html: phoneHtml
+          }
+        }
+      ]
+    }) }}
+
+
+
+
+
+
+
+
+
+
+
+
+    {{ govukRadios({
+      idPrefix: "ethnicity",
+      name: "ethnicity",
+      fieldset: {
+        legend: {
+          text: "Ethnicity",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "white",
+          text: "White"
+        },
+        {
+          value: "multiple",
+          text: "Mixed or multiple ethnic groups"
+        },
+        {
+          value: "asian",
+          text: "Asian or Asian British"
+        },
+        {
+          value: "black",
+          text: "Black, African, Caribbean or Black British"
+        },
+        {
+          value: "other",
+          text: "Other ethnic group"
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "skip",
+          text: "I don't know"
+        }
+      ]
+    }) }}
+
+    {{ govukRadios({
+      idPrefix: "languageneeds",
+      name: "languageneeds",
+      fieldset: {
+        legend: {
+          text: "Do they need a translator?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes"
+        },
+        {
+          value: "No",
+          text: "No"
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "skip",
+          text: "Unknown"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: 'Continue',
+      href: 'task-list-2'
+    }) }}
+
+
+  </form>
+
+</div>
+  </div>
+
+{% endblock %}

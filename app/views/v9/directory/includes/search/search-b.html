@@ -1,0 +1,54 @@
+<!-- From https://design.homeoffice.gov.uk/patterns/search-for-something -->
+
+<form action="./search-results" method="get" novalidate>
+
+
+{{ govukInput({
+    label: {
+        text: "First name (optional)"
+    },
+    id: "firstName",
+    name: "firstName"
+}) }}
+
+{{ govukInput({
+    label: {
+        text: "Surname"
+    },
+    id: "lastName",
+    name: "lastName"
+}) }}
+
+{{ govukDateInput({
+    id: "dob",
+    namePrefix: "dob",
+    fieldset: {
+        legend: {
+            text: "Date of birth",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--xs"
+        }
+    },
+    hint: {
+        text: "For example, 27 3 2007"
+    }
+}) }}
+
+{{ govukInput({
+    label: {
+        text: "Post code",
+        classes: "govuk-label--xs"
+    },
+    hint: {
+        text: 'For example, W1 5EE'
+    },
+    classes: "govuk-input--width-10",
+    id: "postcode",
+    name: "postcode"
+}) }}
+
+    {{ govukButton({
+        text: "Search"
+    }) }}
+
+</form>
