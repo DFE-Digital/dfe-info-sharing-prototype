@@ -1,8 +1,10 @@
-{% if profile.consent.education === false or profile.consent.health === false or profile.consent.welfare === false or profile.consent.familySupport === false %}
-    {{ govukWarningText({
-        text: "Some interactions may not be displayed on this record as consent has not been given",
-        iconFallbackText: "Warning"
-    }) }}
+{% if designVariant === 'D' %}
+    {% if profile.consent.education === false or profile.consent.health === false or profile.consent.welfare === false or profile.consent.familySupport === false %}
+        {{ govukWarningText({
+            text: "Some interactions may not be displayed on this record as consent has not been given",
+            iconFallbackText: "Warning"
+        }) }}
+    {% endif %}
 {% endif %}
 
 
@@ -15,12 +17,12 @@
                 <strong class="govuk-tag ">
                     {{ event.category }}
                 </strong>
-                {% if event.significantEvent %}
-                    {{ govukTag({
-                        text: "Significant Event",
-                        classes: "govuk-tag--red"
-                    }) }}
-                {% endif %}
+{#                {% if event.significantEvent %}#}
+{#                    {{ govukTag({#}
+{#                        text: "Significant Event",#}
+{#                        classes: "govuk-tag--red"#}
+{#                    }) }}#}
+{#                {% endif %}#}
                 <div class="moj-timeline__header">
                     <h2 class="moj-timeline__title">
                         {{ event.title }}
@@ -28,10 +30,15 @@
                     {% if event.organisation.title != null %}
                         <p class="moj-timeline__byline"> - {{ event.organisation.title }}</p>
                     {% endif %}
-
+                    {% if event.organisation.system != null %}
+                        <br/>
+                        <p class="moj-timeline__byline govuk-!-font-size-14"> Data source - {{ event.organisation.system }}</p>
+                    {% endif %}
                     <p class="moj-timeline__date">
                         <time datetime="{{ event.datestamp }}">{{ event.dateString }}</time>
                     </p>
+
+
 
                 </div>
                 {% if designVariant !== 'C' %}
