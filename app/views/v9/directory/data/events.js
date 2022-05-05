@@ -697,7 +697,7 @@ const events = [
         ]
       },
       {
-        title: 'Did not attend',
+        title: 'Was not brought',
         category: 'Health',
         offsetTime: {
           years: 10,

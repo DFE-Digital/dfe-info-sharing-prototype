@@ -1,5 +1,27 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
+
+        {% if profile.consent.education === true %}
+            {% set educationConsent = 'Yes' %}
+        {% else %}
+             {% set educationConsent = 'No' %}
+        {% endif %}
+        {% if profile.consent.health === true %}
+            {% set healthConsent = 'Yes' %}
+        {% else %}
+            {% set healthConsent = 'No' %}
+        {% endif %}
+        {% if profile.consent.familySupport === true %}
+            {% set familySupportConsent = 'Yes' %}
+        {% else %}
+            {% set familySupportConsent = 'No' %}
+        {% endif %}
+        {% if profile.consent.welfare === true %}
+            {% set welfareConsent = 'Yes' %}
+        {% else %}
+            {% set welfareConsent = 'No' %}
+        {% endif %}
+
         {{ govukTable({
             caption: "Consent to view data and contact others",
             captionClasses: "govuk-table__caption--m",
@@ -23,11 +45,11 @@
                         text: "Education"
                     },
                     {
-                        text: profile.consent.education,
+                        text: educationConsent,
                         format: "numeric"
                     },
                     {
-                        text: profile.consent.education,
+                        text: educationConsent,
                         format: "numeric"
                     }
                 ],
@@ -36,11 +58,11 @@
                         text: "Health"
                     },
                     {
-                        text: profile.consent.health,
+                        text: healthConsent,
                         format: "numeric"
                     },
                     {
-                        text: profile.consent.health,
+                        text: healthConsent,
                         format: "numeric"
                     }
                 ],
@@ -49,11 +71,11 @@
                         text: "Family Support"
                     },
                     {
-                        text: profile.consent.familySupport,
+                        text: familySupportConsent,
                         format: "numeric"
                     },
                     {
-                        text: profile.consent.familySupport,
+                        text: familySupportConsent,
                         format: "numeric"
                     }
                 ],
@@ -62,11 +84,11 @@
                         text: "Welfare"
                     },
                     {
-                        text: profile.consent.welfare,
+                        text: welfareConsent,
                         format: "numeric"
                     },
                     {
-                        text: profile.consent.welfare,
+                        text: welfareConsent,
                         format: "numeric"
                     }
                 ]
