@@ -15,6 +15,12 @@ const individuals = [
       mainContact: { id: 4 },
       gp: { id: 1 },
       education: { id: 2 }
+    },
+    consent: {
+      education: true,
+      health: true,
+      welfare: true,
+      familySupport: true
     }
   },
   {
@@ -33,6 +39,12 @@ const individuals = [
       mainContact: { id: 3 },
       gp: { id: 1 },
       education: { id: 2 }
+    },
+    consent: {
+      education: true,
+      health: true,
+      welfare: false,
+      familySupport: false
     }
   },
   {
@@ -51,6 +63,12 @@ const individuals = [
       mainContact: { id: 3 },
       gp: { id: 1 },
       education: { id: 2 }
+    },
+    consent: {
+      education: true,
+      health: true,
+      welfare: true,
+      familySupport: true
     }
   },
   {
@@ -70,6 +88,12 @@ const individuals = [
       mainContact: { id: 3 },
       gp: { id: 1 },
       education: { id: 5 }
+    },
+    consent: {
+      education: true,
+      health: true,
+      welfare: true,
+      familySupport: true
     }
   }
 ]

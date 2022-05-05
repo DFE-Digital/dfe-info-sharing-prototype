@@ -58,15 +58,21 @@ const createEvents = function (childId, timelineId) {
   timelineId = timelineId || 1
   const theEventTimeline = events.eventTimeline.filter(x => x.id === timelineId)[0].events
   const theEvents = []
+  const theChild = individuals.individuals.filter(x => x.id === childId)[0]
   theEventTimeline.map(id => {
       const idsInArray = events.events.filter(x => (x.id == id))
       idsInArray.map(y => {
-        y.events.map(c => theEvents.push(c))
+        y.events.map(c => {
+          Object.entries(theChild.consent).forEach(([key, value]) => {
+            if (value === true && camelize(c.category) === key) {
+              theEvents.push(c)
+            }
+          })
+        })
       })
     }
   )
   // Insert relevant dates (relative to child)
-  const theChild = individuals.individuals.filter(x => x.id === childId)[0]
   const theDob = theChild.dobTimestamp
   const mappedEvents = theEvents.map(x => {
     const theEventDate = addToDate(theDob, x.offsetTime.years, x.offsetTime.months, x.offsetTime.days)
@@ -124,7 +130,6 @@ const groupByOrganisation = function (events) {
       })
     }
   }
-  console.log(grouped)
   grouped.sort((x, y) => y.events.length - x.events.length)
   return grouped
 }

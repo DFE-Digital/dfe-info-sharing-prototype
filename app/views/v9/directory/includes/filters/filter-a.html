@@ -94,6 +94,25 @@
     }) }}
 {% endset %}
 
+{% if ur === 'true' %}
+
+    {{ searchFilter({
+        rows: [
+            {
+                title: 'Interaction type',
+                body: interactionTypeOptionsHtml | safe,
+                expanded: 'true'
+            },
+            {
+                title: 'Date',
+                body: dateOptionsSelectHtml | safe,
+                expanded: 'true'
+            }
+        ]
+    }) }}
+
+{% else %}
+
 {{ searchFilter({
     rows: [
         {
@@ -113,6 +132,8 @@
         }
     ]
 }) }}
+
+{% endif %}
 
 
 <script type="text/javascript">

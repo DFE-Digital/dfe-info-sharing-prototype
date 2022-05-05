@@ -19,6 +19,7 @@ router.get([`/v${verNum}/directory/record/:childId`, `/v${verNum}/directory/reco
   const designVariant = req.params.designVariant || 'A'
   const profile = data.createProfile(childId)
   let eventTimelineId = req.query.eventTimelineId || '1'
+  let ur = req.query.ur || 'false'
   if (profile.timelineId) {
     eventTimelineId = profile.timelineId.toString()
   }
@@ -28,6 +29,7 @@ router.get([`/v${verNum}/directory/record/:childId`, `/v${verNum}/directory/reco
   res.render(`v${verNum}/directory/child-record-dynamic.html`, {
     events: events,
     profile: profile,
+    ur: ur,
     interactionTypes: data.createInteractionTypes(events),
     designVariant: designVariant,
     timelineVariant: timelineVariant,
