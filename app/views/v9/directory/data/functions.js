@@ -112,6 +112,7 @@ const groupByProfessional = function (events) {
     if (!map.has(item.contact.id)) {
       map.set(item.contact.id, true)
       grouped.push({
+        // ...item,
         ...item.contact,
         organisation: item.organisation,
         events: events.filter(x => x.contact.id === item.contact.id)
