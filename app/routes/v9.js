@@ -38,6 +38,34 @@ router.get([`/v${verNum}/directory/record/:childId`, `/v${verNum}/directory/reco
   })
 })
 
+router.get([`/v${verNum}/directory/professional/:category/:professionalId`, `/v${verNum}/directory/professional/:category/:professionalId/:childId/`, `/v${verNum}/directory/professional/`], function (req, res) {
+  const childId = req.params.childId || '1'
+  const professionalId = req.params.professionalId || '1'
+  const category = req.params.category || 'health'
+  const designVariant = req.params.designVariant || 'A'
+  const childProfile = data.createProfile(childId)
+  const professionalProfile = data.createProfessionalProfile(category, professionalId)
+  let eventTimelineId = req.query.eventTimelineId || '1'
+  let ur = req.query.ur || 'false'
+  if (childProfile.timelineId) {
+    eventTimelineId = childProfile.timelineId.toString()
+  }
+  const timelineVariant = req.query.timelineVariant || 'A'
+  // const filterVariant = req.query.filterVariant || 'A'
+  const events = data.createEvents(childId, eventTimelineId)
+  res.render(`v${verNum}/directory/professional-record-dynamic.html`, {
+    events: events,
+    professionalProfile: professionalProfile,
+    profile: childProfile,
+    ur: ur,
+    interactionTypes: data.createInteractionTypes(events),
+    designVariant: designVariant,
+    timelineVariant: timelineVariant,
+    professionalInteractions: data.groupByProfessional(events),
+    organisationInteractions: data.groupByOrganisation(events)
+  })
+})
+
 router.get([`/v${verNum}/directory/search-results`, `/v${verNum}/directory/child-record-results`], function (req, res) {
   const searchTerm = req.query.search || null
   const searchResults = data.createSearchResults(searchTerm)

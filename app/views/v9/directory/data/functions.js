@@ -1,5 +1,6 @@
 const individuals = require('./individuals')
 const events = require('./events')
+const professionals = require('./professionals')
 
 // Data Functions
 const addToDate = function (ogDate, years, months, days) {
@@ -28,7 +29,6 @@ const createHealthContacts = function (id) {
 }
 
 const createMainContact = function (id, childLastName) {
-  console.log(id)
   const contact = individuals.contacts.filter(x => x.id == id)[0]
   return {
     ...contact,
@@ -42,7 +42,6 @@ const createContacts = function (childData) {
     gp: createHealthContacts(childData.contacts.gp.id),
     education: createEducationContacts(childData.contacts.education.id)
   }
-  // console.log(contacts)
   return contacts
 }
 const createSearchResults = function (searchTerm) {
@@ -94,6 +93,13 @@ const createProfile = function (id = 1) {
   return individual
 }
 
+const createProfessionalProfile = function (category, id = 1) {
+  console.log('Cat: ' + professionals.default[category])
+  const professional = professionals.default[category].filter(x => x.id === id)[0]
+  console.log(professional)
+  return professional
+}
+
 const getInteractionCountByType = function (interactions, interactionType) {
   const count = interactions.filter(item => item.category === interactionType)
   return count.length.toString()
@@ -121,7 +127,6 @@ const groupByOrganisation = function (events) {
   const map = new Map()
   for (const item of events) {
     const uniqueId = item.organisation.category + item.organisation.id
-    console.log(uniqueId)
     if (!map.has(uniqueId)) {
       map.set(uniqueId, true)
       grouped.push({
@@ -169,3 +174,4 @@ exports.createSearchResults = createSearchResults
 exports.groupByProfessional = groupByProfessional
 exports.groupByOrganisation = groupByOrganisation
 exports.createInteractionTypes = createInteractionTypes
+exports.createProfessionalProfile = createProfessionalProfile
