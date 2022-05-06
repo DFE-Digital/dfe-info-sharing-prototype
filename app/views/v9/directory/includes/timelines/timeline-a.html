@@ -34,7 +34,7 @@
                         <br/>
                         <p class="moj-timeline__byline govuk-!-font-size-14"> Data source - {{ event.organisation.system }}</p>
                     {% endif %}
-                    <p class="moj-timeline__date">
+                    <p class="moj-timeline__date govuk-!-margin-bottom-2">
                         <time datetime="{{ event.datestamp }}">{{ event.dateString }}</time>
                     </p>
 
@@ -42,9 +42,10 @@
 
                 </div>
                 {% if designVariant !== 'C' %}
+                    {% if professionalProfile == null %}
                     {{ govukDetails({
                         summaryText: "Contact details",
-                        classes: "govuk-!-margin-bottom-0 govuk-!-margin-top-2",
+                        classes: "govuk-!-margin-bottom-0",
                         html: govukSummaryList({
                             rows: [
                                 {
@@ -82,6 +83,8 @@
                             ]
                         })
                     }) }}
+                    {% endif %}
+
 
                     {% set interactionDetails = [] %}
                     {% for detail in event.details %}
