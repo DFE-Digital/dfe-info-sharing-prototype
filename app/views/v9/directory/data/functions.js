@@ -87,6 +87,13 @@ const createEvents = function (childId, timelineId) {
   return mappedEvents.filter(a => new Date(a.timestamp) <= new Date())
 }
 
+const filterEventsByProfessional = function (events, professional) {
+  console.log(professional.organisation.category + professional.id)
+  const theEvents = events.filter(x => x.contact.id === professional.organisation.category + professional.id)
+  console.log(theEvents.length)
+  return theEvents
+}
+
 const createProfile = function (id = 1) {
   const individual = individuals.individuals.filter(x => x.id === id)[0]
   individual.contacts = createContacts(individual)
@@ -94,9 +101,7 @@ const createProfile = function (id = 1) {
 }
 
 const createProfessionalProfile = function (category, id = 1) {
-  console.log('Cat: ' + professionals.default[category])
   const professional = professionals.default[category].filter(x => x.id === id)[0]
-  console.log(professional)
   return professional
 }
 
@@ -176,3 +181,4 @@ exports.groupByProfessional = groupByProfessional
 exports.groupByOrganisation = groupByOrganisation
 exports.createInteractionTypes = createInteractionTypes
 exports.createProfessionalProfile = createProfessionalProfile
+exports.filterEventsByProfessional = filterEventsByProfessional

@@ -52,7 +52,8 @@ router.get([`/v${verNum}/directory/professional/:category/:professionalId`, `/v$
   }
   const timelineVariant = req.query.timelineVariant || 'A'
   // const filterVariant = req.query.filterVariant || 'A'
-  const events = data.createEvents(childId, eventTimelineId)
+  let events = data.createEvents(childId, eventTimelineId)
+  events = data.filterEventsByProfessional(events, professionalProfile)
   res.render(`v${verNum}/directory/professional-record-dynamic.html`, {
     events: events,
     professionalProfile: professionalProfile,
