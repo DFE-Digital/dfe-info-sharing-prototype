@@ -600,7 +600,7 @@ const events = [
         ]
       },
       {
-        title: 'Injury',
+        title: 'Accident and emergency episode',
         category: 'Health',
         offsetTime: {
           years: 5,
@@ -680,7 +680,7 @@ const events = [
         ]
       },
       {
-        title: 'Injury',
+        title: 'Accident and emergency episode',
         category: 'Health',
         offsetTime: {
           years: 15,

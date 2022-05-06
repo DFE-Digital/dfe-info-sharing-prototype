@@ -16,7 +16,7 @@
 {% endset %}
 
 {% set professionalHTML %}
-    {% include './professional-centric.html' %}
+    {% include './professional-centric-b.html' %}
 {% endset %}
 
 {% set organisationHTML %}
@@ -25,6 +25,13 @@
 
     {{ govukTabs({
         items: [
+            {
+                label: "Professional contacts",
+                id: "professional",
+                panel: {
+                html: professionalHTML
+            }
+            },
             {
                 label: "Professional support timeline",
                 id: "timeline",
@@ -37,20 +44,6 @@
                 id: "about",
                 panel: {
                 html: aboutHTML
-            }
-            },
-            {
-                label: "Professional contacts",
-                id: "professional",
-                panel: {
-                html: professionalHTML
-            }
-            },
-            {
-                label: "Organisations",
-                id: "organisations",
-                panel: {
-                html: organisationHTML
             }
             }
         ]
