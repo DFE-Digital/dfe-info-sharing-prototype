@@ -1,0 +1,55 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+{{ govukBackLink({
+    text: "Back",
+    href: "/v8/referral/assessment/can-be-met-universal"
+  }) }}
+
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Do you have consent from the parent or guardian of the child?</h2>
+
+   <p>You must have consent from the parent or guardian before continuing.</p>
+
+  <form action="consent" method="post">
+
+  {{ govukRadios({
+      idPrefix: "consent",
+      name: "consent",
+      fieldset: {
+        legend: {
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {},
+      items: [
+        {
+          value: "Yes",
+          text: "Yes"
+        },
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: 'Continue'
+    }) }}
+
+  </form>
+
+{% endblock %}

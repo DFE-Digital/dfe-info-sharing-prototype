@@ -1,0 +1,40 @@
+{% include './record-header-dynamic.html' %}
+
+<div class="govuk-grid-row">
+
+    {% from "govuk/components/tabs/macro.njk" import govukTabs %}
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+    {% include './record-overview-dynamic.html' %}
+</div>
+
+{% set aboutHTML %}
+    {% include './about-dynamic.html' %}
+{% endset -%}
+
+    {% set timelineHTML %}
+        {% include './timeline-dynamic.html' %}
+    {% endset %}
+
+    {{ govukTabs({
+        items: [
+            {
+                label: "Professional support timeline",
+                id: "timeline",
+                panel: {
+                html: timelineHTML
+            }
+            },
+            {
+                label: "About " + profile.firstName,
+                id: "about",
+                panel: {
+                html: aboutHTML
+            }
+            }
+        ]
+    }) }}
+
+<a href="child-search" class="govuk-link">Search for another child</a>
+
+</div>
+</div>
