@@ -27,7 +27,7 @@
 
             {% for pro in professionalInteractions %}
                 <tr class="govuk-table__row event--filterable"
-                    data-interaction-type="{{ pro.organisation.category }}"
+                    data-interaction-type="{% if pro.organisation.category === 'social' %}familySupport{% else %}{{ pro.organisation.category }}{% endif %}"
                 >
 
                     <td class="govuk-table__cell"><a href="/v{{ verNum }}/directory/professional/{{ pro.organisation.category }}/{{ pro.organisation.id }}/{{ profile.id }}">{{ pro.name }}</a></td>
