@@ -1,0 +1,80 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+  <form action="have-you-found-services" method="post">
+
+     {% set continue %}
+    {{ govukRadios({
+        idPrefix: "still-use-service",
+        name: "still-use-service",
+        fieldset: {
+          legend: {
+            text: "Do you still want to report a concern through this service?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes, I still want to report a concern"
+          },
+          {
+            value: "No",
+            text: "No, I don't"
+          }
+        ]
+      }) }}
+    {% endset -%}
+
+  {{ govukRadios({
+      idPrefix: "have-you-found-services",
+      name: "have-you-found-services",
+      fieldset: {
+        legend: {
+          text: "Have you found universal services available in the local area?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        html: "<div>For example, through community services or a charity.</div>
+        <div>When you report a concern using this service, it normally takes 1 to 2 weeks to get a response.</div>"
+      },
+      items: [
+      {
+        value: "Yes",
+        text: "Yes, I have",
+        hint: {
+
+        },
+        conditional:{
+          html: continue
+        }
+      },
+      {
+        value: "No",
+        text: "No"
+      }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: 'Continue'
+    }) }}
+
+  </form>
+
+{% endblock %}

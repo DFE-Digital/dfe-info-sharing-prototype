@@ -1,0 +1,86 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+  <form action="list-of-services" method="post">
+
+  {{ govukCheckboxes({
+      idPrefix: "list-of-services",
+      name: "list-of-services",
+      fieldset: {
+        legend: {
+          text: "Select the services that the child or family need",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        {
+          value: "Dental",
+          text: "Dental"
+        },
+        {
+          value: "Doctors",
+          text: "Doctors"
+        },
+        {
+          value: "Education",
+          text: "Education"
+        },
+        {
+          value: "Health visitation",
+          text: "Health visitation"
+        },
+        {
+          value: "Children's Centres and early years provision",
+          text: "Children's Centres and early years provision"
+        },
+        {
+          value: "Midwifery",
+          text: "Midwifery"
+        },
+        {
+          value: "Youth services",
+          text: "Youth services"
+        },
+        {
+          value: "Policing",
+          text: "Policing"
+        },
+        {
+          value: "Housing",
+          text: "Housing"
+        },
+        {
+          value: "Youth services",
+          text: "Youth services"
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "None",
+          text: "None of the above"
+        }
+      ]
+    }) }}
+
+
+    {{ govukButton({
+      text: 'Continue'
+    }) }}
+
+  </form>
+
+{% endblock %}

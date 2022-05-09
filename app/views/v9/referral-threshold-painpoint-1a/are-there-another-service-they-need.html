@@ -1,0 +1,75 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+
+<!-- <h1 class="govuk-heading-l">
+  You told us that they need a service that is universally available
+</h1> -->
+
+  <form action="are-there-another-service-they-need" method="post">
+
+     {% set more %}
+    {{ govukRadios({
+        idPrefix: "still-use-service",
+        name: "still-use-service",
+        fieldset: {
+          legend: {
+            text: "Do you still want to report a concern through this service?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes, I still want to report a concern"
+          },
+          {
+            value: "No",
+            text: "No, I don't"
+          }
+        ]
+      }) }}
+    {% endset -%}
+
+  {{ govukRadios({
+      idPrefix: "are-there-another-service-they-need",
+      name: "are-there-another-service-they-need",
+      fieldset: {
+        legend: {
+          text: "Are there any other services that they need?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+      {
+        value: "Yes",
+        text: "Yes"
+      },
+      {
+        value: "No",
+        text: "No"
+      }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: 'Continue'
+    }) }}
+
+  </form>
+
+{% endblock %}

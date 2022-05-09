@@ -1,0 +1,83 @@
+
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+  <form action="can-you-help-the-child-yourself" method="post">
+
+     {% set continue %}
+    {{ govukRadios({
+        idPrefix: "still-use-services",
+        name: "still-use-services",
+        fieldset: {
+          legend: {
+            text: "Do you still want to report a concern through this service?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          html: "<div>When you report a concern using this service, it normally takes 1 to 2 weeks to get a response.</div>"
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes, I still want to report a concern"
+          },
+          {
+            value: "No",
+            text: "No, I don't"
+          }
+        ]
+      }) }}
+    {% endset -%}
+
+  {{ govukRadios({
+      idPrefix: "can-you-help-the-child-yourself",
+      name: "can-you-help-the-child-yourself",
+      fieldset: {
+        legend: {
+          text: "Can you help the child yourself?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        html: "<div>For example, by supporting and engaging with the family, giving advice and putting them in touch with services or advice that they.</div>"
+      },
+      items: [
+      {
+        value: "Yes",
+        text: "Yes, I can",
+        hint: {
+
+        },
+        conditional:{
+          html: continue
+        }
+      },
+      {
+        value: "No",
+        text: "No"
+      }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: 'Continue'
+    }) }}
+
+  </form>
+
+{% endblock %}

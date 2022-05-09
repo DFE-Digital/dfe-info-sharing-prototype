@@ -1,0 +1,42 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+  <form action="hints-to-search" method="post">
+
+  {{ govukRadios({
+      idPrefix: "hints-to-search",
+      name: "hints-to-search",
+      fieldset: {
+        legend: {
+          text: "Hints",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "For example, 2005 or 21/11/2014"
+      },
+      items: [
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: 'Continue',
+      href: 'have-you-found-services'
+    }) }}
+
+  </form>
+
+{% endblock %}

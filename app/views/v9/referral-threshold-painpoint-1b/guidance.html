@@ -1,0 +1,51 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+  <form action="guidance" method="post">
+
+  {{ govukRadios({
+      idPrefix: "guidance",
+      name: "guidance",
+      fieldset: {
+        legend: {
+          text: "What level of need does the child fall under in the continuum of need?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+      {
+        value: "1",
+        text: "1"
+      },
+      {
+        value: "2",
+        text: "2"
+      },
+      {
+        value: "3",
+        text: "3"
+      }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: 'Continue',
+      href: 'have-you-found-services'
+    }) }}
+
+  </form>
+
+{% endblock %}
