@@ -131,7 +131,7 @@ const professionals = {
       lastName: 'Yardie',
       position: 'Community Support Officer',
       organisation: organisations.default.welfare[0],
-      category: 'Welfare',
+      category: 'welfare',
       contact: {
         phone: '0111 2652 8266',
         email: 'sam.yardie@townsville.police.gov.uk'
