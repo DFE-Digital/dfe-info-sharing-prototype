@@ -39,7 +39,7 @@ Info sharing - Referral service
       name: "how-vulnerable",
       fieldset: {
         legend: {
-          text: "Why are the family vulnerable?",
+          text: "What vulnerabilities have been identified?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }
@@ -47,19 +47,27 @@ Info sharing - Referral service
       items: [
         {
           value: "The family have a history of abuse or substance misuse",
-          text: "The family have a history of abuse or substance misuse"
+          text: "A history of abuse or substance misuse"
         },
         {
           value: "The child is sometimes a danger to themselves",
           text: "The child is sometimes a danger to themselves"
         },
         {
-          value: "...?",
-          text: "...?"
+          value: "The child has special educational needs",
+          text: "Special educational needs"
         },
         {
-          value: "...?",
-          text: "...?"
+          value: "A family member is suffering from mental health",
+          text: "Suffering from mental health"
+        },
+        {
+          value: "A family member has significant physical disabilities",
+          text: "Significant physical or mental disabilities"
+        },
+        {
+          value: "They have low income or are unemployed",
+          text: "Low income or are unemployed"
         },
         {
           value: "Other",
@@ -67,6 +75,14 @@ Info sharing - Referral service
           conditional: {
             html: other
           }
+        },
+        {
+          divider: "or"
+
+        },
+        {
+          value: "None",
+          text: "None of the above"
         }
       ]
     }) }}
