@@ -1,0 +1,49 @@
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+        {% include '../includes/filters/filter-a.html' %}
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">
+            Professional contacts
+        </h2>
+
+        <table class="govuk-table" data-module="moj-sortable-table">
+
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+
+                <th scope="col" class="govuk-table__header" aria-sort="ascending">Name</th>
+
+                <th scope="col" class="govuk-table__header" aria-sort="none">Organisation</th>
+
+                <th scope="col" class="govuk-table__header" aria-sort="none">Role</th>
+
+                <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">Interactions</th>
+
+            </tr>
+            </thead>
+
+            <tbody class="govuk-table__body">
+
+            {% for pro in professionalInteractions %}
+                <tr class="govuk-table__row event--filterable"
+                    data-interaction-type="{{ pro.organisation.category }}"
+                >
+
+                    <td class="govuk-table__cell"><a href="/v{{ verNum }}/directory/professional/{{ pro.organisation.category }}/{{ pro.organisation.id }}/{{ profile.id }}">{{ pro.name }}</a></td>
+
+                    <td class="govuk-table__cell">{{ pro.organisation.title }}</td>
+
+                    <td class="govuk-table__cell">{{ pro.position }}</td>
+
+                    <td class="govuk-table__cell govuk-table__cell--numeric" >{{ pro.events.length }}</td>
+
+                </tr>
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+</div>
+</div>

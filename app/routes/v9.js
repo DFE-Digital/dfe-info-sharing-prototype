@@ -1,7 +1,7 @@
 const verNum = 9
 const express = require('express')
 const router = express.Router()
-// const data = require(`../views/v${verNum}/directory/data/functions`)
+const data = require(`../views/v${verNum}/directory/data/functions`)
 
 // Create readily available 'locals'
 router.use((req, res, next) => {

@@ -1,0 +1,68 @@
+ <div class="gov-uk_results-block">
+        <div class="result-info" style="overflow: hidden">
+            <h2 class="result-region-header__counter" style="float: left"><span id="resultCounter"></span> results
+            </h2>
+            <div class="sort-options" style="float: right">
+                <div id="js-sort-options">
+                    <div class=" sort-options">
+                        <label for="order" class="sort-options__label govuk-label">Sort by</label>
+                        <select class="js-order-results govuk-select sort-options__select" name="order" id="order"
+                                aria-controls="js-search-results-info" data-default-sort-option="updated-newest"
+                                data-relevance-sort-option="relevance" data-module="track-select-change">
+                            <option value="updated-newest" selected="" data-track-category="dropDownClicked"
+                                    data-track-action="clicked" data-track-label="Updated (newest)">Newest
+                            </option>
+                            <option value="updated-oldest" data-track-category="dropDownClicked"
+                                    data-track-action="clicked" data-track-label="Updated (oldest)">Oldest
+                            </option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="finder-results">
+            <ol class="gem-c-document-list gem-c-document-list--no-underline">
+
+                {% for event in events %}
+                    <li class="gem-c-document-list__item event--filterable" data-interaction-type="{{ event.slug }}"
+                        data-timestamp="{{ event.timestamp }}" {% if event.significantEvent %} data-significant-event="{{ event.significantEvent }}" {% endif %} >
+                        {# <a class="gem-c-document-list__item-title   gem-c-document-list__item-link" href="/public/EDRM/EAWML104608/00000014.pdf" target="_blank">Compliance Inspection CAR Form Late Waste Return Jan to Dec  2019</a> #}
+                            {{ govukTag({
+                                text: event.category
+                            }) }}
+                        {% if event.significantEvent %}
+                            {{ govukTag({
+                                text: "Significant Event",
+                                classes: "govuk-tag--red"
+                            }) }}
+                        {% endif %}
+                        <br />
+                        <h2 class="moj-timeline__title">
+                            {{ event.title }}
+                        </h2>
+                        {% if event.location != null %}
+                            <p class="moj-timeline__byline"> - {{ event.location }}</p>
+                        {% endif %}
+
+                        <p class="moj-timeline__date">
+                            <time datetime="{{ event.datestamp }}">{{ event.dateString }}</time>
+                        </p>
+
+{#                        <ul class="gem-c-document-list__item-metadata">#}
+{#                            <li class="gem-c-document-list__attribute">#}
+{#                                <span class="type"><abbr title="Portable Document Format">PDF</abbr></span>, <span#}
+{#                                        class="file-size">928KB</span>#}
+{#                            </li>#}
+
+{#                            <li class="gem-c-document-list__attribute">#}
+{#                                Updated:#}
+{#                                <time datetime="7/3/2020">7/3/2020</time>#}
+{#                            </li>#}
+{#                        </ul>#}
+                    </li>
+                {% endfor %}
+
+            </ol>
+        </div>
+    </div>

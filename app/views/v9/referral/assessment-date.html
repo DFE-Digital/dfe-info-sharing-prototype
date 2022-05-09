@@ -1,0 +1,45 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+
+<div data-module="moj-add-another">
+
+  <form action="barry-white-task-list-2" method="post">
+
+    {{ govukDateInput({
+      id: "passport-issued",
+      namePrefix: "passport-issued",
+      fieldset: {
+        legend: {
+          text: "When was the assessment carried out?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "For example, 27 3 2007"
+      }
+    }) }}
+
+    {{ govukButton({
+      text: 'Continue'
+    }) }}
+
+  </form>
+
+</div>
+  </div>
+
+{% endblock %}

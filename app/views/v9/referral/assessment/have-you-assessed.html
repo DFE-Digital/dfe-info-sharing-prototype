@@ -1,0 +1,72 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+
+
+{{ govukBackLink({
+    text: "Back",
+    href: "/v8/referral/urgency"
+  }) }}
+
+  <form action="have-you-assessed-answer" method="post">
+
+  {{ govukRadios({
+      idPrefix: "have-you-assessed",
+      name: "have-you-assessed",
+      fieldset: {
+        legend: {
+          text: "Have you done an early help assessment?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        html:'<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What is an early help assessment?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <div>Brief description.</div>
+    <div >
+
+    <a>Link to how to make an early help assessment</a>.</div>
+  </div>
+</details>'
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes, I've done an early help assessment"
+        },
+        {
+          value: "different-type",
+          text: "No, I've used a different assessment method"
+        },
+        {
+          value: "professional-opinion",
+          text: "No, this is based on my professional judgement"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: 'Continue'
+    }) }}
+
+  </form>
+
+{% endblock %}

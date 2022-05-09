@@ -1,0 +1,438 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+
+<div data-module="moj-add-another">
+
+  <!--<h2 class="govuk-heading-l" tabindex="-1">Reasons for referral</h2>-->
+  <h2 class="govuk-heading-l" tabindex="-1">Identity</h2>
+
+  <form method="post">
+
+{# self ability #}
+  {{ govukTextarea({
+    id: "selfability",
+    name: "selfability",
+    type: "textarea",
+    spellcheck: true,
+    classes: "govuk-!-width-two-thirds",
+    label: {
+      text: "Describe the child's view of their own abilities"
+    }
+  }) }}
+{# END self ability #}
+
+{# self image #}
+  {{ govukTextarea({
+    id: "selfimage",
+    name: "selfimage",
+    type: "textarea",
+    spellcheck: true,
+    classes: "govuk-!-width-two-thirds",
+    label: {
+      text: "Describe how they view their self-image"
+    }
+  }) }}
+{# END self image #}
+
+{# self esteem #}
+  {{ govukTextarea({
+    id: "selfesteem",
+    name: "selfesteem",
+    type: "textarea",
+    spellcheck: true,
+    classes: "govuk-!-width-two-thirds",
+    label: {
+      text: "Describe what their self-esteem is like"
+    }
+  }) }}
+{# END self esteem #}
+
+{# positive sense question #}
+  {% set individualityhtml %}
+    {{ govukTextarea({
+      id: "individualitydetails",
+      name: "individualitydetails",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Describe how they feel about this and the impact it has on them"
+      }
+    }) }}
+  {% endset -%}
+
+  {% set racehtml %}
+    {{ govukTextarea({
+      id: "racedetails",
+      name: "racedetails",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Describe how they feel about this and the impact it has on them"
+      }
+    }) }}
+  {% endset -%}
+
+   {% set religionhtml %}
+    {{ govukTextarea({
+      id: "religiondetails",
+      name: "religiondetails",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Describe how they feel about this and the impact it has on them"
+      }
+    }) }}
+  {% endset -%}
+
+  {% set agehtml %}
+    {{ govukTextarea({
+      id: "agedetails",
+      name: "agedetails",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Describe how they feel about this and the impact it has on them"
+      }
+    }) }}
+  {% endset -%}
+
+  {% set genderhtml %}
+    {{ govukTextarea({
+      id: "genderdetails",
+      name: "genderdetails",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Describe how they feel about this and the impact it has on them"
+      }
+    }) }}
+  {% endset -%}
+
+  {% set sexualorientationhtml %}
+    {{ govukTextarea({
+      id: "sexualorientationdetails",
+      name: "sexualorientationdetails",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Describe how they feel about this and the impact it has on them"
+      }
+    }) }}
+  {% endset -%}
+
+  {% set disabilityhtml %}
+    {{ govukTextarea({
+      id: "disabilitydetails",
+      name: "disabilitydetails",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Describe how they feel about this and the impact it has on them"
+      }
+    }) }}
+  {% endset -%}
+
+
+
+  {{ govukCheckboxes({
+    idPrefix: "positive",
+    name: "positive",
+    fieldset: {
+      legend: {
+        text: "Select the areas where the child has a negative image of themselves",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "Individuality",
+        text: "Individuality",
+        conditional: {
+          html: individualityhtml
+        }
+      },
+      {
+        value: "Race",
+        text: "Race",
+        conditional: {
+          html: racehtml
+        }
+      },
+      {
+        value: "Religion",
+        text: "Religion",
+        conditional: {
+          html: religionhtml
+        }
+      },
+      {
+        value: "Age",
+        text: "Age",
+        conditional: {
+          html: agehtml
+        }
+      },
+      {
+        value: "gender",
+        text: "Gender",
+        conditional: {
+          html: genderhtml
+        }
+      },
+      {
+        value: "Sexual orientation",
+        text: "Sexual orientation",
+        conditional: {
+          html: sexualorientationhtml
+        }
+      },
+      {
+        value: "Disabilities",
+        text: "Disabilities",
+        conditional: {
+          html: disabilityhtml
+        }
+      }
+    ]
+  }) }}
+{# END positive sense question #}
+
+{# belonging question #}
+  {% set familyhtml %}
+    {{ govukTextarea({
+      id: "familydetails",
+      name: "familydetails",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Describe how they feel about this and the impact it has on them"
+      }
+    }) }}
+  {% endset -%}
+
+{% set peershtml %}
+    {{ govukTextarea({
+      id: "peersdetails",
+      name: "peersdetails",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Describe how they feel about this and the impact it has on them"
+      }
+    }) }}
+  {% endset -%}
+
+  {% set widersocietyhtml %}
+    {{ govukTextarea({
+      id: "widersocietydetails",
+      name: "widersocietydetails",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Describe how they feel about this and the impact it has on them"
+      }
+    }) }}
+  {% endset -%}
+
+{% set culturalgroupshtml %}
+    {{ govukTextarea({
+      id: "culturalgroupsdetails",
+      name: "culturalgroupsdetails",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Describe how they feel about this and the impact it has on them"
+      }
+    }) }}
+  {% endset -%}
+
+  {{ govukCheckboxes({
+    idPrefix: "belonging",
+    name: "belonging",
+    fieldset: {
+      legend: {
+        text: "Select the areas where the child has a negative feeling of belonging and acceptance",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "family",
+        text: "Family",
+        conditional: {
+          html: familyhtml
+        }
+      },
+      {
+        value: "Peer group",
+        text: "Peer group",
+        conditional: {
+          html: peershtml
+        }
+      },
+      {
+        value: "wider society",
+        text: "Wider society",
+        conditional: {
+          html: widersocietyhtml
+        }
+      },
+      {
+        value: "Cultural groups",
+        text: "Cultural groups",
+        conditional: {
+          html: culturalgroupshtml
+        }
+      }
+    ]
+  }) }}
+{# END positive sense question #}
+
+                                      {# {{ govukCheckboxes({
+                                        idPrefix: "reasonsforreferralchild",
+                                        name: "reasonsforreferralchild",
+                                        fieldset: {
+                                          legend: {
+                                            text: "What are the children's or young persons' development needs that are currently not being met fully?",
+                                            isPageHeading: true,
+                                            classes: "govuk-fieldset__legend--s"
+                                          }
+                                        },
+      items: [
+        {
+          value: "Identity, family and social relationships",
+          text: "Identity/family and social relationships - To include the child/young person's
+          - view of self
+          - view of abilities,
+          - view of self-image
+          - Self-esteem,
+          - having a positive sense of individuality,
+          - having a positive sense of race,
+          - having a positive sense of religion,
+          - having a positive sense of age,
+          - having a positive sense of gender,
+          - having a positive sense of sexual orientation
+          - having a positive sense of disability.
+          - Feelings of belonging and acceptance by family,
+          - Feelings of belonging and acceptance peer group
+          - Feelings of belonging and acceptance in wider society,
+          - Feelings of belonging and acceptance in cultural groups.
+
+                      - Does the parent ensure the children keeps in contact with important family members and significant others?"
+        },
+        {
+          value: "Self-care skills and social presentation",
+          text: "Self-care skills/social presentation - Including the
+
+          - child having age appropriate self-care skills, cleanliness and personal hygiene."
+          - appropriate supervision and support to encourage self-care skills and independence?
+          - Appropriateness of clothing for age, gender, culture and religion;
+          -
+        }
+      ]
+    }) }}
+
+    {{ govukCheckboxes({
+      idPrefix: "reasonsforreferralparent",
+      name: "reasonsforreferralparent",
+      fieldset: {
+        legend: {
+          text: "Which things do the parent's or guardain's need help help with?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "Basic care and ensuring safety",
+          text: "Basic care/ensuring safety - Including all the children/young people's basic needs regarding food, clothing, access to health / education and other services. Is the child/young person adequately protected from significant harm or danger?"
+        },
+        {
+          value: "Emotional warmth and stimulation",
+          text: "Emotional warmth/stimulation - Including ensuring the child's requirements for secure, stable and affectionate relationships, with appropriate sensitivity and responsiveness to the child's needs."
+        },
+        {
+          value: "Guidance, boundaries and stability",
+          text: "Guidance, boundaries and stability - Including how the parent / carer provide consistent parenting? Are there any challenging / difficult behaviours of the child(ren), and how are these managed? Is the child(ren) provided with a stable family environment? Does the child(ren) have any regular contact with another parent / significant others?"
+        }
+      ]
+    }) }}
+
+    {{ govukCheckboxes({
+      idPrefix: "reasonsforreferralparent",
+      name: "reasonsforreferralparent",
+      fieldset: {
+        legend: {
+          text: "What family and environmental factors are an issue of concern?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "Family history and functioning",
+          text: "Family history and functioning - Including parent/carer's history, parent/carer's current and historical relationships, any drug, alcohol misuse, health, mental health, disability, learning disability, periods in care, known history of violence, domestic abuse, offending, anti-social behaviour."
+        },
+        {
+          value: "Wider family and significant others",
+          text: "Wider family and significant others - Including their role and importance to the child(ren) and parents, what additional support do they provide? i.e. emotional, financial, practical, respite, caring responsibilities."
+        },
+        {
+          value: "Housing, employment and income",
+          text: "Housing, employment and income - Including current housing provision, rent arears, appropriate basic amenities of water, heating, cooking facilities, sleeping arrangements and hygiene. Employment status, benefits, debts, support accessed, impact on family member's financial capabilities."
+        },
+        {
+          value: "Social integration and community resources",
+          text: "Family's social integration and community resources - Thinking about if the child/family is part of the local neighbourhood/community. Including universal services: health care, day care and schools, places of worship, transport, shops and leisure activities."
+        }
+      ]
+    }) }}
+
+    {{ govukTextarea({
+      name: "contribution",
+      id: "contribution",
+      autocomplete: "contribution",
+      classes: 'govuk-input--width-30',
+      label: {
+        text: "Reason for undertaking this assessment and details of any presenting issues",
+        classes: 'govuk-!-font-weight-bold'
+      }
+    }) }} #}
+
+    {{ govukButton({
+      text: 'Continue',
+      href: 'referral-details-child-self-care-presentation'
+    }) }}
+
+  </form>
+
+</div>
+  </div>
+
+{% endblock %}
