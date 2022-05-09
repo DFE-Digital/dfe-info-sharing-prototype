@@ -20,7 +20,7 @@ Info sharing - Referral service
       name: "guidance",
       fieldset: {
         legend: {
-          text: "What level of need does the child fall under in the continuum of need?",
+          text: "What level of help does the child need?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }
@@ -28,22 +28,23 @@ Info sharing - Referral service
       items: [
       {
         value: "1",
-        text: "1"
+        text: "Universal services",
+        hint: {
+          text: "For example schools, health visiting, GP and so on."
+        }
       },
       {
-        value: "2",
-        text: "2"
-      },
-      {
-        value: "3",
-        text: "3"
+        value: "2+",
+        text: "Targeted and specialist services",
+        hint: {
+          text: "For example children and families beginning to experience or at risk of difficulties, or with multiple needs such as - school counselling, parenting programmes, support for teenage parents and so on. Or intensive family support, specialist child and adolescent mental health services, and services for children with disabilities."
+        }
       }
       ]
     }) }}
 
     {{ govukButton({
-      text: 'Continue',
-      href: 'have-you-found-services'
+      text: 'Continue'
     }) }}
 
   </form>

@@ -1,40 +1,28 @@
-{% set mainClasses = "govuk-main-wrapper--l" %}
-{% from "govuk/components/panel/macro.njk" import govukPanel %}
 
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% extends "layout.html" %}
 
 {% block pageTitle %}
 Info sharing - Referral service
 {% endblock %}
 
-
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      {{ govukPanel({
-        titleText: "Request sent",
-        html: "Your reference number<br><strong>HDJ2123F</strong>"
-      }) }}
 
-      <p class="govuk-body">We have sent you a confirmation email.</p>
-      <p class="govuk-body">You can download the submission summary on this page. Once you leave this page you will not be able to access the summary again.</p>
-      {{ govukButton({
-        text: 'Download submission summary'
-      }) }}
-  
 
-      <h2 class="govuk-heading-m">What happens next</h2>
 
-      <p class="govuk-body">
-        We have sent your request to Kirklees Council Holmfirth District Hub.
-      </p>
-      <p class="govuk-body">
-        They will contact the family either to make arrangements for further support or to ask for more information.
-      </p>
+{{ govukBackLink({
+    text: "Back",
+    href: "/v8/referral/urgency"
+  }) }}
 
-      <p class="govuk-body">
-        <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
-      </p>
-    </div>
-  </div>
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">You should not use this service</h2>
+
+  <p>Services for level 1 tiered help on the continuum of need should be dealt with by universal services in the families area.</p>
+
 {% endblock %}

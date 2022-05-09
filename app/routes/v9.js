@@ -119,11 +119,11 @@ router.post(`/v${verNum}/referral-threshold-painpoint-1a/why`, function (req, re
   let answer = req.session.data['why'];
 
   if (answer == 'Yes') {
-    res.redirect(`/v${verNum}/referral-threshold-painpoint-1/task-list`);
+    res.redirect(`/v${verNum}/referral-threshold-painpoint-1a/task-list`);
   }
 
   if (answer == 'No') {
-    res.redirect(`/v${verNum}/referral-threshold-painpoint-1/fin`);
+    res.redirect(`/v${verNum}/referral-threshold-painpoint-1a/fin`);
   }
 });
 // 1a
@@ -157,20 +157,19 @@ router.post(`/v${verNum}/referral-threshold-painpoint-1b/have-you-read-the-guida
   }
 });
 
-router.post(`/v${verNum}/referral-threshold-painpoint-1b/have-you-found-services`, function (req, res) {
-  let answer = req.session.data['have-you-found-services'];
-  let answerB = req.session.data['still-use-service'];
+router.post(`/v${verNum}/referral-threshold-painpoint-1b/guidance`, function (req, res) {
+  let answer = req.session.data['guidance'];
 
-  if (answer === 'No') {
-    res.redirect(`/v${verNum}/referral-threshold-painpoint-1b/can-you-help-the-child-yourself`);
+  if (answer === '1') {
+    res.redirect(`/v${verNum}/referral-threshold-painpoint-1b/fin`);
   }
 
-  if (answer === 'Yes' && answerB === 'Yes') {
-    res.redirect(`/v${verNum}/referral-threshold-painpoint-1b/can-you-help-the-child-yourself`);
+  if (answer === '2+') {
+    res.redirect(`/v${verNum}/referral-threshold-painpoint-1b/task-list`);
   } 
 
-  if (answer === 'Yes' && answerB === 'No') {
-    res.redirect(`/v${verNum}/referral-threshold-painpoint-1b/fin`);
+  else {
+    res.redirect(`/v${verNum}/referral-threshold-painpoint-1b/guidance`);
   }
 });
 

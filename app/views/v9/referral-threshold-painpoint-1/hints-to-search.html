@@ -20,17 +20,33 @@ Info sharing - Referral service
       name: "hints-to-search",
       fieldset: {
         legend: {
-          text: "Hints",
+          text: "How to find universal services",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }
       },
-      hint: {
-        text: "For example, 2005 or 21/11/2014"
-      },
       items: [
       ]
     }) }}
+
+
+    {{ govukInsetText({
+      text: "Universal services are provided by a range of different agencies, including health and education and can be accessed without any extra support or resources"
+    }) }}
+
+    <p>Health visitors, GPs and school nurses are all examples of universal services as are leisure centres and parks in the community. These services are expected to make reasonable adjustments to ensure that children and young people with SEND have no barriers to accessing them.</p>
+
+    <h2 class="govuk-heading-m">
+      Finding universal services
+    </h2>
+
+    <p>To find universal services:</p>
+    <ol class="govuk-list govuk-list--number">
+      <li>
+        Check on the families local authority website for universal services available in the area
+      </li>
+      <li>Do a search online for universal services in the area using a description of the child's needs</li>
+    </ol>
 
     {{ govukButton({
       text: 'Continue',
