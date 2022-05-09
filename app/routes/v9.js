@@ -42,6 +42,7 @@ router.get([`/v${verNum}/directory/professional/:category/:professionalId`, `/v$
   const childProfile = data.createProfile(childId)
   const professionalProfile = data.createProfessionalProfile(category, professionalId)
   let eventTimelineId = req.query.eventTimelineId || '1'
+  console.log(category)
   const ur = req.query.ur || 'false'
   if (childProfile.timelineId) {
     eventTimelineId = childProfile.timelineId.toString()
@@ -49,6 +50,7 @@ router.get([`/v${verNum}/directory/professional/:category/:professionalId`, `/v$
   const timelineVariant = req.query.timelineVariant || 'A'
   let events = data.createEvents(childId, eventTimelineId)
   events = data.filterEventsByProfessional(events, professionalProfile)
+  console.log(events)
   res.render(`v${verNum}/directory/professional-record-dynamic.html`, {
     events: events,
     professionalProfile: professionalProfile,
