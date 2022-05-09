@@ -15,12 +15,38 @@ Info sharing - Referral service
 
   <form action="have-you-read-the-guidance" method="post">
 
+    {% set continue %}
+    {{ govukRadios({
+        idPrefix: "abcsd",
+        name: "abcsds",
+        fieldset: {
+          legend: {
+            text: "Does the child need targeted or specialist services?",
+
+
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No, they need universal services"
+          }
+        ]
+      }) }}
+    {% endset -%}
+
   {{ govukRadios({
       idPrefix: "have-you-read-the-guidance",
       name: "have-you-read-the-guidance",
       fieldset: {
         legend: {
-          text: "Have you read the guidance for when you should use this form to request help and support?",
+          text: "Have you read the continuum of needs?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }
@@ -31,7 +57,10 @@ Info sharing - Referral service
       items: [
         {
           value: "Yes",
-          text: "Yes"
+          text: "Yes",
+          conditional:{
+            html: continue
+          }
         },
         {
           value: "No",

@@ -14,38 +14,12 @@ Info sharing - Referral service
 {% block content %}
 
 
-<h1 class="govuk-heading-l">
-  You have told us that the family do not require any universal or other services
-</h1>
-  <form action="why" method="post">
+  <h1 class="govuk-heading-l">
+    Refer family to the service you selected
+  </h1>
+ 
+  <p> You should refer the family to the service you told us they need, or tell them to get in touch with the service themselves.</p>
 
-  {{ govukRadios({
-      idPrefix: "why",
-      name: "why",
-      fieldset: {
-        legend: {
-          text: "Do you still want to request help and support?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--m"
-        }
-      },
-      items: [
-        {
-          value: "Yes",
-          text: "Yes"
-        },
-        {
-          value: "No",
-          text: "No"
-        }
-      ]
-    }) 
-  }}
 
-    {{ govukButton({
-      text: 'Continue'
-    }) }}
-
-  </form>
 
 {% endblock %}
