@@ -1,0 +1,18 @@
+<div class="govuk-grid-row govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-full">
+        {{ govukBackLink({
+            text: "Back to child record",
+            href: "/v" + verNum + "/directory/record/" + profile.id + "/F/?ur=true"
+        }) }}
+    </div>
+</div>
+<div class="govuk-grid-row govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">
+            {{ professionalProfile.firstName }} {{ professionalProfile.lastName }}
+            <span class="govuk-caption-m">
+            Last updated: 22nd Jan 2022
+            </span>
+        </h1>
+    </div>
+</div>

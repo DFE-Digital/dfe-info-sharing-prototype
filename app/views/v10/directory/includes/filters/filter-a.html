@@ -1,0 +1,289 @@
+{% from '../../macros/searchFilter.njk' import searchFilter %}
+
+{% set interactionTypeOptionsHtml %}
+
+    {{ govukCheckboxes({
+        idPrefix: 'interactionType',
+        name: 'interactionType',
+        classes: "govuk-checkboxes--small",
+        items: interactionTypes
+    }) }}
+
+{% endset %}
+
+{% set significantEventsOptionsHtml %}
+
+    {{ govukRadios({
+        classes: "govuk-radios--small",
+        idPrefix: "significantEvents",
+        name: "significantEvents",
+        fieldset: {
+            legend: {
+                text: "Filter by significant events",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s govuk-visually-hidden"
+            }
+        },
+        items: [
+            {
+                value: false,
+                text: "All",
+                checked: true
+            },
+            {
+                value: true,
+                text: "Significant events only"
+            }
+        ]
+    }) }}
+
+{% endset %}
+
+{% set dateOptionsHtml %}
+    {{ govukInput({
+        label: {
+            text: "Updated after",
+            isPageHeading: false
+        },
+        hint: {
+            text: "For example, 2005 or 21/11/2014"
+        },
+        id: "dateFrom",
+        name: "dateFrom"
+    }) }}
+    {{ govukInput({
+        label: {
+            text: "Updated before",
+            isPageHeading: false
+        },
+        hint: {
+            text: "For example, 2005 or 21/11/2014"
+        },
+        id: "dateTo",
+        name: "dateTo"
+    }) }}
+{% endset %}
+
+{% set dateOptionsSelectHtml %}
+    {{ govukSelect({
+        id: "dateFilter",
+        name: "dateFilter",
+        classes: "govuk-!-display-block govuk-width-full",
+        label: {
+            text: "Show interactions from"
+        },
+        items: [
+            {
+                value: null,
+                text: "All time",
+                selected: true
+            },
+            {
+                value: "sixmonths",
+                text: "Last 6 months"
+            },
+            {
+                value: "oneyear",
+                text: "Last 1 year"
+            },
+            {
+                value: "fiveyears",
+                text: "Last 5 years"
+            }
+        ]
+    }) }}
+{% endset %}
+
+{% if ur === 'true' or professionalProfile != null %}
+
+    {{ searchFilter({
+        rows: [
+            {
+                title: 'Interaction type',
+                body: interactionTypeOptionsHtml | safe,
+                expanded: 'true'
+            },
+            {
+                title: 'Date',
+                body: dateOptionsSelectHtml | safe,
+                expanded: 'true'
+            }
+        ]
+    }) }}
+
+{% else %}
+
+{{ searchFilter({
+    rows: [
+        {
+            title: 'Significant events',
+            body: significantEventsOptionsHtml | safe,
+            expanded: 'true'
+        },
+        {
+            title: 'Interaction type',
+            body: interactionTypeOptionsHtml | safe,
+            expanded: 'true'
+        },
+        {
+            title: 'Date',
+            body: dateOptionsSelectHtml | safe,
+            expanded: 'true'
+        }
+    ]
+}) }}
+
+{% endif %}
+
+
+<script type="text/javascript">
+  window.addEventListener('load', function () {
+    let searchArray = []
+    let permitArray = []
+    let fileTypeArray = []
+    let interactionArray = []
+    let significantEventsValue = false
+    let dateFilterValue = null
+
+    const parentSelector = '.event--filterable'
+    const filterSource = '#facet-wrapper input, #facet-wrapper select'
+
+    // $(".finder-results").find(`[data-permittype='Compliance']`).css('background', 'red')
+
+    function countResults () {
+      let itemsShowing = []
+      $(parentSelector).each(function () {
+        // console.log(this)
+        if ($(this).is(':visible')) {
+          itemsShowing.push(this)
+        }
+      })
+      // console.log(itemsShowing)
+      return itemsShowing.length
+    }
+
+    function getTimeStampFromRange () {
+      let dateFilterTimeStamp = ''
+      switch (dateFilterValue) {
+        case 'sixmonths':
+          dateFilterTimeStamp = new Date(new Date().setMonth(new Date().getMonth() - 6))
+          break
+        case 'oneyear':
+          dateFilterTimeStamp = new Date(new Date().setFullYear(new Date().getFullYear() - 1))
+          break
+        case 'fiveyears':
+          dateFilterTimeStamp = new Date(new Date().setFullYear(new Date().getFullYear() - 5))
+          break
+        default:
+          dateFilterTimeStamp = new Date()
+      }
+      // console.log(dateFilterTimeStamp)
+      return dateFilterTimeStamp
+    }
+
+    function isEventInTimeFilterRange (timestamp) {
+      if (dateFilterValue === null || dateFilterValue === '') {
+        return true
+      } else {
+        return new Date(timestamp).getTime() >= new Date(getTimeStampFromRange().getTime())
+      }
+    }
+
+    function showHideResults (parentSelector, significantEventsData, interactionTypeData, dateFilter) {
+
+      if (significantEventsData === 'true' && interactionTypeData.length) {
+        console.log('hit ' + 1)
+        $(parentSelector).each(function () {
+          if ($(this).data('interaction-type') && interactionTypeData.includes($(this).data('interaction-type')) && ($(this).data('significant-event') && significantEventsData === 'true') && isEventInTimeFilterRange($(this).data('timestamp'))) {
+            $(this).show()
+          } else {
+            $(this).hide()
+          }
+        })
+        // $('.finder-results li').attr(['data-permittype', 'Compliance']).css(['background', 'red'])
+      } else if (interactionTypeData.length) {
+        console.log('hit ' + 2)
+        $(parentSelector).each(function () {
+          // console.log($(this).data('interaction-type'))
+          // console.log(interactionTypeData)
+          if (interactionTypeData.includes($(this).data('interaction-type')) && isEventInTimeFilterRange($(this).data('timestamp'))) {
+            $(this).show()
+          } else {
+            $(this).hide()
+          }
+        })
+        // $('.finder-results li').attr(['data-permittype', 'Compliance']).css(['background', 'red'])
+      } else if (significantEventsData === 'true') {
+        console.log('hit ' + 3)
+        $(parentSelector).each(function () {
+          if ($(this).data('significant-event') && significantEventsData === 'true' && isEventInTimeFilterRange($(this).data('timestamp'))) {
+            // console.log(isEventInTimeFilterRange($(this).data('timestamp')))
+            $(this).show()
+          } else {
+            $(this).hide()
+          }
+        })
+        // $('.finder-results li').attr(['data-permittype', 'Compliance']).css(['background', 'red'])
+      } else if (dateFilterValue) {
+        console.log('hit ' + 4)
+        $(parentSelector).each(function () {
+          if (isEventInTimeFilterRange($(this).data('timestamp'))) {
+            $(this).show()
+          } else {
+            $(this).hide()
+          }
+        })
+      } else {
+        console.log('hit ' + 5)
+        $(parentSelector).show()
+      }
+      $('#resultCounter').text(countResults())
+
+    }
+
+    $(filterSource).on('change', (e) => {
+      // console.log(e.target.value + ' = ' + e.target.checked)
+      let checked = e.target.value
+      if (e.target.checked) {
+        if (e.target.name === 'significantEvents') {
+          console.log(1)
+          significantEventsValue = e.target.value
+        }
+        if (e.target.name === 'docFileType') {
+          fileTypeArray.push(e.target.value)
+        }
+        if (e.target.name === 'interactionType') {
+          interactionArray.push(e.target.value)
+        }
+        searchArray.push(e.target.value)
+      } else {
+        if (e.target.name === 'significantEvents') {
+          console.log(2)
+          // significantEventsValue
+        }
+        if (e.target.name === 'dateFilter') {
+          console.log(3)
+          dateFilterValue = e.target.value
+        }
+        if (e.target.name === 'interactionType') {
+          interactionArray.splice($.inArray(checked, interactionArray), 1)
+        }
+        if (e.target.name === 'docFileType') {
+          fileTypeArray.splice($.inArray(checked, fileTypeArray), 1)
+        }
+        searchArray.splice($.inArray(checked, searchArray), 1)
+      }
+
+      // console.log('Filter by: ' + searchArray)
+      console.log('Significant Events Only: ' + significantEventsValue)
+      console.log('Interaction: ' + interactionArray)
+      console.log('Date filter: ' + dateFilterValue)
+      // showHideResults(searchArray)
+
+      showHideResults(parentSelector, significantEventsValue, interactionArray, fileTypeArray, dateFilterValue)
+    })
+    $('#resultCounter').text(countResults())
+
+  })
+
+</script>
