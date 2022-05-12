@@ -1,0 +1,48 @@
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">
+            Professional contacts
+        </h2>
+        {% set tableRows = [] %}
+        {% for pro in professionalInteractions %}
+            {% set tableRows = (tableRows.push(
+                [
+                    {
+                        text: pro.name
+                    },
+                    {
+                        text: pro.organisation.title
+                    },
+                    {
+                        text: pro.events.length
+                    }
+                ]
+            ), tableRows) %}
+        {% endfor %}
+
+{{ govukTable({
+    attributes: {
+        'data-module': 'moj-sortable-table'
+    },
+    head: [
+        {
+            text: "Name"
+        },
+        {
+            text: "Organisation",
+            attributes: {
+             "aria-sort": "none"
+            }
+        },
+        {
+            text: "Interactions",
+            attributes: {
+             "aria-sort": "descending"
+            }
+        }
+    ],
+    rows: tableRows
+}) }}
+
+</div>
+</div>

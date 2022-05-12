@@ -1,0 +1,20 @@
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+                {% include '../includes/filters/filter-a.html' %}
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+                {% if timelineVariant === 'C' %}
+                    {% include '../includes/timelines/timeline-c.html' %}
+                {% elseif timelineVariant === 'B' %}
+                    {% include '../includes/timelines/timeline-b.html' %}
+                {% else %}
+                    {% include '../includes/timelines/timeline-a.html' %}
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+</div>

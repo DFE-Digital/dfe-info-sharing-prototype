@@ -48,11 +48,11 @@
               text: "Current sprint"
           }) }}
         </span>
-            Sprint 8
+            Sprint 10
         </h2>
 
 
-        {% include './v9/directory/design-goals.html' %}
+        {% include './v10/directory/design-goals.html' %}
 
 
         <!--current sprint ends here-->
@@ -63,6 +63,13 @@
         <p class="govuk-body">
             Links to prototypes and other design assets for each sprint.
         <p>
+
+            {% set Sprint8 %}
+            <h2 class="govuk-heading-l">
+                Sprint 8 and 9
+            </h2>
+            {% include './v9/directory/design-goals.html' %}
+            {% endset %}
 
             {% set Sprint7 %}
         <h2 class="govuk-heading-l">
@@ -98,10 +105,6 @@
                 <li>
                     <a href="https://docs.google.com/document/d/1bTOWDopyqZX4v8Bmq3ekBWkzPwhCtAUzxZNob_gyZHQ/edit"
                        class="govuk-link" target="_blank">Decision log</a>
-                </li>
-                <li>
-                    <a href="https://lucid.app/lucidspark/21d1c860-552d-41af-820e-2f017b0c9e73/edit#" class="govuk-link"
-                       target="_blank">Lucid board</a>
                 </li>
 
             </ul>
@@ -484,6 +487,14 @@
         {{ govukAccordion({
             id: "accordion-default",
             items: [
+                {
+                    heading: {
+                    text: "Sprint 8 and 9"
+                },
+                    content: {
+                    html: Sprint8
+                }
+                },
                 {
                     heading: {
                     text: "Sprint 7"

@@ -1,0 +1,35 @@
+{{ govukTable({
+
+    firstCellIsHeader: true,
+
+    rows: [
+        [
+            {
+                text: "Name",
+                classes: 'govuk-!-width-one-half'
+            },
+            {
+                text: profile.contacts.gp.name
+            }
+        ],
+        [
+            {
+                text: "Contact details",
+                classes: 'govuk-!-width-one-half'
+            },
+            {
+                html: profile.contacts.gp.contact.phone + "<br><a href='#' class='govuk-link'>" + profile.contacts.gp.contact.email + "</a>"
+            }
+        ],
+        [
+            {
+                text: "
+        Address",
+                classes: 'govuk-!-width-one-half'
+            },
+            {
+                html: profile.contacts.gp.contact.address
+            }
+        ]
+    ]
+}) }}
