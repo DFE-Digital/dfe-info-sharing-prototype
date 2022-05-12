@@ -1,0 +1,41 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Info sharing - Referral service
+{% endblock %}
+
+{% block content %}
+
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Share a copy of the assessment</h2>
+
+<div data-module="moj-add-another">
+
+  <form action="barry-white-task-list-2" method="post">
+
+    {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+    {{ govukFileUpload({
+      id: "file-upload-1",
+      name: "file-upload-1",
+      label: {
+        text: "Select a file to upload."
+      }
+    }) }}
+
+    {{ govukButton({
+      text: 'Upload'
+    }) }}
+
+  </form>
+
+</div>
+  </div>
+
+{% endblock %}
