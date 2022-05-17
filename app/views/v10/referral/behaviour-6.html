@@ -16,8 +16,20 @@ Info sharing - Referral service
 
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">What help and support has worked well?</h2>
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Attempts to help and support</h2>
   <form action="behaviour-5" method="post">
+
+    {{ govukTextarea({
+      id: "behaviouractionsworked",
+      name: "behaviouractionsworked",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "What attempts have worked well?",
+        classes: "govuk-!-font-weight-bold"
+      }
+    }) }}
 
     {{ govukTextarea({
       id: "behaviouractionsnotworked",
@@ -26,17 +38,14 @@ Info sharing - Referral service
       spellcheck: true,
       classes: "govuk-!-width-two-thirds",
       label: {
-        text: "",
+        text: "What attempts have not worked well?",
         classes: "govuk-!-font-weight-bold"
-      },
-      hint: {
-          text: "Include details of who provided the help and support, when and for how long."
-        }
+      }
     }) }}
 
     {{ govukButton({
       text: 'Continue',
-      href: 'behaviour-7'
+      href: 'behaviour-8'
     }) }}
 
   </form>

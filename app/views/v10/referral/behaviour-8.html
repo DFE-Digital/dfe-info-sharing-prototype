@@ -16,7 +16,7 @@ Info sharing - Referral service
 
 <div data-module="moj-add-another">
 
-  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">What are Barry's thoughts about this request for help and support?</h2>
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Family's thoughts on this request for help and support and desired outcomes</h2>
 
   <form method="post">
 
@@ -27,14 +27,26 @@ Info sharing - Referral service
       spellcheck: true,
       classes: "govuk-!-width-two-thirds",
       label: {
-        text: "",
+        text: "Barry's thoughts and desired outcomes",
+        classes: "govuk-!-font-weight-bold"
+      }
+    }) }}
+  
+    {{ govukTextarea({
+      id: "view2",
+      name: "view2",
+      type: "textarea",
+      spellcheck: true,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Mary's thoughts and desired outcomes",
         classes: "govuk-!-font-weight-bold"
       }
     }) }}
 
     {{ govukButton({
       text: 'Continue',
-      href: 'behaviour-9'
+      href: 'barry-white-task-list-4'
     }) }}
 
   </form>

@@ -1,7 +1,7 @@
 const verNum = 10
 const express = require('express')
 const router = express.Router()
-const data = require(`../views/v${verNum}/directory/data/functions`)
+// const data = require(`../views/v${verNum}/directory/data/functions`)
 
 // Create readily available 'locals'
 router.use((req, res, next) => {
@@ -36,8 +36,44 @@ router.post(`/v${verNum}/referral/urgency`, function (req, res) {
     res.redirect(`/v${verNum}/referral/exit-points/safeguarding`);
 
   } else {
-    res.redirect(`/v${verNum}/referral/assessment/have-you-assessed`);
+    res.redirect(`/v${verNum}/referral/locality`);
   }
+});
+
+router.post(`/v${verNum}/referral/locality`, function (req, res) {
+  let answer = req.session.data['locality'];
+
+  if (answer === 'hd94nw') {
+    res.redirect(`/v${verNum}/referral/locality-found`);
+  } else if (answer == 'other') {
+    res.redirect(`/v${verNum}/referral/locality-not-found`);
+  } else {
+    res.redirect(`/v${verNum}/referral/locality`);
+  }
+});
+
+router.post(`/v${verNum}/referral/locality-not-found`, function (req, res) {
+  let answer = req.session.data['abcd'];
+
+});
+
+router.post(`/v${verNum}/referral/locality-found`, function (req, res) {
+  let answer = req.session.data['locality-correct'];
+
+  if (answer === 'Yes') {
+    res.redirect(`/v${verNum}/referral/assessment/have-you-assessed`);
+  } else if (answer === 'No') {
+    res.redirect(`/v${verNum}/referral/locality-not-found`);
+  } else {
+    res.redirect(`/v${verNum}/referral/locality-found`);
+  }
+
+});
+
+router.post(`/v${verNum}/referral/locality-not-found`, function (req, res) {
+  let answer = req.session.data['locality-input'];
+    res.redirect(`/v${verNum}/referral/locality-found`);
+
 });
 
 router.post(`/v${verNum}/referral/immediate-danger`, function (req, res) {

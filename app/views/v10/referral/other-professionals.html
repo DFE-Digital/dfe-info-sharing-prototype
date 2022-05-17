@@ -19,9 +19,6 @@
 <div data-module="moj-add-another">
 
   <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Details of another professional</h2>
-   <!--{{ govukInsetText({
-    text: "You do not need to tell us your details here. Please give details of the professionals involved with the child and family."
-  }) }}-->
 
   <form action="other-significant-adults" method="post">
 
@@ -129,16 +126,84 @@
       }
     }) }}
 
-    {{ govukTextarea({
-      name: "contribution",
-      id: "contribution",
-      autocomplete: "contribution",
-      classes: 'govuk-input--width-30',
-      label: {
-        text: "Describe any contribution they have made to this request",
-        classes: 'govuk-!-font-weight-bold'
-      }
+    {% set procontributionconditional %}
+      {{ govukTextarea({
+        name: "contribution",
+        id: "contribution",
+        autocomplete: "contribution",
+        classes: 'govuk-input--width-30',
+        label: {
+          text: "Describe any contribution they have made to this request",
+          classes: 'govuk-!-font-weight-bold'
+        }
+      }) }}
+    {% endset -%}
+
+
+    {{ govukRadios({
+      idPrefix: "procontributionknown",
+      name: "procontributionknown",
+      fieldset: {
+        legend: {
+          text: "Has this person made any contribution to this request?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {},
+      items: [
+        {
+          value: "yes",
+          text: "Yes",
+          conditional: {
+            html: procontributionconditional
+          }
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
     }) }}
+    
+    {% set lastprocontactconditional %}
+    {{ govukInput({
+      name: "lastprocontactconditional",
+      id: "lastprocontactconditional",
+      label: {
+        text: "When were they last in contact?",
+        isPageHeading: false
+      },
+      hint: {}
+    }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+      idPrefix: "lastprocontact",
+      name: "lastprocontact",
+      fieldset: {
+        legend: {
+          text: "Do you know when this person was last in contact with the family?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {},
+      items: [
+        {
+          value: "yes",
+          text: "Yes",
+          conditional: {
+            html: lastprocontactconditional
+          }
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+    
 
     {% endcall %}
 

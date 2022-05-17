@@ -14,29 +14,36 @@ Info sharing - Referral service
 {% block content %}
 
 
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Is the local authority Kirklees Council?</h2>
 
-{{ govukBackLink({
-    text: "Back",
-    href: "/v5/referral"
+  <form action="locality-found" method="post">
+  {{ govukRadios({
+    idPrefix: "locality-correct",
+    name: "locality-correct",
+    fieldset: {
+      legend: {
+        text: "",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    hint: {},
+    items: [
+      {
+        value: "Yes",
+        text: "Yes"
+      },
+      {
+        value: "No",
+        text: "No, this is the wrong local authority"
+      }
+    ]
   }) }}
 
-  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Primary post code of the family</h2>
+  {{ govukButton({
+    text: 'Continue'
+  }) }}
 
-  <form action="locality" method="post">
-
-    {{ govukInput({
-      id: 'locality',
-      name: 'locality',
-      classes: 'govuk-input--width-20',
-      hint: {
-        text: 'Use "hd94nw" or "other"'
-      }
-    }) }}
-    
-    {{ govukButton({
-      text: 'Continue'
-    }) }}
-
-  </form>
+</form>
 
 {% endblock %}
