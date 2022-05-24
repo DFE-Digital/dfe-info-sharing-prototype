@@ -4,16 +4,15 @@
     ABC Software
 {% endblock %}
 
-{% set mainClasses = 'asad' %}
-
 {% block content %}
 <div class="min-h-full">
     <nav class="bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
-                    <div class="flex-shrink-0">
+                    <div class="flex-shrink-0 text-white">
                         <img class="h-8 w-8" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
+                        ABC
                     </div>
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-baseline space-x-4">
@@ -59,14 +58,14 @@
                                 From: "transform opacity-100 scale-100"
                                 To: "transform opacity-0 scale-95"
                             -->
-                            <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                                <!-- Active: "bg-gray-100", Not Active: "" -->
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+{#                            <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">#}
+{#                                <!-- Active: "bg-gray-100", Not Active: "" -->#}
+{#                                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>#}
 
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+{#                                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>#}
 
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
-                            </div>
+{#                                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>#}
+{#                            </div>#}
                         </div>
                     </div>
                 </div>
@@ -164,11 +163,9 @@
     <div class="w-full h-full">
         <div id="modal-bg" class="w-full h-full bg-[#848A97] opacity-60 top-0 absolute hidden"></div>
         <div id="modal-box" class="sm:w-[385px] sm:min-w-[40vw] min-w-[80vw] min-h-[80vh] flex flex-col items-center gap-2 -translate-y-1/2 p-6 bg-[#FFFFEB] rounded-lg top-1/2 left-1/2 -translate-x-1/2 absolute hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" class="text-[#059669] mx-auto h-11 rounded-full bg-[#D1FAE5] w-11" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 13l4 4L19 7" />
-            </svg>
-            <span class="text-2xl font-medium">Payment Successful</span>
-            <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, consequatur?</p>
+
+
+
             <button id="modal-close" class="p-3 bg-[#4F46E5] rounded-lg w-full text-white">Click Background</button>
         </div>
     </div>
@@ -186,8 +183,8 @@
         modalbg.classList.remove('hidden')
       });
       modalClose.addEventListener("click", function() {
-        modalBox.classList.remove('hidden')
-        modalbg.classList.remove('hidden')
+        modalBox.classList.add('hidden')
+        modalbg.classList.add('hidden')
       });
     </script>
 {% endblock %}
