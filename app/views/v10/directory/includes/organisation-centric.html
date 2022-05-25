@@ -1,0 +1,42 @@
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        {% set orgItems = [] %}
+        {% for org in organisationInteractions %}
+            {% set orgDetails = [] %}
+            {% for k, v in org.contact %}
+                {% set orgDetails = (orgDetails.push(
+                {
+                    key: {
+                        text: k
+                    },
+                    value: {
+                        text: v
+                    }
+                }
+            ), orgDetails) %}
+            {% endfor %}
+            {% set events = org.events %}
+            {% set timeline %}
+                {% include './timelines/timeline-a.html' %}
+            {% endset %}
+            {% set orgItems = (orgItems.push(
+                {
+                    heading: {
+                    text: org.title + ' (' + org.events.length + ' interactions)'
+                },
+                    content: {
+                        html:  govukSummaryList({ rows: orgDetails }) +
+                               govukDetails({
+                                   summaryText: "Show interactions",
+                                   html: timeline
+                               })
+                    }
+                }), orgItems) %}
+        {% endfor %}
+        {{ govukAccordion({
+            id: "organisations",
+            items: orgItems
+        }) }}
+
+    </div>
+</div>

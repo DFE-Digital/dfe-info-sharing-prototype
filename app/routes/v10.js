@@ -9,8 +9,77 @@ router.use((req, res, next) => {
   next()
 })
 
-// Copy Directory here 
-// Copy Directory here
+//* Directory routes //
+
+router.get([`/v${verNum}/directory/record/:childId`, `/v${verNum}/directory/record/:childId/:designVariant`, `/v${verNum}/directory/record/`], function (req, res) {
+  const childId = req.params.childId || '1'
+  const designVariant = req.params.designVariant || 'A'
+  const profile = data.createProfile(childId)
+  let eventTimelineId = req.query.eventTimelineId || '1'
+  const ur = req.query.ur || 'false'
+  if (profile.timelineId) {
+    eventTimelineId = profile.timelineId.toString()
+  }
+  const timelineVariant = req.query.timelineVariant || 'A'
+  const events = data.createEvents(childId, eventTimelineId)
+  res.render(`v${verNum}/directory/child-record-dynamic.html`, {
+    events: events,
+    profile: profile,
+    ur: ur,
+    interactionTypes: data.createInteractionTypes(events),
+    designVariant: designVariant,
+    timelineVariant: timelineVariant,
+    professionalInteractions: data.groupByProfessional(events),
+    organisationInteractions: data.groupByOrganisation(events)
+  })
+})
+
+router.get([`/v${verNum}/directory/professional/:category/:professionalId`, `/v${verNum}/directory/professional/:category/:professionalId/:childId/`, `/v${verNum}/directory/professional/`], function (req, res) {
+  const childId = req.params.childId || '1'
+  const professionalId = req.params.professionalId || '1'
+  const category = req.params.category || 'health'
+  const designVariant = req.params.designVariant || 'A'
+  const childProfile = data.createProfile(childId)
+  const professionalProfile = data.createProfessionalProfile(category, professionalId)
+  let eventTimelineId = req.query.eventTimelineId || '1'
+  console.log(category)
+  const ur = req.query.ur || 'false'
+  if (childProfile.timelineId) {
+    eventTimelineId = childProfile.timelineId.toString()
+  }
+  const timelineVariant = req.query.timelineVariant || 'A'
+  let events = data.createEvents(childId, eventTimelineId)
+  events = data.filterEventsByProfessional(events, professionalProfile)
+  console.log(events)
+  res.render(`v${verNum}/directory/professional-record-dynamic.html`, {
+    events: events,
+    professionalProfile: professionalProfile,
+    profile: childProfile,
+    ur: ur,
+    interactionTypes: data.createInteractionTypes(events),
+    designVariant: designVariant,
+    timelineVariant: timelineVariant,
+    professionalInteractions: data.groupByProfessional(events),
+    organisationInteractions: data.groupByOrganisation(events)
+  })
+})
+
+router.get([`/v${verNum}/directory/search-results`, `/v${verNum}/directory/child-record-results`], function (req, res) {
+  const searchTerm = req.query.search || null
+  const searchResults = data.createSearchResults(searchTerm)
+  res.render(`v${verNum}/directory/search-results-dynamic.html`, {
+    searchResults: searchResults
+  })
+})
+
+router.get([`/v${verNum}/directory/search`, `/v${verNum}/directory/child-search`], function (req, res) {
+  const searchVariant = req.query.searchVariant || null
+  res.render(`v${verNum}/directory/child-search.html`, {
+    searchVariant: searchVariant
+  })
+})
+
+//* Directory routes END //
 
 // Referrals start
 router.post(`/v${verNum}/referral/assessment/can-be-met-universal-answer`, function (req, res) {

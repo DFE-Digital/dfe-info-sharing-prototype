@@ -3,7 +3,8 @@
 </h3>
 <ul class='govuk-list govuk-list--bullet'>
     <li>
-        Frame the details held in a 'professional centric' way. Addition of professional <a href="/v9/directory/professional/health/2/4">profile page</a>
+        Frame the details held in a 'professional centric' way. Addition of professional <a
+                href="/v9/directory/professional/health/2/4">profile page</a>
         {{ govukTag({
             text: "Ongoing",
             classes: "govuk-tag--pink"
@@ -20,11 +21,6 @@
         <a href="https://docs.google.com/document/d/1bTOWDopyqZX4v8Bmq3ekBWkzPwhCtAUzxZNob_gyZHQ/edit"
            class="govuk-link" target="_blank">Decision log</a>
     </li>
-    <li>
-        <a href="https://lucid.app/lucidspark/21d1c860-552d-41af-820e-2f017b0c9e73/edit#" class="govuk-link"
-           target="_blank">Lucid board</a>
-    </li>
-
 </ul>
 
 <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
@@ -42,17 +38,23 @@
 <h3 class="govuk-heading-m">
     Design variants
 </h3>
-        <h4 class="govuk-heading-s">Timelines</h4>
-        <ul class="govuk-list govuk-list--bullet">
-            <li><a href="/v9/directory/record/1/D" class="govuk-link">Timeline with filter</a> - (variant D) uses GOV.UK global search filter style and filter items that we have understood to be useful, namely 'Significant Events', 'Interaction Types' and 'Dates of interactions'.</li>
-            <li><a href="/v9/directory/record/1/F" class="govuk-link">Timeline with filter and professional centric views</a> - (variant F) a variant that displays the same data in a grouping relative to professionals and organisations.</li>
-        </ul>
+<h4 class="govuk-heading-s">Timelines</h4>
+<ul class="govuk-list govuk-list--bullet">
+    <li><a href="/v9/directory/record/1/F#timeline" class="govuk-link">Timeline with filter</a> - (variant D) uses GOV.UK global
+        search filter style and filter items that we have understood to be useful, namely 'Significant Events',
+        'Interaction Types' and 'Dates of interactions'.
+    </li>
+</ul>
 {% set listHtml %}
     <ul class="govuk-list govuk-list--bullet">
-        <li><a href="/v9/directory/record/1/B/" class="govuk-link">Variant A</a> - timeline of interactions without filters</li>
+        <li><a href="/v9/directory/record/1/B/" class="govuk-link">Variant A</a> - timeline of interactions without
+            filters
+        </li>
         <li><a href="/v9/directory/record/1/B/" class="govuk-link">Variant B</a> - sortable table of events</li>
         <li><a href="/v9/directory/record/1/C/" class="govuk-link">Variant C</a> - inverted version of variant A</li>
-        <li><a href="/v9/directory/record/1/E/" class="govuk-link">Variant E</a> - same details presented in an accordion</li>
+        <li><a href="/v9/directory/record/1/E/" class="govuk-link">Variant E</a> - same details presented in an
+            accordion
+        </li>
     </ul>
 {% endset %}
     {{ govukDetails({
@@ -60,13 +62,31 @@
         html: listHtml
     }) }}
 
-        <h4 class="govuk-heading-s">Search</h4>
-        <ul class="govuk-list govuk-list--bullet">
-            <li><a href="/v9/directory/child-search" class="govuk-link">Basic omni-search</a> - potentially allows any input (interface shown to users to date)</li>
-            <li><a href="/v9/directory/child-search?searchVariant=B" class="govuk-link">Detailed search</a> - based on common search criteria that we have heard about to date</li>
-            <li><a href="/v9/directory/child-search?searchVariant=C" class="govuk-link">Mixture of simple and detailed</a> - a pattern suggested in the Home Office patterns (https://design.homeoffice.gov.uk/patterns/search-for-something)</li>
-        </ul>
-        <h4 class="govuk-heading-s">Search results</h4>
-        <ul class="govuk-list govuk-list--bullet">
-            <li><a href="/v9/directory/search-results" class="govuk-link">Basic search results</a> - potentially allows any input (interface shown to users to date)</li>
-        </ul>
+<h4 class="govuk-heading-s">Professional profiles</h4>
+<ul class="govuk-list govuk-list--bullet">
+    <li><a href="/v9/directory/record/4/F?eventTimelineId=5&ur=true" class="govuk-link">Professional centric view of
+            interactions</a> - a different presentation of the same data held for the timeline
+    </li>
+    <li><a href="/v9/directory/professional/health/2/4" class="govuk-link">Professional profile page</a> - profile page
+        for professional involved in interactions with child in question
+    </li>
+</ul>
+
+<h4 class="govuk-heading-s">Search</h4>
+<ul class="govuk-list govuk-list--bullet">
+    <li><a href="/v9/directory/child-search" class="govuk-link">Basic omni-search</a> - potentially allows any input
+        (interface shown to users to date)
+    </li>
+    <li><a href="/v9/directory/child-search?searchVariant=B" class="govuk-link">Detailed search</a> - based on common
+        search criteria that we have heard about to date
+    </li>
+    <li><a href="/v9/directory/child-search?searchVariant=C" class="govuk-link">Mixture of simple and detailed</a> - a
+        pattern suggested in the Home Office patterns (https://design.homeoffice.gov.uk/patterns/search-for-something)
+    </li>
+</ul>
+<h4 class="govuk-heading-s">Search results</h4>
+<ul class="govuk-list govuk-list--bullet">
+    <li><a href="/v9/directory/search-results" class="govuk-link">Basic search results</a> - potentially allows any
+        input (interface shown to users to date)
+    </li>
+</ul>

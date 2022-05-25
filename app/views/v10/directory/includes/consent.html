@@ -1,0 +1,98 @@
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        {% if profile.consent.education === true %}
+            {% set educationConsent = 'Yes' %}
+        {% else %}
+             {% set educationConsent = 'No' %}
+        {% endif %}
+        {% if profile.consent.health === true %}
+            {% set healthConsent = 'Yes' %}
+        {% else %}
+            {% set healthConsent = 'No' %}
+        {% endif %}
+        {% if profile.consent.familySupport === true %}
+            {% set familySupportConsent = 'Yes' %}
+        {% else %}
+            {% set familySupportConsent = 'No' %}
+        {% endif %}
+        {% if profile.consent.welfare === true %}
+            {% set welfareConsent = 'Yes' %}
+        {% else %}
+            {% set welfareConsent = 'No' %}
+        {% endif %}
+
+        {{ govukTable({
+            caption: "Consent to view data and contact others",
+            captionClasses: "govuk-table__caption--m",
+            firstCellIsHeader: true,
+            head: [
+                {
+                    text: "Category"
+                },
+                {
+                    text: "Consent to view data",
+                    format: "numeric"
+                },
+                {
+                    text: "Consent to contact professionals",
+                    format: "numeric"
+                }
+            ],
+            rows: [
+                [
+                    {
+                        text: "Education"
+                    },
+                    {
+                        text: educationConsent,
+                        format: "numeric"
+                    },
+                    {
+                        text: educationConsent,
+                        format: "numeric"
+                    }
+                ],
+                [
+                    {
+                        text: "Health"
+                    },
+                    {
+                        text: healthConsent,
+                        format: "numeric"
+                    },
+                    {
+                        text: healthConsent,
+                        format: "numeric"
+                    }
+                ],
+                [
+                    {
+                        text: "Family Support"
+                    },
+                    {
+                        text: familySupportConsent,
+                        format: "numeric"
+                    },
+                    {
+                        text: familySupportConsent,
+                        format: "numeric"
+                    }
+                ],
+                [
+                    {
+                        text: "Welfare"
+                    },
+                    {
+                        text: welfareConsent,
+                        format: "numeric"
+                    },
+                    {
+                        text: welfareConsent,
+                        format: "numeric"
+                    }
+                ]
+            ]
+        }) }}
+</div>
+</div>
