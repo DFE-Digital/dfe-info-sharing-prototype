@@ -7,6 +7,7 @@
 
 const gulp = require('gulp')
 const sass = require('gulp-sass')(require('node-sass'))
+const postcss = require('gulp-postcss')
 const sourcemaps = require('gulp-sourcemaps')
 const path = require('path')
 const fs = require('fs')
@@ -23,6 +24,8 @@ gulp.task('sass-extensions', function (done) {
 })
 
 gulp.task('sass', function () {
+  const tailwindcss = require('tailwindcss')
+
   return gulp.src(config.paths.assets + '/sass/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: 'expanded' }).on('error', function (error) {
@@ -34,6 +37,10 @@ gulp.task('sass', function () {
       console.error('\n', error.messageFormatted, '\n')
       this.emit('end')
     }))
+    .pipe(postcss([
+      tailwindcss('./tailwind.config.js'),
+      require('autoprefixer')
+    ]))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(stylesheetDirectory))
 })
