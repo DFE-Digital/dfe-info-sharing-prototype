@@ -21,7 +21,7 @@
                                 <a href="#"
                                    class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
 
-                                <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-bold"
+                                <a href="./software" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-bold"
                                    aria-current="page">Search</a>
 
                             </div>
@@ -166,7 +166,13 @@
 
         <header class="bg-white shadow">
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                <h1 class="text-3xl font-bold text-gray-900">Search</h1>
+                <h1 class="text-3xl font-bold text-gray-900">
+                    {% if softwareStep === '1' %}
+                    Kai Sutton
+                    {% else %}
+                        Search
+                    {% endif %}
+                </h1>
             </div>
         </header>
         <main>
@@ -174,8 +180,8 @@
                 <!-- Replace with your content -->
                 <div class="px-4 py-6 sm:px-0">
 
-                        {% if softwareStep === '' %}
-
+                        {% if softwareStep === '1' %}
+                            {% include './software/record.html' %}
                         {% else %}
                             {% include './software/search.html' %}
                         {% endif %}
