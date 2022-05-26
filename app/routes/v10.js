@@ -79,6 +79,15 @@ router.get([`/v${verNum}/directory/search`, `/v${verNum}/directory/child-search`
   })
 })
 
+// Software mockup
+router.get([`/v${verNum}/directory/entry-points/software`, `/v${verNum}/directory/entry-points/software/`], function (req, res) {
+  const softwareStep = req.query.softwareStep || null
+  res.render(`v${verNum}/directory/entry-points/software.html`, {
+    softwareStep: softwareStep
+  })
+})
+
+
 //* Directory routes END //
 
 // Referrals start
