@@ -15,6 +15,7 @@
     "@ministryofjustice/frontend": "^1.1.0",
     "acorn": "^8.5.0",
     "ansi-colors": "^4.1.1",
+    "autoprefixer": "^10.4.7",
     "basic-auth": "^2.0.0",
     "basic-auth-connect": "^1.0.0",
     "body-parser": "^1.14.1",
@@ -49,7 +50,6 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.7",
     "glob": "^7.1.4",
     "jest": "^27.3.1",
     "postcss-import": "^14.1.0",
