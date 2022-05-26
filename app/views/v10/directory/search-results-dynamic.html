@@ -22,7 +22,7 @@
                 {% set searchResultRows = (searchResultRows.push(
                     [
                         {
-                            html: "<a href='./record/" + result.id + "/D' class='govuk-link'>" + result.firstName + ' ' + result.lastName + "</a>"
+                            html: "<a href='./record/" + result.id + "/F' class='govuk-link'>" + result.firstName + ' ' + result.lastName + "</a>"
                         },
                         {
                             text: result.dob,
@@ -40,7 +40,7 @@
                             text: result.address
                         },
                         {
-                            html: "<a href='./record/" + result.id + "/D' class='govuk-link'>View</a>"
+                            html: "<a href='./record/" + result.id + "/F' class='govuk-link'>View</a>"
                         }
                     ]
                 ), searchResultRows) %}
