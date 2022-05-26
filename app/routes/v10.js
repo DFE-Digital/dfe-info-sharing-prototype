@@ -1,7 +1,7 @@
 const verNum = 10
 const express = require('express')
 const router = express.Router()
-// const data = require(`../views/v${verNum}/directory/data/functions`)
+const data = require(`../views/v${verNum}/directory/data/functions`)
 
 // Create readily available 'locals'
 router.use((req, res, next) => {
@@ -10,7 +10,6 @@ router.use((req, res, next) => {
 })
 
 //* Directory routes //
-
 router.get([`/v${verNum}/directory/record/:childId`, `/v${verNum}/directory/record/:childId/:designVariant`, `/v${verNum}/directory/record/`], function (req, res) {
   const childId = req.params.childId || '1'
   const designVariant = req.params.designVariant || 'A'
