@@ -1,7 +1,7 @@
 {# specify absolute url for the static assets folder e.g. http://wwww.domain.com/assets #}
 {%- set assetUrl = assetUrl | default(assetPath) -%}
 <!DOCTYPE html>
-<html lang="{{ htmlLang | default('en') }}" class="govuk-template {{ htmlClasses }}">
+<html lang="{{ htmlLang | default('en') }}" class="govuk-template {{ htmlClasses }}" style="height: 100%">
 <head>
     <meta charset="utf-8">
     <title{% if pageTitleLang %} lang="{{ pageTitleLang }}"{% endif %}>{% block pageTitle %}ABC Software{% endblock %}</title>
@@ -20,15 +20,15 @@
     <meta property="og:image" content="{{ assetUrl | default('/assets') }}/images/govuk-opengraph-image.png">
     <link href="/public/stylesheets/software.css" rel="stylesheet" type="text/css" />
 </head>
-<body class="govuk-template__body {{ bodyClasses }}" {%- for attribute, value in bodyAttributes %} {{attribute}}="{{value}}"{% endfor %}>
+<body class="govuk-template__body {{ bodyClasses }}" {%- for attribute, value in bodyAttributes %} {{attribute}}="{{value}}"{% endfor %} style="height: 100%">
 <script{% if cspNonce %} nonce="{{ cspNonce }}"{% endif %}>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 {% block bodyStart %}{% endblock %}
 
 
 {% block main %}
-    <div class="govuk-width-container {{ containerClasses }}">
+    <div class="govuk-width-container {{ containerClasses }}" style="height: 100%">
         {% block beforeContent %}{% endblock %}
-        <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+        <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %} style="height: 100%">
             {% block content %}{% endblock %}
         </main>
     </div>

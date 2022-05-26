@@ -94,7 +94,6 @@
     }) }}
 {% endset %}
 
-{% if ur === 'true' or professionalProfile != null %}
 
     {{ searchFilter({
         rows: [
@@ -110,30 +109,6 @@
             }
         ]
     }) }}
-
-{% else %}
-
-{{ searchFilter({
-    rows: [
-        {
-            title: 'Significant events',
-            body: significantEventsOptionsHtml | safe,
-            expanded: 'true'
-        },
-        {
-            title: 'Interaction type',
-            body: interactionTypeOptionsHtml | safe,
-            expanded: 'true'
-        },
-        {
-            title: 'Date',
-            body: dateOptionsSelectHtml | safe,
-            expanded: 'true'
-        }
-    ]
-}) }}
-
-{% endif %}
 
 
 <script type="text/javascript">
