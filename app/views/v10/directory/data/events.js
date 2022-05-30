@@ -4,6 +4,7 @@ const generateProfessionalContactDetails = function (professional) {
   return {
     id: professional.category + professional.id,
     name: professional.firstName + ' ' + professional.lastName,
+    currentlyInvolved: professional.currentlyInvolved,
     position: professional.position,
     ...professional.contact
   }
