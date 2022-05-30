@@ -125,6 +125,7 @@ const groupByProfessional = function (events) {
     }
   }
   grouped.sort((x, y) => y.events.length - x.events.length)
+  console.log(grouped)
   return grouped
 }
 

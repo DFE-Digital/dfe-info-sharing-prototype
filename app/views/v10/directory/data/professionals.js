@@ -20,6 +20,7 @@ const professionals = {
       lastName: 'Khalid',
       position: 'General Practitioner',
       category: 'health',
+      currentlyInvolved: true,
       organisation: organisations.default.health[1],
       contact: {
         phone: '07765437682',
